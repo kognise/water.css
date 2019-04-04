@@ -26,6 +26,10 @@ Just stick this in your head:
 
 No other classes or code is required to make Water.css work.
 
+Oh, you want a demo you say? Cheeky fellah!
+
+[Well, here's your demo.](https://kognise.github.io/water.css/)
+
 ## Contributing
 
 Water.css can be greatly improved if people in the community help make it better!
