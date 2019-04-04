@@ -21,7 +21,7 @@ You probably don't want to use it for a production app or something that has mor
 Just stick this in your head:
 
 ```html
-<link rel='stylesheet' href='https://cdn.kognise.dev/water.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@master/water.css'>
 ```
 
 No other classes or code is required to make Water.css work.
