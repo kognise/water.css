@@ -30,7 +30,11 @@ No other classes or code is required to make Water.css work.
 
 Oh, you want a demo you say? Cheeky fellah!
 
-[Well, here's your demo.](https://kognise.github.io/water.css/)
+[Well, here's your demo.](https://kognise.github.io/water.css/) And here's a screenshot to top it off:
+
+![Screenshot](screenshot.jpg)
+
+Don't like how it looks? Feel free to submit a PR with suggestions.
 
 ## Contributing
 
