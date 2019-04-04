@@ -7,6 +7,15 @@ body {
   line-height: 1.4;
 }
 
+a {
+  color: #41adff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 hr {
   border: none;
   border-top: 1px solid #dbdbdb;
