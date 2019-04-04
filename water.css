@@ -1,0 +1,56 @@
+body {
+  background: #202b38;
+  color: #dbdbdb;
+  font-family: sans-serif;
+  margin: 20px;
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dbdbdb;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: 500;
+}
+
+input:not([type="checkbox"]), select {
+  display: block;
+}
+
+input, select, button, textarea {
+  border-radius: 6px;
+  padding: 10px;
+  background: #161f27;
+  color: #ffffff;
+  font-size: inherit;
+  font-family: inherit;
+  border: none;
+  outline: none;
+  margin-bottom: 6px;
+  margin-right: 6px;
+}
+
+input:focus, select:focus, button:focus, textarea:focus {
+  box-shadow: 0 0 0 2px #0096bfab;
+}
+
+::placeholder {
+  color: #949494;
+}
+
+input[type="checkbox"]:active, input[type="submit"]:active, input[type="button"]:active, button:active {
+  transform: translateY(2px);
+}
