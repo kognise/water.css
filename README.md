@@ -1,6 +1,6 @@
 # Water.css
 
-![Water.css](logo.svg)
+[![Water.css](logo.svg)](https://kognise.github.io/water.css/)
 
 *A just-add-css collection of styles to make simple websites just a little nicer*
 
