@@ -34,7 +34,7 @@ Oh, you want a demo you say? Cheeky fellah!
 
 ![Screenshot](screenshot.jpg)
 
-Don't like how it looks? Feel free to submit a PR with suggestions.
+Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
 ## Contributing
 
