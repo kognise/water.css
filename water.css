@@ -1,7 +1,8 @@
 body {
   background: #202b38;
   color: #dbdbdb;
-  font-family: sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  text-rendering: optimizeLegibility;;
   margin: 20px;
   max-width: 800px;
   line-height: 1.4;
@@ -35,7 +36,7 @@ h1, h2, h3, h4, h5, h6, b, strong, th {
   font-weight: 500;
 }
 
-input:not([type="checkbox"]), select {
+input:not([type='checkbox']), select {
   display: block;
 }
 
@@ -60,6 +61,6 @@ input:focus, select:focus, button:focus, textarea:focus {
   color: #949494;
 }
 
-input[type="checkbox"]:active, input[type="submit"]:active, input[type="button"]:active, button:active {
+input[type='checkbox']:active, input[type='submit']:active, input[type='button']:active, button:active {
   transform: translateY(2px);
 }
