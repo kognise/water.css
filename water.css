@@ -28,12 +28,15 @@ h1 {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
   margin-bottom: 12px;
 }
 
 h1, h2, h3, h4, h5, h6, b, strong, th {
   font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
 }
 
 input:not([type='checkbox']), select {
@@ -57,10 +60,24 @@ input:focus, select:focus, button:focus, textarea:focus {
   box-shadow: 0 0 0 2px #0096bfab;
 }
 
-::placeholder {
-  color: #949494;
-}
-
 input[type='checkbox']:active, input[type='submit']:active, input[type='button']:active, button:active {
   transform: translateY(2px);
+}
+
+body.light {
+  background: #ffffff;
+  color: #363636;
+}
+
+body.light h1, body.light h2, body.light h3, body.light h4, body.light h5, body.light h6, body.light strong {
+  color: #000000;
+}
+
+body.light input, body.light select, body.light button, body.light textarea {
+  background: #efefef;
+  color: #000000;
+}
+
+::placeholder {
+  color: #949494;
 }

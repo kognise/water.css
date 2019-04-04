@@ -28,11 +28,15 @@ Just stick this in your head:
 
 No other classes or code is required to make Water.css work.
 
+Well, I may have lied a *little* bit when I said Water.css makes use of no classes: if you're a light theme guy (shame on you!) just add the class `.light` to your `<body>` and everything will burn your eyes. 
+
 Oh, you want a demo you say? Cheeky fellah!
 
 [Well, here's your demo.](https://kognise.github.io/water.css/) And here's a screenshot to top it off:
 
 ![Screenshot](screenshot.jpg)
+
+Don't forget there's a light theme as well.
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
