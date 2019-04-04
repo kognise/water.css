@@ -4,6 +4,8 @@
 
 *A just-add-css collection of styles to make simple websites just a little nicer*
 
+[![On reddit](https://img.shields.io/badge/on-reddit-orange.svg)](https://www.reddit.com/r/programming/comments/b9ixev/watercss_a_collection_of_styles_for_simple_static/) [![MIT license](https://img.shields.io/github/license/kognise/water.css.svg)](https://github.com/kognise/water.css/blob/master/LICENSE.md)
+
 ## Why?
 
 I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but don't like the uglyness of the default styles.
@@ -36,4 +38,4 @@ Water.css can be greatly improved if people in the community help make it better
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue.
 
-If people are interested I'll make a Jekyll theme with Water.css, I'd love any help with that.
+If people are interested I'll make a Jekyll theme with Water.css and possibly an NPM package, I'd love any help with that.
