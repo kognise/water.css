@@ -31,3 +31,5 @@ No other classes or code is required to make Water.css work.
 Water.css can be greatly improved if people in the community help make it better!
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue.
+
+If people are interested I'll make a Jekyll theme with Water.css, I'd love any help with that.
