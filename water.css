@@ -74,7 +74,9 @@ input, select, button, textarea {
   border-radius: 6px;
   outline: none;
   background: #161f27;
+}
 
+input:not([type='checkbox']), select, button, textarea {
   -webkit-appearance: none;
 }
 
