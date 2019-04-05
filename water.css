@@ -1,28 +1,31 @@
 body {
-  background: #202b38;
-  color: #dbdbdb;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  text-rendering: optimizeLegibility;
-  margin: 20px auto;
-  max-width: 800px;
   line-height: 1.4;
+
+  max-width: 800px;
+  margin: 20px auto;
+
+  color: #dbdbdb;
+  background: #202b38;
+
+  text-rendering: optimizeLegibility;
 }
 
-button, input[type="submit"] {
+button, input[type='submit'] {
   cursor: pointer;
 }
 
 a, button, input {
-  transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s linear;
+  transition: background-color .1s linear,
+  border-color .1s linear,
+  color .1s linear,
+  box-shadow .1s linear,
+  transform .1s linear;
 }
 
 a {
-  color: #41adff;
   text-decoration: none;
+  color: #41adff;
 }
 
 a:hover {
@@ -35,8 +38,8 @@ hr {
 }
 
 h1 {
-  margin-top: 0;
   font-size: 2.2em;
+  margin-top: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,61 +59,80 @@ input:not([type='checkbox']), select {
 }
 
 input, select, button, textarea {
-  border-radius: 6px;
-  padding: 10px;
-  background: #161f27;
-  color: #ffffff;
-  font-size: inherit;
   font-family: inherit;
-  border: none;
-  outline: none;
-  margin-bottom: 6px;
+  font-size: inherit;
+
   margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+  background: #161f27;
+
   -webkit-appearance: none;
 }
 
-button, input[type="submit"] {
+button, input[type='submit'] {
   padding-right: 30px;
   padding-left: 30px;
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover, input[type='submit']:hover {
   background: #324759;
 }
 
-input:focus, select:focus, button:focus, textarea:focus {
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
   box-shadow: 0 0 0 2px #0096bfab;
 }
 
-input[type='checkbox']:active, input[type='submit']:active, input[type='button']:active, button:active {
+input[type='checkbox']:active,
+input[type='submit']:active,
+input[type='button']:active,
+button:active {
   transform: translateY(2px);
 }
 
 input:disabled {
-  opacity: 0.5;
   cursor: not-allowed;
+  opacity: .5;
 }
 
 body.light {
-  background: #ffffff;
   color: #363636;
+  background: #ffffff;
 }
 
 body.light a {
-  color: #0076D1;
+  color: #0076d1;
 }
 
-body.light h1, body.light h2, body.light h3, body.light h4, body.light h5, body.light h6, body.light strong {
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6,
+body.light strong {
   color: #000000;
 }
 
-body.light input, body.light select, body.light button, body.light textarea {
+body.light input,
+body.light select,
+body.light button,
+body.light textarea {
+  color: #000000;
   background: #efefef;
-  color: #000000;
 }
 
-body.light button:hover, body.light input[type="submit"]:hover {
-  background: #dddddd;
+body.light button:hover,
+body.light input[type='submit']:hover {
+  background: #ddd;
 }
 
 ::placeholder {
