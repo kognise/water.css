@@ -11,7 +11,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-button, input[type='submit'] {
+button, input[type='submit'], input[type='button'], input[type='checkbox'] {
   cursor: pointer;
 }
 
@@ -80,7 +80,9 @@ button, input[type='submit'] {
   padding-left: 30px;
 }
 
-button:hover, input[type='submit']:hover {
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
   background: #324759;
 }
 
@@ -131,8 +133,9 @@ body.light textarea {
 }
 
 body.light button:hover,
-body.light input[type='submit']:hover {
-  background: #ddd;
+body.light input[type='submit']:hover,
+body.light input[type='button']:hover {
+  background: #dddddd;
 }
 
 ::placeholder {
