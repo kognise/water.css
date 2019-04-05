@@ -51,8 +51,9 @@ Have any questions or concerns? Did I forget an element or selector? Does someth
 - Support `placeholder`
 - Tables
 - Blockquotes
-- Code/kbd/blocks?
 - Update screenshots
 - Jekyll theme
+- Code/kbd/blocks?
+- Nicer buttons?
 
 Feel free to help! :P
