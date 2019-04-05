@@ -44,11 +44,13 @@ Water.css can be greatly improved if people in the community help make it better
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue.
 
-If people are interested I'll make a Jekyll theme with Water.css and possibly an NPM package, I'd love any help with that.
-
 ## Todos
 
 - Check image styles
 - Improve inputs in light theme
 - Support `placeholder`
 - Table styles
+- Update screenshots
+- Jekyll theme
+
+Feel free to help! :P
