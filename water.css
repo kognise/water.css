@@ -54,6 +54,7 @@ input, select, button, textarea {
   outline: none;
   margin-bottom: 6px;
   margin-right: 6px;
+  -webkit-appearance: none;
 }
 
 input:focus, select:focus, button:focus, textarea:focus {
