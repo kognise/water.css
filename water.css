@@ -16,7 +16,8 @@ a, button, input {
   transition: background-color 0.1s linear,
               border-color 0.1s linear,
               color 0.1s linear,
-              box-shadow 0.1s linear;
+              box-shadow 0.1s linear,
+              transform 0.1s linear;
 }
 
 a {
