@@ -51,3 +51,4 @@ If people are interested I'll make a Jekyll theme with Water.css and possibly an
 - Check image styles
 - Improve inputs in light theme
 - Support `placeholder`
+- Table styles
