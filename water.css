@@ -18,6 +18,10 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
 a, button, input, textarea {
   transition: background-color .1s linear,
   border-color .1s linear,
