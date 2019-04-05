@@ -50,10 +50,11 @@ Have any questions or concerns? Did I forget an element or selector? Does someth
 
 - Animate more things
 - Reduce size
-- Tables
+- [Tables](https://github.com/kognise/water.css/issues/5)
 - Blockquotes
 - Update screenshots
 - Jekyll theme
 - [Code/kbd/blocks](https://github.com/kognise/water.css/issues/1)
+- [Code splitting](https://github.com/kognise/water.css/issues/6)
 
 Feel free to help! :P
