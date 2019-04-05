@@ -92,6 +92,47 @@ textarea {
   resize: vertical;
 }
 
+code, kbd {
+  background: #161f27;
+  color: #D17933;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+pre > code {
+  padding: 10px;
+  display: block;
+  overflow-y: auto;
+  scrollbar-color: #324759 #1b252f; /* Firefox see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars */
+  scrollbar-width: thin; /* Firefox see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars */
+}
+
+pre > code::-webkit-scrollbar {
+  height: 10px;
+}
+
+pre > code::-webkit-scrollbar-track {
+  background: #1b252f;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+pre > code::-webkit-scrollbar-thumb {
+  background: #324759;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+pre > code::-webkit-scrollbar-thumb:hover {
+  background: #3e586e;
+}
+
+body.light code,
+body.light kbd {
+  background: #dddddd;
+  color: #001c36;
+}
+
 button, input[type='submit'], input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
