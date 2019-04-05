@@ -11,11 +11,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-button, input[type='submit'], input[type='button'], input[type='checkbox'] {
+button,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'] {
   cursor: pointer;
 }
 
-a, button, input {
+a, button, input, textarea {
   transition: background-color .1s linear,
   border-color .1s linear,
   color .1s linear,
@@ -75,7 +78,14 @@ input, select, button, textarea {
   -webkit-appearance: none;
 }
 
-button, input[type='submit'] {
+textarea {
+  margin-right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+button, input[type='submit'], input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
 }
