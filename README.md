@@ -55,7 +55,7 @@ Have any questions or concerns? Did I forget an element or selector? Does someth
 - Blockquotes
 - Update screenshots
 - Jekyll theme
-- Code/kbd/blocks?
+- (Code/kbd/blocks)[https://github.com/kognise/water.css/issues/1]
 - Nicer buttons?
 
 Feel free to help! :P
