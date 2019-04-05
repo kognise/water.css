@@ -64,6 +64,14 @@ input[type='checkbox']:active, input[type='submit']:active, input[type='button']
   transform: translateY(2px);
 }
 
+input:read-only, input:disabled {
+  cursor: not-allowed;
+}
+
+input:disabled {
+  opacity: 0.5;
+}
+
 body.light {
   background: #ffffff;
   color: #363636;

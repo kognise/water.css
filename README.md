@@ -32,11 +32,9 @@ Well, I may have lied a *little* bit when I said Water.css makes use of no class
 
 Oh, you want a demo you say? Cheeky fellah!
 
-[Well, here's your demo.](https://kognise.github.io/water.css/) And here's a screenshot to top it off:
+[Well, here's your demo.](https://kognise.github.io/water.css/) And here's a screenshot of the dark theme to top it off:
 
 ![Screenshot](screenshot.jpg)
-
-Don't forget there's a light theme as well.
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
