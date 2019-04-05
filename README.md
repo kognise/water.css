@@ -49,7 +49,9 @@ Have any questions or concerns? Did I forget an element or selector? Does someth
 - Check image styles
 - Improve inputs in light theme
 - Support `placeholder`
-- Table styles
+- Tables
+- Blockquotes
+- Code/kbd/blocks?
 - Update screenshots
 - Jekyll theme
 
