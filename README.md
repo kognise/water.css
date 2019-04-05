@@ -28,7 +28,7 @@ Just stick this in your head:
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/water.min.css'>
 ```
 
-No other classes or code is required to make Water.css work.
+No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all versions](https://github.com/kognise/water.css/releases).
 
 Well, I may have lied a *little* bit when I said Water.css makes use of no classes: if you're a light theme guy (shame on you!) just add the class `.light` to your `<body>` and everything will burn your eyes. 
 
