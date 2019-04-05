@@ -68,6 +68,11 @@ input, select, button, textarea {
   -webkit-appearance: none;
 }
 
+button, input[type="submit"] {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 button:hover, input[type="submit"]:hover {
   background: #324759;
 }
