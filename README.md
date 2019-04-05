@@ -4,7 +4,9 @@
 
 *A just-add-css collection of styles to make simple websites just a little nicer*
 
-[![On reddit](https://img.shields.io/badge/on-reddit-orange.svg)](https://www.reddit.com/r/webdev/comments/b9m6mv/watercss_a_collection_of_neat_styles_for_simple/) [![MIT license](https://img.shields.io/github/license/kognise/water.css.svg)](https://github.com/kognise/water.css/blob/master/LICENSE.md)
+[![On reddit](https://img.shields.io/badge/on-reddit-orange.svg)](https://www.reddit.com/r/webdev/comments/b9m6mv/watercss_a_collection_of_neat_styles_for_simple/)
+[![On product hunt](https://img.shields.io/badge/on-product%20hunt-red.svg)](https://www.producthunt.com/posts/water-css)
+[![MIT license](https://img.shields.io/github/license/kognise/water.css.svg)](https://github.com/kognise/water.css/blob/master/LICENSE.md)
 
 ## Why?
 
