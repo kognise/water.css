@@ -48,14 +48,12 @@ Have any questions or concerns? Did I forget an element or selector? Does someth
 
 ## Todos
 
-- Check image styles
-- Improve inputs in light theme
-- Support `placeholder`
+- Animate more things
+- Reduce size
 - Tables
 - Blockquotes
 - Update screenshots
 - Jekyll theme
 - [Code/kbd/blocks](https://github.com/kognise/water.css/issues/1)
-- Nicer buttons?
 
 Feel free to help! :P
