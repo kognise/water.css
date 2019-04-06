@@ -1,0 +1,16 @@
+h1 {
+  font-size: 2.2em;
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 12px;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: $text-bright;
+}
+
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: 600;
+}

@@ -1,11 +1,11 @@
 document.getElementById('switch').addEventListener('click', () => {
-  const { body } = document
+  const stylesheet = document.getElementById('stylesheet')
   const ph = document.getElementById('ph')
-  if (body.classList.contains('light')) {
-    body.classList.remove('light')
-    ph.src = ph.src.replace('theme=light', 'theme=dark')
-  } else {
-    body.classList.add('light')
+  if (stylesheet.getAttribute('href') === 'dist/dark.css') {
+    stylesheet.setAttribute('href', 'dist/light.css')
     ph.src = ph.src.replace('theme=dark', 'theme=light')
+  } else {
+    stylesheet.setAttribute('href', 'dist/dark.css')
+    ph.src = ph.src.replace('theme=light', 'theme=dark')
   }
 })

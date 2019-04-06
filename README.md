@@ -8,6 +8,15 @@
 [![On product hunt](https://img.shields.io/badge/on-product%20hunt-red.svg)](https://www.producthunt.com/posts/water-css)
 [![MIT license](https://img.shields.io/github/license/kognise/water.css.svg)](https://github.com/kognise/water.css/blob/master/LICENSE.md)
 
+## Goals
+
+ - Responsive
+ - Good code quality
+ - Good browser support (works on my old kindle's browser :P)
+ - Small size (&lt; 2kb)
+ - Beautiful
+ - No classes
+
 ## Why?
 
 I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but don't like the uglyness of the default styles.
@@ -25,36 +34,93 @@ You probably don't want to use it for a production app or something that has mor
 Just stick this in your head:
 
 ```html
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/water.min.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
 ```
 
-No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all versions](https://github.com/kognise/water.css/releases).
+Well, there's a dark theme and a light theme. If you want the light theme, use `light.css` instead of `dark.css`. See [Theming](#theming) to make your own theme!
 
-Well, I may have lied a *little* bit when I said Water.css makes use of no classes: if you're a light theme guy (shame on you!) just add the class `.light` to your `<body>` and everything will burn your eyes. 
+No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
 
 Oh, you want a demo you say? Cheeky fellah!
 
-[Well, here's your demo.](https://kognise.github.io/water.css/) And here's a screenshot of the dark theme to top it off:
-
-![Screenshot](screenshot.jpg)
+[Well, here's your demo.](https://kognise.github.io/water.css/)
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
 ## Contributing
 
-Water.css can be greatly improved if people in the community help make it better!
+Water.css becomes better for everyone when people like you help make it better!
 
-Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue.
+Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
+
+If you decide to cotnribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading and automatic Sass compiling.
+
+```
+$ yarn dev
+```
+
+And make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
+
+## Theming
+
+Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
+
+- `$background`
+- `$background-alt`
+- `$text-main`
+- `$text-bright`
+- `$links`
+- `$focus`
+- `$border`
+- `$code`
+- `$button-hover`
+- `$animation-duration`
+- `$form-placeholder`
+- `$form-text`
+
+### Based on an existing theme
+
+You can base your theme off of the existing light or dark themes, which already have some variables predefined to make it easier for you.
+
+Here's some simple Sass that'll just use the dark theme but color all links red. Of course, you can change any variables you want.
+
+```scss
+$links: #ff0000;
+@import 'dark.scss';
+```
+
+### From scratch
+
+You can also make your theme from scratch. This is less recommended, but feel free to! You just have to define all of the variables.
+
+For example, here's an example of a really ugly theme, made from scratch. **Ouch!**
+
+```scss
+$background: #ff48c2 !default;
+$background-alt: #00ff00 !default;
+
+$text-main: #dbdbdb !default;
+$text-bright: #ffffff !default;
+
+$links: #ff0022 !default;
+$focus: #ffc400 !default;
+$border: #00ffff !default;
+$code: #001aff !default;
+
+$button-hover: #324759 !default;
+$animation-duration: 0.1s !default;
+
+$form-placeholder: #a9a9a9 !default;
+$form-text: #ffffff !default;
+
+@import 'parts/core';
+```
+
+You can also only import parts you want, but this is not recommended. See the `src/parts/` folder for a list of parts.
 
 ## Todos
 
-- Animate more things
-- Reduce size
 - [Tables](https://github.com/kognise/water.css/issues/5)
 - Blockquotes
-- Update screenshots
+- Add a screenshot
 - Jekyll theme
-- [Code/kbd/blocks](https://github.com/kognise/water.css/issues/1)
-- [Code splitting](https://github.com/kognise/water.css/issues/6)
-
-Feel free to help! :P
