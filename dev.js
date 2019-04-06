@@ -45,18 +45,31 @@ chokidar.watch('script.js', { ignoreInitial: true }).on('all', () => {
   reload()
 })
 
-chokidar.watch('src/*.scss', { ignoreInitial: true }).on('all', (event, file) => {
-  console.log('> Stylesheet changed')
-  sass.render({ file, outputStyle: 'compressed' }, async (errors, { css }) => {
+function buildSass(file) {
+  sass.render({ file, outputStyle: 'compressed' }, async (errors, result) => {
     if (errors) {
       console.log('> Sass errors!')
       console.log(errors)
       return
     }
     const outFile = file.replace('src', 'dist').replace('.scss', '.css')
-    await fs.outputFile(outFile, css)
+    await fs.outputFile(outFile, result.css)
     reload()
   })
+}
+
+chokidar.watch('src/*.scss', { ignoreInitial: true }).on('all', (event, file) => {
+  console.log('> Stylesheet changed')
+  buildSass(file)
+})
+
+chokidar.watch('src/parts/*.scss', { ignoreInitial: true }).on('all', async () => {
+  console.log('> Stylesheet part changed')
+  const src = await fs.readdir('src')
+  const files = src.filter(file => file !== 'parts').map(file => `src/${file}`)
+  for (let file of files) {
+    buildSass(file)
+  }
 })
 
 http.listen(3000, () => console.log('> Ready at http://localhost:3000/'))
