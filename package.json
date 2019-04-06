@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node-sass src/ --output dist/",
-    "dev:build": "yarn build --watch",
-    "dev:demo": "servor"
+    "dev": "node dev.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +24,10 @@
   },
   "homepage": "https://github.com/kognise/water.css",
   "devDependencies": {
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
     "node-sass": "^4.11.0",
-    "servor": "^2.0.3"
+    "socket.io": "^2.2.0",
+    "chokidar": "^2.1.5"
   }
 }
