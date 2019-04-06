@@ -24,6 +24,16 @@
     </p>
     <a href='https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css' target='_blank'><img id='ph' src='https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=150490&theme=dark' alt='Water.css - Make your tiny website just a little nicer | Product Hunt Embed' style='width: 250px; height: 54px;' width='250px' height='54px' /></a>
 
+    <h2>Goals</h2>
+    <ul>
+      <li>Responsive</li>
+      <li>Good code quality</li>
+      <li>Good browser support</li>
+      <li>Small size (&lt; 2kb)</li>
+      <li>Beautiful</li>
+      <li>No classes</li>
+    </ul>
+
     <h2>Is it responsive?</h2>
     <p>
       <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's easily mobile responsive.
@@ -34,42 +44,64 @@
     </p>
     <button id='switch'>Switch theme</button>
 
-    <h2>More elements</h2>
+    <h2>Element demos</h2>
     <p>
       This is supposed to be a demo page so we need more elements!
     </p>
-    <img src='http://placekitten.com/408/287' alt='Example kitten'>
-    <ul>
-      <li>List item 1</li>
-      <li>List item 2</li>
-      <li>List item 3</li>
-    </ul>
-    <p>
-      Below I'm gonna put an <code>&lt;hr&gt;</code>, because why not?
-    </p>
-    <hr>
-    <textarea>Hello from a textarea!</textarea>
+
+    <h3>Form elements</h3>
     <form>
       <label for='email'>Email</label>
       <input type='email' name='email' id='email' placeholder='john.doe@gmail.com'>
 
-      <label for='password'>Password</label>
-      <input type='password' name='password' id='password' placeholder='&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;'>
+      <label for='id'>User id (read only)</label>
+      <input readonly name='id' id='id' value='04D6H89Z'>
+
+      <label for='disabled'>Random disabled input</label>
+      <input disabled name='disabled' id='disabled' placeholder='Because why not?'>
+
+      <label for='about'>About me</label>
+      <textarea name='about' id='about' placeholder='I am a textarea...'></textarea>
 
       <input type='checkbox' name='remember' id='remember' checked>
       <label for='remember'>Remember me</label>
 
       <input type='submit'>
     </form>
-    <input disabled placeholder='This is disabled'>
-    <input readonly value='This is readonly'>
 
-    <h3>H3 for separation</h3>
+    <h3>Code</h3>
     <p>
       Below is some code, you can copy it with <kbd>Ctrl-C</kbd>.
       Did you know, <code>alert(1)</code> can show an alert in JavaScript!
     </p>
     <pre><code>// This logs a message to the console<br>console.log('Hello, world!')</code></pre>
+
+    <h3>Other</h3>
+    <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
+    <img src='http://placekitten.com/408/287' alt='Example kitten'>
+    <hr>
+
+    <h3>Typography</h3>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+      <strong>This is strong,</strong> this is normal, <b>this is just bold,</b> <em>and this is emphasized!</em> And heck, <a href='/'>here</a>'s a link.
+    </p>
+    <ul>
+      <li>Unordered list item 1</li>
+      <li>Unordered list item 2</li>
+      <li>Unordered list item 3</li>
+    </ul>
+    <ol>
+      <li>Ordered list item 1</li>
+      <li>Ordered list item 2</li>
+      <li>Ordered list item 3</li>
+    </ol>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
 
     <script src='script.js'></script>
   </body>
