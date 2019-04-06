@@ -1,0 +1,28 @@
+{
+  "name": "water.css",
+  "version": "1.0.0",
+  "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kognise/water.css.git"
+  },
+  "keywords": [
+    "css",
+    "css-framework",
+    "simple",
+    "minimal"
+  ],
+  "author": "kognise",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kognise/water.css/issues"
+  },
+  "homepage": "https://github.com/kognise/water.css#readme",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}
