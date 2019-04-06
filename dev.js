@@ -18,6 +18,13 @@ app.get('/', async (req, res) => {
   res.send(injected)
 })
 
+app.get('/script.js', async (req, res) => {
+  console.log('> Serving script')
+  const script = await fs.readFile('script.js')
+  res.contentType('javascript')
+  res.send(script)
+})
+
 app.use('/dist', (req, res, next) => {
   console.log('> Serving a stylesheet')
   next()
@@ -33,7 +40,12 @@ chokidar.watch('index.html', { ignoreInitial: true }).on('all', () => {
   reload()
 })
 
-chokidar.watch('src/*.scss', { ignoreInitial: true }).on('all', async (event, file) => {
+chokidar.watch('script.js', { ignoreInitial: true }).on('all', () => {
+  console.log('> Script changed')
+  reload()
+})
+
+chokidar.watch('src/*.scss', { ignoreInitial: true }).on('all', (event, file) => {
   console.log('> Stylesheet changed')
   sass.render({ file, outputStyle: 'compressed' }, async (errors, { css }) => {
     if (errors) {
