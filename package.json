@@ -4,7 +4,9 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass ./src/water-dark.scss > ./dist/water-dark.css && node-sass ./src/water-light.scss > ./dist/water-light.css"
+    "build:dark": "node-sass ./src/water-dark.scss > ./dist/water-dark.css",
+    "build:light": "node-sass ./src/water-light.scss > ./dist/water-light.css",
+    "build": "yarn build:dark && yarn build:light"
   },
   "repository": {
     "type": "git",
@@ -16,12 +18,12 @@
     "simple",
     "minimal"
   ],
-  "author": "kognise",
+  "author": "Kognise",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kognise/water.css/issues"
   },
-  "homepage": "https://github.com/kognise/water.css#readme",
+  "homepage": "https://github.com/kognise/water.css",
   "devDependencies": {
     "node-sass": "^4.11.0"
   }
