@@ -6,3 +6,18 @@ hr {
   border: none;
   border-top: 1px solid $border;
 }
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+td,
+th {
+  padding: 5px;
+}
+
+table,
+th,
+td {
+  border: 1px solid $border;
