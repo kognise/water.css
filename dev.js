@@ -35,7 +35,7 @@ chokidar.watch('index.html', { ignoreInitial: true }).on('all', () => {
 
 chokidar.watch('src/*.scss', { ignoreInitial: true }).on('all', async (event, file) => {
   console.log('> Stylesheet changed')
-  sass.render({ file }, async (errors, { css }) => {
+  sass.render({ file, outputStyle: 'compressed' }, async (errors, { css }) => {
     if (errors) {
       console.log('> Sass errors!')
       console.log(errors)

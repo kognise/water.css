@@ -4,7 +4,7 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass src/ --output dist/",
+    "build": "node-sass src/ --output dist/ --output-style compressed",
     "dev": "node dev.js"
   },
   "repository": {
