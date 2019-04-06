@@ -120,7 +120,6 @@ You can also only import parts you want, but this is not recommended. See the `s
 
 ## Todos
 
-- [Tables](https://github.com/kognise/water.css/issues/5)
 - Blockquotes
 - Add a screenshot
 - Jekyll theme
