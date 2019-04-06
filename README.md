@@ -53,7 +53,7 @@ Water.css becomes better for everyone when people like you help make it better!
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
 
-If you decide to cotnribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading and automatic Sass compiling.
+If you decide to contribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading and automatic Sass compiling.
 
 ```
 $ yarn dev
