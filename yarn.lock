@@ -971,6 +971,11 @@ semver@~5.3.0:
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.3.0.tgz#9b2ce5d3de02d17c6012ad326aa6b4d0cf54f94f"
   integrity sha1-myzl094C0XxgEq0yaqa00M9U+U8=
 
+servor@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/servor/-/servor-2.0.3.tgz#629c64b778639db8181276441a616942d1eb49af"
+  integrity sha512-LuXdSg+1w/0LnnKjZrwFGcpnHpFLvAQj7t6Kes4h1LUVmeGKA6X/9NdcWnjj25nJDDHXdhRKusMf5ftG/2BGBQ==
+
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
