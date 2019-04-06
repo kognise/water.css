@@ -6,8 +6,8 @@ body {
   margin: 20px auto;
   padding: 0 10px;
 
-  color: #dbdbdb;
-  background: #202b38;
+  color: $font-color;
+  background: $background-color;
 
   text-rendering: optimizeLegibility;
 }
@@ -33,7 +33,7 @@ a, button, input, textarea {
 
 a {
   text-decoration: none;
-  color: #41adff;
+  color: $link-color;
 }
 
 a:hover {
@@ -42,7 +42,7 @@ a:hover {
 
 hr {
   border: none;
-  border-top: 1px solid #dbdbdb;
+  border-top: 1px solid $border-color;
 }
 
 h1 {
@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6, b, strong, th {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #ffffff;
+  color: $heading-color;
 }
 
 input:not([type='checkbox']), select {
@@ -74,11 +74,20 @@ input, select, button, textarea {
   margin-bottom: 6px;
   padding: 10px;
 
-  color: #ffffff;
   border: none;
   border-radius: 6px;
   outline: none;
-  background: #161f27;
+}
+
+input, select, textarea {
+  color: $form-font-color;
+  background-color: $form-background-color;
+
+}
+
+button {
+  color: $button-font-color;
+  background-color: $button-background-color
 }
 
 input:not([type='checkbox']), select, button, textarea {
@@ -100,14 +109,14 @@ button, input[type='submit'], input[type='button'] {
 button:hover,
 input[type='submit']:hover,
 input[type='button']:hover {
-  background: #324759;
+  background: $button-hover-color;
 }
 
 input:focus,
 select:focus,
 button:focus,
 textarea:focus {
-  box-shadow: 0 0 0 2px #0096bfab;
+  box-shadow: 0 0 0 2px $focus-color;
 }
 
 input[type='checkbox']:active,
@@ -120,41 +129,4 @@ button:active {
 input:disabled {
   cursor: not-allowed;
   opacity: .5;
-}
-
-body.light {
-  color: #363636;
-  background: #ffffff;
-}
-
-body.light a {
-  color: #0076d1;
-}
-
-body.light h1,
-body.light h2,
-body.light h3,
-body.light h4,
-body.light h5,
-body.light h6,
-body.light strong {
-  color: #000000;
-}
-
-body.light input,
-body.light select,
-body.light button,
-body.light textarea {
-  color: #000000;
-  background: #efefef;
-}
-
-body.light button:hover,
-body.light input[type='submit']:hover,
-body.light input[type='button']:hover {
-  background: #dddddd;
-}
-
-::placeholder {
-  color: #949494;
 }

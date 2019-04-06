@@ -1,0 +1,100 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.4;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 0 10px;
+  color: #363636;
+  background: #fff;
+  text-rendering: optimizeLegibility; }
+
+button,
+input[type='submit'],
+input[type='button'],
+input[type='checkbox'] {
+  cursor: pointer; }
+
+img {
+  max-width: 100%; }
+
+a, button, input, textarea {
+  transition: background-color .1s linear, border-color .1s linear, color .1s linear, box-shadow .1s linear, transform .1s linear; }
+
+a {
+  text-decoration: none;
+  color: #0076d1; }
+
+a:hover {
+  text-decoration: underline; }
+
+hr {
+  border: none;
+  border-top: 1px solid #dbdbdb; }
+
+h1 {
+  font-size: 2.2em;
+  margin-top: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 12px; }
+
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: 600; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000; }
+
+input:not([type='checkbox']), select {
+  display: block; }
+
+input, select, button, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  outline: none; }
+
+input, select, textarea {
+  color: #000;
+  background-color: #efefef; }
+
+button {
+  color: #000;
+  background-color: #ddd; }
+
+input:not([type='checkbox']), select, button, textarea {
+  -webkit-appearance: none; }
+
+textarea {
+  margin-right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical; }
+
+button, input[type='submit'], input[type='button'] {
+  padding-right: 30px;
+  padding-left: 30px; }
+
+button:hover,
+input[type='submit']:hover,
+input[type='button']:hover {
+  background: #dddddd; }
+
+input:focus,
+select:focus,
+button:focus,
+textarea:focus {
+  box-shadow: 0 0 0 2px #0096bfab; }
+
+input[type='checkbox']:active,
+input[type='submit']:active,
+input[type='button']:active,
+button:active {
+  transform: translateY(2px); }
+
+input:disabled {
+  cursor: not-allowed;
+  opacity: .5; }
