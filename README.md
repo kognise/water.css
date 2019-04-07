@@ -76,7 +76,7 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$form-placeholder`
 - `$form-text`
 
-Wanna quickly try theming out without installing anything or just explore our build environment?
+Wanna quickly try out theming without installing anything or just explore our build environment?
 
 [![Try on Repl.it](https://repl-badge.jajoosam.repl.co/try.png)](https://repl.it/@Kognise/watercss-node?ref=button)
 
