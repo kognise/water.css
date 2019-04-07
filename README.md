@@ -8,6 +8,8 @@
 [![On product hunt](https://img.shields.io/badge/on-product%20hunt-red.svg)](https://www.producthunt.com/posts/water-css)
 [![MIT license](https://img.shields.io/github/license/kognise/water.css.svg)](https://github.com/kognise/water.css/blob/master/LICENSE.md)
 
+[![Try on repl.it](https://repl-badge.jajoosam.repl.co/try.png)](https://repl.it/@amasad/water-css?ref=button)
+
 ## Goals
 
  - Responsive
