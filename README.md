@@ -41,9 +41,7 @@ Well, there's a dark theme and a light theme. If you want the light theme, use `
 
 No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
 
-Oh, you want a demo you say? Cheeky fellah!
-
-[Well, here's your demo.](https://kognise.github.io/water.css/)
+**Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://kognise.github.io/water.css/)
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
@@ -77,6 +75,10 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$animation-duration`
 - `$form-placeholder`
 - `$form-text`
+
+Wanna quickly try theming out without installing anything or just explore our build environment?
+
+[![Try on Repl.it](https://repl-badge.jajoosam.repl.co/try.png)](https://repl.it/@Kognise/watercss-node?ref=button)
 
 ### Based on an existing theme
 
