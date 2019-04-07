@@ -14,3 +14,9 @@ h1, h2, h3, h4, h5, h6, strong {
 h1, h2, h3, h4, h5, h6, b, strong, th {
   font-weight: 600;
 }
+
+blockquote {
+  border-left: 0.2em solid $focus;
+  margin: 1.5em 1em;
+  padding: 0.5em 1em;
+}
