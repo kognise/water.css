@@ -4,7 +4,7 @@ document.getElementById('switch').addEventListener('click', () => {
   if (stylesheet.getAttribute('href') === 'dist/dark.css') {
     stylesheet.setAttribute('href', 'dist/light.css')
     ph.src = ph.src.replace('theme=dark', 'theme=light')
-  } else if (stylesheet.getAttribute('href') === 'dist/dark.css') {
+  } else if (stylesheet.getAttribute('href') === 'dist/light.css') {
     stylesheet.setAttribute('href', 'dist/darker.css')
     ph.src = ph.src.replace('theme=dark', 'theme=darker')
   } else {
