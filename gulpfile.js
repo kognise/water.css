@@ -23,7 +23,7 @@ function style() {
             .pipe(sass())
             .on("error", sass.logError)
             .pipe(postcss([autoprefixer(), cssnano()]))
-            .pipe(sourcemaps.write())
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest(paths.styles.dest))
             .pipe(browserSync.stream())
     );
