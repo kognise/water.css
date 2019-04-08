@@ -24,7 +24,7 @@ function style() {
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(bytediff.start())
-        .pipe(postcss([ cssnano() ]))
+        .pipe(postcss([ autoprefixer(), cssnano() ]))
         .pipe(bytediff.stop())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
