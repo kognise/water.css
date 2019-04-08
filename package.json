@@ -4,8 +4,8 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "build": "node-sass src/ --output dist/ --output-style compressed",
-    "dev": "node dev.js"
+    "build": "gulp style",
+    "dev": "gulp watch"
   },
   "repository": {
     "type": "git",
