@@ -3,7 +3,7 @@ blockquote {
     background: $background-alt;
     margin: 1.5em 1em;
     padding: 0.5em 1em;
-    border-radius: 6px;
+    border-radius: $border-radius;
     border-bottom-left-radius: 0px;
     border-top-left-radius: 0px;
 }
