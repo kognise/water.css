@@ -23,5 +23,5 @@ th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: darken($background, 4%);
+  background-color: $background-alt;
 }
