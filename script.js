@@ -4,8 +4,11 @@ document.getElementById('switch').addEventListener('click', () => {
   if (stylesheet.getAttribute('href') === 'dist/dark.css') {
     stylesheet.setAttribute('href', 'dist/light.css')
     ph.src = ph.src.replace('theme=dark', 'theme=light')
+  } else if (stylesheet.getAttribute('href') === 'dist/dark.css') {
+    stylesheet.setAttribute('href', 'dist/darker.css')
+    ph.src = ph.src.replace('theme=dark', 'theme=darker')
   } else {
     stylesheet.setAttribute('href', 'dist/dark.css')
-    ph.src = ph.src.replace('theme=light', 'theme=dark')
+    ph.src = ph.src.replace('theme=darker', 'theme=dark')
   }
 })
