@@ -78,7 +78,7 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 
 Wanna quickly try out theming without installing anything or just explore our build environment?
 
-[![Try on Repl.it](https://repl-badge.jajoosam.repl.co/try.png)](https://repl.it/@Kognise/watercss-node?ref=button)
+[![Try on repl.it](https://repl-badge.jajoosam.repl.co/edit.png)](https://repl.it/github/https://github.com/amasad/water.css?lang=nodejs&ref=button)
 
 ### Based on an existing theme
 
@@ -124,4 +124,5 @@ You can also only import parts you want, but this is not recommended. See the `s
 
 - [Blockquotes](https://github.com/kognise/water.css/issues/13)
 - Add a screenshot
-- Jekyll theme
+- [Jekyll theme](https://github.com/kognise/water.css/issues/18)
+- [Radio buttons](https://github.com/kognise/water.css/issues/22)
