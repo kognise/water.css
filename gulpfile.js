@@ -6,6 +6,7 @@ const cssnano = require('cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const bytediff = require('gulp-bytediff')
 const browserSync = require('browser-sync').create()
+const chalk = require('chalk');
 
 const paths = {
   styles: {
@@ -17,6 +18,29 @@ const paths = {
   }
 }
 
+// https://stackoverflow.com/a/20732091
+function humanFileSize(size) {
+  var i = Math.floor( Math.log(size) / Math.log(1024) );
+  return ( size / Math.pow(1024, i) ).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
+};
+
+function formatByteMessage(source, data){
+  var change = (data.savings > 0 ? 'saved' : 'gained');
+  var prettySavings = humanFileSize(Math.abs(data.savings));
+  var prettyStartSize = humanFileSize(data.startSize);
+  var prettyEndSize = humanFileSize(data.endSize);
+
+  if(data.endSize > data.startSize){
+    prettyEndSize = chalk.yellow(prettyEndSize);
+  }
+
+  if(data.endSize < data.startSize){
+    prettyEndSize = chalk.green(prettyEndSize);
+  }
+
+  return `${chalk.cyan(source.padStart(12, ' '))}: ${data.fileName} ${change} ${prettySavings} (${prettyStartSize} -> ${prettyEndSize})`
+}
+
 function style() {
   return (
     gulp.src(paths.styles.src)
@@ -24,8 +48,11 @@ function style() {
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(bytediff.start())
-        .pipe(postcss([ autoprefixer(), cssnano() ]))
-        .pipe(bytediff.stop())
+        .pipe(postcss([ autoprefixer()]))
+        .pipe(bytediff.stop((data) => formatByteMessage("autoprefixer", data)))
+        .pipe(bytediff.start())
+        .pipe(postcss([cssnano()]))
+        .pipe(bytediff.stop((data) => formatByteMessage("cssnano", data)))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())

@@ -28,14 +28,15 @@
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
+    "gulp-bytediff": "^1.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-bytediff": "^1.0.0"
+    "gulp-sourcemaps": "^2.6.5"
   },
   "browserslist": [
-    "last 1 version",
-    "not dead",
-    "> 5%"
-  ]
+    "defaults AND not android 4.4.3"
+  ],
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
 }
