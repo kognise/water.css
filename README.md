@@ -37,7 +37,7 @@ Just stick this in your head:
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
 ```
 
-Well, there's a dark theme and a light theme. If you want the light theme, use `light.css` instead of `dark.css`. See [Theming](#theming) to make your own theme!
+Well, there's a dark theme, a darker theme and a light theme. If you want the light theme, use `light.css` instead of `dark.css`. If you want it darker, use `darker.css`. See [Theming](#theming) to make your own theme!
 
 No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
 
