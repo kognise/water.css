@@ -24,18 +24,18 @@ function humanFileSize(size) {
   return ( size / Math.pow(1024, i) ).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
 };
 
-function formatByteMessage(source, data){
-  var change = (data.savings > 0 ? 'saved' : 'gained');
-  var prettySavings = humanFileSize(Math.abs(data.savings));
-  var prettyStartSize = humanFileSize(data.startSize);
-  var prettyEndSize = humanFileSize(data.endSize);
+function formatByteMessage(source, data) {
+  const change = (data.savings > 0 ? 'saved' : 'gained')
+  const prettySavings = humanFileSize(Math.abs(data.savings))
+  const prettyStartSize = humanFileSize(data.startSize)
+  let prettyEndSize = humanFileSize(data.endSize)
 
-  if(data.endSize > data.startSize){
-    prettyEndSize = chalk.yellow(prettyEndSize);
+  if (data.endSize > data.startSize) {
+    prettyEndSize = chalk.yellow(prettyEndSize)
   }
 
-  if(data.endSize < data.startSize){
-    prettyEndSize = chalk.green(prettyEndSize);
+  if (data.endSize < data.startSize) {
+    prettyEndSize = chalk.green(prettyEndSize)
   }
 
   return `${chalk.cyan(source.padStart(12, ' '))}: ${data.fileName} ${change} ${prettySavings} (${prettyStartSize} -> ${prettyEndSize})`
@@ -49,10 +49,10 @@ function style() {
         .on('error', sass.logError)
         .pipe(bytediff.start())
         .pipe(postcss([ autoprefixer()]))
-        .pipe(bytediff.stop((data) => formatByteMessage("autoprefixer", data)))
+        .pipe(bytediff.stop((data) => formatByteMessage('autoprefixer', data)))
         .pipe(bytediff.start())
         .pipe(postcss([cssnano()]))
-        .pipe(bytediff.stop((data) => formatByteMessage("cssnano", data)))
+        .pipe(bytediff.stop((data) => formatByteMessage('cssnano', data)))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())
