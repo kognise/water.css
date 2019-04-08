@@ -4,6 +4,7 @@ const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 const sourcemaps = require('gulp-sourcemaps')
+const bytediff = require('gulp-bytediff')
 const browserSync = require('browser-sync').create()
 
 const paths = {
@@ -22,7 +23,9 @@ function style() {
         .pipe(sourcemaps.init())
         .pipe(sass())
         .on('error', sass.logError)
-        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(bytediff.start())
+        .pipe(postcss([ cssnano() ]))
+        .pipe(bytediff.stop())
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
         .pipe(browserSync.stream())

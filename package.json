@@ -23,18 +23,18 @@
     "url": "https://github.com/kognise/water.css/issues"
   },
   "homepage": "https://github.com/kognise/water.css",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.3",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5"
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-bytediff": "^1.0.0"
   },
   "browserslist": [
-    "last 1 version", 
+    "last 1 version",
     "not dead",
     "> 0.2%"
   ]
