@@ -19,8 +19,9 @@ td, th {
 }
 
 th {
-  background-color: darken($background, 8%);
+  border-bottom: 1px solid $border;
 }
+
 tbody tr:nth-child(even) {
   background-color: darken($background, 4%);
 }
