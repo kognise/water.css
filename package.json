@@ -23,11 +23,13 @@
     "url": "https://github.com/kognise/water.css/issues"
   },
   "homepage": "https://github.com/kognise/water.css",
-  "devDependencies": {
-    "express": "^4.16.4",
-    "fs-extra": "^7.0.1",
-    "node-sass": "^4.11.0",
-    "socket.io": "^2.2.0",
-    "chokidar": "^2.1.5"
+  "devDependencies": {},
+  "dependencies": {
+    "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5"
   }
 }
