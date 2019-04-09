@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node-sass src/ --output dist/ --output-style compressed",
-    "dev": "node dev.js"
+    "dev": "node index.js"
   },
   "repository": {
     "type": "git",
