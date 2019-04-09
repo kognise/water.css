@@ -15,8 +15,13 @@ table {
 
 td, th {
   padding: 6px;
+  text-align: left;
 }
 
-table, th, td {
-  border: 1px solid $border;
+th {
+  border-bottom: 1px solid $border;
+}
+
+tbody tr:nth-child(even) {
+  background-color: $background-alt;
 }
