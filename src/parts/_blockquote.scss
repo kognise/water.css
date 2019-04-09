@@ -1,9 +1,8 @@
 blockquote {
-    border-left: 0.2em solid $focus;
-    background: $background-alt;
-    margin: 1.5em 1em;
-    padding: 0.5em 1em;
-    border-radius: $border-radius;
-    border-bottom-left-radius: 0px;
-    border-top-left-radius: 0px;
+  border-left: 0.2em solid $focus;
+  background: $background-alt;
+  margin: 1.5em 1em;
+  padding: 0.5em 1em;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
 }
