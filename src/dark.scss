@@ -12,6 +12,9 @@ $code: #ffbe85 !default;
 $button-hover: #324759 !default;
 $animation-duration: 0.1s !default;
 
+$scrollbar-thumb: $button-hover;
+$scrollbar-thumb-hover: lighten($button-hover, 8%);
+
 $form-placeholder: #a9a9a9 !default;
 $form-text: #ffffff !default;
 
