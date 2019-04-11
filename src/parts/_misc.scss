@@ -25,3 +25,22 @@ th {
 tbody tr:nth-child(even) {
   background-color: $background-alt;
 }
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-alt;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-thumb;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $scrollbar-thumb-hover;
+}
