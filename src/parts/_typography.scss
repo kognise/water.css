@@ -16,10 +16,17 @@ h1, h2, h3, h4, h5, h6, b, strong, th {
 }
 
 blockquote {
-  border-left: 0.2em solid $focus;
-  background: $background-alt;
+  border-left: 4px solid $focus;
   margin: 1.5em 1em;
   padding: 0.5em 1em;
-  border-top-right-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
+  font-style: italic;
+}
+
+blockquote > footer {
+  margin-top: 10px;
+  font-style: normal;
+}
+
+blockquote cite {
+  font-style: normal;
 }
