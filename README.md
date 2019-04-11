@@ -122,7 +122,6 @@ You can also only import parts you want, but this is not recommended. See the `s
 
 ## Todos
 
-- [Blockquotes](https://github.com/kognise/water.css/issues/13)
-- Add a screenshot
+- Add screenshots
 - [Jekyll theme](https://github.com/kognise/water.css/issues/18)
-- [Radio buttons](https://github.com/kognise/water.css/issues/22)
+- [NPM package](https://github.com/kognise/water.css/issues/41)
