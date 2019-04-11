@@ -9,25 +9,4 @@ pre > code {
   padding: 10px;
   display: block;
   overflow-x: auto;
-  scrollbar-color: lighten($button-hover, 5%) darken($button-hover, 3%); /* Firefox see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars */
-  scrollbar-width: thin; /* Firefox see https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars */
-}
-
-::-webkit-scrollbar {
-  height: 10px;
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: $background-alt;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $scrollbar-thumb;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: $scrollbar-thumb-hover;
 }
