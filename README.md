@@ -19,7 +19,7 @@
 
 ## Why?
 
-I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but don't like the uglyness of the default styles.
+I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
 
 Water.css is a css framework that doesn't require any classes. You just include it in your `<head>` and forget about it, while it silently makes everything nicer.
 
@@ -41,9 +41,7 @@ Well, there's a dark theme and a light theme. If you want the light theme, use `
 
 No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
 
-Oh, you want a demo you say? Cheeky fellah!
-
-[Well, here's your demo.](https://kognise.github.io/water.css/)
+**Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://kognise.github.io/water.css/)
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
@@ -77,6 +75,10 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$animation-duration`
 - `$form-placeholder`
 - `$form-text`
+
+Wanna quickly try out theming without installing anything or just explore our build environment?
+
+[![Try on repl.it](https://repl-badge.jajoosam.repl.co/edit.png)](https://repl.it/github/https://github.com/amasad/water.css?lang=nodejs&ref=button)
 
 ### Based on an existing theme
 
@@ -122,4 +124,5 @@ You can also only import parts you want, but this is not recommended. See the `s
 
 - [Blockquotes](https://github.com/kognise/water.css/issues/13)
 - Add a screenshot
-- Jekyll theme
+- [Jekyll theme](https://github.com/kognise/water.css/issues/18)
+- [Radio buttons](https://github.com/kognise/water.css/issues/22)
