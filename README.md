@@ -1,6 +1,6 @@
 # Water.css
 
-[![Water.css](logo.svg)](https://kognise.github.io/water.css/)
+[![Water.css](logo.svg)](https://watercss.netlify.com/)
 
 *A just-add-css collection of styles to make simple websites just a little nicer*
 
@@ -41,7 +41,7 @@ Well, there's a dark theme and a light theme. If you want the light theme, use `
 
 No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
 
-**Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://kognise.github.io/water.css/)
+**Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://watercss.netlify.com/)
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
