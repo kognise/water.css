@@ -120,6 +120,9 @@ $form-text: #ffffff !default;
 
 You can also only import parts you want, but this is not recommended. See the `src/parts/` folder for a list of parts.
 
+### Community Themes
+- [Darker by JackFly26](https://github.com/JackFly26/water.css)
+
 ## Todos
 
 - Add screenshots
