@@ -7,6 +7,8 @@ const sourcemaps = require('gulp-sourcemaps')
 const bytediff = require('gulp-bytediff')
 const browserSync = require('browser-sync').create()
 const chalk = require('chalk');
+const rename = require('gulp-rename');
+const filter = require('gulp-filter');
 
 const paths = {
   styles: {
@@ -44,17 +46,37 @@ function formatByteMessage(source, data) {
 function style() {
   return (
     gulp.src(paths.styles.src)
+        // Add sourcemaps
         .pipe(sourcemaps.init())
-        .pipe(sass())
+        // Create a human readable sass file
+        .pipe(sass({outputStyle: 'expanded'}))  
+        // Catch any sass errors
         .on('error', sass.logError)
-        .pipe(bytediff.start())
-        .pipe(postcss([ autoprefixer()]))
-        .pipe(bytediff.stop((data) => formatByteMessage('autoprefixer', data)))
-        .pipe(bytediff.start())
-        .pipe(postcss([cssnano()]))
-        .pipe(bytediff.stop((data) => formatByteMessage('cssnano', data)))
+        // Calculate size before autoprefixing
+        .pipe(bytediff.start()) 
+        // autoprefix
+        .pipe(postcss([ autoprefixer()])) 
+        // Write the amount gained by autoprefixing
+        .pipe(bytediff.stop((data) => formatByteMessage('autoprefixer', data))) 
+        // Write the sourcemaps after making pre-minified changes
         .pipe(sourcemaps.write('.'))
+        // Write pre-minified styles
         .pipe(gulp.dest(paths.styles.dest))
+        // Remove sourcemaps from the pipeline, only keep css
+        .pipe(filter('**/*.css'))
+        // Calculate size before minifying
+        .pipe(bytediff.start()) 
+        // Minify using cssnano
+        .pipe(postcss([cssnano()]))
+        // Write the amount saved by minifying
+        .pipe(bytediff.stop((data) => formatByteMessage('cssnano', data)))
+        // Rename the files have the .min suffix
+        .pipe(rename({suffix: '.min' }))
+        // Write the sourcemaps after making all changes
+        .pipe(sourcemaps.write('.'))
+        // Write the minified files
+        .pipe(gulp.dest(paths.styles.dest))
+        // Stream any changes to browserSync
         .pipe(browserSync.stream())
   )
 }
