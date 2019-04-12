@@ -37,6 +37,8 @@
     "defaults AND not android 4.4.3"
   ],
   "dependencies": {
-    "chalk": "^2.4.2"
+    "chalk": "^2.4.2",
+    "gulp-filter": "^5.1.0",
+    "gulp-rename": "^1.4.0"
   }
 }
