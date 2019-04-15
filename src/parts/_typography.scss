@@ -36,9 +36,13 @@ address {
 }
 
 a[href^='mailto']::before {
-  content: '✉️ ';
+  content: '📧 ';
 }
 
 a[href^='tel']::before {
   content: '📞 ';
+}
+
+a[href^='sms']::before {
+  content: '💬 ';
 }
