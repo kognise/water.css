@@ -3,21 +3,40 @@ h1 {
   margin-top: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 12px;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
   color: $text-bright;
 }
 
-h1, h2, h3, h4, h5, h6, b, strong, th {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
   font-weight: 600;
 }
 
 blockquote {
   border-left: 4px solid $focus;
-  margin: 1.5em 1em;
+  margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
@@ -29,4 +48,20 @@ blockquote > footer {
 
 blockquote cite {
   font-style: normal;
+}
+
+address {
+  font-style: normal;
+}
+
+a[href^='mailto']::before {
+  content: '📧 ';
+}
+
+a[href^='tel']::before {
+  content: '📞 ';
+}
+
+a[href^='sms']::before {
+  content: '💬 ';
 }
