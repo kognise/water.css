@@ -5,7 +5,8 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']), select {
+input:not([type='checkbox']):not([type='radio']),
+select {
   display: block;
 }
 
@@ -25,7 +26,8 @@ input, select, button, textarea {
   outline: none;
 }
 
-input:not([type='checkbox']), select, button, textarea {
+input:not([type='checkbox']):not([type='radio']),
+select, button, textarea {
   -webkit-appearance: none;
 }
 
@@ -55,6 +57,7 @@ textarea:focus {
 }
 
 input[type='checkbox']:active,
+input[type='radio']:active,
 input[type='submit']:active,
 input[type='button']:active,
 button:active {
