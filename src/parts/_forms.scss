@@ -24,10 +24,7 @@ input, select, button, textarea {
   border: none;
   border-radius: 6px;
   outline: none;
-}
 
-input:not([type='checkbox']):not([type='radio']),
-select, button, textarea {
   -webkit-appearance: none;
 }
 
@@ -54,6 +51,36 @@ select:focus,
 button:focus,
 textarea:focus {
   box-shadow: 0 0 0 2px $focus;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 2px;
+}
+
+input[type='radio'] {
+  border-radius: 50%;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  background: $button-hover;
+
+  &::before {
+    content: '•';
+    display: block;
+    transform: translateY(-50%) translateY(-0.3px) translateX(-2.7px);
+  }
+}
+
+input[type='checkbox']:checked::before {
+  content: '✔';
+  transform: translateY(-50%) translateY(0.5px) translateX(-6px);
 }
 
 input[type='checkbox']:active,
