@@ -18,13 +18,11 @@ td, th {
   text-align: left;
 }
 
-thead td,
 thead th {
   border-bottom: 1px solid $border;
 }
 
-tfoot td,
-tfoot th {
+tfoot td {
   border-top: 1px solid $border;
 }
 
