@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.4;
@@ -18,21 +19,40 @@ h1 {
   margin-top: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-bottom: 12px;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6, b, strong, th {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong,
+th {
   font-weight: 600;
 }
 
 blockquote {
   border-left: 4px solid #0096bfab;
-  margin: 1.5em 1em;
+  margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
@@ -46,6 +66,22 @@ blockquote cite {
   font-style: normal;
 }
 
+address {
+  font-style: normal;
+}
+
+a[href^='mailto']::before {
+  content: '📧 ';
+}
+
+a[href^='tel']::before {
+  content: '📞 ';
+}
+
+a[href^='sms']::before {
+  content: '💬 ';
+}
+
 button,
 input[type='submit'],
 input[type='button'],
@@ -53,7 +89,8 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']), select {
+input:not([type='checkbox']):not([type='radio']),
+select {
   display: block;
 }
 
@@ -70,7 +107,8 @@ input, select, button, textarea {
   outline: none;
 }
 
-input:not([type='checkbox']), select, button, textarea {
+input:not([type='checkbox']):not([type='radio']),
+select, button, textarea {
   -webkit-appearance: none;
 }
 
@@ -100,6 +138,7 @@ textarea:focus {
 }
 
 input[type='checkbox']:active,
+input[type='radio']:active,
 input[type='submit']:active,
 input[type='button']:active,
 button:active {
