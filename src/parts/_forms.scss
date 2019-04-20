@@ -75,7 +75,10 @@ input[type='radio']:checked {
   &::before {
     content: '•';
     display: block;
-    transform: translateY(-50%) translateY(-0.3px) translateX(-2.7px);
+    position: absolute;
+    left: 50%; 
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
   }
 }
 
