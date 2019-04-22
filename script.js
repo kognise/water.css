@@ -1,4 +1,4 @@
-document.getElementById('switch').addEventListener('click', () => {
+document.getElementById('switch').addEventListener('click', function() {
   const stylesheet = document.getElementById('stylesheet')
   const ph = document.getElementById('ph')
   if (stylesheet.getAttribute('href') === 'dist/dark.css') {
