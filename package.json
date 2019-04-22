@@ -30,6 +30,8 @@
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
     "gulp-bytediff": "^1.0.0",
+    "gulp-gzip": "^1.4.2",
+    "gulp-ignore": "^2.0.2",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5"
