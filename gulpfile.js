@@ -18,11 +18,10 @@ const paths = {
   }
 }
 
-// https://stackoverflow.com/a/20732091
 function humanFileSize(size) {
-  var i = Math.floor( Math.log(size) / Math.log(1024) );
-  return ( size / Math.pow(1024, i) ).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i];
-};
+  var i = Math.floor(Math.log(size) / Math.log(1024));
+  return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + [ 'B', 'kB', 'MB', 'GB', 'TB' ][i]
+}
 
 function formatByteMessage(source, data) {
   const change = (data.savings > 0 ? 'saved' : 'gained')
