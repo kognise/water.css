@@ -39,7 +39,7 @@ Just stick this in your head:
 
 Well, there's a dark theme and a light theme. If you want the light theme, use `light.min.css` instead of `dark.min.css`. See [Theming](#theming) to make your own theme!
 
-No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
+No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases). You can also get rid of the `.min.css` and replace it with just `.css` if you want an unminified version.
 
 **Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://watercss.netlify.com/)
 
