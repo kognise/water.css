@@ -73,6 +73,8 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$code`
 - `$button-hover`
 - `$animation-duration`
+- `$scrollbar-thumb`
+- `$scrollbar-thumb-hover`
 - `$form-placeholder`
 - `$form-text`
 
