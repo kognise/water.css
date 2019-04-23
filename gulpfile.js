@@ -84,7 +84,7 @@ function watch() {
     startPath: 'index.html'
   })
 
-  gulp.watch(paths.styles.src, style)
+  gulp.watch(paths.styles.src, gulp.series(style, compress))
   gulp.watch(paths.html.src, reload)
 }
 
