@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const gzip = require('gulp-gzip')
-const ignore = require('gulp-ignore')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
@@ -57,12 +56,17 @@ function style() {
         .pipe(bytediff.stop((data) => formatByteMessage('cssnano', data)))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(paths.styles.dest))
-        .pipe(bytediff.start())
-        .pipe(ignore.exclude('*.map'))
-        .pipe(gzip({ append: false }))
-        .pipe(bytediff.stop((data) => formatByteMessage('gzip', data)))
-        .pipe(ignore.exclude('*.gz'))
         .pipe(browserSync.stream())
+  )
+}
+
+function compress(){
+  // Logs the gzip'd size to console
+  return (
+      gulp.src(paths.styles.dest + "/*.css")
+          .pipe(bytediff.start())
+          .pipe(gzip({ append: false }))
+          .pipe(bytediff.stop((data) => formatByteMessage('gzip', data)))
   )
 }
 
@@ -85,4 +89,5 @@ function watch() {
 }
 
 module.exports.style = style
+module.exports.compress = compress
 module.exports.watch = watch
