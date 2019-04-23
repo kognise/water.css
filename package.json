@@ -4,7 +4,7 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "build": "gulp style",
+    "build": "gulp build",
     "dev": "gulp watch"
   },
   "repository": {

@@ -88,6 +88,6 @@ function watch() {
   gulp.watch(paths.html.src, reload)
 }
 
-module.exports.style = style
+module.exports.build = gulp.series(style, compress)
 module.exports.compress = compress
 module.exports.watch = watch
