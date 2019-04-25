@@ -7,7 +7,7 @@ const cssnano = require('cssnano')
 const sourcemaps = require('gulp-sourcemaps')
 const bytediff = require('gulp-bytediff')
 const browserSync = require('browser-sync').create()
-const chalk = require('chalk');
+const chalk = require('chalk')
 
 const paths = {
   styles: {
