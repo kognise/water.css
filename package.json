@@ -22,6 +22,10 @@
   "bugs": {
     "url": "https://github.com/kognise/water.css/issues"
   },
+  "files": [
+    "LICENSE.md",
+    "dist/*"
+  ],
   "homepage": "https://github.com/kognise/water.css",
   "devDependencies": {
     "autoprefixer": "^9.5.1",
