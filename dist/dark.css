@@ -238,4 +238,12 @@ tbody tr:nth-child(even) {
   background: #415c73;
 }
 
+::-moz-selection {
+  background-color: #161f27;
+}
+
+::selection {
+  background-color: #161f27;
+}
+
 /*# sourceMappingURL=dark.css.map */

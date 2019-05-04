@@ -44,3 +44,7 @@ tbody tr:nth-child(even) {
 ::-webkit-scrollbar-thumb:hover {
   background: $scrollbar-thumb-hover;
 }
+
+::selection {
+  background-color: $selection;
+}
