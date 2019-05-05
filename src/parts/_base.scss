@@ -6,16 +6,16 @@ body {
   margin: 20px auto;
   padding: 0 10px;
 
-  color: $text-main;
-  background: $background;
+  color: var(--text-main);
+  background: var(--background);
 
   text-rendering: optimizeLegibility;
 }
 
 button, input, textarea {
-  transition: background-color $animation-duration linear,
-              border-color $animation-duration linear,
-              color $animation-duration linear,
-              box-shadow $animation-duration linear,
-              transform $animation-duration ease;
+  transition: background-color var(--animation-duration) linear,
+              border-color var(--animation-duration) linear,
+              color var(--animation-duration) linear,
+              box-shadow var(--animation-duration) linear,
+              transform var(--animation-duration) ease;
 }

@@ -11,8 +11,8 @@ select {
 }
 
 input, select, button, textarea {
-  color: $form-text;
-  background-color: $background-alt;
+  color: var(--form-text);
+  background-color: var(--background-alt);
 
   font-family: inherit;
   font-size: inherit;
@@ -46,14 +46,14 @@ button, input[type='submit'], input[type='button'] {
 button:hover,
 input[type='submit']:hover,
 input[type='button']:hover {
-  background: $button-hover;
+  background: var(--button-hover);
 }
 
 input:focus,
 select:focus,
 button:focus,
 textarea:focus {
-  box-shadow: 0 0 0 2px $focus;
+  box-shadow: 0 0 0 2px var(--focus);
 }
 
 input[type='checkbox']:active,
@@ -73,5 +73,5 @@ textarea:disabled {
 }
 
 ::placeholder {
-  color: $form-placeholder;
+  color: var(--form-placeholder);
 }

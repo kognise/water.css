@@ -1,6 +1,6 @@
 code, kbd {
-  background: $background-alt;
-  color: $code;
+  background: var(--background-alt);
+  color: var(--code);
   padding: 5px;
   border-radius: 6px;
 }
