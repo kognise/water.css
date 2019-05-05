@@ -17,8 +17,8 @@
   --animation-duration: 0.1s;
   --button-hover: #324759;
 
-  --scrollbar-thumb: var(--button-hover);
-  --scrollbar-thumb-hover: #{lighten(var(--scrollbar-thumb), 8%)};
+  --scrollbar-thumb: #324759;
+  --scrollbar-thumb-hover: #{lighten(#324759, 8%)};
 
   --form-placeholder: #a9a9a9;
   --form-text: #ffffff;

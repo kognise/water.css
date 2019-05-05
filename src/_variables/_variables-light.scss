@@ -17,8 +17,8 @@
 --animation-duration: 0.1s;
 --button-hover: #dddddd;
 
---scrollbar-thumb: #{darken( var(--button-hover), 3% )};
---scrollbar-thumb-hover: #{darken( var(--button-hover), 10% )};
+--scrollbar-thumb: #{darken( #dddddd, 3% )};
+--scrollbar-thumb-hover: #{darken( #dddddd, 10% )};
 
 --form-placeholder: #949494;
 --form-text: #000000;
