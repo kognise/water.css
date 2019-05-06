@@ -1,5 +1,3 @@
-/* To use this file from Sass, import `_variables/_variables-dark` */
-
 :root {
   --background: #202b38;
   --background-alt: #161f27;
@@ -18,7 +16,7 @@
   --button-hover: #324759;
 
   --scrollbar-thumb: var(--button-hover);
-  --scrollbar-thumb-hover: #{lighten(var(--scrollbar-thumb), 8%)};
+  --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(+8%));
 
   --form-placeholder: #a9a9a9;
   --form-text: #ffffff;

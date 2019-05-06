@@ -7,10 +7,8 @@
  * at runtime in the browser.
  */
 
-@import '../_variables/variables-light';
+@import '../variables-light.css';
+@import '../variables-dark.css' (prefers-color-scheme: dark);
 
-@media (prefers-color-scheme: dark) {
-  @import '../_variables/variables-dark';
-}
 
-@import '../parts/core';
+@import '../parts/_core.css';
