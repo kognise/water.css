@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
@@ -10,22 +9,15 @@ const chalk = require('chalk');
 const rename = require('gulp-rename');
 const filter = require('gulp-filter');
 const flatten = require('gulp-flatten')
-const postcssSassParser = require('postcss-scss')
+const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
+const postcssImport = require('postcss-import')
+const postcssColorModFunction = require('postcss-color-mod-function')
 
 const paths = {
-  styles: {
-    src: 'src/**/*.scss',
-    variables: {
-      src: 'src/variables-*.scss',
-      compiled: 'src/_variables/_variables-*.scss',
-      dest: 'src/_variables',
-    },
-    dest: 'dist'
-  },
-  html: {
-    src: 'index.html'
-  }
+  srcDir: 'src/*',
+  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  html: { src: 'index.html' },
 }
 
 // https://stackoverflow.com/a/20732091
@@ -52,32 +44,21 @@ function formatByteMessage(source, data) {
   return chalk`{cyan ${(source.padStart(12, ' '))}}: {bold ${data.fileName}} ${message}`
 }
 
-/* Inlines variable references within the variable files themselves. */
-/* Allows computing new variables based on previous ones, e.g. with `lighten()` */
-function computeVariables() {
-  const plugins = [postcssCssVariables({ preserve: 'computed' })]
-  const parser = postcssSassParser
-
-  return gulp.src(paths.styles.variables.src)
-    .pipe(postcss(plugins, { parser }))
-    .pipe(rename({ prefix: '_' }))
-    .pipe(gulp.dest(paths.styles.variables.dest));
-}
-
-function compileStyles() {
+function style() {
   const isLegacyOrStandalone = path => /standalone|legacy/.test(path)
 
   const excludeModern = filter(file => isLegacyOrStandalone(file.path), { restore: true })
   const excludeLegacy = filter(file => !isLegacyOrStandalone(file.path), { restore: true })
 
+  const postcssColorMod = postcssColorModFunction({ stringifier: color => color.toRGBLegacy() })
+
   return (
-    gulp.src(paths.styles.src, { ignore: paths.styles.variables.src })
+    gulp
+      .src(paths.styles.src)
       // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Create a human readable sass file
-      .pipe(sass({ outputStyle: 'expanded' }))
-      // Catch any sass errors
-      .on('error', sass.logError)
+      // Resolve imports and calculated colors
+      .pipe(postcss([postcssImport(), postcssColorMod]))
 
       // * Process legacy & standalone builds *
       .pipe(excludeModern)
@@ -122,12 +103,11 @@ function compileStyles() {
       .pipe(sourcemaps.write('.'))
       // Write the minified files
       .pipe(gulp.dest(paths.styles.dest))
+      .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
       // Stream any changes to browserSync
       .pipe(browserSync.stream())
   )
 }
-
-const style = gulp.series(computeVariables, compileStyles)
 
 function reload() {
   browserSync.reload()
@@ -143,11 +123,8 @@ function watch() {
     startPath: 'index.html'
   })
 
-  // Don't watch compiled variables or every build triggers the watcher again (infinite loop)
-  const watched = [paths.styles.src, `!${paths.styles.variables.compiled}`]
-
-  gulp.watch(watched, style)
-  gulp.watch(paths.html.src, reload)
+  gulp.watch(paths.srcDir, style)
+  gulp.watch([paths.srcDir, paths.html.src], reload)
 }
 
 module.exports.style = style

@@ -1,32 +1,45 @@
-@charset "UTF-8";
 /**
  * Standalone light-themed version.
  * Includes light variables and core, compiled at build time so the final output
  * will only include regular CSS, no variables.
  */
-/* To use this file from Sass, import `_variables/_variables-light` */
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.4;
+
   max-width: 800px;
   margin: 20px auto;
   padding: 0 10px;
+
   color: #363636;
   background: #ffffff;
+
   text-rendering: optimizeLegibility;
 }
 
 button {
-  transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease;
+  transition: background-color 0.1s linear,
+              border-color 0.1s linear,
+              color 0.1s linear,
+              box-shadow 0.1s linear,
+              transform 0.1s ease;
 }
 
 input {
-  transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease;
+  transition: background-color 0.1s linear,
+              border-color 0.1s linear,
+              color 0.1s linear,
+              box-shadow 0.1s linear,
+              transform 0.1s ease;
 }
 
 textarea {
-  transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease;
+  transition: background-color 0.1s linear,
+              border-color 0.1s linear,
+              color 0.1s linear,
+              box-shadow 0.1s linear,
+              transform 0.1s ease;
 }
 
 h1 {
@@ -130,11 +143,14 @@ select {
 input {
   color: #000000;
   background-color: #efefef;
+
   font-family: inherit;
   font-size: inherit;
+
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
+
   border: none;
   border-radius: 6px;
   outline: none;
@@ -143,11 +159,14 @@ input {
 select {
   color: #000000;
   background-color: #efefef;
+
   font-family: inherit;
   font-size: inherit;
+
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
+
   border: none;
   border-radius: 6px;
   outline: none;
@@ -156,11 +175,14 @@ select {
 button {
   color: #000000;
   background-color: #efefef;
+
   font-family: inherit;
   font-size: inherit;
+
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
+
   border: none;
   border-radius: 6px;
   outline: none;
@@ -169,11 +191,14 @@ button {
 textarea {
   color: #000000;
   background-color: #efefef;
+
   font-family: inherit;
   font-size: inherit;
+
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
+
   border: none;
   border-radius: 6px;
   outline: none;
@@ -325,12 +350,12 @@ tbody tr:nth-child(even) {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d5d5d5;
+  background: rgb(213, 213, 213);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c4c4c4;
+  background: rgb(196, 196, 196);
 }
 
 ::-moz-selection {

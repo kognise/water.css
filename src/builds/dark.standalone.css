@@ -4,5 +4,5 @@
  * will only include regular CSS, no variables.
  */
 
-@import '../_variables/variables-dark';
-@import '../parts/core';
+@import '../variables-dark.css';
+@import '../parts/_core.css';
