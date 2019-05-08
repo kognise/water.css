@@ -217,7 +217,7 @@ th {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #161f27;
+  background-color: #1a242f;
 }
 
 ::-webkit-scrollbar {
