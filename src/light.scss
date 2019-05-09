@@ -18,4 +18,6 @@ $scrollbar-thumb-hover: darken($button-hover, 10%);
 $form-placeholder: #949494 !default;
 $form-text: #000000 !default;
 
+$down-arrow-path: "../../arrow-dark.svg";
+
 @import 'parts/core';

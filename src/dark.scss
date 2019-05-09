@@ -18,4 +18,6 @@ $scrollbar-thumb-hover: lighten($button-hover, 8%);
 $form-placeholder: #a9a9a9 !default;
 $form-text: #ffffff !default;
 
+$down-arrow-path: "../../arrow-light.svg";
+
 @import 'parts/core';
