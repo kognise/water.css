@@ -43,6 +43,10 @@ select {
   padding-right: 35px;
 }
 
+select::-ms-expand {
+  display: none;
+}
+
 button, input[type='submit'], input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
