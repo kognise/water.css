@@ -240,11 +240,11 @@ tbody tr:nth-child(even) {
 }
 
 ::-moz-selection {
-  background-color: #9e9e9e;
+  background-color: aliceblue;
 }
 
 ::selection {
-  background-color: #9e9e9e;
+  background-color: aliceblue;
 }
 
 /*# sourceMappingURL=light.css.map */
