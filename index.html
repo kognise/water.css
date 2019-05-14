@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang='en'>
-  <head>
-    <title>Water.css</title>
+  
+  <head>   <!--The <head> element is a container for metadata (data about data) and is placed between the <html> tag and the <body> tag.  -->
+    <title>Water.css</title>   <!--The <title> element defines the title of the document, and is required in all HTML/XHTML documents. -->
     <link id='stylesheet' rel='stylesheet' href='dist/dark.css'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-116663597-6'></script>
-    <script>
+    
+    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-116663597-6'></script>     <!-- The <script> element is used to define client-side JavaScripts. -->
+    <script> 
       window.dataLayer = window.dataLayer || []
       function gtag(){dataLayer.push(arguments)}
       gtag('js', new Date())
       gtag('config', 'UA-116663597-6')
     </script>
   </head>
-  <body>
+  
+  <body>   <!-- The <body> tag defines the document's body-->
     <h1>Water.css</h1>
     <p>
       Water.css is a just-add-css collection of styles to make simple websites like this just a little bit nicer.
-      <a href='https://github.com/kognise/water.css'>Get it already!</a>
+      <a href='https://github.com/kognise/water.css'>Get it already!</a>   <!--The HTML code used to create a link to another page -->
     </p>
+    
     <p>
       Now you can write your simple static site with nice semantic html, and Water.css will manage the styling for you.
     </p>
+    
     <a href='https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css' target='_blank'><img id='ph' src='https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily' alt='Water.css - Make your tiny website just a little nicer | Product Hunt Embed' style='width: 250px; height: 54px;' width='250px' height='54px' /></a>
 
     <h2>Goals</h2>
@@ -39,9 +43,11 @@
       <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's easily mobile responsive.
       Just add the famous <a href='https://www.w3schools.com/css/css_rwd_viewport.asp'>responsive viewport tag</a> and you'll be good to go!
     </p>
+    
     <p>
       In fact, try resizing this page. Everything flows super nicely as you'll see.
     </p>
+    
     <button id='switch'>Switch theme</button>
 
     <h2>Element demos</h2>
@@ -50,8 +56,8 @@
     </p>
 
     <h3>Form elements</h3>
-    <form>
-      <label for='email'>Email</label>
+    <form>   <!--  The <form>, user to enter data that is sent to a server for processing -->
+      <label for='email'>Email</label>  <!--The <label> element is used to associate a text label with a form <input> field. -->
       <input type='email' name='email' id='email' placeholder='john.doe@gmail.com'>
 
       <label for='id'>User id (read only)</label>
@@ -61,6 +67,7 @@
       <input disabled name='disabled' id='disabled' placeholder='Because why not?'>
 
       <label for='about'>About me</label>
+      <!--The HTML <textarea> tag is used within a form to declare a textarea element - a control that allows the user to input text over multiple rows. -->
       <textarea name='about' id='about' placeholder='I am a textarea...'></textarea>
 
       <label>Choose a Doe:</label>
@@ -68,10 +75,12 @@
         <input type='radio' id='john' name='drone' value='john' checked>
         <label for='john'>John Doe</label>
       </div>
+      
       <div>
         <input type='radio' id='jane' name='drone' value='jane' checked>
         <label for='jane'>Jane Doe</label>
       </div>
+      
       <div>
         <input type='radio' id='johnny' name='drone' value='johnny' checked>
         <label for='johnny'>Johnny Doe</label>
@@ -90,33 +99,37 @@
       Below is some code, you can copy it with <kbd>Ctrl-C</kbd>.
       Did you know, <code>alert(1)</code> can show an alert in JavaScript!
     </p>
+    
     <pre><code>// This logs a message to the console and check out the scrollbar.<br>console.log('Hello, world!')</code></pre>
 
     <h3>Other</h3>
     <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
-    <img src='https://placekitten.com/408/287' alt='Example kitten'>
+    <img src='https://placekitten.com/408/287' alt='Example kitten'>   <!-- The <img> tag defines an image in an HTML page. -->
     <hr>
 
     <p>And here's a nicely marked up table!</p>
     <table>
-      <thead>
+      <thead>   <!-- The <thead> tag is used to group header content in an HTML table. -->
         <tr>
           <th>Name</th>
           <th>Quantity</th>
           <th>Price</th>
         </tr>
       </thead>
+      
       <tbody>
         <tr>
           <td>Godzilla</td>
           <td>2</td>
           <td>$299.99</td>
         </tr>
+        
         <tr>
           <td>Mozilla</td>
           <td>10</td>
           <td>$100,000.00</td>
         </tr>
+        
         <tr>
           <td>Quesadilla</td>
           <td>1</td>
@@ -130,7 +143,8 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
       <strong>This is strong,</strong> this is normal, <b>this is just bold,</b> <em>and this is emphasized!</em> And heck, <a href='/'>here</a>'s a link.
     </p>
-
+    
+    <!-- The blockquote element is used to indicate the quotation of a large section of text from another source -->
     <blockquote cite='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote'>
       "The HTML blockquote Element (or HTML Block Quotation Element) indicates
       that the enclosed text is an extended quotation. Usually, this is
@@ -140,7 +154,7 @@
       <code>cite</code> attribute, while a text representation of the source
       can be given using the <code>&ltcite&gt</code> cite element."
 
-      <footer>
+      <footer>   <!-- The <footer> tag defines a footer for a document or section. -->
         <cite>MDN, "The Block Quotation element"</cite>
       </footer>
     </blockquote>
@@ -150,6 +164,7 @@
       <li>Unordered list item 2</li>
       <li>Unordered list item 3</li>
     </ul>
+    
     <ol>
       <li>Ordered list item 1</li>
       <li>Ordered list item 2</li>
@@ -159,7 +174,8 @@
     <p>
       Addresses are also styled to be <strong>awesome</strong>!
     </p>
-    <address>
+    
+    <address>   <!-- The <address> element identifies contact information relevant to the current site, page, document, section, or article. -->
       <a href='mailto:john.doe@example.com'>john.doe@example.com</a><br/>
       <a href='tel:778-330-2389'>778-330-2389</a><br/>
       <a href='sms:666-666-6666'>666-666-6666</a><br/>
