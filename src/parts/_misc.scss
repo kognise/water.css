@@ -1,5 +1,6 @@
 img {
   max-width: 100%;
+  height: auto;
 }
 
 hr {
@@ -47,4 +48,8 @@ tr:nth-child(even) {
 
 ::-webkit-scrollbar-thumb:hover {
   background: $scrollbar-thumb-hover;
+}
+
+::selection {
+  background-color: $selection;
 }

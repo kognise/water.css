@@ -34,12 +34,12 @@ You probably don't want to use it for a production app or something that has mor
 Just stick this in your head:
 
 ```html
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css'>
 ```
 
-Well, there's a dark theme and a light theme. If you want the light theme, use `light.css` instead of `dark.css`. See [Theming](#theming) to make your own theme!
+Well, there's a dark theme and a light theme. If you want the light theme, use `light.min.css` instead of `dark.min.css`. See [Theming](#theming) to make your own theme!
 
-No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
+No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases). You can also get rid of the `.min.css` and replace it with just `.css` if you want an unminified version.
 
 **Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://watercss.netlify.com/)
 
@@ -73,6 +73,8 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$code`
 - `$button-hover`
 - `$animation-duration`
+- `$scrollbar-thumb`
+- `$scrollbar-thumb-hover`
 - `$form-placeholder`
 - `$form-text`
 
