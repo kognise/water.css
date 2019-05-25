@@ -193,6 +193,7 @@ pre > code {
 
 img {
   max-width: 100%;
+  height: auto;
 }
 
 hr {
@@ -236,6 +237,14 @@ tbody tr:nth-child(even) {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #415c73;
+}
+
+::-moz-selection {
+  background-color: #161f27;
+}
+
+::selection {
+  background-color: #161f27;
 }
 
 /*# sourceMappingURL=dark.css.map */
