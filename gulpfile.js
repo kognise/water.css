@@ -8,7 +8,6 @@ const sourcemaps = require('gulp-sourcemaps')
 const bytediff = require('gulp-bytediff')
 const browserSync = require('browser-sync').create()
 const chalk = require('chalk')
-const chalk = require('chalk')
 const rename = require('gulp-rename')
 const filter = require('gulp-filter')
 
