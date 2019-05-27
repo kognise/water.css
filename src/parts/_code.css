@@ -1,7 +1,8 @@
-code, kbd {
+code,
+kbd {
   background: var(--background-alt);
   color: var(--code);
-  padding: 5px;
+  padding: 2.5px 5px;
   border-radius: 6px;
 }
 
