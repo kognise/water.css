@@ -5,9 +5,14 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input,
 select {
   display: block;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: initial;
 }
 
 input, select, button, textarea {
