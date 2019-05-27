@@ -1,7 +1,7 @@
 /**
  * Standalone light-themed version.
- * Includes light variables and core, compiled at build time so the final output
- * will only include regular CSS, no variables.
+ * Includes light variables and core, left as CSS variables
+ * so the theming can be adjusted at runtime.
  */
 
 @import '../variables-light.css';
