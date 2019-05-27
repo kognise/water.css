@@ -45,7 +45,7 @@ Just stick this in your `<head>`:
 
 ### Other options:
 
-> ⚡ An interactive version selection is available [here](https://watercss.netlify.com/#select-version)
+> ⚡ An interactive version selection will be available soon [here](https://watercss.netlify.com/#select-version)
 
 #### Enforce a theme and ignore `(prefers-color-scheme)`
 
@@ -81,7 +81,7 @@ And make sure to run `yarn build` before pushing any changes! Thanks for taking 
 
 ## Theming
 
-> ⚠ The theming guide is out of date!
+> ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
 
 Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
