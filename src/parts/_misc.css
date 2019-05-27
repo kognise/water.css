@@ -14,7 +14,8 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   padding: 6px;
   text-align: left;
 }
@@ -33,7 +34,7 @@ tbody tr:nth-child(even) {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background-alt);
+  background: var(--background);
   border-radius: 6px;
 }
 

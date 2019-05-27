@@ -1,6 +1,7 @@
 :root {
-  --background: #202b38;
-  --background-alt: #161f27;
+  --background-body: #202b38;
+  --background: #161f27;
+  --background-alt: #1a242f;
 
   --selection: #161f27;
 

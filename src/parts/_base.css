@@ -7,7 +7,7 @@ body {
   padding: 0 10px;
 
   color: var(--text-main);
-  background: var(--background);
+  background: var(--background-body);
 
   text-rendering: optimizeLegibility;
 }

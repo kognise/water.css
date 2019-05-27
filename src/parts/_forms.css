@@ -10,9 +10,12 @@ select {
   display: block;
 }
 
-input, select, button, textarea {
+input,
+select,
+button,
+textarea {
   color: var(--form-text);
-  background-color: var(--background-alt);
+  background-color: var(--background);
 
   font-family: inherit;
   font-size: inherit;
@@ -27,7 +30,9 @@ input, select, button, textarea {
 }
 
 input:not([type='checkbox']):not([type='radio']),
-select, button, textarea {
+select,
+button,
+textarea {
   -webkit-appearance: none;
 }
 
@@ -38,7 +43,9 @@ textarea {
   resize: vertical;
 }
 
-button, input[type='submit'], input[type='button'] {
+button,
+input[type='submit'],
+input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
 }
@@ -69,7 +76,7 @@ select:disabled,
 button:disabled,
 textarea:disabled {
   cursor: not-allowed;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 ::placeholder {
