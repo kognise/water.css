@@ -1,6 +1,6 @@
 {
   "name": "water.css",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
