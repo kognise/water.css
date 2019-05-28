@@ -19,7 +19,7 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 
 const paths = {
   srcDir: 'src/*',
-  docsDir: 'docs/*',
+  docsDir: '*',
   styles: { src: 'src/builds/*.css', dest: 'dist' },
 }
 
@@ -117,7 +117,7 @@ function watch() {
     server: {
       baseDir: './',
     },
-    startPath: 'docs/index.html',
+    startPath: 'index.html',
   })
 
   gulp.watch(paths.srcDir, style)
