@@ -19,7 +19,7 @@ h4,
 h5,
 h6,
 strong {
-  color: $text-bright;
+  color: var(--text-bright);
 }
 
 h1,
@@ -35,7 +35,7 @@ th {
 }
 
 blockquote {
-  border-left: 4px solid $focus;
+  border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;

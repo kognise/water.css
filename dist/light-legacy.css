@@ -1,0 +1,12 @@
+
+
+@import url('https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light-legacy.standalone.min.css');
+@import url('https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark-legacy.standalone.min.css') (prefers-color-scheme: dark);
+/**
+ * Light-themed version for legacy browsers:
+ * Loads the compiled, standalone version of the light theme at runtime,
+ * but overrides it with the compiled, standalone version of the dark theme
+ * if a system-wide theme preference is set on the user's device.
+ */
+
+/*# sourceMappingURL=light-legacy.css.map */
