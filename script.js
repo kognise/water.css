@@ -1,45 +1,70 @@
-(function () {
-  const switchBtn = document.getElementById('switch');
-  const stylesheet = document.getElementById('stylesheet');
-  const darkMql = matchMedia('(prefers-color-scheme: dark)');
-  const lightMql = matchMedia('(prefers-color-scheme: light)');
+(function (ThemeSwitcher) {
+  const themeSwitcher = new ThemeSwitcher('stylesheet');
+  const themeSwitch = document.getElementById('theme-switch');
   const themes = {
-    dark: '../dist/dark.css',
-    darkStandalone: '../dist/dark.standalone.css',
-    light: '../dist/light.css',
-    lightStandalone: '../dist/light.standalone.css'
+    dark: 'dark',
+    darkStandalone: 'dark.standalone',
+    light: 'light',
+    lightStandalone: 'light.standalone'
+  };
+  const getSwitchThemePath = function () {
+    // Case: switch to "light.standalone.css"
+    if (
+      (themeSwitcher.current === themes.dark) && themeSwitcher.isDark ||
+      (themeSwitcher.current === themes.light) && themeSwitcher.isDark ||
+      themeSwitcher.current === themes.darkStandalone
+    ) {
+      return themes.lightStandalone
+
+    // Case: switch to "dark.standalone.css"
+    } else if (
+      (themeSwitcher.current === themes.dark) && themeSwitcher.isLight ||
+      (themeSwitcher.current === themes.light) && themeSwitcher.isLight ||
+      themeSwitcher.current === themes.lightStandalone
+    ) {
+      return themes.darkStandalone;
+
+    // Case: switch to "light.css"
+    } else if (themeSwitcher.current === themes.dark) {
+      return themes.light;
+
+    // Case: switch to "dark.css"
+    } else if (themeSwitcher.current === themes.light) {
+      return themes.dark;
+
+    // Case: switch destination is unknown
+    } else {
+      return themeSwitcher.current;
+    }
   };
 
-  switchBtn.addEventListener('click', function() {
-    const readTheme = stylesheet.getAttribute('href');
-    if (readTheme === themes.dark) {
-      if (darkMql.matches) {
-        stylesheet.href = themes.lightStandalone
-      } else if (lightMql.matches) {
-        stylesheet.href = themes.darkStandalone
-      } else {
-        stylesheet.href = themes.light
-      }
-    } else if (readTheme === themes.darkStandalone) {
-      stylesheet.href = themes.lightStandalone
-    } else if (readTheme === themes.light) {
-      if (darkMql.matches) {
-        stylesheet.href = themes.lightStandalone
-      } else if (lightMql.matches) {
-        stylesheet.href = themes.darkStandalone
-      } else {
-        stylesheet.href = themes.dark
-      }
-    } else if (readTheme === themes.lightStandalone) {
-      stylesheet.href = themes.darkStandalone
-    }
+  themeSwitch.addEventListener('click', function() {
+    themeSwitcher.switch(getSwitchThemePath());
   });
+})(
+  (function () {
+    const ThemeSwitcher = function(stylesheet) {
+      const darkSchemeMql = matchMedia('(prefers-color-scheme: dark)');
+      const lightSchemeMql = matchMedia('(prefers-color-scheme: light)');
 
-  darkMql.addListener(function (mql) {
-    if (mql.matches) {
-      stylesheet.href = themes.dark;
-    } else {
-      stylesheet.href = themes.light;
-    }
-  })
-})();
+      this.themeDir = '../dist/';
+      this.stylesheet = document.getElementById(stylesheet);
+      this.current = this.getThemeName(this.stylesheet.href);
+      this.isDark = darkSchemeMql.matches;
+      this.isLight = lightSchemeMql.matches;
+    };
+
+    ThemeSwitcher.prototype = {
+      switch: function (themeName) {
+        this.stylesheet.href = this.themeDir + themeName + '.css';
+        this.current = themeName;
+      },
+      getThemeName: function () {
+        const reg = new RegExp(this.themeDir + '(|.+?).css');
+        return stylesheet.getAttribute('href').replace(reg, '$1');
+      }
+    };
+
+    return ThemeSwitcher;
+  })()
+);
