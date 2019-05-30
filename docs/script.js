@@ -94,7 +94,7 @@ new Vue({
     selectedVersion() {
       return {
         fileName: getFileName(this.versionOptions),
-        fileSize: getFileSize(this.versionOptions),
+        fileSize: getFileSize(this.versionOptions).toFixed(2),
         fileSnippet: getFileSnippet(this.versionOptions),
       }
     },
