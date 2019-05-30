@@ -64,9 +64,9 @@ body > footer {
 .v-leave-active {
   transition: transform 220ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-[v-cloak] > * {
+[v-cloak] > *:not(h2) {
   display: none;
 }
-[v-cloak]::before {
+[v-cloak]::after {
   content: 'Version picker is loading...';
 }
