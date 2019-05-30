@@ -31,6 +31,12 @@ html {
   width: 35%;
 }
 
+body > footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 /* Used for (Links / ProductHunt) and (Installation / Copy-Button) rows */
 .row {
   display: flex;
