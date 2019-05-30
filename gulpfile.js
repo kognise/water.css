@@ -9,6 +9,8 @@ const chalk = require('chalk')
 const rename = require('gulp-rename')
 const filter = require('gulp-filter')
 const flatten = require('gulp-flatten')
+const babel = require('gulp-babel')
+const terser = require('gulp-terser')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
@@ -19,7 +21,7 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 
 const paths = {
   srcDir: 'src/*',
-  docsDir: 'docs/*',
+  docs: { src: 'docs/*', dest: 'dist/docs' },
   styles: { src: 'src/builds/*.css', dest: 'dist' },
 }
 
@@ -110,17 +112,32 @@ function style() {
   )
 }
 
-function watch() {
-  style()
+function docs() {
+  const jsOnly = filter('**/*.js', { restore: true })
+  const cssOnly = filter('**/*.css', { restore: true })
 
-  browserSync.init({
-    server: { baseDir: './' },
-    startPath: 'docs/index.html',
-  })
-
-  gulp.watch(paths.srcDir, style)
-  gulp.watch([paths.srcDir, paths.docsDir], browserSync.reload)
+  return gulp
+    .src(paths.docs.src)
+    .pipe(jsOnly)
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
+    .pipe(terser({ toplevel: true }))
+    .pipe(jsOnly.restore)
+    .pipe(cssOnly)
+    .pipe(postcss([cssnano()]))
+    .pipe(cssOnly.restore)
+    .pipe(gulp.dest(paths.docs.dest))
 }
 
-module.exports.style = style
+const browserReload = done => (browserSync.reload(), done())
+const startDevServer = () => {
+  browserSync.init({ server: { baseDir: './dist' }, startPath: 'docs/index.html' })
+
+  gulp.watch(paths.srcDir, gulp.series(style, browserReload))
+  gulp.watch(paths.docs.src, gulp.series(docs, browserReload))
+}
+
+const build = gulp.parallel(style, docs)
+const watch = gulp.series(build, startDevServer)
+
+module.exports.build = build
 module.exports.watch = watch

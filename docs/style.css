@@ -45,6 +45,9 @@ html {
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
 }
+.translucent {
+  opacity: 0.5;
+}
 
 /* For the bounce transitions of code snippet and copy success Emoji */
 .v-enter,

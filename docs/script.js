@@ -6,7 +6,9 @@
  * @prop {boolean} isStandalone
  */
 
-/** The base URI from where to load the CSS files. */
+/** The base URI from where the docs page loads the CSS files. */
+const DEV_BASE = '../'
+/** The base URI from where instructions show to load the CSS files. */
 const CDN_BASE = 'https://cdn.jsdelivr.net/gh/kognise/water.css/dist/'
 
 /** An object mapping the (minified + gzipped) fileSize in KB to a fileName. */
@@ -57,14 +59,20 @@ const externalElements = {
   _phImage: document.querySelector('#js-producthunt'),
   _stylesheet: document.querySelector('#js-stylesheet'),
 
+  updateStylesheet(href) {
+    this._stylesheet.href = href
+  },
+  updateProductHunt(theme) {
+    this._phImage.src = this._phImage.src.replace(/dark|light/, theme)
+  },
   /** @param {VersionOptions} options @param {'dark' | 'light'} [preferedColorScheme] */
   update(options, preferedColorScheme) {
     const { theme, isStandalone } = options
-    const href = '../dist/' + getFileName(options)
+    const href = DEV_BASE + getFileName(options)
     const visibleTheme = isStandalone ? theme : preferedColorScheme || theme
 
-    this._stylesheet.href = href
-    this._phImage.src = this._phImage.src.replace(/dark|light/, visibleTheme)
+    this.updateStylesheet(href)
+    this.updateProductHunt(visibleTheme)
   },
 }
 
@@ -78,7 +86,7 @@ new Vue({
   el: '#installation',
   filters: { capitalize: str => str.charAt(0).toUpperCase() + str.slice(1) },
   data: {
-    versionOptions: { theme: 'dark', isStandalone: true, isLegacy: false },
+    versionOptions: { theme: 'dark', isStandalone: false, isLegacy: false },
     preferedColorScheme: null,
     copyStatus: null,
   },
@@ -92,19 +100,17 @@ new Vue({
     },
   },
   created() {
-    externalElements.update(this.versionOptions, this.preferedColorScheme)
-
     createColorSchemeListener('dark', match => match && (this.preferedColorScheme = 'dark'))
     createColorSchemeListener('light', match => match && (this.preferedColorScheme = 'light'))
+
+    if (this.preferedColorScheme) externalElements.updateProductHunt(this.preferedColorScheme)
   },
   methods: {
-    async copyToClipboard() {
-      try {
-        await clipboard.writeText(this.selectedVersion.fileSnippet)
-        this.copyStatus = 'success'
-      } catch (error) {
-        this.copyStatus = 'failed'
-      }
+    copyToClipboard() {
+      Promise.resolve()
+        .then(() => clipboard.writeText(this.selectedVersion.fileSnippet))
+        .then(() => (this.copyStatus = 'success'))
+        .catch(() => (this.copyStatus = 'failed'))
       setTimeout(() => (this.copyStatus = undefined), 1000)
     },
   },
