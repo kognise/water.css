@@ -79,8 +79,8 @@
           <h3>Paste this into the <code>&lt;head&gt;</code> of your HTML:</h3>
           <button type="button" @click="copyToClipboard">
             <transition>
-              <span class="emoji" v-if="copyStatus === 'success'">✔</span>
-              <span class="emoji" v-else-if="copyStatus === 'failed'">❌</span>
+              <span v-if="copyStatus === 'success'" class="emoji">✔</span>
+              <span v-else-if="copyStatus === 'failed'" class="emoji">❌</span>
             </transition>
             Copy to clipboard
           </button>
@@ -92,15 +92,27 @@
 
         <h3>Version options:</h3>
         <form action="./" method="post" @submit.prevent>
-          <label title="Selected theme may be overwritten by theme settings on user's device">
-            <input type="radio" value="dark" v-model="versionOptions.theme" checked name="theme" />
+          <label>
+            <input type="radio" value="dark" checked name="theme" v-model="versionOptions.theme" />
             Dark theme <span class="emoji">🌙</span>
-            <span class="emoji translucent" v-if="!versionOptions.isStandalone"> / ☀</span>
+            <span
+              v-if="!versionOptions.isStandalone"
+              class="emoji translucent"
+              title="Selected theme may be overwritten by theme settings on user's device"
+            >
+              / ☀</span
+            >
           </label>
-          <label title="Selected theme may be overwritten by theme settings on user's device">
-            <input type="radio" value="light" v-model="versionOptions.theme" name="theme" />
+          <label>
+            <input type="radio" value="light" name="theme" v-model="versionOptions.theme" />
             Light theme <span class="emoji">☀</span>
-            <span class="emoji translucent" v-if="!versionOptions.isStandalone"> / 🌙</span>
+            <span
+              v-if="!versionOptions.isStandalone"
+              class="emoji translucent"
+              title="Selected theme may be overwritten by theme settings on user's device"
+            >
+              / 🌙</span
+            >
           </label>
           <br /><br />
           <label>
@@ -129,18 +141,30 @@
               <th>Theme</th>
               <td>
                 <template v-if="versionOptions.isStandalone">
-                  <span class="emoji" v-if="versionOptions.theme === 'dark'">🌙</span>
-                  <span class="emoji" v-else>☀</span>
+                  <span v-if="versionOptions.theme === 'dark'" class="emoji">🌙</span>
+                  <span v-else class="emoji">☀</span>
                   {{ versionOptions.theme | capitalize }}
                 </template>
 
                 <template v-else>
-                  <span class="emoji" v-if="versionOptions.theme === 'dark'">
+                  <span
+                    v-if="versionOptions.theme === 'dark'"
+                    class="emoji"
+                    title="Selected theme may be overwritten by theme settings on user's device"
+                  >
                     🌙<span class="translucent"> / ☀</span>
                   </span>
-                  <span class="emoji" v-else>☀ <span class="translucent"> / 🌙</span></span>
+                  <span
+                    v-else
+                    class="emoji"
+                    title="Selected theme may be overwritten by theme settings on user's device"
+                  >
+                    ☀ <span class="translucent"> / 🌙</span></span
+                  >
+
                   Defaults to {{ versionOptions.theme }}, but respects user-defined theme settings.
                   (detected via <code>prefers-color-scheme</code>)
+
                   <template v-if="preferedColorScheme">
                     <br />Your device is currently set to {{ preferedColorScheme }} mode.
                   </template>
