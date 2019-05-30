@@ -119,11 +119,15 @@ function docs() {
   return gulp
     .src(paths.docs.src)
     .pipe(jsOnly)
+    .pipe(sourcemaps.init())
     .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(terser({ toplevel: true }))
+    .pipe(sourcemaps.write('.'))
     .pipe(jsOnly.restore)
     .pipe(cssOnly)
+    .pipe(sourcemaps.init())
     .pipe(postcss([cssnano()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(cssOnly.restore)
     .pipe(gulp.dest(paths.docs.dest))
 }
