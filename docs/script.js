@@ -47,7 +47,7 @@ const getFileSnippet = ({ theme, isLegacy, isStandalone }) => {
 
   if (!isLegacy || isStandalone) return stylesheetSnippet
 
-  const altTheme = theme === 'dark' ? 'dark' : 'light'
+  const altTheme = theme === 'dark' ? 'light' : 'dark'
   const mainStandaloneFile = getFileName({ theme, isLegacy: true, isStandalone: true })
   const altStandaloneFile = getFileName({ theme: altTheme, isLegacy: true, isStandalone: true })
   const preloadSnippet = getFilePreloadSnippet(mainStandaloneFile, altStandaloneFile, altTheme)
