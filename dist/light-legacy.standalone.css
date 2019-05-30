@@ -354,7 +354,7 @@ tbody tr:nth-child(even) {
   border-radius: 6px;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: rgb(213, 213, 213);
   border-radius: 6px;
 }
