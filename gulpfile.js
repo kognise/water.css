@@ -11,6 +11,9 @@ const filter = require('gulp-filter')
 const flatten = require('gulp-flatten')
 const babel = require('gulp-babel')
 const terser = require('gulp-terser')
+const posthtml = require('gulp-posthtml')
+const posthtmlInclude = require('posthtml-include')
+const htmlnano = require('htmlnano')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
@@ -113,23 +116,37 @@ function style() {
 }
 
 function docs() {
+  const htmlOnly = filter('**/*.html', { restore: true })
   const jsOnly = filter('**/*.js', { restore: true })
   const cssOnly = filter('**/*.css', { restore: true })
 
-  return gulp
-    .src(paths.docs.src)
-    .pipe(jsOnly)
-    .pipe(sourcemaps.init())
-    .pipe(babel({ presets: ['@babel/preset-env'] }))
-    .pipe(terser({ toplevel: true }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(jsOnly.restore)
-    .pipe(cssOnly)
-    .pipe(sourcemaps.init())
-    .pipe(postcss([cssnano()]))
-    .pipe(sourcemaps.write('.'))
-    .pipe(cssOnly.restore)
-    .pipe(gulp.dest(paths.docs.dest))
+  return (
+    gulp
+      // Exclude all HTML files but index.html
+      .src(paths.docs.src, { ignore: '**/!(index).html' })
+
+      // * Process HTML *
+      .pipe(htmlOnly)
+      .pipe(posthtml([posthtmlInclude({ root: './docs/' }), htmlnano()]))
+      .pipe(htmlOnly.restore)
+
+      // * Process JS *
+      .pipe(jsOnly)
+      .pipe(sourcemaps.init())
+      .pipe(babel({ presets: ['@babel/preset-env'] }))
+      .pipe(terser({ toplevel: true }))
+      .pipe(sourcemaps.write('.'))
+      .pipe(jsOnly.restore)
+
+      // * Process CSS *
+      .pipe(cssOnly)
+      .pipe(sourcemaps.init())
+      .pipe(postcss([cssnano()]))
+      .pipe(sourcemaps.write('.'))
+      .pipe(cssOnly.restore)
+
+      .pipe(gulp.dest(paths.docs.dest))
+  )
 }
 
 const browserReload = done => (browserSync.reload(), done())
