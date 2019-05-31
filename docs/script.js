@@ -1,10 +1,12 @@
-/**
- * Type definition for the version object used throughout the code
- * @typedef {Object} VersionOptions
- * @prop {'dark' | 'light'} theme
- * @prop {boolean} isLegacy
- * @prop {boolean} isStandalone
- */
+// @ts-check
+/** @typedef {'dark' | 'light'} Theme */
+/** @typedef {keyof typeof FILE_SIZES} FileName */
+/** @typedef {'success' | 'failed'} CopyStatus */
+/** @typedef {{ Vue: typeof import('vue').default, clipboard: Clipboard }} Libraries */
+/** @typedef {{ theme: Theme, isLegacy: boolean, isStandalone: boolean }} VersionOptions */
+
+/** Reference to global window, but with properties for loaded libraries. */
+const w = /** @type {Window & Libraries} */ (window)
 
 /** The base URI from where the docs page loads the CSS files. */
 const DEV_BASE = '../'
@@ -23,74 +25,90 @@ const FILE_SIZES = {
   'light-legacy.standalone.min.css': 1.15,
 }
 
-/** @param {VersionOptions} options */
-const getFileName = ({ theme, isLegacy, isStandalone }) => {
-  return `${theme}${isLegacy ? '-legacy' : ''}${isStandalone ? '.standalone' : ''}.min.css`
+/** Takes in version options and returns the respective CSS file name. */
+const getFileName = (/** @type {VersionOptions} */ { theme, isLegacy, isStandalone }) => {
+  const legacySuffix = isLegacy ? '-legacy' : ''
+  const standaloneExt = isStandalone ? '.standalone' : ''
+  return /** @type {FileName} */ (`${theme}${legacySuffix}${standaloneExt}.min.css`)
 }
 
-/** @param {VersionOptions} options */
-const getFileSize = options => {
-  return FILE_SIZES[getFileName(options)] || 0
-}
+/** Takes in version options and returns the corresponding file size in KB. */
+const getFileSize = (/** @type {VersionOptions} */ options) => FILE_SIZES[getFileName(options)] || 0
 
-const getFilePreloadSnippet = (mainFileName, altFileName, altTheme) => {
+/** Takes in version options and returns an HTML snippet that preloads the main stylesheet and
+ *  conditionally preloads the alternative stylesheet (if the alternative theme is active). */
+const getFilePreloadSnippet = (/** @type {VersionOptions} */ { theme, isLegacy, isStandalone }) => {
+  const alternativeTheme = theme === 'dark' ? 'light' : 'dark'
+  const alternativeFile = getFileName({ theme: alternativeTheme, isLegacy, isStandalone })
+
   return `
 <!-- Preload the required stylesheets (optional) -->
-<link rel="preload" as="style" href="${CDN_BASE}${mainFileName}">
-<link rel="preload" as="style" href="${CDN_BASE}${altFileName}" media="(prefers-color-scheme: ${altTheme})">`
+<link rel="preload" as="style" href="${CDN_BASE}${getFileName({ theme, isLegacy, isStandalone })}">
+<link rel="preload" as="style" href="${CDN_BASE}${alternativeFile}" media="(prefers-color-scheme: ${alternativeTheme})">`
 }
 
-/** @param {VersionOptions} options */
-const getFileSnippet = ({ theme, isLegacy, isStandalone }) => {
+/** Takes in version options and returns the code snippet instructing users how to load the file. */
+const getFileSnippet = (/** @type {VersionOptions} */ { theme, isLegacy, isStandalone }) => {
   const fileName = getFileName({ theme, isLegacy, isStandalone })
   const stylesheetSnippet = `<link rel="stylesheet" href="${CDN_BASE}${fileName}">`
 
   if (!isLegacy || isStandalone) return stylesheetSnippet
 
-  const altTheme = theme === 'dark' ? 'light' : 'dark'
-  const mainStandaloneFile = getFileName({ theme, isLegacy: true, isStandalone: true })
-  const altStandaloneFile = getFileName({ theme: altTheme, isLegacy: true, isStandalone: true })
-  const preloadSnippet = getFilePreloadSnippet(mainStandaloneFile, altStandaloneFile, altTheme)
-
+  const preloadSnippet = getFilePreloadSnippet({ theme, isLegacy, isStandalone: true })
   return (preloadSnippet + '\n\n' + stylesheetSnippet).trim()
 }
 
+/** Handles elements external to the version picker that still need to be kept
+ *  up to date with the current version, e.g. switching images from dark to light. */
 const externalElements = {
-  _phImage: document.querySelector('#js-producthunt'),
-  _stylesheet: document.querySelector('#js-stylesheet'),
-
-  updateStylesheet(href) {
-    this._stylesheet.href = href
+  _productHunt: /** @type {HTMLImageElement} */ (document.querySelector('#js-producthunt')),
+  _stylesheet: /** @type {HTMLLinkElement} */ (document.querySelector('#js-stylesheet')),
+  _updateProductHunt(/** @type {Theme} */ theme) {
+    this._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
   },
-  updateProductHunt(theme) {
-    this._phImage.src = this._phImage.src.replace(/dark|light/, theme)
+  _updateStylesheet(/** @type {FileName} */ fileName) {
+    this._stylesheet.href = DEV_BASE + fileName
   },
-  /** @param {VersionOptions} options @param {'dark' | 'light'} [preferedColorScheme] */
-  update(options, preferedColorScheme) {
-    const { theme, isStandalone } = options
-    const href = DEV_BASE + getFileName(options)
-    const visibleTheme = isStandalone ? theme : preferedColorScheme || theme
 
-    this.updateStylesheet(href)
-    this.updateProductHunt(visibleTheme)
+  /** Takes current version + the user's prefered scheme and updates all external elements. */
+  update(/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) {
+    const displayedTheme = options.isStandalone ? options.theme : preferedTheme || options.theme
+
+    this._updateStylesheet(getFileName(options))
+    this._updateProductHunt(displayedTheme)
   },
 }
 
-const createColorSchemeListener = (theme, queryHandler) => {
-  const mediaQuery = matchMedia(`(prefers-color-scheme: ${theme})`)
+/**
+ * Sets up a media query for the given color scheme and runs the callback on change.
+ * @param {Theme} scheme
+ * @param {(matches: boolean) => any} queryHandler
+ */
+const createColorSchemeListener = (scheme, queryHandler) => {
+  const mediaQuery = w.matchMedia(`(prefers-color-scheme: ${scheme})`)
   mediaQuery.addListener(query => queryHandler(query.matches))
   queryHandler(mediaQuery.matches)
 }
 
-new Vue({
+/** @typedef {Object} VueData
+ * @prop {VersionOptions} versionOptions
+ * @prop {?CopyStatus} copyStatus
+ * @prop {?Theme} preferedColorScheme
+ */
+
+new w.Vue({
   el: '#installation',
-  filters: { capitalize: str => str.charAt(0).toUpperCase() + str.slice(1) },
+  filters: {
+    capitalize: (/** @type {string} */ str) => str.charAt(0).toUpperCase() + str.slice(1),
+  },
+  /** @type {VueData} */
   data: {
-    versionOptions: { theme: 'dark', isStandalone: false, isLegacy: false },
+    versionOptions: { theme: /** @type {Theme} */ ('dark'), isStandalone: false, isLegacy: false },
     preferedColorScheme: null,
     copyStatus: null,
   },
   computed: {
+    /** @returns {{ fileName: string, fileSize: string, fileSnippet: string }} */
     selectedVersion() {
       return {
         fileName: getFileName(this.versionOptions),
@@ -103,24 +121,24 @@ new Vue({
     createColorSchemeListener('dark', match => match && (this.preferedColorScheme = 'dark'))
     createColorSchemeListener('light', match => match && (this.preferedColorScheme = 'light'))
 
-    if (this.preferedColorScheme) externalElements.updateProductHunt(this.preferedColorScheme)
+    if (this.preferedColorScheme) externalElements._updateProductHunt(this.preferedColorScheme)
   },
   methods: {
     copyToClipboard() {
       Promise.resolve()
-        .then(() => clipboard.writeText(this.selectedVersion.fileSnippet))
+        .then(() => w.clipboard.writeText(this.selectedVersion.fileSnippet))
         .then(() => (this.copyStatus = 'success'))
         .catch(() => (this.copyStatus = 'failed'))
-      setTimeout(() => (this.copyStatus = undefined), 1000)
+      setTimeout(() => (this.copyStatus = null), 1000)
     },
   },
   watch: {
-    preferedColorScheme(nextScheme) {
+    preferedColorScheme(/** @type {Theme} */ nextScheme) {
       externalElements.update(this.versionOptions, nextScheme)
     },
     versionOptions: {
       deep: true,
-      handler(nextOptions) {
+      handler(/** @type {VersionOptions} */ nextOptions) {
         externalElements.update(nextOptions, this.preferedColorScheme)
       },
     },
