@@ -30,7 +30,7 @@ const getFileName = ({ theme, isLegacy, isStandalone }) => {
 
 /** @param {VersionOptions} options */
 const getFileSize = options => {
-  return FILE_SIZES[getFileName(options)] || '...'
+  return FILE_SIZES[getFileName(options)] || 0
 }
 
 const getFilePreloadSnippet = (mainFileName, altFileName, altTheme) => {

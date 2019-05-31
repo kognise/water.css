@@ -32,6 +32,7 @@ html {
 }
 
 body > footer {
+  padding-top: 2rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
