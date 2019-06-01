@@ -59,7 +59,7 @@ For the main versions, `dark` or `light` is only treated as a _default theme_: i
 #### Want to support Internet Explorer?
 
 Sure, just extend the theme prefix with `-legacy`, e.g. `dark-legacy.min.css`.
-Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](https://watercss.netlify.com/?isLegacy#installation).
+Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](https://watercss.netlify.com/?legacy#installation).
 
 #### Unminified builds
 
