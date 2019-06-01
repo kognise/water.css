@@ -5,8 +5,15 @@
 /** @typedef {{ Vue: typeof import('vue').default, clipboard: Clipboard }} Libraries */
 /** @typedef {{ theme: Theme, isLegacy: boolean, isStandalone: boolean }} VersionOptions */
 
+/** @typedef {Object} VueData State used by the version picker
+ * @prop {VersionOptions} versionOptions
+ * @prop {?CopyStatus} copyStatus
+ * @prop {?Theme} preferedColorScheme
+ */
+
 /** Reference to global window, but with properties for loaded libraries. */
 const w = /** @type {Window & Libraries} */ (window)
+const queryParams = new URLSearchParams(w.location.search)
 
 /** The base URI from where the docs page loads the CSS files. */
 const DEV_BASE = '../'
@@ -90,11 +97,12 @@ const createColorSchemeListener = (scheme, queryHandler) => {
   queryHandler(mediaQuery.matches)
 }
 
-/** @typedef {Object} VueData
- * @prop {VersionOptions} versionOptions
- * @prop {?CopyStatus} copyStatus
- * @prop {?Theme} preferedColorScheme
- */
+const themeFromParams = queryParams.get('theme')
+const initialVersionOptions = {
+  theme: /** @type {Theme} */ (/dark|light/.test(themeFromParams) ? themeFromParams : 'dark'),
+  isLegacy: queryParams.has('legacy'),
+  isStandalone: queryParams.has('standalone'),
+}
 
 new w.Vue({
   el: '#installation',
@@ -103,7 +111,7 @@ new w.Vue({
   },
   /** @type {VueData} */
   data: {
-    versionOptions: { theme: /** @type {Theme} */ ('dark'), isStandalone: false, isLegacy: false },
+    versionOptions: initialVersionOptions,
     preferedColorScheme: null,
     copyStatus: null,
   },
@@ -121,7 +129,7 @@ new w.Vue({
     createColorSchemeListener('dark', match => match && (this.preferedColorScheme = 'dark'))
     createColorSchemeListener('light', match => match && (this.preferedColorScheme = 'light'))
 
-    if (this.preferedColorScheme) externalElements._updateProductHunt(this.preferedColorScheme)
+    externalElements.update(this.versionOptions, this.preferedColorScheme)
   },
   methods: {
     copyToClipboard() {
