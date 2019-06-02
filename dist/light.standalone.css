@@ -297,6 +297,7 @@ tbody tr:nth-child(even) {
 }
 
 details {
+  display: block;
   background-color: var(--background-alt);
   padding: 10px 10px 0;
   margin: 1em 0;
