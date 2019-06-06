@@ -59,7 +59,7 @@ function style() {
       .src(paths.styles.src)
       // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Resolve imports and calculated colors
+      // Resolve imports, calculated colors and inlined SVG files
       .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       // * Process legacy builds *
@@ -95,8 +95,8 @@ function style() {
       .pipe(filter('**/*.css'))
       // Calculate size before minifying
       .pipe(bytediff.start())
-      // Minify using cssnano
-      .pipe(postcss([cssnano()]))
+      // Minify using cssnano, use extra-low precision while minifying inline SVGs
+      .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
       // Write the amount saved by minifying
       .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
       // Rename the files have the .min suffix
