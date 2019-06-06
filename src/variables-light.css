@@ -22,5 +22,5 @@
   --form-placeholder: #949494;
   --form-text: #000000;
 
-  --down-arrow-path: url("../arrow-dark.svg");
+  --down-arrow-path: svg-load("../arrow-dark.svg");
 }

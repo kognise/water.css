@@ -12,6 +12,7 @@ const flatten = require('gulp-flatten')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
+const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
   stringifier: color => color.toRGBLegacy(),
@@ -59,7 +60,7 @@ function style() {
       // Add sourcemaps
       .pipe(sourcemaps.init())
       // Resolve imports and calculated colors
-      .pipe(postcss([postcssImport(), postcssColorModFunction()]))
+      .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       // * Process legacy builds *
       .pipe(excludeModern)

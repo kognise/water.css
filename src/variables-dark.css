@@ -22,5 +22,5 @@
   --form-placeholder: #a9a9a9;
   --form-text: #ffffff;
 
-  --down-arrow-path: url("../arrow-light.svg");
+  --down-arrow-path: svg-load("../arrow-light.svg");
 }
