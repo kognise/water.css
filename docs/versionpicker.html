@@ -19,7 +19,7 @@
   <form action="./" method="post" @submit.prevent>
     <label>
       <input type="radio" value="dark" checked name="theme" v-model="versionOptions.theme" />
-      Dark theme <span class="emoji">🌙</span>
+      Dark theme&nbsp;<span class="emoji">🌙</span>
       <span
         v-if="!versionOptions.isStandalone"
         class="emoji translucent"
@@ -30,7 +30,7 @@
     </label>
     <label>
       <input type="radio" value="light" name="theme" v-model="versionOptions.theme" />
-      Light theme <span class="emoji">☀</span>
+      Light theme&nbsp;<span class="emoji">☀</span>
       <span
         v-if="!versionOptions.isStandalone"
         class="emoji translucent"
