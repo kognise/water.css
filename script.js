@@ -1,4 +1,22 @@
-(function (ThemeSwitcher) {
+!(function() {
+  const iconModeSwitcher = window.faviconModeSwitcher && faviconModeSwitcher.default
+  if (!iconModeSwitcher) return
+  iconModeSwitcher([
+    {
+      element: 'link[rel="shortcut icon"]',
+      href: { dark: '/icons/light-favicon.ico' }
+    },
+    {
+      element: 'link[rel="icon"][sizes="16x16"]',
+      href: { dark: '/icons/light-favicon-16x16.png' }
+    },
+    {
+      element: 'link[rel="icon"][sizes="32x32"]',
+      href: { dark: '/icons/light-favicon-32x32.png' }
+    }
+  ])
+})()
+;(function (ThemeSwitcher) {
   const themeSwitcher = new ThemeSwitcher('stylesheet');
   const themeSwitchBtn = document.getElementById('switch');
   const themes = {
