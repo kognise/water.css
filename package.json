@@ -26,9 +26,11 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
+    "@ungap/url-search-params": "^0.1.2",
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
+    "clipboard-polyfill": "^2.8.1",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
