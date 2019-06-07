@@ -15,7 +15,7 @@
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="msapplication-config" content="./icons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
-    <!-- Base styles of water.css, so styles don't have to wait until JS is loaded -->
+    <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
     <!-- <link
       rel="preload"
       as="style"
@@ -33,9 +33,8 @@
     /> -->
 
     <!-- TODO: Remove once water.css v2 is hosted so the above links work -->
-    <link rel="stylesheet" href="../dark.min.css" />
-
-    <!-- Dynamic version of water.css, overwrites base styles. JavaScript sets & updates href. -->
+    <link rel="stylesheet" id="js-startup-stylesheet" href="../dark.min.css" />
+    <!-- Dynamic version of water.css, overwrites startup styles. JavaScript sets & updates href -->
     <link rel="stylesheet" id="js-stylesheet" />
     <!-- Custom styles for the documentation / version picker -->
     <link rel="stylesheet" href="style.css" />

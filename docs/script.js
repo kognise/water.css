@@ -14,6 +14,7 @@
 /** Reference to global window, but with properties for loaded libraries. */
 const w = /** @type {Window & Libraries} */ (window)
 const queryParams = new URLSearchParams(w.location.search)
+const supportsCssVars = typeof CSS !== 'undefined' && CSS.supports('color', 'var(--clr)')
 
 /** The base URI from where the docs page loads the CSS files. */
 const DEV_BASE = '../'
@@ -70,6 +71,10 @@ const getFileSnippet = (/** @type {VersionOptions} */ { theme, isLegacy, isStand
 const externalElements = {
   _productHunt: /** @type {HTMLImageElement} */ (document.querySelector('#js-producthunt')),
   _stylesheet: /** @type {HTMLLinkElement} */ (document.querySelector('#js-stylesheet')),
+  _removeStartupStylesheet() {
+    const startupStylesheet = document.head.querySelector('#js-startup-stylesheet')
+    if (startupStylesheet) document.head.removeChild(startupStylesheet)
+  },
   _updateProductHunt(/** @type {Theme} */ theme) {
     this._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
   },
@@ -77,6 +82,11 @@ const externalElements = {
     this._stylesheet.href = DEV_BASE + fileName
   },
 
+  /** Sets up listener to remove startup version of water.css when right one loads, then updates */
+  init(/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) {
+    this._stylesheet.addEventListener('load', this._removeStartupStylesheet)
+    this.update(options, preferedTheme)
+  },
   /** Takes current version + the user's prefered scheme and updates all external elements. */
   update(/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) {
     const displayedTheme = options.isStandalone ? options.theme : preferedTheme || options.theme
@@ -100,7 +110,7 @@ const createColorSchemeListener = (scheme, queryHandler) => {
 const themeFromParams = queryParams.get('theme')
 const initialVersionOptions = {
   theme: /** @type {Theme} */ (/dark|light/.test(themeFromParams) ? themeFromParams : 'dark'),
-  isLegacy: queryParams.has('legacy'),
+  isLegacy: queryParams.has('legacy') || !supportsCssVars,
   isStandalone: queryParams.has('standalone'),
 }
 
@@ -129,7 +139,7 @@ new w.Vue({
     createColorSchemeListener('dark', match => match && (this.preferedColorScheme = 'dark'))
     createColorSchemeListener('light', match => match && (this.preferedColorScheme = 'light'))
 
-    externalElements.update(this.versionOptions, this.preferedColorScheme)
+    externalElements.init(this.versionOptions, this.preferedColorScheme)
   },
   methods: {
     copyToClipboard() {
