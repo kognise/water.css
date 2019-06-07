@@ -96,7 +96,22 @@ th {
   font-weight: 600;
 }
 
-blockquote {
+q:before {
+   content: none;
+}
+
+q:after {
+   content: none;
+}
+
+blockquote{
+  border-left: 4px solid #0096bfab;
+  margin: 1.5em 0em;
+  padding: 0.5em 1em;
+  font-style: italic;
+}
+
+q{
   border-left: 4px solid #0096bfab;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
@@ -126,6 +141,13 @@ a[href^='tel']::before {
 
 a[href^='sms']::before {
   content: '💬 ';
+}
+
+mark {
+  background-color: #ffff00;
+  border-radius: 2px;
+  padding: 0px 2px 0px 2px;
+  color: #000000;
 }
 
 button,
@@ -295,23 +317,47 @@ a:hover {
 }
 
 code {
-  background: #efefef;
+  background:  #efefef;
   color: #000000;
   padding: 2.5px 5px;
   border-radius: 6px;
+  font-size: 1em;
 }
 
-kbd {
-  background: #efefef;
+samp {
+  background:  #efefef;
   color: #000000;
   padding: 2.5px 5px;
   border-radius: 6px;
+  font-size: 1em;
+}
+
+time {
+  background:  #efefef;
+  color: #000000;
+  padding: 2.5px 5px;
+  border-radius: 6px;
+  font-size: 1em;
 }
 
 pre > code {
   padding: 10px;
   display: block;
   overflow-x: auto;
+}
+
+var {
+  color: #39a33c;
+  font-style: normal;
+  font-family: monospace;
+}
+
+kbd {
+  background: #efefef;
+  border: 1px solid #dbdbdb;
+  border-radius: 2px;
+  color: #363636;
+  padding: 2px 4px 2px 4px;
 }
 
 img {

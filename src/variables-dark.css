@@ -22,5 +22,8 @@
   --form-placeholder: #a9a9a9;
   --form-text: #ffffff;
 
+  --variable: #d941e2;
+  --highlight: #efdb43;
+
   --select-arrow: svg-load('./assets/select-arrow.svg', fill: #efefef);
 }
