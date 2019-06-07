@@ -26,11 +26,11 @@ html {
   transform: scale(1.3);
 }
 
-.version-select__options {
-  margin-right: 1rem;
-}
 .version-select__options > label {
   white-space: pre;
+}
+.version-select__options > label:first-child {
+  margin-right: 1rem;
 }
 .version-select__options__additional > * {
   margin-top: 1rem;
