@@ -2400,6 +2400,11 @@ fast-levenshtein@~2.0.4:
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
   integrity sha1-PYpcZog6FqMMqGQ+hR8Zuqd5eRc=
 
+favicon-mode-switcher@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/favicon-mode-switcher/-/favicon-mode-switcher-1.0.4.tgz#122a1b7204ab9a5265adf6b3e4c5f8edde6f0002"
+  integrity sha512-zLXOYVToYqwV3iZrwy1q1JFB+QLVHQAkY6L/C3nGdxPs65LyrL3l5JeigoxqCMjT7CNFA9RbwXjcbZ/2izKPig==
+
 filename-regex@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/filename-regex/-/filename-regex-2.0.1.tgz#c1c4b9bee3e09725ddb106b75c1e301fe2f18b26"

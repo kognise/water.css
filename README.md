@@ -1,6 +1,6 @@
 # Water.css
 
-[![Water.css](docs/logo.svg)](https://watercss.netlify.com/)
+[![Water.css](assets/logo.svg)](https://watercss.netlify.com/)
 
 _A just-add-css collection of styles to make simple websites just a little nicer_
 

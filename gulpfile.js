@@ -24,7 +24,7 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 
 const paths = {
   srcDir: 'src/*',
-  docs: { src: 'docs/*', dest: 'dist/docs' },
+  docs: { src: 'docs/**', dest: 'dist/docs' },
   styles: { src: 'src/builds/*.css', dest: 'dist' },
 }
 

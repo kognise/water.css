@@ -2,10 +2,16 @@
 /** @typedef {'dark' | 'light'} Theme */
 /** @typedef {keyof typeof FILE_SIZES} FileName */
 /** @typedef {'success' | 'failed'} CopyStatus */
-/** @typedef {{ Vue: typeof import('vue').default, clipboard: Clipboard }} Libraries */
 /** @typedef {{ theme: Theme, isLegacy: boolean, isStandalone: boolean }} VersionOptions */
+/**
+ * @typedef {Object} Libraries External packages exposed on `window` (loaded through `<script>`)
+ * @prop {typeof import('vue').default} Vue
+ * @prop {Clipboard} clipboard
+ * @prop {import('favicon-mode-switcher')} faviconModeSwitcher
+ */
 
-/** @typedef {Object} VueData State used by the version picker
+/**
+ * @typedef {Object} VueData State used by the version picker
  * @prop {VersionOptions} versionOptions
  * @prop {?CopyStatus} copyStatus
  * @prop {?Theme} preferedColorScheme
@@ -163,7 +169,7 @@ new w.Vue({
   },
 })
 
-const iconModeSwitcher = faviconModeSwitcher.default
+const iconModeSwitcher = w.faviconModeSwitcher.default
 iconModeSwitcher([
   {
     element: 'link[rel="shortcut icon"]',
