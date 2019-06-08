@@ -2,14 +2,18 @@
 /** @typedef {'dark' | 'light'} Theme */
 /** @typedef {keyof typeof FILE_SIZES} FileName */
 /** @typedef {'success' | 'failed'} CopyStatus */
-/** @typedef {{ theme: Theme, isLegacy: boolean, isStandalone: boolean }} VersionOptions */
+/**
+ * @typedef {Object} VersionOptions Configurable options for water.css versions
+ * @prop {Theme} theme
+ * @prop {boolean} isLegacy
+ * @prop {boolean} isStandalone
+ */
 /**
  * @typedef {Object} Libraries External packages exposed on `window` (loaded through `<script>`)
  * @prop {typeof import('vue').default} Vue
  * @prop {Clipboard} clipboard
  * @prop {import('favicon-mode-switcher')} faviconModeSwitcher
  */
-
 /**
  * @typedef {Object} VueData State used by the version picker
  * @prop {VersionOptions} versionOptions
@@ -80,6 +84,8 @@ const externalElements = {
   _removeStartupStylesheet() {
     const startupStylesheet = document.head.querySelector('#js-startup-stylesheet')
     if (startupStylesheet) document.head.removeChild(startupStylesheet)
+    const that = externalElements
+    that._stylesheet.removeEventListener('load', that._removeStartupStylesheet)
   },
   _updateProductHunt(/** @type {Theme} */ theme) {
     this._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
@@ -171,6 +177,7 @@ new w.Vue({
 })
 
 const iconModeSwitcher = w.faviconModeSwitcher.default
+/* Use bright favicons when the browser is in dark mode. */
 iconModeSwitcher([
   {
     element: 'link[rel="shortcut icon"]',

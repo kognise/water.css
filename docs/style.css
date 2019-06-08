@@ -32,18 +32,24 @@ html {
 .version-select__options > label:first-child {
   margin-right: 1rem;
 }
+.version-select__options__additional {
+  display: flex;
+  flex-direction: column;
+}
 .version-select__options__additional > * {
   margin-top: 1rem;
-  display: inline-block;
+}
+.version-select__options__additional > *:not(summary) {
+  display: block;
 }
 .version-select__options__additional summary {
-  display: block;
   cursor: pointer;
   font-weight: 600;
 }
 .version-select__options__additional summary:focus {
   outline: none;
 }
+.version-select__options__additional summary:hover span,
 .version-select__options__additional summary:focus span {
   text-decoration: underline;
 }
