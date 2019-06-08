@@ -114,8 +114,9 @@ const createColorSchemeListener = (scheme, queryHandler) => {
 }
 
 const themeFromParams = queryParams.get('theme')
+/** @type {VersionOptions} */
 const initialVersionOptions = {
-  theme: /** @type {Theme} */ (/dark|light/.test(themeFromParams) ? themeFromParams : 'dark'),
+  theme: /** @type {Theme} */ (/^(dark|light)$/.test(themeFromParams) ? themeFromParams : 'dark'),
   isLegacy: queryParams.has('legacy') || !supportsCssVars,
   isStandalone: queryParams.has('standalone'),
 }
