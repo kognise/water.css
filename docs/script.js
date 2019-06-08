@@ -139,6 +139,12 @@ new w.Vue({
     copyStatus: null,
   },
   computed: {
+    /** @returns {boolean} */
+    isOverwritten() {
+      const { isStandalone, theme } = this.versionOptions
+      if (isStandalone || !this.preferedColorScheme) return false
+      return theme !== this.preferedColorScheme
+    },
     /** @returns {{ fileName: string, fileSize: string, fileSnippet: string }} */
     selectedVersion() {
       return {
@@ -155,6 +161,11 @@ new w.Vue({
     externalElements.init(this.versionOptions, this.preferedColorScheme)
   },
   methods: {
+    getTooltipMessage(/** @type {Theme} */ theme) {
+      if (this.versionOptions.theme === theme && this.isOverwritten) {
+        return 'Your theme selection is currently overwritten by the theme setting on your device.'
+      } else return "Selected theme can be overwritten by theme setting on user's device."
+    },
     copyToClipboard() {
       Promise.resolve()
         .then(() => w.clipboard.writeText(this.selectedVersion.fileSnippet))

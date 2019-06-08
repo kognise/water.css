@@ -22,20 +22,24 @@
       Dark theme&nbsp;<span class="emoji">🌙</span>
       <span
         v-if="!versionOptions.isStandalone"
-        class="tooltip emoji translucent"
-        title="Selected theme may be overwritten by theme settings on user's device"
+        class="tooltip emoji opacity-4"
+        :class="{'opacity-7': versionOptions.theme === 'dark' && isOverwritten}"
+        :title="getTooltipMessage('dark')"
       >
-        / ☀</span>
+        / ☀</span
+      >
     </label>
     <label>
       <input type="radio" value="light" name="theme" v-model="versionOptions.theme" />
       Light theme&nbsp;<span class="emoji">☀</span>
       <span
         v-if="!versionOptions.isStandalone"
-        class="tooltip emoji translucent"
-        title="Selected theme may be overwritten by theme settings on user's device"
+        class="tooltip emoji opacity-4"
+        :class="{'opacity-7': versionOptions.theme === 'light' && isOverwritten}"
+        :title="getTooltipMessage('light')"
       >
-        / 🌙</span>
+        / 🌙</span
+      >
     </label>
     <details class="version-select__options__additional">
       <summary><span>Additional options</span></summary>
@@ -48,7 +52,6 @@
         Support Internet Explorer and other legacy browsers?
       </label>
     </details>
-
   </form>
 
   <table class="version-select__info">
@@ -77,23 +80,22 @@
             <span
               v-if="versionOptions.theme === 'dark'"
               class="emoji"
-              title="Selected theme may be overwritten by theme settings on user's device"
+              :title="getTooltipMessage('dark')"
             >
-              🌙<span class="translucent"> / ☀</span>
+              🌙<span class="opacity-4" :class="{'opacity-7': isOverwritten}"> / ☀</span>
             </span>
-            <span
-              v-else
-              class="emoji"
-              title="Selected theme may be overwritten by theme settings on user's device"
-            >
-              ☀ <span class="translucent"> / 🌙</span>
+            <span v-else class="emoji" :title="getTooltipMessage('light')">
+              ☀ <span class="opacity-4" :class="{'opacity-7': isOverwritten}"> / 🌙</span>
             </span>
 
             Defaults to {{ versionOptions.theme }}, but respects user-defined theme settings.
             (detected via <code>prefers-color-scheme</code>)
 
             <template v-if="preferedColorScheme">
-              <br />Your device is currently set to {{ preferedColorScheme }} mode.
+              <br />
+              <span :style="'text-decoration: ' + (isOverwritten ? 'underline' : 'none')">
+                Your device is currently set to {{ preferedColorScheme }} mode.
+              </span>
             </template>
           </template>
         </td>
@@ -106,7 +108,8 @@
           </template>
           <template v-else>
             All current browsers (<a href="https://caniuse.com/#feat=css-variables"
-              >support for CSS Custom Properties</a>)
+              >support for CSS Custom Properties</a
+            >)
           </template>
         </td>
       </tr>

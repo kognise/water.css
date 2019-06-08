@@ -87,8 +87,11 @@ body > footer {
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
 }
-.translucent {
+.opacity-4 {
   opacity: 0.4;
+}
+.opacity-7 {
+  opacity: 0.76;
 }
 .tooltip {
   position: relative;
