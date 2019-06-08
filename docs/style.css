@@ -35,12 +35,11 @@ html {
 .version-select__options__additional {
   display: flex;
   flex-direction: column;
-}
-.version-select__options__additional > * {
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 .version-select__options__additional > *:not(summary) {
   display: block;
+  margin-top: 1rem;
 }
 .version-select__options__additional summary {
   cursor: pointer;
