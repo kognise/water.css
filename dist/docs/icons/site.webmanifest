@@ -1,6 +1,7 @@
 {
   "name": "Water.css",
   "short_name": "Water.css",
+  "start_url": "./",
   "icons": [
     {
       "src": "./android-chrome-192x192.png",

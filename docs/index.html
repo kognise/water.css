@@ -6,16 +6,25 @@
 
     <!-- Icons generated with https://realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+    <link rel="icon" id="icon-16" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+    <link rel="icon" id="icon-32" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
     <link rel="manifest" href="./icons/site.webmanifest" />
     <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#5bbad5" />
-    <link rel="shortcut icon" href="./icons/favicon.ico" />
+    <link rel="shortcut icon" id="icon-ico" href="./icons/favicon.ico" />
     <meta name="apple-mobile-web-app-title" content="Water.css" />
     <meta name="application-name" content="Water.css" />
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="msapplication-config" content="./icons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- Use bright favicons when the browser is in dark mode. -->
+    <script type="module">
+      import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
+      faviconSwitcher([
+        { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
+        { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
+        { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } },
+      ])
+    </script>
 
     <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
     <link rel="preload" as="style" href="../dark-legacy.standalone.min.css" />
@@ -240,7 +249,6 @@
     ></script>
     <script src="https://unpkg.com/@ungap/url-search-params@0.1.2/min.js" defer></script>
     <script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js" defer></script>
-    <script src="https://unpkg.com/favicon-mode-switcher@^1.0.0" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
