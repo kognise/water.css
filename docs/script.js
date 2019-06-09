@@ -27,7 +27,7 @@ const queryParams = new URLSearchParams(w.location.search)
 const supportsCssVars = typeof CSS !== 'undefined' && CSS.supports('color', 'var(--clr)')
 
 /** The base URI from where the docs page loads the CSS files. */
-const DEV_BASE = '../'
+const DEV_BASE = './water.css/'
 /** The base URI from where instructions show to load the CSS files. */
 const CDN_BASE = 'https://cdn.jsdelivr.net/gh/kognise/water.css/dist/'
 

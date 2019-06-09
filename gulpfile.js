@@ -112,6 +112,9 @@ function style() {
       .pipe(sourcemaps.write('.'))
       // Write the minified files
       .pipe(gulp.dest(paths.styles.dest))
+      // Output files to docs directory so documentation site can use them
+      .pipe(gulp.dest(paths.docs.dest + '/water.css'))
+      // Final size report including gzipped sizes
       .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
       // Stream any changes to browserSync
       .pipe(browserSync.stream())
