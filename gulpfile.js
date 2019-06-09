@@ -58,13 +58,16 @@ function style() {
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
   const excludeLegacy = filter(file => !isLegacy(file.path), { restore: true })
 
+  // Don't inline minified versions, so builds can lazily import them at runtime
+  const cssImportOptions = { filter: path => !/\.min/.test(path) }
+
   return (
     gulp
       .src(paths.styles.src)
       // Add sourcemaps
       .pipe(sourcemaps.init())
       // Resolve imports and calculated colors
-      .pipe(postcss([postcssImport(), postcssColorModFunction()]))
+      .pipe(postcss([postcssImport(cssImportOptions), postcssColorModFunction()]))
 
       // * Process legacy builds *
       .pipe(excludeModern)
