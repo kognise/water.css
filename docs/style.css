@@ -29,34 +29,24 @@ html {
 .version-select__options > label {
   white-space: pre;
 }
-.version-select__options > label:first-child {
+.version-select__options > label:not(:last-of-type) {
   margin-right: 1rem;
 }
-.version-select__options__additional {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 0;
-}
+.version-select__options__additional,
 .version-select__options__additional > *:not(summary) {
   display: block;
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 .version-select__options__additional summary {
+  outline: none;
   cursor: pointer;
   font-weight: 600;
-}
-.version-select__options__additional summary:focus {
-  outline: none;
 }
 .version-select__options__additional summary:hover span,
 .version-select__options__additional summary:focus span {
   text-decoration: underline;
 }
 
-/* Fixed layout so columns don't jump when content changes */
-.version-select__info {
-  table-layout: fixed;
-}
 .version-select__info caption {
   text-align: left;
 }
@@ -73,16 +63,14 @@ body > footer {
   align-items: flex-end;
 }
 
-/* Used for (Links / ProductHunt) and (Installation / Copy-Button) rows */
 .row {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
-
-/* Use proper Emoji instead of plain Unicode chars */
 .emoji {
+  /* Use proper Emoji instead of plain Unicode chars */
   font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', system-ui, -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;

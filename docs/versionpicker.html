@@ -60,15 +60,15 @@
     </caption>
     <tbody>
       <tr>
-        <th>File</th>
+        <th scope="row">File</th>
         <td>{{ selectedVersion.fileName }}</td>
       </tr>
       <tr>
-        <th>Size (min+gzip)</th>
+        <th scope="row">Size (min+gzip)</th>
         <td>{{ selectedVersion.fileSize }}KB</td>
       </tr>
       <tr>
-        <th>Theme</th>
+        <th scope="row">Theme</th>
         <td>
           <template v-if="versionOptions.isStandalone">
             <span v-if="versionOptions.theme === 'dark'" class="emoji">🌙</span>
@@ -101,7 +101,7 @@
         </td>
       </tr>
       <tr>
-        <th>Browser support</th>
+        <th scope="row">Browser support</th>
         <td>
           <template v-if="versionOptions.isLegacy">
             All browsers (including Internet Explorer)
