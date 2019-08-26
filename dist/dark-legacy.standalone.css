@@ -154,11 +154,8 @@ button,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
-<<<<<<< HEAD
+input[type='range'],
 input[type='radio'] {
-=======
-input[type='range'] {
->>>>>>> master
   cursor: pointer;
 }
 
@@ -215,12 +212,7 @@ textarea {
   outline: none;
 }
 
-<<<<<<< HEAD
 input,
-=======
-input:not([type='checkbox']):not([type='radio']),
-input[type='range'],
->>>>>>> master
 select,
 button,
 textarea {
