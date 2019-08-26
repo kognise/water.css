@@ -87,6 +87,7 @@ textarea:disabled {
 input[type='range'] {
   -webkit-appearance: none;
   margin: 10px 0;
+  padding: 10px 0;
   background: transparent;
 }
 input[type='range']:focus {
