@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /**
  * Light-themed version:
  * uses light theme by default but switches to dark theme
@@ -453,8 +451,12 @@ th {
   text-align: left;
 }
 
-th {
+thead {
   border-bottom: 1px solid var(--border);
+}
+
+tfoot {
+  border-top: 1px solid var(--border);
 }
 
 tbody tr:nth-child(even) {
@@ -488,4 +490,3 @@ tbody tr:nth-child(even) {
   background-color: var(--selection);
 }
 /*# sourceMappingURL=light.css.map */
->>>>>>> master
