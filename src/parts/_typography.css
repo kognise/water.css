@@ -19,7 +19,7 @@ h4,
 h5,
 h6,
 strong {
-  color: $text-bright;
+  color: var(--text-bright);
 }
 
 h1,
@@ -34,8 +34,16 @@ th {
   font-weight: 600;
 }
 
-blockquote {
-  border-left: 4px solid $focus;
+q:before {
+   content: none;
+}
+
+q:after {
+   content: none;
+}
+
+blockquote , q{
+  border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
@@ -64,4 +72,11 @@ a[href^='tel']::before {
 
 a[href^='sms']::before {
   content: '💬 ';
+}
+
+mark {
+  background-color: var(--highlight);
+  border-radius: 2px;
+  padding: 0px 2px 0px 2px;
+  color: #000000;
 }

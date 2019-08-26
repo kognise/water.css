@@ -1,0 +1,27 @@
+:root {
+  --background-body: #ffffff;
+  --background: #efefef;
+  --background-alt: #f7f7f7;
+
+  --selection: #9e9e9e;
+
+  --text-main: #363636;
+  --text-bright: #000000;
+
+  --links: #0076d1;
+  --focus: #0096bfab;
+  --border: #dbdbdb;
+  --code: #000000;
+
+  --animation-duration: 0.1s;
+  --button-hover: #dddddd;
+
+  --scrollbar-thumb: color-mod(var(--button-hover) lightness(-3%));
+  --scrollbar-thumb-hover: color-mod(var(--button-hover) lightness(-10%));
+
+  --form-placeholder: #949494;
+  --form-text: #000000;
+
+  --variable: #39a33c;
+  --highlight: #ffff00;
+}

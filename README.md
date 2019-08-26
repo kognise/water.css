@@ -2,7 +2,7 @@
 
 [![Water.css](logo.svg)](https://watercss.netlify.com/)
 
-*A just-add-css collection of styles to make simple websites just a little nicer*
+_A just-add-css collection of styles to make simple websites just a little nicer_
 
 [![On reddit](https://img.shields.io/badge/on-reddit-orange.svg)](https://www.reddit.com/r/webdev/comments/b9m6mv/watercss_a_collection_of_neat_styles_for_simple/)
 [![On product hunt](https://img.shields.io/badge/on-product%20hunt-red.svg)](https://www.producthunt.com/posts/water-css)
@@ -10,12 +10,12 @@
 
 ## Goals
 
- - Responsive
- - Good code quality
- - Good browser support (works on my old kindle's browser :P)
- - Small size (&lt; 2kb)
- - Beautiful
- - No classes
+- Responsive
+- Good code quality
+- Good browser support (works on my old kindle's browser :P)
+- Small size (&lt; 2kb)
+- Beautiful
+- No classes
 
 ## Why?
 
@@ -31,15 +31,35 @@ You probably don't want to use it for a production app or something that has mor
 
 ## How?
 
-Just stick this in your head:
+Just stick this in your `<head>`:
 
-```html
-<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>
-```
+### 🌙 Dark theme:
 
-Well, there's a dark theme and a light theme. If you want the light theme, use `light.css` instead of `dark.css`. See [Theming](#theming) to make your own theme!
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">`
 
-No other classes or code is required to make Water.css work. If you want a specific version, you can replace `@latest` with `@version`. See [all the versions](https://github.com/kognise/water.css/releases).
+### ☀ Light theme:
+
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">`
+
+<br>
+
+### Other options:
+
+> ⚡ An interactive version selection will be available soon [here](https://watercss.netlify.com/#select-version)
+
+#### Enforce a theme and ignore `(prefers-color-scheme)`
+
+For the main versions, `dark` or `light` is only treated as a _default theme_: if a user has a system-wide preference for either dark or light mode on their device, `water.css` will respect this. If you want to avoid this behavior and enforce dark or light theme, append `.standalone` to the theme prefix, e.g. `dark.standalone.min.css`.
+
+#### Want to support Internet Explorer?
+
+Sure, just extend the theme prefix with `-legacy`, e.g. `dark-legacy.min.css`.
+Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](#).
+
+#### Unminified builds
+
+All versions are also available as unminified stylesheets, which can be handy during development.
+Simply remove the `.min` from the file name.
 
 **Oh, you want a demo you say?** Cheeky fellah! [Well, here's your demo.](https://watercss.netlify.com/)
 
@@ -51,7 +71,7 @@ Water.css becomes better for everyone when people like you help make it better!
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
 
-If you decide to contribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading and automatic Sass compiling.
+If you decide to contribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading on change.
 
 ```
 $ yarn dev
@@ -60,6 +80,8 @@ $ yarn dev
 And make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
 
 ## Theming
+
+> ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
 
 Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
@@ -73,6 +95,8 @@ Do you want to make your own theme different from the light or dark themes? Sinc
 - `$code`
 - `$button-hover`
 - `$animation-duration`
+- `$scrollbar-thumb`
+- `$scrollbar-thumb-hover`
 - `$form-placeholder`
 - `$form-text`
 

@@ -1,0 +1,8 @@
+/**
+ * Standalone dark-themed version.
+ * Includes dark variables and core, left as CSS variables
+ * so the theming can be adjusted at runtime.
+ */
+
+@import '../variables-dark.css';
+@import '../parts/_core.css';
