@@ -153,7 +153,8 @@ mark {
 button,
 input[type='submit'],
 input[type='button'],
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='radio'] {
   cursor: pointer;
 }
 
@@ -226,7 +227,7 @@ textarea {
   outline: none;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input,
 select,
 button,
 textarea {
@@ -273,6 +274,44 @@ button:focus {
 
 textarea:focus {
   box-shadow: 0 0 0 2px #0096bfab;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 2px;
+}
+
+input[type='radio'] {
+  border-radius: 50%;
+}
+
+input[type='checkbox']:checked {
+  background: #dddddd;
+}
+
+input[type='radio']:checked {
+  background: #dddddd;
+}
+
+input[type='checkbox']:checked::before,
+input[type='radio']:checked::before {
+  content: '•';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+input[type='checkbox']:checked::before {
+  content: '✔';
+  transform: translateY(-50%) translateY(0.5px) translateX(-6px);
 }
 
 input[type='checkbox']:active,
