@@ -1,0 +1,8 @@
+/**
+ * Standalone dark-themed version for legacy browsers.
+ * Includes dark variables and core, compiled at build time so the final output
+ * will only include regular CSS, no variables.
+ */
+
+@import '../variables-dark.css';
+@import '../parts/_core.css';

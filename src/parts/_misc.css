@@ -5,7 +5,7 @@ img {
 
 hr {
   border: none;
-  border-top: 1px solid $border;
+  border-top: 1px solid var(--border);
 }
 
 table {
@@ -14,21 +14,18 @@ table {
   width: 100%;
 }
 
-td, th {
+td,
+th {
   padding: 6px;
   text-align: left;
 }
 
-thead {
-  border-bottom: 1px solid $border;
+th {
+  border-bottom: 1px solid var(--border);
 }
 
-tfoot {
-  border-top: 1px solid $border;
-}
-
-tr:nth-child(even) {
-  background-color: $background-alt;
+tbody tr:nth-child(even) {
+  background-color: var(--background-alt);
 }
 
 ::-webkit-scrollbar {
@@ -37,19 +34,19 @@ tr:nth-child(even) {
 }
 
 ::-webkit-scrollbar-track {
-  background: $background-alt;
+  background: var(--background);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $scrollbar-thumb;
+  background: var(--scrollbar-thumb);
   border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $scrollbar-thumb-hover;
+  background: var(--scrollbar-thumb-hover);
 }
 
 ::selection {
-  background-color: $selection;
+  background-color: var(--selection);
 }
