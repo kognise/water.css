@@ -495,8 +495,12 @@ th {
   text-align: left;
 }
 
-th {
+thead {
   border-bottom: 1px solid #dbdbdb;
+}
+
+tfoot {
+  border-top: 1px solid #dbdbdb;
 }
 
 tbody tr:nth-child(even) {
