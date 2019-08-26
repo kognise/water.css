@@ -1,7 +1,8 @@
 button,
 input[type='submit'],
 input[type='button'],
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='range'] {
   cursor: pointer;
 }
 
@@ -11,7 +12,6 @@ select {
 }
 
 input,
-select,
 button,
 textarea {
   color: var(--form-text);
@@ -30,6 +30,7 @@ textarea {
 }
 
 input:not([type='checkbox']):not([type='radio']),
+input[type='range'],
 select,
 button,
 textarea {
@@ -67,6 +68,7 @@ input[type='checkbox']:active,
 input[type='radio']:active,
 input[type='submit']:active,
 input[type='button']:active,
+input[type='range']:active,
 button:active {
   transform: translateY(2px);
 }
