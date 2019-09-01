@@ -173,7 +173,9 @@ mark {
 button,
 input[type='submit'],
 input[type='button'],
-input[type='checkbox'] {
+input[type='checkbox'],
+input[type='range'],
+input[type='radio'] {
   cursor: pointer;
 }
 
@@ -183,7 +185,6 @@ select {
 }
 
 input,
-select,
 button,
 textarea {
   color: var(--form-text);
@@ -201,7 +202,7 @@ textarea {
   outline: none;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input,
 select,
 button,
 textarea {
@@ -235,10 +236,46 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
 }
 
+input[type='checkbox'],
+input[type='radio'] {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 2px;
+}
+
+input[type='radio'] {
+  border-radius: 50%;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  background: var(--button-hover);
+}
+
+input[type='checkbox']:checked::before,
+input[type='radio']:checked::before {
+  content: '•';
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+input[type='checkbox']:checked::before {
+  content: '✔';
+  transform: translateY(-50%) translateY(0.5px) translateX(-6px);
+}
+
 input[type='checkbox']:active,
 input[type='radio']:active,
 input[type='submit']:active,
 input[type='button']:active,
+input[type='range']:active,
 button:active {
   transform: translateY(2px);
 }
@@ -265,6 +302,94 @@ textarea:disabled {
 
 ::placeholder {
   color: var(--form-placeholder);
+}
+
+input[type='range'] {
+  margin: 10px 0;
+  padding: 10px 0;
+  background: transparent;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 9.5px;
+  transition: 0.2s;
+  background: var(--background);
+  border-radius: 3px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--border);
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: var(--background);
+}
+
+input[type='range']::-moz-range-track {
+  width: 100%;
+  height: 9.5px;
+  transition: 0.2s;
+  background: var(--background);
+  border-radius: 3px;
+}
+
+input[type='range']::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+input[type='range']::-ms-track {
+  width: 100%;
+  height: 9.5px;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type='range']::-ms-fill-lower {
+  background: var(--background);
+  border: 0.2px solid #010101;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type='range']::-ms-fill-upper {
+  background: var(--background);
+  border: 0.2px solid #010101;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type='range']::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+input[type='range']:focus::-ms-fill-lower {
+  background: var(--background);
+}
+
+input[type='range']:focus::-ms-fill-upper {
+  background: var(--background);
 }
 
 a {
@@ -326,8 +451,12 @@ th {
   text-align: left;
 }
 
-th {
+thead {
   border-bottom: 1px solid var(--border);
+}
+
+tfoot {
+  border-top: 1px solid var(--border);
 }
 
 tbody tr:nth-child(even) {
