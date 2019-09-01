@@ -1,4 +1,4 @@
-button,
+button, select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -14,7 +14,8 @@ select {
 
 input,
 button,
-textarea {
+textarea,
+select {
   color: var(--form-text);
   background-color: var(--background);
 
