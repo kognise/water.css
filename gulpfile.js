@@ -12,6 +12,7 @@ const flatten = require('gulp-flatten')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
+const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
   stringifier: color => color.toRGBLegacy(),
@@ -58,8 +59,8 @@ function style() {
       .src(paths.styles.src)
       // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Resolve imports and calculated colors
-      .pipe(postcss([postcssImport(), postcssColorModFunction()]))
+      // Resolve imports, calculated colors and inlined SVG files
+      .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       // * Process legacy builds *
       .pipe(excludeModern)
@@ -94,8 +95,8 @@ function style() {
       .pipe(filter('**/*.css'))
       // Calculate size before minifying
       .pipe(bytediff.start())
-      // Minify using cssnano
-      .pipe(postcss([cssnano()]))
+      // Minify using cssnano, use extra-low precision while minifying inline SVGs
+      .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
       // Write the amount saved by minifying
       .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
       // Rename the files have the .min suffix

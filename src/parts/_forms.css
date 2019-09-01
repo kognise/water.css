@@ -1,4 +1,4 @@
-button,
+button, select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -14,7 +14,8 @@ select {
 
 input,
 button,
-textarea {
+textarea,
+select {
   color: var(--form-text);
   background-color: var(--background);
 
@@ -42,6 +43,15 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   resize: vertical;
+}
+
+select {
+  background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat;
+  padding-right: 35px;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 button,
