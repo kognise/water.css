@@ -552,11 +552,11 @@ tbody tr:nth-child(even) {
 }
 
 ::-moz-selection {
-  background-color: #161f27;
+  background-color: #e0edf9;
 }
 
 ::selection {
-  background-color: #161f27;
+  background-color: #e0edf9;
 }
 
 /*# sourceMappingURL=dark-legacy.standalone.css.map */
