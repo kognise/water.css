@@ -1,0 +1,13 @@
+/**
+ * Dark-themed version:
+ * uses dark theme by default but switches to light theme
+ * if a system-wide theme preference is set on the user's device.
+ *
+ * Variables will remain uncompiled so the theme can update dynamically
+ * at runtime in the browser.
+ */
+
+@import '../variables-dark.css';
+@import '../variables-light.css' (prefers-color-scheme: light);
+
+@import '../parts/_core.css';
