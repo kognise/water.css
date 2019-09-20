@@ -477,6 +477,11 @@ tbody tr:nth-child(even) {
   background-color: var(--background-alt);
 }
 
+details p {
+  border-left: 4px solid var(--focus);
+  padding-left: 1em;
+}
+
 ::-webkit-scrollbar {
   height: 10px;
   width: 10px;

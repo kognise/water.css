@@ -532,6 +532,11 @@ tbody tr:nth-child(even) {
   background-color: #f7f7f7;
 }
 
+details p {
+  border-left: 4px solid #0096bfab;
+  padding-left: 1em;
+}
+
 ::-webkit-scrollbar {
   height: 10px;
   width: 10px;
