@@ -4,15 +4,15 @@
   iconModeSwitcher([
     {
       element: 'link[rel="shortcut icon"]',
-      href: { dark: '/icons/light-favicon.ico' }
+      href: { dark: 'icons/light-favicon.ico' }
     },
     {
       element: 'link[rel="icon"][sizes="16x16"]',
-      href: { dark: '/icons/light-favicon-16x16.png' }
+      href: { dark: 'icons/light-favicon-16x16.png' }
     },
     {
       element: 'link[rel="icon"][sizes="32x32"]',
-      href: { dark: '/icons/light-favicon-32x32.png' }
+      href: { dark: 'icons/light-favicon-32x32.png' }
     }
   ])
 })()
@@ -77,7 +77,7 @@
       const lightSchemeMql = matchMedia('(prefers-color-scheme: light)');
       const that = this;
 
-      this.themeDir = '../dist/';
+      this.themeDir = 'dist/';
       this.stylesheet = document.getElementById(stylesheet);
       this.current = this.getThemeName(this.stylesheet.href);
       this.isDark = darkSchemeMql.matches;
