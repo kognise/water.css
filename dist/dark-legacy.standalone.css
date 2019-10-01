@@ -559,4 +559,42 @@ tbody tr:nth-child(even) {
   background-color: #161f27;
 }
 
+details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #1a242f;
+  padding: 10px 10px 0;
+  margin: 1em 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+details[open] {
+  padding: 10px;
+}
+
+details > :last-child {
+  margin-bottom: 0;
+}
+
+details[open] summary {
+  margin-bottom: 10px;
+}
+
+summary {
+  display: list-item;
+  background-color: #161f27;
+  padding: 10px;
+  margin: -10px -10px 0;
+}
+
+details > :not(summary) {
+  margin-top: 0;
+}
+
+summary::-webkit-details-marker {
+  color: #dbdbdb;
+}
+
 /*# sourceMappingURL=dark-legacy.standalone.css.map */
