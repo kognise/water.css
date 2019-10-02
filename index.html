@@ -100,13 +100,33 @@
 
     <h3>Form elements</h3>
     <form>
-      <label for='email'>Email</label>
-      <input
-        type='email'
-        name='email'
-        id='email'
-        placeholder='john.doe@gmail.com'
-      />
+
+      <fieldset>
+        <legend>Fieldset</legend>
+
+        <label for='email'>Email</label>
+        <input
+          type='email'
+          name='email'
+          id='email'
+          placeholder='john.doe@gmail.com'
+        />
+
+        <label for='password'>Password</label>
+        <input
+          type='password'
+          name='password'
+          id='password'
+          placeholder='password'
+        />
+
+        <p>
+          <input type='checkbox' name='remember' id='remember' checked />
+          <label for='remember'>Remember me</label>
+        </p>
+
+        <input type='submit' />
+      </fieldset>
 
       <label for='id'>User id (read only)</label>
       <input readonly name='id' id='id' value='04D6H89Z' />
@@ -133,11 +153,9 @@
         <option value='lemon'>Lemon juice</option>
       </select>
 
-      <br />
-
       <label for='drinks'>Or select multiple favorite drinks</label>
-      <p>Hold down the Ctrl (windows) /  
-        Command (Mac) button to select multiple options.</p> 
+      <br/>
+      <small>Hold down the Ctrl (Windows) /  Command (Mac) button to select multiple options. (P.S. this message is inside a <code>&lt;small&gt;</code> tag!</small>) 
       <select name='drink' id='drinks' multiple>
         <option value='mojito'>Mojito</option>
         <option value='water'>Water</option>
@@ -168,11 +186,6 @@
         <label for='volume'>Volume</label>
         <input type='range' id='start' name='volume' id='volume' min='0' max='11' />
       </div>
-
-      <input type='checkbox' name='remember' id='remember' checked />
-      <label for='remember'>Remember me</label>
-
-      <input type='submit' />
     </form>
 
     <h3>Code</h3>

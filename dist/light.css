@@ -230,6 +230,12 @@ select::-ms-expand {
   display: none;
 }
 
+select[multiple] {
+  padding-right: 10px;
+  background-image: none;
+  overflow-y: auto;
+}
+
 button,
 input[type='submit'],
 input[type='button'] {
@@ -316,6 +322,19 @@ textarea:disabled {
 
 ::placeholder {
   color: var(--form-placeholder);
+}
+
+fieldset {
+  border: 1px var(--focus) solid;
+  border-radius: 6px;
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 10px;
+}
+
+legend {
+  font-size: 0.9em;
+  font-weight: 600;
 }
 
 input[type='range'] {
