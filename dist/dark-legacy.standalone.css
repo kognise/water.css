@@ -363,6 +363,16 @@ textarea:disabled {
   color: #a9a9a9;
 }
 
+fieldset {
+  border: 1px #0096bfab solid;
+  border-radius: 6px;
+}
+
+legend {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
 input[type='range'] {
   margin: 10px 0;
   padding: 10px 0;

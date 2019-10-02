@@ -135,3 +135,13 @@ textarea:disabled {
 ::placeholder {
   color: var(--form-placeholder);
 }
+
+fieldset {
+  border: 1px var(--focus) solid;
+  border-radius: 6px;
+}
+
+legend {
+  font-size: 0.9em;
+  font-weight: 600;
+}
