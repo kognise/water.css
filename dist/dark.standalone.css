@@ -292,6 +292,9 @@ textarea:disabled {
 fieldset {
   border: 1px var(--focus) solid;
   border-radius: 6px;
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 10px;
 }
 
 legend {

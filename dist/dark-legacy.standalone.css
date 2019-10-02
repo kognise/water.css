@@ -366,6 +366,9 @@ textarea:disabled {
 fieldset {
   border: 1px #0096bfab solid;
   border-radius: 6px;
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 10px;
 }
 
 legend {
