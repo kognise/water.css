@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp style",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -43,5 +44,8 @@
   },
   "browserslist": [
     "defaults AND not android 4.4.3"
+  ],
+  "files": [
+    "dist"
   ]
 }
