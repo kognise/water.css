@@ -69,7 +69,9 @@ function style() {
       // Calculate size before autoprefixing
       .pipe(bytediff.start())
       // autoprefix
-      .pipe(postcss([autoprefixer()]))
+      .pipe(postcss([autoprefixer({
+        env: "legacy"
+      })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeModern.restore)
@@ -79,8 +81,9 @@ function style() {
       // Calculate size before autoprefixing
       .pipe(bytediff.start())
       // autoprefix modern builds
-      // TODO: Use separate browserslist to only apply prefixes needed in *modern* browsers
-      .pipe(postcss([autoprefixer()]))
+      .pipe(postcss([autoprefixer({
+        env: "modern"
+      })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeLegacy.restore)
