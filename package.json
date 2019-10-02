@@ -6,6 +6,7 @@
   "scripts": {
     "build": "gulp style",
     "dev": "gulp watch",
+    "lint": "standard --fix",
     "prepublishOnly": "yarn build"
   },
   "repository": {
