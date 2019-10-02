@@ -1,28 +1,73 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
+    <meta charset='utf-8'>
     <title>Water.css</title>
-    <link id='stylesheet' rel='stylesheet' href='dist/dark.css'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link id='stylesheet' rel='stylesheet' href='dist/dark.css' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <!-- Icons generated with https://realfavicongenerator.net -->
+    <link
+      rel='apple-touch-icon'
+      sizes='180x180'
+      href='icons/apple-touch-icon.png'
+    />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='32x32'
+      href='icons/favicon-32x32.png'
+    />
+    <link
+      rel='icon'
+      type='image/png'
+      sizes='16x16'
+      href='icons/favicon-16x16.png'
+    />
+    <link rel='manifest' href='icons/site.webmanifest' />
+    <link rel='mask-icon' href='icons/safari-pinned-tab.svg' color='#5bbad5' />
+    <link rel='shortcut icon' href='icons/favicon.ico' />
+    <meta name='apple-mobile-web-app-title' content='Water.css' />
+    <meta name='application-name' content='Water.css' />
+    <meta name='msapplication-TileColor' content='#00aba9' />
+    <meta name='msapplication-config' content='icons/browserconfig.xml' />
+    <meta name='theme-color' content='#ffffff' />
 
-    <script async src='https://www.googletagmanager.com/gtag/js?id=UA-116663597-6'></script>
+    <script
+      async
+      src='https://www.googletagmanager.com/gtag/js?id=UA-116663597-6'
+    ></script>
     <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag(){dataLayer.push(arguments)}
-      gtag('js', new Date())
-      gtag('config', 'UA-116663597-6')
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-116663597-6');
     </script>
   </head>
+
   <body>
     <h1>Water.css</h1>
     <p>
-      Water.css is a just-add-css collection of styles to make simple websites like this just a little bit nicer.
+      Water.css is a just-add-css collection of styles to make simple websites
+      like this just a little bit nicer.
       <a href='https://github.com/kognise/water.css'>Get it already!</a>
     </p>
     <p>
-      Now you can write your simple static site with nice semantic html, and Water.css will manage the styling for you.
+      Now you can write your simple static site with nice semantic html, and
+      Water.css will manage the styling for you.
     </p>
-    <a href='https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css' target='_blank'><img id='ph' src='https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily' alt='Water.css - Make your tiny website just a little nicer | Product Hunt Embed' style='width: 250px; height: 54px;' width='250px' height='54px' /></a>
+    <a
+      href='https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css'
+      target='_blank'
+      ><img
+        id='ph'
+        src='https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily'
+        alt='Water.css - Make your tiny website just a little nicer | Product Hunt Embed'
+        style='width: 250px; height: 54px;'
+        width='250px'
+        height='54px'
+    /></a>
 
     <h2>Goals</h2>
     <ul>
@@ -36,14 +81,18 @@
 
     <h2>Is it responsive?</h2>
     <p>
-      <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's easily mobile responsive.
-      Just add the famous <a href='https://www.w3schools.com/css/css_rwd_viewport.asp'>responsive viewport tag</a> and you'll be good to go!
+      <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's
+      easily mobile responsive. Just add the famous
+      <a href='https://www.w3schools.com/css/css_rwd_viewport.asp'
+        >responsive viewport tag</a
+      >
+      and you'll be good to go!
     </p>
     <p>
-      In fact, try resizing this page. Everything flows super nicely as you'll see.
+      In fact, try resizing this page. Everything flows super nicely as you'll
+      see.
     </p>
-    <button id='switch'>Switch theme</button>
-
+    <button type='button' id='switch'>Switch theme</button>
     <h2>Element demos</h2>
     <p>
       This is supposed to be a demo page so we need more elements!
@@ -52,50 +101,101 @@
     <h3>Form elements</h3>
     <form>
       <label for='email'>Email</label>
-      <input type='email' name='email' id='email' placeholder='john.doe@gmail.com'>
+      <input
+        type='email'
+        name='email'
+        id='email'
+        placeholder='john.doe@gmail.com'
+      />
 
       <label for='id'>User id (read only)</label>
-      <input readonly name='id' id='id' value='04D6H89Z'>
+      <input readonly name='id' id='id' value='04D6H89Z' />
 
       <label for='disabled'>Random disabled input</label>
-      <input disabled name='disabled' id='disabled' placeholder='Because why not?'>
+      <input
+        disabled
+        name='disabled'
+        id='disabled'
+        placeholder='Because why not?'
+      />
 
       <label for='about'>About me</label>
-      <textarea name='about' id='about' placeholder='I am a textarea...'></textarea>
+      <textarea
+        name='about'
+        id='about'
+        placeholder='I am a textarea...'
+      ></textarea>
+
+      <label for='drink'>Select your favorite drink</label>
+      <select name='drinks' id='drink'>
+        <option value='mojito'>Mojito</option>
+        <option value='water'>Water</option>
+        <option value='lemon'>Lemon juice</option>
+      </select>
+
+      <br />
+
+      <label for='drinks'>Or select multiple favorite drinks</label>
+      <p>Hold down the Ctrl (windows) /  
+        Command (Mac) button to select multiple options.</p> 
+      <select name='drink' id='drinks' multiple>
+        <option value='mojito'>Mojito</option>
+        <option value='water'>Water</option>
+        <option value='lemon'>Lemon juice</option>
+      </select>
 
       <label>Choose a Doe:</label>
       <div>
-        <input type='radio' id='john' name='drone' value='john' checked>
+        <input type='radio' id='john' name='doe' value='john' checked>
         <label for='john'>John Doe</label>
       </div>
       <div>
-        <input type='radio' id='jane' name='drone' value='jane' checked>
+        <input type='radio' id='jane' name='doe' value='jane' checked>
         <label for='jane'>Jane Doe</label>
       </div>
       <div>
-        <input type='radio' id='johnny' name='drone' value='johnny' checked>
+        <input type='radio' id='johnny' name='doe' value='johnny' checked>
         <label for='johnny'>Johnny Doe</label>
       </div>
+      <div>
+        <input type='radio' id='doe' name='doe' value='doe' checked>
+        <label for='doe'>An actual doe</label>
+      </div>
 
-      <br>
+      <br />
 
-      <input type='checkbox' name='remember' id='remember' checked>
+      <div>
+        <label for='volume'>Volume</label>
+        <input type='range' id='start' name='volume' id='volume' min='0' max='11' />
+      </div>
+
+      <input type='checkbox' name='remember' id='remember' checked />
       <label for='remember'>Remember me</label>
 
-      <input type='submit'>
+      <input type='submit' />
     </form>
 
     <h3>Code</h3>
     <p>
-      Below is some code, you can copy it with <kbd>Ctrl-C</kbd>.
-      Did you know, <code>alert(1)</code> can show an alert in JavaScript!
+      Below is some code, with a variable, you can copy it with
+      <kbd>Ctrl-C</kbd>. Did you know, <code>alert(1)</code> can show an alert
+      in JavaScript!
     </p>
+    <code>var <var>myNumber</var> = 0;</code>
     <pre><code>// This logs a message to the console and check out the scrollbar.<br>console.log('Hello, world!')</code></pre>
 
+    <p>Here are some more keyboard buttons</p>
+    <p>
+      Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Print Screen</kbd> to take
+      a selected area screenshot on Linux.
+    </p>
     <h3>Other</h3>
-    <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
-    <img src='https://placekitten.com/408/287' alt='Example kitten'>
-    <hr>
+    <p>
+      Here's a horizontal rule and image because I don't know where else to put
+      them.
+    </p>
+    <img src='https://placekitten.com/408/287' alt='Example kitten' />
+    <hr />
 
     <p>And here's a nicely marked up table!</p>
     <table>
@@ -127,23 +227,43 @@
 
     <h3>Typography</h3>
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-      <strong>This is strong,</strong> this is normal, <b>this is just bold,</b> <em>and this is emphasized!</em> And heck, <a href='/'>here</a>'s a link.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum
+      hendrerit velit, quis ullamcorper sem congue ac. Quisque id magna rhoncus,
+      sodales massa vel, vestibulum elit. Duis ornare accumsan egestas. Proin
+      maximus lacus interdum leo molestie convallis. Orci varius natoque
+      penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut
+      iaculis risus eu felis feugiat, eu mollis neque elementum. Donec interdum,
+      nisl id dignissim iaculis, felis dui aliquet dui, non fermentum velit
+      lectus ac quam. Class aptent taciti sociosqu ad litora torquent per
+      conubia nostra, per inceptos himenaeos.
+      <strong>This is strong,</strong> this is normal,
+      <b>this is just bold,</b> <em>and this is emphasized!</em> And heck,
+      <a href='/'>here</a>'s a link.
     </p>
 
-    <blockquote cite='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote'>
-      "The HTML blockquote Element (or HTML Block Quotation Element) indicates
-      that the enclosed text is an extended quotation. Usually, this is
-      rendered visually by indentation (see
-      <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#Usage_notes'>Notes</a>
-      for how to change it). A URL for the source of the quotation may be given using the
-      <code>cite</code> attribute, while a text representation of the source
-      can be given using the <code>&ltcite&gt</code> cite element."
+    <blockquote
+      cite='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote'
+    >
+      'The HTML blockquote Element (or HTML Block Quotation Element) indicates
+      that the enclosed text is an extended quotation. Usually, this is rendered
+      visually by indentation (see
+      <a
+        href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#Usage_notes'
+        >Notes</a
+      >
+      for how to change it). A URL for the source of the quotation may be given
+      using the
+      <code>cite</code> attribute, while a text representation of the source can
+      be given using the <code>&ltcite&gt</code> cite element.'
 
       <footer>
-        <cite>MDN, "The Block Quotation element"</cite>
+        <cite>MDN, 'The Block Quotation element'</cite>
       </footer>
     </blockquote>
+
+    <q>Quotes (&ltq&gt) share the same style as blockquotes.</q>
+
+    <p>Use &ltmark&gt to <mark>highlight the important stuff</mark>.</p>
 
     <ul>
       <li>Unordered list item 1</li>
@@ -156,13 +276,11 @@
       <li>Ordered list item 3</li>
     </ol>
 
-    <p>
-      Addresses are also styled to be <strong>awesome</strong>!
-    </p>
+    <p>Addresses are also styled to be <strong>awesome</strong>!</p>
     <address>
-      <a href='mailto:john.doe@example.com'>john.doe@example.com</a><br/>
-      <a href='tel:778-330-2389'>778-330-2389</a><br/>
-      <a href='sms:666-666-6666'>666-666-6666</a><br/>
+      <a href='mailto:john.doe@example.com'>john.doe@example.com</a><br />
+      <a href='tel:778-330-2389'>778-330-2389</a><br />
+      <a href='sms:666-666-6666'>666-666-6666</a><br />
     </address>
 
     <h1>Heading 1</h1>
@@ -172,6 +290,18 @@
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
 
-    <script src='script.js'></script>
+    <p>The details and summary tag</p>
+    <details>
+      <summary>Click to Open...</summary>
+      <p>The HTML Details Element (details) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label can be provided using the summary element.</p>
+    </details>
+
+    <details open>
+      <summary>Click to Hide...</summary>
+      <p>The HTML Details Element (details) creates a disclosure widget in which information is visible only when the widget is toggled into an "open" state. A summary or label can be provided using the summary element.</p>
+    </details>
+
+    <script src='https://unpkg.com/favicon-mode-switcher@^1.0.0' defer></script>
+    <script src='script.js' defer></script>
   </body>
 </html>
