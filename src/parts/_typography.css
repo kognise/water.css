@@ -34,11 +34,11 @@ th {
   font-weight: 600;
 }
 
-q:before {
+q::before {
    content: none;
 }
 
-q:after {
+q::after {
    content: none;
 }
 
