@@ -33,11 +33,11 @@ You probably don't want to use it for a production app or something that has mor
 
 Just stick this in your `<head>`:
 
-### 🌙 Dark theme:
+### 🌙 Dark Theme:
 
 `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">`
 
-### ☀ Light theme:
+### ☀ Light Theme:
 
 `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">`
 
