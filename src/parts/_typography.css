@@ -42,7 +42,7 @@ q::after {
    content: none;
 }
 
-blockquote, q{
+blockquote, q {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
