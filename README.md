@@ -77,11 +77,11 @@ If you decide to contribute, after downloading a copy of the repository make sur
 $ yarn dev
 ```
 
-And make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
+And please make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
 
 ## Theming
 
-> ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
+> ⚠ The theming guide is out of date and will be updated soon ! In the mean time, check src/variables-\*.css to see your customization options.
 
 Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
