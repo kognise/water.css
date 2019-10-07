@@ -1,0 +1,55 @@
+title: Your awesome title
+author: GitHub User
+email: your-email@domain.com
+description: > # this means to ignore newlines until "show_excerpts:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+
+show_excerpts: false # set to true to show excerpts on the homepage
+
+# Water.css date format
+# refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
+water:
+  date_format: "%b %-d, %Y"
+
+  # generate social links in footer
+  social_links:
+    twitter: water
+    github:  water
+    rss: rss
+    # dribbble: water
+    # facebook: water
+    # flickr:   water
+    # instagram: water
+    # linkedin: water
+    # pinterest: water
+    # youtube: water
+    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
+    # youtube_channel_name: water
+    # telegram: water
+    # googleplus: +water
+    # microdotblog: water
+    # keybase: water
+
+    # Mastodon instances
+    # mastodon:
+    # - username: water
+    #   instance: example.com
+    # - username: water2
+    #   instance: example.com
+
+# If you want to link only specific pages in your header, uncomment
+# this and add the path to the pages in order as they should show up
+#header_pages:
+# - about.md
+
+sass:
+    style: compressed
+
+# Build settings
+theme: water
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag

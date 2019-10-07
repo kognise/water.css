@@ -1,0 +1,26 @@
+<footer>
+    <data href="{{ "/" | relative_url }}"></data>
+    <div>
+        <div>
+            <div>
+                <h2>{{ site.title | escape }}</h2>
+                <ul>
+                    <li>
+                        {%- if site.author -%}
+                        {{ site.author | escape }}
+                        {%- endif -%}
+                    </li>
+                    {%- if site.email -%}
+                    <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    {%- endif -%}
+                </ul>
+            </div>
+            <div>
+                <p>{{- site.description | escape -}}</p>
+            </div>
+            <div>
+                {%- include social.html -%}
+            </div>
+        </div>
+    </div>
+</footer>

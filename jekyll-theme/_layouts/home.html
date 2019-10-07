@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{%- if page.title -%}
+<h1>{{ page.title }}</h1>
+{%- endif -%}
+{{ content }}
+{%- if site.posts.size > 0 -%}
+<h2>{{ page.list_title | default: "Posts" }}</h2>
+<ul>
+    {%- for post in site.posts -%}
+    <li>
+        {%- assign date_format = site.water.date_format | default: "%b %-d, %Y" -%}
+        <span>{{ post.date | date: date_format }}</span>
+        <h3>
+            <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+            </a>
+        </h3>
+        {%- if site.show_excerpts -%}
+        {{ post.excerpt }}
+        {%- endif -%}
+    </li>
+    {%- endfor -%}
+</ul>
+<p>
+    <a href="{{ 'feed.xml' | relative_url }}">
+        <svg>
+            <use xlink:href="{{ 'assets/water-social-icons.svg#rss' | relative_url }}"></use>
+        </svg><span>Subscribe</span>
+    </a>
+</p>
+{%- endif -%}
