@@ -1,0 +1,58 @@
+#meter-wrapper {
+  width: 640px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.styled progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 60%;
+  height: 25px;
+}
+
+.styled progress::-webkit-progress-bar {
+  background: #eee;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) inset;
+  border-radius: 3px;
+}
+
+.styled progress::-webkit-progress-value {
+  background-color: #cc0000;
+  border-radius: 3px;
+}
+
+/* progress bar */
+#progress-wrapper progress[value] {
+  appearance: none;
+  border: none;
+  width: 60%;
+  height: 25px;
+  background-color: whiteSmoke;
+}
+
+#progress-wrapper progress[value]::-webkit-progress-bar {
+  background-color: whiteSmoke;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5) inset;
+}
+
+progress::-webkit-progress-value {
+  background-color: #cc0000;
+}
+
+#progress-wrapper p[data-value] {
+  position: relative;
+}
+
+#progress-wrapper p[data-value]:after {
+  content: attr(data-value) "%";
+  position: absolute;
+  right: 60%;
+  top: 175%;
+  z-index: 1;
+  color: #fff;
+}
