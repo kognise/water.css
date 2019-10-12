@@ -277,7 +277,7 @@ textarea:disabled {
   color: var(--form-placeholder);
 }
 
-:-ms-input-placeholder {
+::-moz-placeholder {
   color: var(--form-placeholder);
 }
 
