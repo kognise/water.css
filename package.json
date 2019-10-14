@@ -4,19 +4,19 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "eslint": "eslint --fix --ignore-path .gitignore .",
-    "prettier": "prettier --write **/*.{js,css,html}",
+    "lint": "eslint --fix --ignore-path .gitignore .",
+    "pretty": "prettier --write --ignore-path ./.gitignore **/*.{js,css,html}",
     "build": "gulp style",
     "dev": "gulp watch"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run eslint && lint-staged && npm run build"
+      "pre-commit": "npm run lint && lint-staged && npm run build"
     }
   },
   "lint-staged": {
-    "*": [
-      "npm run prettier",
+    "*.*": [
+      "npm run pretty",
       "git add"
     ]
   },

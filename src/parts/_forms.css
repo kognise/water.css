@@ -1,13 +1,14 @@
-button, select,
-input[type='submit'],
-input[type='button'],
-input[type='checkbox'],
-input[type='range'],
-input[type='radio'] {
+button,
+select,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="range"],
+input[type="radio"] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input:not([type="checkbox"]):not([type="radio"]),
 select {
   display: block;
 }
@@ -46,7 +47,8 @@ textarea {
 }
 
 select {
-  background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px no-repeat;
+  background: var(--background) var(--select-arrow) calc(100% - 12px) 50% / 12px
+    no-repeat;
   padding-right: 35px;
 }
 
@@ -61,15 +63,15 @@ select[multiple] {
 }
 
 button,
-input[type='submit'],
-input[type='button'] {
+input[type="submit"],
+input[type="button"] {
   padding-right: 30px;
   padding-left: 30px;
 }
 
 button:hover,
-input[type='submit']:hover,
-input[type='button']:hover {
+input[type="submit"]:hover,
+input[type="button"]:hover {
   background: var(--button-hover);
 }
 
@@ -80,8 +82,8 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
 }
 
-input[type='checkbox'],
-input[type='radio'] {
+input[type="checkbox"],
+input[type="radio"] {
   position: relative;
   width: 14px;
   height: 14px;
@@ -91,18 +93,18 @@ input[type='radio'] {
   margin-right: 2px;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   border-radius: 50%;
 }
 
-input[type='checkbox']:checked,
-input[type='radio']:checked {
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
   background: var(--button-hover);
 }
 
-input[type='checkbox']:checked::before,
-input[type='radio']:checked::before {
-  content: '•';
+input[type="checkbox"]:checked::before,
+input[type="radio"]:checked::before {
+  content: "•";
   display: block;
   position: absolute;
   left: 50%;
@@ -110,16 +112,16 @@ input[type='radio']:checked::before {
   transform: translateX(-50%) translateY(-50%);
 }
 
-input[type='checkbox']:checked::before {
-  content: '✔';
+input[type="checkbox"]:checked::before {
+  content: "✔";
   transform: translateY(-50%) translateY(0.5px) translateX(-6px);
 }
 
-input[type='checkbox']:active,
-input[type='radio']:active,
-input[type='submit']:active,
-input[type='button']:active,
-input[type='range']:active,
+input[type="checkbox"]:active,
+input[type="radio"]:active,
+input[type="submit"]:active,
+input[type="button"]:active,
+input[type="range"]:active,
 button:active {
   transform: translateY(2px);
 }

@@ -35,14 +35,15 @@ th {
 }
 
 q:before {
-   content: none;
+  content: none;
 }
 
 q:after {
-   content: none;
+  content: none;
 }
 
-blockquote , q{
+blockquote,
+q {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
@@ -62,16 +63,16 @@ address {
   font-style: normal;
 }
 
-a[href^='mailto']::before {
-  content: '📧 ';
+a[href^="mailto"]::before {
+  content: "📧 ";
 }
 
-a[href^='tel']::before {
-  content: '📞 ';
+a[href^="tel"]::before {
+  content: "📞 ";
 }
 
-a[href^='sms']::before {
-  content: '💬 ';
+a[href^="sms"]::before {
+  content: "💬 ";
 }
 
 mark {

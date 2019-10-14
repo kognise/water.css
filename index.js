@@ -1,2 +1,2 @@
-const gulpfile = require('./gulpfile')
-gulpfile.watch()
+const gulpfile = require("./gulpfile");
+gulpfile.watch();
