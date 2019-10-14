@@ -7,7 +7,8 @@
     "lint": "eslint --fix --ignore-path .gitignore .",
     "pretty": "prettier --write --ignore-path ./.gitignore **/*.{js,css,html}",
     "build": "gulp style",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
