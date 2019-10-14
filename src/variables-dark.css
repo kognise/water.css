@@ -9,6 +9,7 @@
   --text-bright: #ffffff;
 
   --links: #41adff;
+    --links: text-decoration: none;
   --focus: #0096bfab;
   --border: #dbdbdb;
   --code: #ffbe85;
