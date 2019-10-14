@@ -77,7 +77,7 @@ If you decide to contribute, after downloading a copy of the repository make sur
 $ npm run dev
 ```
 
-And make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
+We use eslint, prettier and husky for auto formatting during commits! Thanks for taking the time to contribute :)
 
 ## Theming
 
