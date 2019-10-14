@@ -4,9 +4,21 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
+    "eslint": "eslint --fix --ignore-path .gitignore .",
+    "prettier": "prettier --write **/*.{js,css,html}",
     "build": "gulp style",
-    "dev": "gulp watch",
-    "prepublishOnly": "yarn build"
+    "dev": "gulp watch"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint && lint-staged && npm run build"
+    }
+  },
+  "lint-staged": {
+    "*": [
+      "npm run prettier",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
@@ -29,6 +41,7 @@
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
+    "eslint": "^6.5.1",
     "gulp": "^4.0.0",
     "gulp-bytediff": "^1.0.0",
     "gulp-filter": "^5.1.0",
@@ -37,27 +50,32 @@
     "gulp-rename": "^1.4.0",
     "gulp-sizereport": "^1.2.1",
     "gulp-sourcemaps": "^2.6.5",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
     "postcss-import": "^12.0.1",
-    "postcss-inline-svg": "^3.1.1"
+    "postcss-inline-svg": "^3.1.1",
+    "prettier": "^1.18.2"
   },
   "browserslist": {
-     "legacy": ["defaults AND not android 4.4.3"],
-     "modern": [
-       "Edge > 16",
-       "Firefox > 31",
-       "Chrome > 49",
-       "Safari > 9.1",
-       "Opera > 36",
-       "ios_saf > 9.3",
-       "Android > 76",
-       "OperaMobile > 46",
-       "ChromeAndroid > 76",
-       "FirefoxAndroid > 68",
-       "UCAndroid > 12.12",
-       "Samsung > 5"
-     ]
+    "legacy": [
+      "defaults AND not android 4.4.3"
+    ],
+    "modern": [
+      "Edge > 16",
+      "Firefox > 31",
+      "Chrome > 49",
+      "Safari > 9.1",
+      "Opera > 36",
+      "ios_saf > 9.3",
+      "Android > 76",
+      "OperaMobile > 46",
+      "ChromeAndroid > 76",
+      "FirefoxAndroid > 68",
+      "UCAndroid > 12.12",
+      "Samsung > 5"
+    ]
   },
   "files": [
     "dist"
