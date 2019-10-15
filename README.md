@@ -81,24 +81,27 @@ And make sure to run `yarn build` before pushing any changes! Thanks for taking 
 
 ## Theming
 
-> ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
+Do you want to make your own theme different from the light or dark themes? Since Water.css is built using CSS variables, this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
-Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
-
-- `$background`
-- `$background-alt`
-- `$text-main`
-- `$text-bright`
-- `$links`
-- `$focus`
-- `$border`
-- `$code`
-- `$button-hover`
-- `$animation-duration`
-- `$scrollbar-thumb`
-- `$scrollbar-thumb-hover`
-- `$form-placeholder`
-- `$form-text`
+- `--background-body`
+- `--background`
+- `--background-alt`
+- `--selection`
+- `--text-main`
+- `--text-bright`
+- `--links`
+- `--focus`
+- `--border`
+- `--code`
+- `--animation-duration`
+- `--button-hover`
+- `--scrollbar-thumb`
+- `--scrollbar-thumb-hover`
+- `--form-placeholder`
+- `--form-text`
+- `--variable`
+- `--highlight`
+- `--select-arrow`
 
 Wanna quickly try out theming without installing anything or just explore our build environment?
 
@@ -108,11 +111,11 @@ Wanna quickly try out theming without installing anything or just explore our bu
 
 You can base your theme off of the existing light or dark themes, which already have some variables predefined to make it easier for you.
 
-Here's some simple Sass that'll just use the dark theme but color all links red. Of course, you can change any variables you want.
+Here's some simple CSS that'll just use the dark theme but color all links red. Of course, you can change any variables you want.
 
-```scss
-$links: #ff0000;
-@import 'dark.scss';
+```css
+--links: #ff0000;
+@import 'variables-dark.css';
 ```
 
 ### From scratch
@@ -121,25 +124,25 @@ You can also make your theme from scratch. This is less recommended, but feel fr
 
 For example, here's an example of a really ugly theme, made from scratch. **Ouch!**
 
-```scss
-$background: #ff48c2 !default;
-$background-alt: #00ff00 !default;
+```css
+--background: #ff48c2;
+--background-alt: #00ff00;
 
-$text-main: #dbdbdb !default;
-$text-bright: #ffffff !default;
+--text-main: #dbdbdb;
+--text-bright: #ffffff;
 
-$links: #ff0022 !default;
-$focus: #ffc400 !default;
-$border: #00ffff !default;
-$code: #001aff !default;
+--links: #ff0022;
+--focus: #ffc400;
+--border: #00ffff;
+--code: #001aff;
 
-$button-hover: #324759 !default;
-$animation-duration: 0.1s !default;
+--button-hover: #324759;
+--animation-duration: 0.1s;
 
-$form-placeholder: #a9a9a9 !default;
-$form-text: #ffffff !default;
+--form-placeholder: #a9a9a9;
+--form-text: #ffffff;
 
-@import 'parts/core';
+@import 'parts/_core.css';
 ```
 
 You can also only import parts you want, but this is not recommended. See the `src/parts/` folder for a list of parts.
