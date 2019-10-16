@@ -5,18 +5,24 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp style",
-	"lint": "eslint --fix --ignore-path .eslintignore .",
-    "pretty": "prettier --write --ignore-path ./.eslintignore **/*.{js,css,html}",
     "dev": "gulp watch",
     "prepublishOnly": "npm run build"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run build && npm run lint && npm run pretty && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
-    "*": "git add"
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{css,html,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
