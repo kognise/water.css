@@ -20,26 +20,26 @@ body {
 
 button {
   transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 input {
   transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 textarea {
   transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 h1 {
@@ -97,28 +97,28 @@ th {
 }
 
 q:before {
-   content: none;
+  content: none;
 }
 
 q:after {
-   content: none;
+  content: none;
 }
 
-blockquote{
+blockquote {
   border-left: 4px solid #0096bfab;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-q{
+q {
   border-left: 4px solid #0096bfab;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-blockquote > footer {
+blockquote>footer {
   margin-top: 10px;
   font-style: normal;
 }
@@ -150,7 +150,8 @@ mark {
   color: #000000;
 }
 
-button, select,
+button,
+select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -478,7 +479,7 @@ a:hover {
 }
 
 code {
-  background:  #efefef;
+  background: #efefef;
   color: #000000;
   padding: 2.5px 5px;
   border-radius: 6px;
@@ -486,7 +487,7 @@ code {
 }
 
 samp {
-  background:  #efefef;
+  background: #efefef;
   color: #000000;
   padding: 2.5px 5px;
   border-radius: 6px;
@@ -494,14 +495,14 @@ samp {
 }
 
 time {
-  background:  #efefef;
+  background: #efefef;
   color: #000000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
 }
 
-pre > code {
+pre>code {
   padding: 10px;
   display: block;
   overflow-x: auto;
@@ -597,7 +598,7 @@ details[open] {
   padding: 10px;
 }
 
-details > :last-child {
+details> :last-child {
   margin-bottom: 0;
 }
 
@@ -612,12 +613,11 @@ summary {
   margin: -10px -10px 0;
 }
 
-details > :not(summary) {
+details> :not(summary) {
   margin-top: 0;
 }
 
 summary::-webkit-details-marker {
   color: #363636;
 }
-
 /*# sourceMappingURL=light-legacy.standalone.css.map */

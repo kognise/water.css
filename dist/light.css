@@ -25,8 +25,8 @@
   --animation-duration: 0.1s;
   --button-hover: #dddddd;
 
-  --scrollbar-thumb: rgb(213, 213, 213);
-  --scrollbar-thumb-hover: rgb(196, 196, 196);
+  --scrollbar-thumb: rgb(44, 63, 79);
+  --scrollbar-thumb-hover: rgb(32, 45, 56);
 
   --form-placeholder: #949494;
   --form-text: #000000;
@@ -37,7 +37,6 @@
   --select-arrow: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23161f27'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E");
 }
 
-@media (prefers-color-scheme: dark) {
 :root {
   --background-body: #202b38;
   --background: #161f27;
@@ -57,7 +56,7 @@
   --button-hover: #324759;
 
   --scrollbar-thumb: var(--button-hover);
-  --scrollbar-thumb-hover: rgb(20, 20, 20);
+  --scrollbar-thumb-hover: rgb(65, 92, 115);
 
   --form-placeholder: #a9a9a9;
   --form-text: #ffffff;
@@ -66,7 +65,6 @@
   --highlight: #efdb43;
 
   --select-arrow: url("data:image/svg+xml;charset=utf-8,%3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23efefef'%3E %3Cpath d='M115.3,1.6 C113.7,0 111.1,0 109.5,1.6 L58.5,52.7 L7.4,1.6 C5.8,0 3.2,0 1.6,1.6 C0,3.2 0,5.8 1.6,7.4 L55.5,61.3 C56.3,62.1 57.3,62.5 58.4,62.5 C59.4,62.5 60.5,62.1 61.3,61.3 L115.2,7.4 C116.9,5.8 116.9,3.2 115.3,1.6Z'/%3E %3C/svg%3E");
-}
 }
 
 body {
@@ -83,12 +81,14 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   transition: background-color var(--animation-duration) linear,
-              border-color var(--animation-duration) linear,
-              color var(--animation-duration) linear,
-              box-shadow var(--animation-duration) linear,
-              transform var(--animation-duration) ease;
+    border-color var(--animation-duration) linear,
+    color var(--animation-duration) linear,
+    box-shadow var(--animation-duration) linear,
+    transform var(--animation-duration) ease;
 }
 
 h1 {
@@ -128,21 +128,22 @@ th {
 }
 
 q:before {
-   content: none;
+  content: none;
 }
 
 q:after {
-   content: none;
+  content: none;
 }
 
-blockquote , q{
+blockquote,
+q {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-blockquote > footer {
+blockquote>footer {
   margin-top: 10px;
   font-style: normal;
 }
@@ -174,7 +175,8 @@ mark {
   color: #000000;
 }
 
-button, select,
+button,
+select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -434,15 +436,17 @@ a:hover {
   text-decoration: underline;
 }
 
-code, samp, time {
-  background:  var(--background);
+code,
+samp,
+time {
+  background: var(--background);
   color: var(--code);
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
 }
 
-pre > code {
+pre>code {
   padding: 10px;
   display: block;
   overflow-x: auto;
@@ -538,7 +542,7 @@ details[open] {
   padding: 10px;
 }
 
-details > :last-child {
+details> :last-child {
   margin-bottom: 0;
 }
 
@@ -553,7 +557,7 @@ summary {
   margin: -10px -10px 0;
 }
 
-details > :not(summary) {
+details> :not(summary) {
   margin-top: 0;
 }
 
