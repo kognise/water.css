@@ -70,7 +70,7 @@ details[open] {
   padding: 10px;
 }
 
-details > :last-child {
+details> :last-child {
   margin-bottom: 0;
 }
 
@@ -85,7 +85,7 @@ summary {
   margin: -10px -10px 0;
 }
 
-details > :not(summary) {
+details> :not(summary) {
   margin-top: 0;
 }
 

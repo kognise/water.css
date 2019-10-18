@@ -351,6 +351,10 @@ textarea:disabled {
   color: #949494;
 }
 
+::-moz-placeholder {
+  color: #949494;
+}
+
 :-ms-input-placeholder {
   color: #949494;
 }

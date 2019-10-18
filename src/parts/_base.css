@@ -12,10 +12,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-button, input, textarea {
+button,
+input,
+textarea {
   transition: background-color var(--animation-duration) linear,
-              border-color var(--animation-duration) linear,
-              color var(--animation-duration) linear,
-              box-shadow var(--animation-duration) linear,
-              transform var(--animation-duration) ease;
+    border-color var(--animation-duration) linear,
+    color var(--animation-duration) linear,
+    box-shadow var(--animation-duration) linear,
+    transform var(--animation-duration) ease;
 }

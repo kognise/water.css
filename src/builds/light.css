@@ -8,7 +8,7 @@
  */
 
 @import '../variables-light.css';
-@import '../variables-dark.css' (prefers-color-scheme: dark);
+@import '../variables-dark.css'(prefers-color-scheme: dark);
 
 
 @import '../parts/_core.css';
