@@ -19,7 +19,7 @@ _A just-add-css collection of styles to make simple websites just a little nicer
 
 ## Why?
 
-I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but I also don't like the ugliness of the default styles.
+I commonly make quick demo pages and websites with simple content. For these small projects, I usually don't spend time styling them. However, I hate the default ugly styles of html.
 
 Water.css is a css framework that doesn't require any classes. You just include it in your `<head>` and forget about it, while it silently makes everything nicer.
 
