@@ -19,19 +19,20 @@ _A just-add-css collection of styles to make simple websites just a little nicer
 
 ## Why?
 
-I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but don't like the ugliness of the default styles.
+I commonly make quick demo pages or websites with simple content. For these, I don't want to spend time styling them but I also don't like the ugliness of the default styles.
 
 Water.css is a css framework that doesn't require any classes. You just include it in your `<head>` and forget about it, while it silently makes everything nicer.
 
 ## Who?
 
-You might want to use Water.css if you're making a simple static or demo website that you don't want to spend time styling.
+You might want to use Water.css if you're making a simple static or demo website and you don't want to spend time styling it.
 
-You probably don't want to use it for a production app or something that has more than a simple document. Rule of thumb: if your site has a navbar, don't use Water.css. It's just not meant for that kind of content.
+You probably don't want to use it for a production app or something that has more than a simple document. 
+**Rule of thumb**: If your site has a navbar, don't use Water.css. It's just not meant for that kind of content.
 
 ## How?
 
-Just stick this in your `<head>`:
+Just add this in your `<head>`:
 
 ### 🌙 Dark theme:
 
@@ -54,7 +55,7 @@ For the main versions, `dark` or `light` is only treated as a _default theme_: i
 #### Want to support Internet Explorer?
 
 Sure, just extend the theme prefix with `-legacy`, e.g. `dark-legacy.min.css`.
-Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](#).
+Be aware that these versions **do not support** [runtime theming](#theming) as they use hard-coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](#).
 
 #### Unminified builds
 
@@ -83,7 +84,7 @@ And make sure to run `yarn build` before pushing any changes! Thanks for taking 
 
 > ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
 
-Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
+Do you want to make your own theme which is different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
 - `$background`
 - `$background-alt`
@@ -144,7 +145,7 @@ $form-text: #ffffff !default;
 
 You can also only import parts you want, but this is not recommended. See the `src/parts/` folder for a list of parts.
 
-## Todos
+ ## Todos 
 
 - Add screenshots
 - [Jekyll theme](https://github.com/kognise/water.css/issues/18)
