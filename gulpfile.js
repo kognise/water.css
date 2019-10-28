@@ -21,7 +21,7 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 const paths = {
   srcDir: 'src/*',
   docsDir: '*',
-  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  styles: { src: 'src/builds/*.css', dest: 'dist', watch: 'src/**/*.css' },
 }
 
 // https://stackoverflow.com/a/20732091
@@ -115,18 +115,19 @@ function style() {
 }
 
 function watch() {
-  style()
-
+  // Setup browserSync to reload on changes
   browserSync.init({
     server: {
       baseDir: './',
     },
     startPath: 'index.html',
-  })
+  });
 
-  gulp.watch(paths.srcDir, style)
-  gulp.watch([paths.srcDir, paths.docsDir], browserSync.reload)
+  // Run all required tasks once
+  style();
+
+  // Watch files for changes to reload when detected
+  gulp.watch([paths.docsDir, paths.styles.watch]).on('change', gulp.series(style, browserSync.reload));
 }
 
-module.exports.style = style
 module.exports.watch = watch
