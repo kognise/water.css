@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp style",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -41,7 +42,24 @@
     "postcss-import": "^12.0.1",
     "postcss-inline-svg": "^3.1.1"
   },
-  "browserslist": [
-    "defaults AND not android 4.4.3"
+  "browserslist": {
+     "legacy": ["defaults AND not android 4.4.3"],
+     "modern": [
+       "Edge > 16",
+       "Firefox > 31",
+       "Chrome > 49",
+       "Safari > 9.1",
+       "Opera > 36",
+       "ios_saf > 9.3",
+       "Android > 76",
+       "OperaMobile > 46",
+       "ChromeAndroid > 76",
+       "FirefoxAndroid > 68",
+       "UCAndroid > 12.12",
+       "Samsung > 5"
+     ]
+  },
+  "files": [
+    "dist"
   ]
 }
