@@ -130,4 +130,5 @@ function watch() {
   gulp.watch([paths.docsDir, paths.styles.watch]).on('change', gulp.series(style, browserSync.reload));
 }
 
+module.exports.style = style
 module.exports.watch = watch
