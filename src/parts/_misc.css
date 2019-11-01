@@ -92,3 +92,10 @@ details > :not(summary) {
 summary::-webkit-details-marker {
   color: var(--text-main);
 }
+
+footer {
+  border-top: 1px solid var(--background);
+  padding-top: 10px;
+  font-size: 0.8em;
+  color: var(--text-muted);
+}
