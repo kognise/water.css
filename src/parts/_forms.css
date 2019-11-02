@@ -41,6 +41,7 @@ textarea {
 textarea {
   margin-right: 0;
   width: 100%;
+  min-height: 38px;
   box-sizing: border-box;
   resize: vertical;
 }
