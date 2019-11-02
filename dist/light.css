@@ -16,6 +16,7 @@
 
   --text-main: #363636;
   --text-bright: #000000;
+  --text-muted: #999999;
 
   --links: #0076d1;
   --focus: #0096bfab;
@@ -47,6 +48,7 @@
 
   --text-main: #dbdbdb;
   --text-bright: #ffffff;
+  --text-muted: #717880;
 
   --links: #41adff;
   --focus: #0096bfab;
@@ -143,8 +145,8 @@ blockquote , q{
 }
 
 blockquote > footer {
-  margin-top: 10px;
   font-style: normal;
+  border: 0;
 }
 
 blockquote cite {
@@ -312,7 +314,7 @@ textarea:disabled {
   color: var(--form-placeholder);
 }
 
-:-ms-input-placeholder {
+::-moz-placeholder {
   color: var(--form-placeholder);
 }
 
@@ -559,5 +561,12 @@ details > :not(summary) {
 
 summary::-webkit-details-marker {
   color: var(--text-main);
+}
+
+footer {
+  border-top: 1px solid var(--background);
+  padding-top: 10px;
+  font-size: 0.8em;
+  color: var(--text-muted);
 }
 /*# sourceMappingURL=light.css.map */

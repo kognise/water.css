@@ -119,8 +119,8 @@ q{
 }
 
 blockquote > footer {
-  margin-top: 10px;
   font-style: normal;
+  border: 0;
 }
 
 blockquote cite {
@@ -614,6 +614,13 @@ details > :not(summary) {
 
 summary::-webkit-details-marker {
   color: #363636;
+}
+
+footer {
+  border-top: 1px solid #efefef;
+  padding-top: 10px;
+  font-size: 0.8em;
+  color: #999999;
 }
 
 /*# sourceMappingURL=light-legacy.standalone.css.map */

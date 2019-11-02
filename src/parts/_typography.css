@@ -50,8 +50,8 @@ blockquote, q {
 }
 
 blockquote > footer {
-  margin-top: 10px;
   font-style: normal;
+  border: 0;
 }
 
 blockquote cite {
