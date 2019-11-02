@@ -67,7 +67,7 @@ Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
 ## Theming
 
-> ⚠ The theming guide is out of date and will be updated shortly! In the mean time, check src/variables-\*.css to see your customization options.
+> ⚠ The theming guide is out of date and will be updated shortly! In the meantime, check src/variables-\*.css to see your customization options.
 
 Do you want to make your own theme different from the light or dark themes? Since Water.css is built with Sass this is super easy to do. There are two methods. Also, here's a list of variables to set:
 
