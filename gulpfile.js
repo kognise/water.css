@@ -10,6 +10,7 @@ const rename = require('gulp-rename')
 const filter = require('gulp-filter')
 const flatten = require('gulp-flatten')
 const sizereport = require('gulp-sizereport')
+const w3cjs = require('gulp-w3cjs')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
@@ -21,7 +22,8 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 const paths = {
   srcDir: 'src/*',
   docsDir: '*',
-  styles: { src: 'src/builds/*.css', dest: 'dist' }
+  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  html: '*.html'
 }
 
 // https://stackoverflow.com/a/20732091
@@ -114,8 +116,23 @@ function style () {
   )
 }
 
+function html () {
+  return (
+    gulp
+      .src(paths.html)
+      .pipe(w3cjs())
+      .pipe(w3cjs.reporter())
+  )
+}
+
+function build () {
+  style()
+  return html()
+}
+
 function watch () {
   style()
+  html()
 
   browserSync.init({
     server: {
@@ -125,8 +142,11 @@ function watch () {
   })
 
   gulp.watch(paths.srcDir, style)
+  gulp.watch(paths.html, html)
   gulp.watch([paths.srcDir, paths.docsDir], browserSync.reload)
 }
 
 module.exports.style = style
+module.exports.html = html
+module.exports.build = build
 module.exports.watch = watch

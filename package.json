@@ -4,7 +4,7 @@
   "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
   "main": "index.js",
   "scripts": {
-    "build": "gulp style",
+    "build": "gulp build",
     "dev": "gulp watch",
     "lint": "standard --fix && stylelint \"src/*.css\" --fix",
     "prepublishOnly": "yarn build"
@@ -38,6 +38,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sizereport": "^1.2.1",
     "gulp-sourcemaps": "^2.6.5",
+    "gulp-w3cjs": "^1.3.2",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
     "postcss-import": "^12.0.1",
