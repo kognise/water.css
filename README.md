@@ -65,20 +65,6 @@ Simply remove the `.min` from the file name.
 
 Don't like how it looks? Feel free to submit an issue or PR with suggestions.
 
-## Contributing
-
-Water.css becomes better for everyone when people like you help make it better!
-
-Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
-
-If you decide to contribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can just run the following to start a server of the demo with live reloading on change.
-
-```
-$ yarn dev
-```
-
-And make sure to run `yarn build` before pushing any changes! Thanks for taking the time to contribute :)
-
 ## Theming
 
 > ⚠ The theming guide is out of date and will be updated shortly! In the meantime, check src/variables-\*.css to see your customization options.
@@ -143,6 +129,10 @@ $form-text: #ffffff !default;
 ```
 
 You can also only import parts you want, but this is not recommended. See the `src/parts/` folder for a list of parts.
+
+## Contributing
+
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Todos
 
