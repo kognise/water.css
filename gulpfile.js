@@ -15,22 +15,22 @@ const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: color => color.toRGBLegacy(),
+  stringifier: color => color.toRGBLegacy()
 })
 
 const paths = {
   srcDir: 'src/*',
   docsDir: '*',
-  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  styles: { src: 'src/builds/*.css', dest: 'dist' }
 }
 
 // https://stackoverflow.com/a/20732091
-function humanFileSize(size) {
+function humanFileSize (size) {
   var i = Math.floor(Math.log(size) / Math.log(1024))
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i]
 }
 
-function formatByteMessage(source, data) {
+function formatByteMessage (source, data) {
   const prettyStartSize = humanFileSize(data.startSize)
   let message = ''
 
@@ -48,7 +48,7 @@ function formatByteMessage(source, data) {
   return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
-function style() {
+function style () {
   const isLegacy = path => /legacy/.test(path)
 
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
@@ -70,7 +70,7 @@ function style() {
       .pipe(bytediff.start())
       // autoprefix
       .pipe(postcss([autoprefixer({
-        env: "legacy"
+        env: 'legacy'
       })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
@@ -82,7 +82,7 @@ function style() {
       .pipe(bytediff.start())
       // autoprefix modern builds
       .pipe(postcss([autoprefixer({
-        env: "modern"
+        env: 'modern'
       })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
@@ -114,14 +114,14 @@ function style() {
   )
 }
 
-function watch() {
+function watch () {
   style()
 
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: './'
     },
-    startPath: 'index.html',
+    startPath: 'index.html'
   })
 
   gulp.watch(paths.srcDir, style)
