@@ -15,22 +15,22 @@ const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: color => color.toRGBLegacy(),
+  stringifier: color => color.toRGBLegacy()
 })
 
 const paths = {
   srcDir: 'src/*',
   docsDir: '*',
-  styles: { src: 'src/builds/*.css', dest: 'dist', watch: 'src/**/*.css' },
+  styles: { src: 'src/builds/*.css', dest: 'dist', watch: 'src/**/*.css' }
 }
 
 // https://stackoverflow.com/a/20732091
-function humanFileSize(size) {
+function humanFileSize (size) {
   var i = Math.floor(Math.log(size) / Math.log(1024))
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i]
 }
 
-function formatByteMessage(source, data) {
+function formatByteMessage (source, data) {
   const prettyStartSize = humanFileSize(data.startSize)
   let message = ''
 
@@ -48,7 +48,7 @@ function formatByteMessage(source, data) {
   return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
-function style() {
+function style () {
   const isLegacy = path => /legacy/.test(path)
 
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
@@ -57,77 +57,77 @@ function style() {
   return (
     gulp
       .src(paths.styles.src)
-      // Add sourcemaps
+    // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Resolve imports, calculated colors and inlined SVG files
+    // Resolve imports, calculated colors and inlined SVG files
       .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
-      // * Process legacy builds *
+    // * Process legacy builds *
       .pipe(excludeModern)
-      // Inline variable values so CSS works in legacy browsers
+    // Inline variable values so CSS works in legacy browsers
       .pipe(postcss([postcssCssVariables()]))
-      // Calculate size before autoprefixing
+    // Calculate size before autoprefixing
       .pipe(bytediff.start())
-      // autoprefix
+    // autoprefix
       .pipe(postcss([autoprefixer({
-        env: "legacy"
+        env: 'legacy'
       })]))
-      // Write the amount gained by autoprefixing
+    // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeModern.restore)
 
-      // * Process modern builds *
+    // * Process modern builds *
       .pipe(excludeLegacy)
-      // Calculate size before autoprefixing
+    // Calculate size before autoprefixing
       .pipe(bytediff.start())
-      // autoprefix modern builds
+    // autoprefix modern builds
       .pipe(postcss([autoprefixer({
-        env: "modern"
+        env: 'modern'
       })]))
-      // Write the amount gained by autoprefixing
+    // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeLegacy.restore)
 
-      // Write the sourcemaps after making pre-minified changes
+    // Write the sourcemaps after making pre-minified changes
       .pipe(sourcemaps.write('.'))
-      // Flatten output so files end up in dist/*, not dist/builds/*
+    // Flatten output so files end up in dist/*, not dist/builds/*
       .pipe(flatten())
-      // Write pre-minified styles
+    // Write pre-minified styles
       .pipe(gulp.dest(paths.styles.dest))
-      // Remove sourcemaps from the pipeline, only keep css
+    // Remove sourcemaps from the pipeline, only keep css
       .pipe(filter('**/*.css'))
-      // Calculate size before minifying
+    // Calculate size before minifying
       .pipe(bytediff.start())
-      // Minify using cssnano, use extra-low precision while minifying inline SVGs
+    // Minify using cssnano, use extra-low precision while minifying inline SVGs
       .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
-      // Write the amount saved by minifying
+    // Write the amount saved by minifying
       .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
-      // Rename the files have the .min suffix
+    // Rename the files have the .min suffix
       .pipe(rename({ suffix: '.min' }))
-      // Write the sourcemaps after making all changes
+    // Write the sourcemaps after making all changes
       .pipe(sourcemaps.write('.'))
-      // Write the minified files
+    // Write the minified files
       .pipe(gulp.dest(paths.styles.dest))
       .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
-      // Stream any changes to browserSync
+    // Stream any changes to browserSync
       .pipe(browserSync.stream())
   )
 }
 
-function watch() {
+function watch () {
   // Setup browserSync to reload on changes
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: './'
     },
-    startPath: 'index.html',
-  });
+    startPath: 'index.html'
+  })
 
   // Run all required tasks once
-  style();
+  style()
 
   // Watch files for changes to reload when detected
-  gulp.watch([paths.docsDir, paths.styles.watch]).on('change', gulp.series(style, browserSync.reload));
+  gulp.watch([paths.docsDir, paths.styles.watch]).on('change', gulp.series(style, browserSync.reload))
 }
 
 module.exports.style = style
