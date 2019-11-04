@@ -7,39 +7,39 @@
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.4;
-
   max-width: 800px;
   margin: 20px auto;
   padding: 0 10px;
-
   color: #363636;
-  background: #ffffff;
-
+  background: #fff;
   text-rendering: optimizeLegibility;
 }
 
 button {
-  transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+  transition:
+    background-color 0.1s linear,
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 input {
-  transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+  transition:
+    background-color 0.1s linear,
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 textarea {
-  transition: background-color 0.1s linear,
-              border-color 0.1s linear,
-              color 0.1s linear,
-              box-shadow 0.1s linear,
-              transform 0.1s ease;
+  transition:
+    background-color 0.1s linear,
+    border-color 0.1s linear,
+    color 0.1s linear,
+    box-shadow 0.1s linear,
+    transform 0.1s ease;
 }
 
 h1 {
@@ -57,31 +57,31 @@ h6 {
 }
 
 h1 {
-  color: #000000;
+  color: #000;
 }
 
 h2 {
-  color: #000000;
+  color: #000;
 }
 
 h3 {
-  color: #000000;
+  color: #000;
 }
 
 h4 {
-  color: #000000;
+  color: #000;
 }
 
 h5 {
-  color: #000000;
+  color: #000;
 }
 
 h6 {
-  color: #000000;
+  color: #000;
 }
 
 strong {
-  color: #000000;
+  color: #000;
 }
 
 h1,
@@ -96,24 +96,24 @@ th {
   font-weight: 600;
 }
 
-q:before {
-   content: none;
+q::before {
+  content: none;
 }
 
-q:after {
-   content: none;
+q::after {
+  content: none;
 }
 
-blockquote{
+blockquote {
   border-left: 4px solid #0096bfab;
-  margin: 1.5em 0em;
+  margin: 1.5em 0;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-q{
+q {
   border-left: 4px solid #0096bfab;
-  margin: 1.5em 0em;
+  margin: 1.5em 0;
   padding: 0.5em 1em;
   font-style: italic;
 }
@@ -144,13 +144,14 @@ a[href^='sms']::before {
 }
 
 mark {
-  background-color: #ffff00;
+  background-color: #ff0;
   border-radius: 2px;
-  padding: 0px 2px 0px 2px;
-  color: #000000;
+  padding: 0 2px 0 2px;
+  color: #000;
 }
 
-button, select,
+button,
+select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -165,64 +166,52 @@ select {
 }
 
 input {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
-
   font-family: inherit;
   font-size: inherit;
-
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
-
   border: none;
   border-radius: 6px;
   outline: none;
 }
 
 button {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
-
   font-family: inherit;
   font-size: inherit;
-
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
-
   border: none;
   border-radius: 6px;
   outline: none;
 }
 
 textarea {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
-
   font-family: inherit;
   font-size: inherit;
-
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
-
   border: none;
   border-radius: 6px;
   outline: none;
 }
 
 select {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
-
   font-family: inherit;
   font-size: inherit;
-
   margin-right: 6px;
   margin-bottom: 6px;
   padding: 10px;
-
   border: none;
   border-radius: 6px;
   outline: none;
@@ -265,15 +254,15 @@ input[type='button'] {
 }
 
 button:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='submit']:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='button']:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input:focus {
@@ -308,11 +297,11 @@ input[type='radio'] {
 }
 
 input[type='checkbox']:checked {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='radio']:checked {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='checkbox']:checked::before,
@@ -395,7 +384,7 @@ input[type='range']::-webkit-slider-runnable-track {
 }
 
 input[type='range']::-webkit-slider-thumb {
-  box-shadow: 0px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow: 0 1px 1px #000, 0 0 1px #0d0d0d;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -417,7 +406,7 @@ input[type='range']::-moz-range-track {
 }
 
 input[type='range']::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -437,19 +426,19 @@ input[type='range']::-ms-fill-lower {
   background: #efefef;
   border: 0.2px solid #010101;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
 }
 
 input[type='range']::-ms-fill-upper {
   background: #efefef;
   border: 0.2px solid #010101;
   border-radius: 3px;
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
 }
 
 input[type='range']::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+  border: 1px solid #000;
   height: 20px;
   width: 20px;
   border-radius: 50%;
@@ -474,24 +463,24 @@ a:hover {
 }
 
 code {
-  background:  #efefef;
-  color: #000000;
+  background: #efefef;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
 }
 
 samp {
-  background:  #efefef;
-  color: #000000;
+  background: #efefef;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
 }
 
 time {
-  background:  #efefef;
-  color: #000000;
+  background: #efefef;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
@@ -620,7 +609,5 @@ footer {
   border-top: 1px solid #efefef;
   padding-top: 10px;
   font-size: 0.8em;
-  color: #999999;
+  color: #999;
 }
-
-/*# sourceMappingURL=light-legacy.standalone.css.map */

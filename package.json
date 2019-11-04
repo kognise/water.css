@@ -9,6 +9,21 @@
     "lint": "standard --fix && stylelint \"src/*.css\" --fix",
     "prepublishOnly": "yarn build"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ],
+    "src/*.css": [
+      "stylelint --fix",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kognise/water.css.git"
@@ -27,7 +42,7 @@
   "homepage": "https://github.com/kognise/water.css",
   "devDependencies": {
     "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "chalk": "^2.4.2",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.0",
@@ -38,6 +53,8 @@
     "gulp-rename": "^1.4.0",
     "gulp-sizereport": "^1.2.1",
     "gulp-sourcemaps": "^2.6.5",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
     "postcss-import": "^12.0.1",
