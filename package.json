@@ -19,7 +19,7 @@
       "standard --fix",
       "git add"
     ],
-    "src/*.css": [
+    "src/**/*.css": [
       "stylelint --fix",
       "git add"
     ]
