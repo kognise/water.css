@@ -38,11 +38,11 @@ You probably don't want to use it for a production app or something that is more
 
 Just stick this in your `<head>`:
 
-### 🌙 Dark theme:
+### 🌙 Dark Theme:
 
 `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">`
 
-### ☀ Light theme:
+### ☀ Light Theme:
 
 `<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">`
 
@@ -143,6 +143,10 @@ $ yarn dev
 
 Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
 Thanks for taking the time to contribute :)
+
+## Contributing
+
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Todos
 

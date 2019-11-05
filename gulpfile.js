@@ -12,24 +12,25 @@ const flatten = require('gulp-flatten')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
+const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: color => color.toRGBLegacy(),
+  stringifier: color => color.toRGBLegacy()
 })
 
 const paths = {
   srcDir: 'src/*',
   docsDir: '*',
-  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  styles: { src: 'src/builds/*.css', dest: 'dist' }
 }
 
 // https://stackoverflow.com/a/20732091
-function humanFileSize(size) {
+function humanFileSize (size) {
   var i = Math.floor(Math.log(size) / Math.log(1024))
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i]
 }
 
-function formatByteMessage(source, data) {
+function formatByteMessage (source, data) {
   const prettyStartSize = humanFileSize(data.startSize)
   let message = ''
 
@@ -47,7 +48,7 @@ function formatByteMessage(source, data) {
   return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
-function style() {
+function style () {
   const isLegacy = path => /legacy/.test(path)
 
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
@@ -58,8 +59,8 @@ function style() {
       .src(paths.styles.src)
       // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Resolve imports and calculated colors
-      .pipe(postcss([postcssImport(), postcssColorModFunction()]))
+      // Resolve imports, calculated colors and inlined SVG files
+      .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       // * Process legacy builds *
       .pipe(excludeModern)
@@ -68,7 +69,9 @@ function style() {
       // Calculate size before autoprefixing
       .pipe(bytediff.start())
       // autoprefix
-      .pipe(postcss([autoprefixer()]))
+      .pipe(postcss([autoprefixer({
+        env: 'legacy'
+      })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeModern.restore)
@@ -78,8 +81,9 @@ function style() {
       // Calculate size before autoprefixing
       .pipe(bytediff.start())
       // autoprefix modern builds
-      // TODO: Use separate browserslist to only apply prefixes needed in *modern* browsers
-      .pipe(postcss([autoprefixer()]))
+      .pipe(postcss([autoprefixer({
+        env: 'modern'
+      })]))
       // Write the amount gained by autoprefixing
       .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
       .pipe(excludeLegacy.restore)
@@ -94,8 +98,8 @@ function style() {
       .pipe(filter('**/*.css'))
       // Calculate size before minifying
       .pipe(bytediff.start())
-      // Minify using cssnano
-      .pipe(postcss([cssnano()]))
+      // Minify using cssnano, use extra-low precision while minifying inline SVGs
+      .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
       // Write the amount saved by minifying
       .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
       // Rename the files have the .min suffix
@@ -110,14 +114,14 @@ function style() {
   )
 }
 
-function watch() {
+function watch () {
   style()
 
   browserSync.init({
     server: {
-      baseDir: './',
+      baseDir: './'
     },
-    startPath: 'index.html',
+    startPath: 'index.html'
   })
 
   gulp.watch(paths.srcDir, style)

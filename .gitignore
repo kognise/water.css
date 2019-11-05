@@ -82,3 +82,9 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# IntelliJ IDE
+.idea/
+
+# Output of yarn build
+dist/

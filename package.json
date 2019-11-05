@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp style",
-    "dev": "gulp watch"
+    "dev": "gulp watch",
+    "lint": "standard --fix && stylelint \"src/*.css\" --fix",
+    "prepublishOnly": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -38,9 +40,32 @@
     "gulp-sourcemaps": "^2.6.5",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
-    "postcss-import": "^12.0.1"
+    "postcss-import": "^12.0.1",
+    "postcss-inline-svg": "^3.1.1",
+    "standard": "^14.3.1",
+    "stylelint": "^11.0.0",
+    "stylelint-config-standard": "^19.0.0"
   },
-  "browserslist": [
-    "defaults AND not android 4.4.3"
+  "browserslist": {
+    "legacy": [
+      "defaults AND not android 4.4.3"
+    ],
+    "modern": [
+      "Edge > 16",
+      "Firefox > 31",
+      "Chrome > 49",
+      "Safari > 9.1",
+      "Opera > 36",
+      "ios_saf > 9.3",
+      "Android > 76",
+      "OperaMobile > 46",
+      "ChromeAndroid > 76",
+      "FirefoxAndroid > 68",
+      "UCAndroid > 12.12",
+      "Samsung > 5"
+    ]
+  },
+  "files": [
+    "dist"
   ]
 }
