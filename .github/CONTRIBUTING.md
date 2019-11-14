@@ -46,6 +46,7 @@ Please take a moment to read through the following guidelines:
 
 *Note:* A script that builds distribution ready files is also available but it is not the part of development workflow. It is designed to be triggered automatically while publishing a new version of Water.css, but if you want to inspect the minified assets meant for production, you can run it manually: `yarn build`
 
+> Alternatively, you can develop in Repl.it, a supercool in-browser IDE! Just click this button: [![Run on Repl.it](https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
 
 ## Find issues to work on
 

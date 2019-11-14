@@ -148,15 +148,5 @@ You also might want to check out the [Contributing Guide](https://github.com/kog
 
 Water.css becomes better for everyone when people like you help make it better!
 
-Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
-
-If you decide to contribute, after downloading a copy of the repository make sure to run `yarn` to install dependencies useful for development. Then, you can run the following to start a server of the demo with live reloading on change.
-
-```
-$ yarn dev
-```
-
-**Alternatively, just click this button to develop in Repl.it, a supercool in-browser IDE!** [![Run on Repl.it](https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
-
-Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
-Thanks for taking the time to contribute :)
+Check out our [Contributing Guide](.github/CONTRIBUTING.md) to learn how to get started.  
+And thanks for taking the time to contribute! :)
