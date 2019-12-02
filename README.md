@@ -68,14 +68,14 @@ Simply remove the `.min` from the file name.
 
 ## Theming
 
-Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do!  
+Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do!
 You can find a full list of the variables used at [**src/variables-\*.css**](https://github.com/kognise/water.css/tree/master/src/variables-dark.css).
 
 ### Runtime theming
 
 > ⚠ If you use a version with support for legacy browsers like Internet Explorer, skip to [Compiling your own theme](#compiling-your-own-theme)!
 
-Water.css uses Custom Properties (_"CSS variables"_) to define its base styles such as colors. These can be changed and overwritten right in the browser.  
+Water.css uses Custom Properties (_"CSS variables"_) to define its base styles such as colors. These can be changed and overwritten right in the browser.
 Because of this, you can simply add your own stylesheet to the page and set your own CSS variables there. As long as your stylesheet comes after Water.css in the HTML, your values will override the default ones and your theme is applied!
 
 This short example will use Water.css, but color all links red:
@@ -141,7 +141,13 @@ If you decide to contribute, after downloading a copy of the repository make sur
 $ yarn dev
 ```
 
-Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
+### Online setup with a single click
+
+You can also use [Gitpod](https://gitpod.io) (a free online VS Code like IDE) for contributing. With a single click it will launch a ready to use workspace, with all the dependencies pre-installed and the web server running, so that you can start coding straight away without wasting time on the setup.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/kognise/water.css/)
+
+Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!
 Thanks for taking the time to contribute :)
 
 ## Contributing
