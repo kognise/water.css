@@ -4,7 +4,7 @@
   <a href="https://www.producthunt.com/posts/water-css"><img align="center" src="https://img.shields.io/badge/on-product%20hunt-red.svg" alt="On Product Hunt"></a>
   <a href="https://github.com/kognise/water.css/blob/master/LICENSE.md"><img align="center" src="https://img.shields.io/github/license/kognise/water.css.svg" alt="MIT license"></a>
 </p>
-[![Run on Repl.it](https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
+[![Run on Repl.it][https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
 
 <br>
 
