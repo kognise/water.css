@@ -141,12 +141,10 @@ If you decide to contribute, after downloading a copy of the repository make sur
 $ yarn dev
 ```
 
+**Alternatively, just click this button to develop in Repl.it, a supercool in-browser IDE!** [![Run on Repl.it](https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
+
 Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
 Thanks for taking the time to contribute :)
-
-## Contributing
-
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Todos
 
