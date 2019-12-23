@@ -34,7 +34,7 @@ yarn build
 
 ## How to find issues to work on
 
-If you are new to contributing open-source software, you can starty by picking any relevant issue that is tagged with `good first issue` [there](
+If you are new to contributing open-source software, you can start by picking any relevant issue that is tagged with `good first issue` [there](
 https://github.com/kognise/water.css/contribute).
 
 Also everyone is welcome to contribute on issues tagged with `help wanted`, you can find it filtered [here](https://github.com/kognise/water.css/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
