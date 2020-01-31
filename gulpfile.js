@@ -13,6 +13,8 @@ const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
+const htmlValidator = require("gulp-w3c-html-validator") //importation of the package to be used as a HTML validator
+const through2= require('through2')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
   stringifier: color => color.toRGBLegacy()
@@ -23,6 +25,21 @@ const paths = {
   docsDir: '*',
   styles: { src: 'src/builds/*.css', dest: 'dist' }
 }
+
+const tasks ={
+  validateHtml: ()=>{
+    const handleFile=(file, encoding, callback) =>{
+      callback(null, file)
+      if(!file.w3cjs.success)
+        throw Error("HTML validation error(s) found")
+    }
+    return gulp.src('target/**/*.html')
+    .pipe(htmlValidator())
+    .pipe(through2.obj(handleFile))
+  }
+}
+
+gulp.task('validate-html', tasks.validateHtml)
 
 // https://stackoverflow.com/a/20732091
 function humanFileSize (size) {
