@@ -26,6 +26,9 @@ const paths = {
   styles: { src: 'src/builds/*.css', dest: 'dist' }
 }
 
+
+//Tasks for validation
+
 const tasks ={
   validateHtml: ()=>{
     const handleFile=(file, encoding, callback) =>{
@@ -131,7 +134,7 @@ function style () {
   )
 }
 
-function watch () {
+function watch() {
   style()
 
   browserSync.init({
