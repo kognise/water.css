@@ -32,6 +32,40 @@ More details will be provided in command line interface.
 yarn build
 ```
 
+
+LINTING
+##
+
+Linting is the automated checking of your source code for programmatic and stylistic errors. This is done by using a lint tool (otherwise known as linter). A lint tool is a basic static code analyzer.
+
+
+Here' how lint tools are typically fit into the development process.
+
+1)Write the code.
+
+
+2)Compile it.
+
+
+3)Analyze it with the linter.
+
+
+4)Review the bugs identified by the tool.
+
+
+5)Make changes to the code to resolve the bugs.
+
+
+6)Link modules once the code is clean.
+
+
+7)Analyze them with the linter.
+
+
+8)Do manual code reviews.
+
+Hence in a nutshell linting is to rectify your code if there are programming or styling issues.
+
 ## How to find issues to work on
 
 If you are new to contributing open-source software, you can starty by picking any relevant issue that is tagged with `good first issue` [there](
