@@ -11,9 +11,10 @@ body {
   max-width: 800px;
   margin: 20px auto;
   padding: 0 10px;
+  word-wrap: break-word;
 
   color: #363636;
-  background: #ffffff;
+  background: #fff;
 
   text-rendering: optimizeLegibility;
 }
@@ -57,31 +58,31 @@ h6 {
 }
 
 h1 {
-  color: #000000;
+  color: #000;
 }
 
 h2 {
-  color: #000000;
+  color: #000;
 }
 
 h3 {
-  color: #000000;
+  color: #000;
 }
 
 h4 {
-  color: #000000;
+  color: #000;
 }
 
 h5 {
-  color: #000000;
+  color: #000;
 }
 
 h6 {
-  color: #000000;
+  color: #000;
 }
 
 strong {
-  color: #000000;
+  color: #000;
 }
 
 h1,
@@ -96,22 +97,22 @@ th {
   font-weight: 600;
 }
 
-q:before {
+q::before {
    content: none;
 }
 
-q:after {
+q::after {
    content: none;
 }
 
-blockquote{
+blockquote {
   border-left: 4px solid #0096bfab;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-q{
+q {
   border-left: 4px solid #0096bfab;
   margin: 1.5em 0em;
   padding: 0.5em 1em;
@@ -131,20 +132,20 @@ address {
   font-style: normal;
 }
 
-a[href^='mailto']::before {
+a[href^='mailto\:']::before {
   content: '📧 ';
 }
 
-a[href^='tel']::before {
+a[href^='tel\:']::before {
   content: '📞 ';
 }
 
-a[href^='sms']::before {
+a[href^='sms\:']::before {
   content: '💬 ';
 }
 
 mark {
-  background-color: #ffff00;
+  background-color: #ff0;
   border-radius: 2px;
   padding: 0px 2px 0px 2px;
   color: #000000;
@@ -165,7 +166,7 @@ select {
 }
 
 input {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
 
   font-family: inherit;
@@ -181,7 +182,7 @@ input {
 }
 
 button {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
 
   font-family: inherit;
@@ -197,7 +198,7 @@ button {
 }
 
 textarea {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
 
   font-family: inherit;
@@ -213,7 +214,7 @@ textarea {
 }
 
 select {
-  color: #000000;
+  color: #000;
   background-color: #efefef;
 
   font-family: inherit;
@@ -265,15 +266,15 @@ input[type='button'] {
 }
 
 button:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='submit']:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='button']:hover {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input:focus {
@@ -308,11 +309,11 @@ input[type='radio'] {
 }
 
 input[type='checkbox']:checked {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='radio']:checked {
-  background: #dddddd;
+  background: #ddd;
 }
 
 input[type='checkbox']:checked::before,
@@ -475,7 +476,7 @@ a:hover {
 
 code {
   background:  #efefef;
-  color: #000000;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
@@ -483,7 +484,7 @@ code {
 
 samp {
   background:  #efefef;
-  color: #000000;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
@@ -491,7 +492,7 @@ samp {
 
 time {
   background:  #efefef;
-  color: #000000;
+  color: #000;
   padding: 2.5px 5px;
   border-radius: 6px;
   font-size: 1em;
@@ -531,12 +532,14 @@ table {
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
+  table-layout:fixed;
 }
 
 td,
 th {
   padding: 6px;
   text-align: left;
+  word-wrap:break-word;
 }
 
 thead {
@@ -620,7 +623,7 @@ footer {
   border-top: 1px solid #efefef;
   padding-top: 10px;
   font-size: 0.8em;
-  color: #999999;
+  color: #999;
 }
 
 /*# sourceMappingURL=light-legacy.standalone.css.map */

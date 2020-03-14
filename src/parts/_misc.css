@@ -12,12 +12,14 @@ table {
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
+  table-layout:fixed;
 }
 
 td,
 th {
   padding: 6px;
   text-align: left;
+  word-wrap:break-word;
 }
 
 thead {
