@@ -32,6 +32,18 @@ More details will be provided in command line interface.
 yarn build
 ```
 
+### Online one-click setup for contributing
+
+You can use Gitpod (A free online VS Code-like IDE) for contributing. With a single click, it'll launch a workspace and automatically:
+
+- clone the water.css repository.
+- install the dependencies.
+- run `yarn dev`.
+
+So that you can start straight away.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io#https://github.com/kognise/water.css/)
+
 ## How to find issues to work on
 
 If you are new to contributing open-source software, you can starty by picking any relevant issue that is tagged with `good first issue` [there](
