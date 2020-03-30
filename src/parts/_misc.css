@@ -79,6 +79,7 @@ details[open] summary {
 }
 
 summary {
+  cursor: pointer;
   display: list-item;
   background-color: var(--background);
   padding: 10px;
