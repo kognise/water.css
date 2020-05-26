@@ -19,7 +19,7 @@
 - Responsive
 - Themeable
 - Good browser support (works on my old kindle's browser :P)
-- Small size (&lt; 2kb)
+- Tiny size
 - Beautiful
 - No classes
 
