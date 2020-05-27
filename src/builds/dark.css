@@ -9,5 +9,4 @@
 
 @import '../variables-dark.css';
 @import '../variables-light.css' (prefers-color-scheme: light);
-
 @import '../parts/_core.css';

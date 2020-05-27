@@ -40,7 +40,7 @@ const FILE_SIZES = {
   'light.min.css': 1.4,
   'light.standalone.min.css': 1.3,
   'light-legacy.min.css': 0.178 + 1.16 + 1.15,
-  'light-legacy.standalone.min.css': 1.15,
+  'light-legacy.standalone.min.css': 1.15
 }
 
 /** Takes in version options and returns the respective CSS file name. */
@@ -81,31 +81,30 @@ const getFileSnippet = (/** @type {VersionOptions} */ { theme, isLegacy, isStand
 const externalElements = {
   _productHunt: /** @type {HTMLImageElement} */ (document.querySelector('#js-producthunt')),
   _stylesheet: /** @type {HTMLLinkElement} */ (document.querySelector('#js-stylesheet')),
-  _removeStartupStylesheet() {
+  _removeStartupStylesheet: () => {
     const startupStylesheet = document.head.querySelector('#js-startup-stylesheet')
     if (startupStylesheet) document.head.removeChild(startupStylesheet)
-    const that = externalElements
-    that._stylesheet.removeEventListener('load', that._removeStartupStylesheet)
+    externalElements._stylesheet.removeEventListener('load', externalElements._removeStartupStylesheet)
   },
-  _updateProductHunt(/** @type {Theme} */ theme) {
-    this._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
+  _updateProductHunt: (/** @type {Theme} */ theme) => {
+    externalElements._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
   },
-  _updateStylesheet(/** @type {FileName} */ fileName) {
-    this._stylesheet.href = DEV_BASE + fileName
+  _updateStylesheet: (/** @type {FileName} */ fileName) => {
+    externalElements._stylesheet.href = DEV_BASE + fileName
   },
 
   /** Sets up listener to remove startup version of water.css when right one loads, then updates */
-  init(/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) {
-    this._stylesheet.addEventListener('load', this._removeStartupStylesheet)
-    this.update(options, preferedTheme)
+  init: (/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) => {
+    externalElements._stylesheet.addEventListener('load', externalElements._removeStartupStylesheet)
+    externalElements.update(options, preferedTheme)
   },
   /** Takes current version + the user's prefered scheme and updates all external elements. */
-  update(/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) {
+  update: (/** @type {VersionOptions} */ options, /** @type {?Theme} */ preferedTheme) => {
     const displayedTheme = options.isStandalone ? options.theme : preferedTheme || options.theme
 
-    this._updateStylesheet(getFileName(options))
-    this._updateProductHunt(displayedTheme)
-  },
+    externalElements._updateStylesheet(getFileName(options))
+    externalElements._updateProductHunt(displayedTheme)
+  }
 }
 
 /**
@@ -124,65 +123,65 @@ const themeFromParams = queryParams.get('theme')
 const initialVersionOptions = {
   theme: themeFromParams === 'dark' || themeFromParams === 'light' ? themeFromParams : 'dark',
   isLegacy: queryParams.has('legacy') || !supportsCssVars,
-  isStandalone: queryParams.has('standalone'),
+  isStandalone: queryParams.has('standalone')
 }
 
-new w.Vue({
+new w.Vue({ // eslint-disable-line no-new
   el: '#installation',
   filters: {
-    capitalize: (/** @type {string} */ str) => str.charAt(0).toUpperCase() + str.slice(1),
+    capitalize: (/** @type {string} */ str) => str.charAt(0).toUpperCase() + str.slice(1)
   },
   /** @type {VueData} */
   data: {
     versionOptions: initialVersionOptions,
     preferedColorScheme: null,
-    copyStatus: null,
+    copyStatus: null
   },
   computed: {
     /** @returns {boolean} */
-    isOverwritten() {
+    isOverwritten () {
       const { isStandalone, theme } = this.versionOptions
       if (isStandalone || !this.preferedColorScheme) return false
       return theme !== this.preferedColorScheme
     },
     /** @returns {{ fileName: string, fileSize: string, fileSnippet: string }} */
-    selectedVersion() {
+    selectedVersion () {
       return {
         fileName: getFileName(this.versionOptions),
         fileSize: getFileSize(this.versionOptions).toFixed(2),
-        fileSnippet: getFileSnippet(this.versionOptions),
+        fileSnippet: getFileSnippet(this.versionOptions)
       }
-    },
+    }
   },
-  created() {
+  created () {
     createColorSchemeListener('dark', match => match && (this.preferedColorScheme = 'dark'))
     createColorSchemeListener('light', match => match && (this.preferedColorScheme = 'light'))
 
     externalElements.init(this.versionOptions, this.preferedColorScheme)
   },
   methods: {
-    getTooltipMessage(/** @type {Theme} */ theme) {
+    getTooltipMessage (/** @type {Theme} */ theme) {
       if (this.versionOptions.theme === theme && this.isOverwritten) {
         return 'Your theme selection is currently overwritten by the theme setting on your device.'
       } else return "Selected theme can be overwritten by theme setting on user's device."
     },
-    copyToClipboard() {
+    copyToClipboard () {
       Promise.resolve()
         .then(() => w.clipboard.writeText(this.selectedVersion.fileSnippet))
         .then(() => (this.copyStatus = 'success'))
         .catch(() => (this.copyStatus = 'failed'))
       setTimeout(() => (this.copyStatus = null), 1000)
-    },
+    }
   },
   watch: {
-    preferedColorScheme(/** @type {Theme} */ nextScheme) {
+    preferedColorScheme (/** @type {Theme} */ nextScheme) {
       externalElements.update(this.versionOptions, nextScheme)
     },
     versionOptions: {
       deep: true,
-      handler(/** @type {VersionOptions} */ nextOptions) {
+      handler (/** @type {VersionOptions} */ nextOptions) {
         externalElements.update(nextOptions, this.preferedColorScheme)
-      },
-    },
-  },
+      }
+    }
+  }
 })

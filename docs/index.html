@@ -22,15 +22,6 @@
     <meta name="msapplication-TileColor" content="#00aba9" />
     <meta name="msapplication-config" content="./icons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
-    <!-- Use bright favicons when the browser is in dark mode. -->
-    <script type="module">
-      import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
-      faviconSwitcher([
-        { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
-        { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
-        { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } },
-      ])
-    </script>
 
     <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
     <link rel="preload" as="style" href="./water.css/dark-legacy.standalone.min.css" />
@@ -71,12 +62,20 @@
       }
     </script>
 
+    <!-- Use bright favicons when the browser is in dark mode. -->
+    <script type="module">
+      import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
+      faviconSwitcher([
+        { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
+        { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
+        { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
+      ])
+    </script>
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116663597-6"></script>
     <script>
       window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
-      }
+      const gtag = (...args) => window.dataLayer.push(args)
       gtag('js', new Date())
       gtag('config', 'UA-116663597-6')
     </script>

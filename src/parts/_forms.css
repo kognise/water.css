@@ -1,4 +1,5 @@
-button, select,
+button,
+select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
@@ -9,25 +10,6 @@ input[type='range'] {
 input:not([type='checkbox']):not([type='radio']),
 select {
   display: block;
-}
-
-input,
-button,
-textarea,
-select {
-  color: var(--form-text);
-  background-color: var(--background);
-
-  font-family: inherit;
-  font-size: inherit;
-
-  margin-right: 6px;
-  margin-bottom: 6px;
-  padding: 10px;
-
-  border: none;
-  border-radius: 6px;
-  outline: none;
 }
 
 input:not([type='checkbox']):not([type='radio']),

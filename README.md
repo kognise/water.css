@@ -96,6 +96,7 @@ If you want to change a value for dark or light mode only, use a media query lik
   :root {
     --links: blue; /* Always applied */
   }
+
   @media (prefers-color-scheme: dark) {
     :root {
       --links: yellow; /* Only applied in dark mode (overrides previous declarations while applied) */
@@ -117,10 +118,6 @@ If you are targeting browsers without support for CSS Custom Properties such as 
 When making your changes, we recommend you don't change the values set by Water.css directly, instead simply add your own variable declarations:
 
 ```css
-:root {
-  /* Water.css variable declarations... */
-}
-
 /* ⬇ Add this block! */
 :root {
   /* Your variable declarations, overriding previous ones */
@@ -145,9 +142,3 @@ $ yarn dev
 
 Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
 Thanks for taking the time to contribute :)
-
-## Todos
-
-- Add screenshots
-- Release Jekyll theme ([#18](https://github.com/kognise/water.css/issues/18))
-- Publish to npm ([#41](https://github.com/kognise/water.css/issues/41))

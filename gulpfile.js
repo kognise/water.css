@@ -29,12 +29,12 @@ const paths = {
 }
 
 // https://stackoverflow.com/a/20732091
-function humanFileSize(size) {
-  var i = Math.floor(Math.log(size) / Math.log(1024))
+const humanFileSize = (size) => {
+  const i = Math.floor(Math.log(size) / Math.log(1024))
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i]
 }
 
-function formatByteMessage(source, data) {
+const formatByteMessage = (source, data) => {
   const prettyStartSize = humanFileSize(data.startSize)
   let message = ''
 
@@ -52,14 +52,14 @@ function formatByteMessage(source, data) {
   return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
-function style() {
-  const isLegacy = path => /legacy/.test(path)
+const style = () => {
+  const isLegacy = (path) => /legacy/.test(path)
 
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
   const excludeLegacy = filter(file => !isLegacy(file.path), { restore: true })
 
   // Don't inline minified versions, so builds can lazily import them at runtime
-  const cssImportOptions = { filter: path => !/\.min/.test(path) }
+  const cssImportOptions = { filter: (path) => !/\.min/.test(path) }
 
   return (
     gulp
@@ -124,7 +124,7 @@ function style() {
   )
 }
 
-function docs() {
+const docs = () => {
   const htmlOnly = filter('**/*.html', { restore: true })
   const jsOnly = filter('**/*.js', { restore: true })
   const cssOnly = filter('**/*.css', { restore: true })
@@ -158,7 +158,11 @@ function docs() {
   )
 }
 
-const browserReload = done => (browserSync.reload(), done())
+const browserReload = (done) => {
+  browserSync.reload()
+  return done()
+}
+
 const startDevServer = () => {
   browserSync.init({ server: { baseDir: './dist' }, startPath: 'docs/index.html' })
 
