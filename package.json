@@ -48,6 +48,7 @@
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
     "postcss-import": "^12.0.1",
+    "postcss-inline-svg": "^4.1.0",
     "posthtml-include": "^1.2.0",
     "vue": "^2.6.10"
   },
