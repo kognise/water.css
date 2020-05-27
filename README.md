@@ -40,11 +40,11 @@ Just stick this in your `<head>`:
 
 ### 🌙 Dark Theme:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.min.css">`
+`<link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">`
 
 ### ☀ Light Theme:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/light.min.css">`
 
 <br>
 

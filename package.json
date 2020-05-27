@@ -87,6 +87,7 @@
     ]
   },
   "files": [
-    "dist"
+    "dist/*.css",
+    "LICENSE.md"
   ]
 }
