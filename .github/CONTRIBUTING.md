@@ -4,27 +4,21 @@ Water.css becomes better for everyone when people like you help make it better!
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
 
-Before contributing, please read the [code of conduct](CODE_OF_CONDUCT.md). Also you agree that your contributions will be licensed under its [MIT License](./LICENSE.md).
+Before contributing, please read the [code of conduct](CODE_OF_CONDUCT.md). Also you agree that your contributions will be licensed under its [MIT License](../LICENSE.md).
 
 ## How to get started
 
 1. Get a copy of repository. It is recommended to fork it first and clone to your machine using `git`.
-
 2. Make sure that you have [yarn](https://yarnpkg.com) and install dependencies listed in `package.json` using it.
-
-```
-yarn
-```
-
+    ```
+    yarn
+    ```
 3. Then you can run development server with live reloading out of the box and play around with the framework.
+    ```
+    yarn dev
+    ```
 
-```
-yarn dev
-```
-
-So you can access the `index.html` in browser by visiting http://localhost:3000/index.html
-
-More details will be provided in command line interface.
+So you can access the `index.html` in browser by visiting [localhost:3000](http://localhost:3000/)
 
 *Note.* A script that builds distribution ready files is also available but it is not the part of development workflow, it is designed to be triggered automatically while publishing a new version of a package. The script itself could be run manually:
 
@@ -44,18 +38,37 @@ Also everyone is welcome to contribute on issues tagged with `help wanted`, you 
 
 It is a few general rules of thumb about making pull requests:
 
-* Make sure that your pull request covers a small and well defined scope
+- Make sure that your pull request covers a small and well defined scope
+- Make small commits with clear and explainful messages
+- You need to provide a clear description about your contribution on GitHub
 
-* Make small commits with clear and explainful messages
+Before making a pull request, make sure you lint your code and generate a changelog.
 
-* You need to provide a clear description about your contribution on GitHub
+**Linting**
+
+If you aren't familiar, a linter is a program that automatically checks your code for formatting issues and potential bugs. Our linters are configured to automatically fix what they can so you can typically run one command and be done with it:
+
+```
+yarn lint
+```
+
+**Changelogs**
+
+We use software called Changesets to keep track of what changes have been made between versions. Make sure to create a changelog before creating your pull request!
+
+Just run this command, and then answer a few questions:
+
+```
+yarn changeset
+```
 
 ## Directory structure
 
 ```
 .
 ├── dist
-├── icons
+└── docs
+    └── icons
 └── src
     ├── assets
     ├── builds
@@ -64,7 +77,9 @@ It is a few general rules of thumb about making pull requests:
 
 `dist` directory is ignored by git and it contains built assets for distribution
 
-`icons` directory contains water.css favicons used in `index.html` demo/docs file
+`docs` directory contains the documentation and demo page
+
+`docs/icons` directory contains water.css favicons used in the documentation
 
 `src` directory contains all the source stylesheets groupped into folders and variables
 
