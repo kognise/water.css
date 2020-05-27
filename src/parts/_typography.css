@@ -34,15 +34,15 @@ th {
   font-weight: 600;
 }
 
-q:before {
+q::before {
    content: none;
 }
 
-q:after {
+q::after {
    content: none;
 }
 
-blockquote , q{
+blockquote, q {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0em;
   padding: 0.5em 1em;
@@ -50,8 +50,8 @@ blockquote , q{
 }
 
 blockquote > footer {
-  margin-top: 10px;
   font-style: normal;
+  border: 0;
 }
 
 blockquote cite {
@@ -62,15 +62,15 @@ address {
   font-style: normal;
 }
 
-a[href^='mailto']::before {
+a[href^='mailto\:']::before {
   content: '📧 ';
 }
 
-a[href^='tel']::before {
+a[href^='tel\:']::before {
   content: '📞 ';
 }
 
-a[href^='sms']::before {
+a[href^='sms\:']::before {
   content: '💬 ';
 }
 

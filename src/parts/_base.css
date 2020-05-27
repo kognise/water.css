@@ -5,6 +5,7 @@ body {
   max-width: 800px;
   margin: 20px auto;
   padding: 0 10px;
+  word-wrap: break-word;
 
   color: var(--text-main);
   background: var(--background-body);
