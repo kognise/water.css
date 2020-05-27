@@ -56,11 +56,13 @@ yarn lint
 
 We use software called Changesets to keep track of what changes have been made between versions. Make sure to create a changelog before creating your pull request!
 
-Just run this command, and then answer a few questions:
+Just run this command for each change you made, and then answer a few questions:
 
 ```
 yarn changeset
 ```
+
+If you're not sure what kind of change you're making, pick patch.
 
 ## Directory structure
 
