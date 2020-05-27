@@ -29,7 +29,7 @@ const supportsCssVars = typeof CSS !== 'undefined' && CSS.supports('color', 'var
 /** The base URI from where the docs page loads the CSS files. */
 const DEV_BASE = './water.css/'
 /** The base URI from where instructions show to load the CSS files. */
-const CDN_BASE = 'https://cdn.jsdelivr.net/gh/kognise/water.css/dist/'
+const CDN_BASE = 'https://cdn.jsdelivr.net/npm/water.css@2/dist/'
 
 /** An object mapping the (minified + gzipped) fileSize in KB to a fileName. */
 const FILE_SIZES = {
@@ -87,7 +87,7 @@ const externalElements = {
     externalElements._stylesheet.removeEventListener('load', externalElements._removeStartupStylesheet)
   },
   _updateProductHunt: (/** @type {Theme} */ theme) => {
-    externalElements._productHunt.src = this._productHunt.src.replace(/dark|light/, theme)
+    externalElements._productHunt.src = externalElements._productHunt.src.replace(/dark|light/, theme)
   },
   _updateStylesheet: (/** @type {FileName} */ fileName) => {
     externalElements._stylesheet.href = DEV_BASE + fileName

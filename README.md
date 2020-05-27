@@ -40,7 +40,7 @@ Just stick this in your `<head>`:
 
 ### 🌙 Dark Theme:
 
-`<link rel="stylesheet" href=https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">`
 
 ### ☀ Light Theme:
 
@@ -81,7 +81,7 @@ Because of this, you can simply add your own stylesheet to the page and set your
 This short example will use Water.css, but color all links red:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css/dist/dark.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/water.css@2/dist/dark.min.css" />
 <style>
   :root {
     --links: red;
