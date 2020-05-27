@@ -26,16 +26,16 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 const paths = {
   srcDir: 'src/*',
   docs: { src: 'docs/**', dest: 'dist/docs' },
-  styles: { src: 'src/builds/*.css', dest: 'dist' },
+  styles: { src: 'src/builds/*.css', dest: 'dist', watch: 'src/**/*.css' }
 }
 
 // https://stackoverflow.com/a/20732091
-function humanFileSize (size) {
+function humanFileSize(size) {
   var i = Math.floor(Math.log(size) / Math.log(1024))
   return (size / Math.pow(1024, i)).toFixed(2) * 1 + ' ' + ['B', 'kB', 'MB', 'GB', 'TB'][i]
 }
 
-function formatByteMessage (source, data) {
+function formatByteMessage(source, data) {
   const prettyStartSize = humanFileSize(data.startSize)
   let message = ''
 
@@ -53,7 +53,7 @@ function formatByteMessage (source, data) {
   return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
-function style () {
+function style() {
   const isLegacy = path => /legacy/.test(path)
 
   const excludeModern = filter(file => isLegacy(file.path), { restore: true })
@@ -163,7 +163,7 @@ const browserReload = done => (browserSync.reload(), done())
 const startDevServer = () => {
   browserSync.init({ server: { baseDir: './dist' }, startPath: 'docs/index.html' })
 
-  gulp.watch(paths.srcDir, gulp.series(style, browserReload))
+  gulp.watch(paths.styles.watch, gulp.series(style, browserReload))
   gulp.watch(paths.docs.src, gulp.series(docs, browserReload))
 }
 
