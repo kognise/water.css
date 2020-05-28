@@ -1,7 +1,7 @@
 <p align="center">
-  <!-- <a href="https://www.npmjs.com/package/water.css"><img align="center" src="https://img.shields.io/npm/v/water.css.svg" alt="NPM page"></a> -->
-  <a href="https://www.reddit.com/r/webdev/comments/b9m6mv/watercss_a_collection_of_neat_styles_for_simple/"><img align="center" src="https://img.shields.io/badge/on-reddit-orange.svg" alt="On Reddit"></a>
-  <a href="https://www.producthunt.com/posts/water-css"><img align="center" src="https://img.shields.io/badge/on-product%20hunt-red.svg" alt="On Product Hunt"></a>
+  <a href="https://www.npmjs.com/package/water.css"><img align="center" src="https://img.shields.io/npm/v/water.css.svg" alt="NPM page"></a>
+  <a href="https://www.producthunt.com/posts/water-css"><img align="center" src="https://img.shields.io/badge/on-product%20hunt-blue.svg" alt="On Product Hunt"></a>
+  <a href="https://github.com/kognise/water.css/pulls"><img align="center" src="https://img.shields.io/github/contributors-anon/kognise/water.css" alt="Contributors"></a>
   <a href="https://github.com/kognise/water.css/blob/master/LICENSE.md"><img align="center" src="https://img.shields.io/github/license/kognise/water.css.svg" alt="MIT license"></a>
 </p>
 
