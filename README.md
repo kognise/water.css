@@ -10,7 +10,7 @@
 <h1 align="center">Water.css</h1>
 <p align="center">🌊 A drop-in collection of CSS styles to make simple websites just a little nicer</p>
 
-[![Water.css](logo.svg)](https://watercss.netlify.com/)
+[![Water.css](logo.svg)](https://watercss.kognise.dev/)
 
 <br>
 
@@ -50,7 +50,7 @@ Just stick this in your `<head>`:
 
 ### Other options:
 
-> ⚡ An interactive version selection is available [on the **demo page**!](https://watercss.netlify.com/#installation)
+> ⚡ An interactive version selection is available [on the **demo page**!](https://watercss.kognise.dev/#installation)
 
 #### Enforce a theme and ignore `(prefers-color-scheme)`
 
@@ -59,7 +59,7 @@ For the main versions, `dark` or `light` is only treated as a _default theme_: i
 #### Want to support Internet Explorer?
 
 Sure, just extend the theme prefix with `-legacy`, e.g. `dark-legacy.min.css`.
-Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](https://watercss.netlify.com/?legacy#installation).
+Be aware that these versions **do not support** [runtime theming](#theming) as they use hard coded values rather than variables. Additionally, if you use a legacy version that is not standalone, we recommend [you add the respective preload tags to improve load times](https://watercss.kognise.dev/?legacy#installation).
 
 #### Unminified builds
 
