@@ -11,12 +11,17 @@ const themeForm = document.getElementById('theme-form')
 const linkSnippet = document.getElementById('link-snippet')
 const stylesheet = document.getElementById('js-stylesheet')
 const startupStylesheet = document.getElementById('js-startup-stylesheet')
+const productHunt = document.getElementById('product-hunt')
 
 const table = {
   fileName: document.getElementById('table-file-name'),
   fileSize: document.getElementById('table-file-size'),
   theme: document.getElementById('table-theme'),
   browserSupport: document.getElementById('table-browser-support')
+}
+
+const updateProductHunt = (theme) => {
+  productHunt.src = `https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=${theme}&period=daily`
 }
 
 const updateTheme = () => {
@@ -40,10 +45,18 @@ const updateTheme = () => {
   } else {
     table.theme.innerText = `Theme is forced to ${theme}`
     table.browserSupport.innerText = 'All browsers (including Internet Explorer)'
+    updateProductHunt(theme)
   }
 }
 
 themeForm.addEventListener('input', updateTheme)
+
+const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
+updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
+prefersColorScheme.addEventListener('change', () => {
+  if (themeForm.theme.value !== 'auto') return
+  updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
+})
 
 updateTheme()
 startupStylesheet.remove()
@@ -129,7 +142,7 @@ startupStylesheet.remove()
 // /** Handles elements external to the version picker that still need to be kept
 //  *  up to date with the current version, e.g. switching images from dark to light. */
 // const externalElements = {
-//   _productHunt: /** @type {HTMLImageElement} */ (document.querySelector('#js-producthunt')),
+//   _productHunt: /** @type {HTMLImageElement} */ (document.querySelector('#product-hunt')),
 //   _stylesheet: /** @type {HTMLLinkElement} */ (document.querySelector('#js-stylesheet')),
 //   _removeStartupStylesheet: () => {
 //     const startupStylesheet = document.head.querySelector('#js-startup-stylesheet')
