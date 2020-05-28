@@ -20,7 +20,7 @@ const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: color => color.toRGBLegacy()
+  stringifier: (color) => color.toRGBLegacy()
 })
 
 const paths = {
@@ -53,13 +53,57 @@ const formatByteMessage = (source, data) => {
 }
 
 const style = () => {
-  const isLegacy = (path) => /legacy/.test(path)
+  // const isLegacy = (path) => /legacy/.test(path)
 
-  const excludeModern = filter(file => isLegacy(file.path), { restore: true })
-  const excludeLegacy = filter(file => !isLegacy(file.path), { restore: true })
+  // const excludeModern = filter(file => isLegacy(file.path), { restore: true })
+  // const excludeLegacy = filter(file => !isLegacy(file.path), { restore: true })
 
   // Don't inline minified versions, so builds can lazily import them at runtime
   const cssImportOptions = { filter: (path) => !/\.min/.test(path) }
+
+  const startDiff = () => bytediff.start()
+  const endDiff = (source) => bytediff.stop((data) => formatByteMessage(source, data))
+
+  return (
+    gulp
+      .src(paths.styles.src)
+      .pipe(sourcemaps.init())
+      .pipe(postcss([postcssImport(cssImportOptions), postcssColorModFunction(), postcssInlineSvg()]))
+
+      .pipe(startDiff())
+      .pipe(postcss([postcssCssVariables({ preserve: true })]))
+      .pipe(endDiff('css variables'))
+
+      .pipe(startDiff())
+      .pipe(postcss([autoprefixer({ env: 'legacy' })]))
+      .pipe(endDiff('autoprefixer'))
+
+      .pipe(sourcemaps.write('.'))
+      .pipe(flatten()) // Put files in dist/*, not dist/builds/*
+      .pipe(gulp.dest(paths.styles.dest))
+
+      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
+
+      // <minifying>
+      .pipe(startDiff())
+      .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
+      .pipe(endDiff('minification'))
+      .pipe(rename({ suffix: '.min' }))
+      // </minifying>
+
+      .pipe(sourcemaps.write('.'))
+      .pipe(gulp.dest(paths.styles.dest))
+      .pipe(gulp.dest(paths.docs.dest + '/water.css'))
+
+      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
+      .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
+      .pipe(browserSync.stream())
+  )
+
+  // return gulp.parallel(
+  //   gulp.src(paths.styles.src)
+  //     .pipe(sourcemaps.init())
+  // )
 
   return (
     gulp
@@ -80,7 +124,7 @@ const style = () => {
         env: 'legacy'
       })]))
       // Write the amount gained by autoprefixing
-      .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
+      .pipe(bytediff.stop((data) => formatByteMessage('autoprefixer', data)))
       .pipe(excludeModern.restore)
 
       // * Process modern builds *
@@ -92,7 +136,7 @@ const style = () => {
         env: 'modern'
       })]))
       // Write the amount gained by autoprefixing
-      .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
+      .pipe(bytediff.stop((data) => formatByteMessage('autoprefixer', data)))
       .pipe(excludeLegacy.restore)
 
       // Write the sourcemaps after making pre-minified changes
@@ -108,7 +152,7 @@ const style = () => {
       // Minify using cssnano, use extra-low precision while minifying inline SVGs
       .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
       // Write the amount saved by minifying
-      .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
+      .pipe(bytediff.stop((data) => formatByteMessage('cssnano', data)))
       // Rename the files have the .min suffix
       .pipe(rename({ suffix: '.min' }))
       // Write the sourcemaps after making all changes
