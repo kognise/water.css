@@ -7,7 +7,7 @@
     "build": "gulp build",
     "dev": "gulp watch",
     "lint:js": "eslint **/*.js **/*.html gulpfile.js --fix",
-    "lint:css": "stylelint src/**/*.css --fix",
+    "lint:css": "stylelint src/**/*.css docs/style.css --fix",
     "lint": "yarn lint:js && yarn lint:css"
   },
   "repository": {

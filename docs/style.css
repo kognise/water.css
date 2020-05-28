@@ -13,12 +13,14 @@ html {
 .version-select__snippet h3 {
   margin: 1rem 2.5rem 1rem 0;
 }
+
 /* Make the ✔ / ❌ Emoji appear next to the button */
 .version-select__snippet__btn {
   position: relative;
   margin: 0 2px 0 auto;
   overflow: visible;
 }
+
 .version-select__snippet__btn span {
   position: absolute;
   left: -2rem;
@@ -29,19 +31,23 @@ html {
 .version-select__options > label {
   white-space: pre;
 }
+
 .version-select__options > label:not(:last-of-type) {
   margin-right: 1rem;
 }
+
 .version-select__options__additional,
 .version-select__options__additional > *:not(summary) {
   display: block;
   margin: 1rem 0;
 }
+
 .version-select__options__additional summary {
   outline: none;
   cursor: pointer;
   font-weight: 600;
 }
+
 .version-select__options__additional summary:hover span,
 .version-select__options__additional summary:focus span {
   text-decoration: underline;
@@ -50,6 +56,7 @@ html {
 .version-select__info caption {
   text-align: left;
 }
+
 .version-select__info th {
   border: none;
   vertical-align: top;
@@ -69,22 +76,40 @@ body > footer {
   align-items: center;
   justify-content: space-between;
 }
+
 .emoji {
   /* Use proper Emoji instead of plain Unicode chars */
-  font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', system-ui, -apple-system,
-    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
+  font-family:
+    'Segoe UI Emoji',
+    'Apple Color Emoji',
+    'Noto Color Emoji',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
 }
+
 .opacity-4 {
   opacity: 0.4;
 }
+
 .opacity-7 {
   opacity: 0.76;
 }
+
 .tooltip {
   position: relative;
   cursor: help;
 }
+
 .tooltip::after {
   content: '';
   position: absolute;
@@ -100,13 +125,16 @@ body > footer {
 .v-leave-to {
   transform: scale(0) !important;
 }
+
 .v-enter-active,
 .v-leave-active {
   transition: transform 220ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
 [v-cloak] > * {
   display: none;
 }
+
 [v-cloak]::after {
   content: 'Version picker is loading...';
 }
