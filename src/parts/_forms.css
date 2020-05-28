@@ -3,7 +3,8 @@ select,
 input[type='submit'],
 input[type='button'],
 input[type='checkbox'],
-input[type='range'] {
+input[type='range'],
+input[type='radio'] {
   cursor: pointer;
 }
 
@@ -26,6 +27,16 @@ select {
   border: none;
   border-radius: 6px;
   outline: none;
+}
+
+input,
+label {
+  vertical-align: top;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 4px;
 }
 
 input:not([type='checkbox']):not([type='radio']),
@@ -103,7 +114,7 @@ fieldset {
   border: 1px var(--focus) solid;
   border-radius: 6px;
   margin: 0;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   padding: 10px;
 }
 
