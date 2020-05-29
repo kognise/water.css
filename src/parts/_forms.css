@@ -35,6 +35,10 @@ input[type='radio'] {
   width: 1em;
 }
 
+input[type='radio'] {
+  border-radius: 100%;
+}
+
 input {
   vertical-align: top;
 }
