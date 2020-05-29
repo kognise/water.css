@@ -58,6 +58,7 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.2.0",
     "htmlnano": "^0.2.3",
+    "husky": "^4.2.5",
     "postcss-color-mod-function": "^3.0.3",
     "postcss-css-variables": "^0.12.0",
     "postcss-import": "^12.0.1",
