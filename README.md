@@ -63,7 +63,7 @@ For the main `water.css` file, dark is only treated as a _default theme_: if a u
 
 #### Want to support Internet Explorer?
 
-All three distrubutions of Water.css support Internet Explorer 11, but the main `water.css` file **doesn't respect the user's color scheme** and will be locked to dark mode due to lack of `prefers-color-scheme` support.
+All three distributions of Water.css support Internet Explorer 11, but the main `water.css` file **doesn't respect the user's color scheme** and will be locked to dark mode due to lack of `prefers-color-scheme` support.
 
 Be aware that IE also doesn't support [runtime theming](#theming), and fixed fallback values will be used. If you want to override the Water.css theme, we recommend that you [compile your own theme](#compiling-your-own-theme).
 
