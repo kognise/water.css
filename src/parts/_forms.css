@@ -29,14 +29,20 @@ select {
   outline: none;
 }
 
-input,
-label {
+input[type='checkbox'],
+input[type='radio'] {
+  height: 1em;
+  width: 1em;
+}
+
+input {
   vertical-align: top;
 }
 
 label {
-  display: inline-block;
+  vertical-align: middle;
   margin-bottom: 4px;
+  display: inline-block;
 }
 
 input:not([type='checkbox']):not([type='radio']),
