@@ -10,7 +10,7 @@
 <h1 align="center">Water.css</h1>
 <p align="center">🌊 A drop-in collection of CSS styles to make simple websites just a little nicer</p>
 
-[![Water.css](logo.svg)](https://watercss.kognise.dev/)
+[![Water.css](assets/logo.svg)](https://watercss.kognise.dev/)
 
 <br>
 
@@ -53,19 +53,19 @@ Just stick this in your `<head>`:
 
 <br>
 
-### Other options:
+A **preview** of the different themes is available [on the **demo page**](https://watercss.kognise.dev/#installation)! ⚡
 
-> ⚡ An interactive version selection is available [on the **demo page**!](https://watercss.kognise.dev/#installation)
+#### How the "Automatic Theme" works
 
-#### Enforce a theme and ignore `(prefers-color-scheme)`
+The main `water.css` file automatically switches between light and dark mode depending on the system preferences of a user's device. This detection is made possible through a CSS media query called [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). In browsers where the preference can't be detected, `water.css` will stick to the light theme.
 
-For the main `water.css` file, light is only treated as a _default theme_: if a user has a preference for either dark or light mode on their device, the stylesheet will respect this. This detection is made possible through a CSS media query called `prefers-color-scheme`. If you want to avoid this behavior and enforce a theme, use either `dark.css` or `light.css`.
+If you want to avoid this behavior, use either `dark.css` or `light.css`.
 
-#### Want to support Internet Explorer?
+#### Supporting Internet Explorer
 
 All three distributions of Water.css support Internet Explorer 11, but the main `water.css` file **doesn't respect the user's color scheme** and will be locked to light mode due to lack of `prefers-color-scheme` support.
 
-Be aware that IE also doesn't support [runtime theming](#theming), and fixed fallback values will be used. If you want to override the Water.css theme, we recommend that you [compile your own theme](#compiling-your-own-theme).
+Be aware that IE also doesn't support [runtime theming](#theming), and fixed fallback values will be used. If you want to override the Water.css theme in a way that's compatible with IE, we recommend that you [compile your own theme](#compiling-your-own-theme).
 
 #### Unminified builds
 
