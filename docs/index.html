@@ -114,7 +114,7 @@
     </div>
 
     <h2>Installation</h2>
-    <div id="installation" class="version-select">
+    <div id="installation">
       <header class="row version-select-snippet">
         <h3>Paste this into the <code>&lt;head&gt;</code> of your HTML:</h3>
         <button type="button" id="copy-snippet">
@@ -122,7 +122,11 @@
         </button>
       </header>
 
-      <pre><code id="link-snippet">Oh noes, the JavaScript hasn't loaded!</code></pre>
+      <div id="link-snippet-container">
+        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/water.css"></code></pre>
+        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.css"></code></pre>
+        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/light.css"></code></pre>
+      </div>
 
       <h3>Options</h3>
       <form id="theme-form">

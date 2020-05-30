@@ -1,6 +1,5 @@
 'use strict'
 
-const cdnBase = 'https://cdn.jsdelivr.net/npm/water.css@2/dist/'
 const localBase = './water.css/'
 
 const fileSizes = {
@@ -10,10 +9,10 @@ const fileSizes = {
 }
 
 const themeForm = document.getElementById('theme-form')
-const linkSnippet = document.getElementById('link-snippet')
 const stylesheet = document.getElementById('js-stylesheet')
 const startupStylesheet = document.getElementById('js-startup-stylesheet')
 const productHunt = document.getElementById('product-hunt')
+const linkSnippets = [].slice.call(document.querySelectorAll('#link-snippet-container > pre'))
 
 const table = {
   fileName: document.getElementById('table-file-name'),
@@ -33,12 +32,14 @@ const updateTheme = () => {
   const theme = themeForm.querySelector('input[name="theme"]:checked').value
 
   const fileName = `${theme === 'auto' ? 'water' : theme}.min.css`
-  const cdnUrl = `${cdnBase}${fileName}`
   const localUrl = `${localBase}${fileName}`
 
   stylesheet.href = localUrl
 
-  linkSnippet.innerText = `<link rel="stylesheet" href="${cdnUrl}">`
+  for (const snippet of linkSnippets) {
+    snippet.hidden = snippet.id.indexOf(theme) === -1
+  }
+
   table.fileName.innerText = fileName
   table.fileSize.innerText = `${fileSizes[theme].toFixed(2)} kb`
 
