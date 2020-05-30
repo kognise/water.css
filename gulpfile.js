@@ -12,7 +12,6 @@ const flatten = require('gulp-flatten')
 const babel = require('gulp-babel')
 const terser = require('gulp-terser')
 const posthtml = require('gulp-posthtml')
-const posthtmlInclude = require('posthtml-include')
 const htmlnano = require('htmlnano')
 const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
@@ -108,7 +107,7 @@ const docs = () => {
 
       // * Process HTML *
       .pipe(htmlOnly)
-      .pipe(posthtml([posthtmlInclude({ root: './docs/' }), htmlnano()]))
+      .pipe(posthtml([htmlnano()]))
       .pipe(htmlOnly.restore)
 
       // * Process JS *
