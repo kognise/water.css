@@ -88,6 +88,13 @@ summary {
   background-color: var(--background);
   padding: 10px;
   margin: -10px -10px 0;
+  cursor: pointer;
+  outline: none;
+}
+
+summary:hover,
+summary:focus {
+  text-decoration: underline;
 }
 
 details > :not(summary) {
