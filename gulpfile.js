@@ -118,7 +118,7 @@ const docs = () => {
       // * Process CSS *
       .pipe(cssOnly)
       .pipe(sourcemaps.init())
-      .pipe(postcss([cssnano()]))
+      .pipe(postcss([autoprefixer(), cssnano()]))
       .pipe(sourcemaps.write('.'))
       .pipe(cssOnly.restore)
 
