@@ -12,6 +12,8 @@ const themeForm = document.getElementById('theme-form')
 const stylesheet = document.getElementById('js-stylesheet')
 const startupStylesheet = document.getElementById('js-startup-stylesheet')
 const productHunt = document.getElementById('product-hunt')
+const copyButton = document.getElementById('copy-button')
+const copyButtonFeedback = document.getElementById('copy-button-feedback')
 const linkSnippets = [].slice.call(document.querySelectorAll('#link-snippet-container > pre'))
 
 const table = {
@@ -70,3 +72,14 @@ prefersColorScheme.addListener(() => {
 
 updateTheme()
 startupStylesheet.parentElement.removeChild(startupStylesheet)
+
+copyButton.addEventListener('click', () => {
+  const clipboard = navigator.clipboard || window.clipboard
+  const theme = themeForm.querySelector('input[name="theme"]:checked').value
+  const snippetText = document.querySelector(`#link-snippet-${theme} code`).textContent
+
+  clipboard.writeText(snippetText)
+    .then(() => { copyButtonFeedback.textContent = '✔' })
+    .catch(() => { copyButtonFeedback.textContent = '❌' })
+    .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
+})

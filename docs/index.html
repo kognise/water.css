@@ -57,6 +57,11 @@
       }
     </script>
 
+    <script>
+      // eslint-disable-next-line no-useless-escape
+      window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
+    </script>
+
     <!-- Use bright favicons when the browser is in dark mode. -->
     <script type="module">
       import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
@@ -117,7 +122,8 @@
     <div id="installation">
       <header class="row version-select-snippet">
         <h3>Paste this into the <code>&lt;head&gt;</code> of your HTML:</h3>
-        <button type="button" id="copy-snippet">
+        <button type="button" id="copy-button">
+          <span id="copy-button-feedback" class="emoji"></span>
           Copy to clipboard
         </button>
       </header>

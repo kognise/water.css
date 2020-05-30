@@ -11,13 +11,13 @@ html {
 }
 
 /* Make the ✔ / ❌ Emoji appear next to the button */
-#copy-snippet {
+#copy-button {
   position: relative;
   margin-right: 2px;
   overflow: visible;
 }
 
-#copy-snippet span {
+#copy-button-feedback {
   position: absolute;
   left: -2rem;
   display: inline-block;
