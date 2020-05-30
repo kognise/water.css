@@ -63,23 +63,3 @@ body > footer {
   align-items: center;
   justify-content: space-between;
 }
-
-.emoji {
-  /* Use proper Emoji instead of plain Unicode chars */
-  font-family:
-    'Segoe UI Emoji',
-    'Apple Color Emoji',
-    'Noto Color Emoji',
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-}
