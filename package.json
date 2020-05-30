@@ -1,7 +1,7 @@
 {
   "name": "water.css",
   "version": "1.4.0",
-  "description": "A just-add-css collection of styles to make simple websites just a little nicer.",
+  "description": "A drop-in collection of CSS styles to make simple websites just a little nicer",
   "main": "index.js",
   "scripts": {
     "build": "gulp build",
