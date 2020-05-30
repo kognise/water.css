@@ -22,7 +22,10 @@ const table = {
   browserSupport: document.getElementById('table-browser-support')
 }
 
-const updateProductHunt = (theme) => {
+const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
+
+const updateProductHunt = () => {
+  const theme = prefersColorScheme.matches ? 'light' : 'dark'
   productHunt.src = `https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=${theme}&period=daily`
 }
 
@@ -39,6 +42,8 @@ const updateTheme = () => {
   table.fileName.innerText = fileName
   table.fileSize.innerText = `${fileSizes[theme].toFixed(2)} kb`
 
+  updateProductHunt()
+
   if (theme === 'auto') {
     table.theme.innerHTML = `
     Defaults to light, but respects user-defined theme settings.<br>
@@ -51,17 +56,15 @@ const updateTheme = () => {
   } else {
     table.theme.innerText = `Theme is forced to ${theme}.`
     table.browserSupport.innerText = 'All browsers (including Internet Explorer)'
-    updateProductHunt(theme)
   }
 }
 
 themeForm.addEventListener('change', updateTheme)
 
-const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
-updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
+updateProductHunt()
 prefersColorScheme.addListener(() => {
   if (themeForm.theme.value !== 'auto') return
-  updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
+  updateProductHunt()
 })
 
 updateTheme()
