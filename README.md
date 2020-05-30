@@ -53,7 +53,7 @@ Just stick this in your `<head>`:
 
 <br>
 
-A **preview** of the different themes is available [on the **demo page**!](https://watercss.kognise.dev/#installation)! ⚡
+A **preview** of the different themes is available [on the **demo page**](https://watercss.kognise.dev/#installation)! ⚡
 
 #### How the "Automatic Theme" works
 
