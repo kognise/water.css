@@ -57,7 +57,9 @@ A **preview** of the different themes is available [on the **demo page**](https:
 
 #### How the "Automatic Theme" works
 
-The main `water.css` file automatically switches between light and dark mode depending on the system preferences of a user's device. This detection is made possible through a CSS media query called [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). In browsers where the preference can't be detected, `water.css` will stick to the light theme. If you want to avoid this behavior, use either `dark.css` or `light.css`.
+The main `water.css` file automatically switches between light and dark mode depending on the system preferences of a user's device. This detection is made possible through a CSS media query called [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). In browsers where the preference can't be detected, `water.css` will stick to the light theme.
+
+If you want to avoid this behavior, use either `dark.css` or `light.css`.
 
 #### Supporting Internet Explorer
 
