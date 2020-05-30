@@ -59,11 +59,11 @@ Just stick this in your `<head>`:
 
 #### Enforce a theme and ignore `(prefers-color-scheme)`
 
-For the main `water.css` file, dark is only treated as a _default theme_: if a user has a preference for either dark or light mode on their device, the stylesheet will respect this. This detection is made possible through a recent CSS media query called `prefers-color-scheme`. If you want to avoid this behavior and enforce dark or light theme, use either `dark.css` or `light.css`.
+For the main `water.css` file, light is only treated as a _default theme_: if a user has a preference for either dark or light mode on their device, the stylesheet will respect this. This detection is made possible through a CSS media query called `prefers-color-scheme`. If you want to avoid this behavior and enforce a theme, use either `dark.css` or `light.css`.
 
 #### Want to support Internet Explorer?
 
-All three distributions of Water.css support Internet Explorer 11, but the main `water.css` file **doesn't respect the user's color scheme** and will be locked to dark mode due to lack of `prefers-color-scheme` support.
+All three distributions of Water.css support Internet Explorer 11, but the main `water.css` file **doesn't respect the user's color scheme** and will be locked to light mode due to lack of `prefers-color-scheme` support.
 
 Be aware that IE also doesn't support [runtime theming](#theming), and fixed fallback values will be used. If you want to override the Water.css theme, we recommend that you [compile your own theme](#compiling-your-own-theme).
 
@@ -101,12 +101,12 @@ If you want to change a value for dark or light mode only, use a media query lik
 ```html
 <style>
   :root {
-    --links: yellow; /* Always applied */
+    --links: blue; /* Always applied */
   }
 
-  @media (prefers-color-scheme: light) {
+  @media (prefers-color-scheme: dark) {
     :root {
-      --links: blue; /* Only applied in light mode (overrides yellow) */
+      --links: yellow; /* Only applied in dark mode (overrides blue) */
     }
   }
 </style>

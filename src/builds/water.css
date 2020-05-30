@@ -4,6 +4,6 @@
  * if a system-wide theme preference is set on the user's device.
  */
 
-@import '../variables-dark.css';
-@import '../variables-light.css' (prefers-color-scheme: light);
+@import '../variables-light.css';
+@import '../variables-dark.css' (prefers-color-scheme: dark);
 @import '../parts/_core.css';
