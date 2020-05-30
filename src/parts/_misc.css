@@ -12,6 +12,7 @@ table {
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
+  table-layout: fixed;
 }
 
 table caption {
@@ -23,6 +24,7 @@ th {
   padding: 6px;
   text-align: left;
   vertical-align: top;
+  word-wrap: break-word;
 }
 
 thead {
