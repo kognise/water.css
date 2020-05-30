@@ -19,8 +19,7 @@ const linkSnippets = [].slice.call(document.querySelectorAll('#link-snippet-cont
 const table = {
   fileName: document.getElementById('table-file-name'),
   fileSize: document.getElementById('table-file-size'),
-  theme: document.getElementById('table-theme'),
-  browserSupport: document.getElementById('table-browser-support')
+  theme: document.getElementById('table-theme')
 }
 
 const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
@@ -49,16 +48,11 @@ const updateTheme = () => {
 
   if (theme === 'auto') {
     table.theme.innerHTML = `
-    Defaults to light, but respects user-defined theme settings.<br>
-    (detected via <a style="--links: var(--code)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener"><code>prefers-color-scheme</code></a>)
-    `
-    table.browserSupport.innerHTML = `
-      All current browsers
-      (<a href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">support for CSS Custom Properties</a>)
+    Respects user-defined theme settings using <a style="--links: var(--code)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener"><code>prefers-color-scheme</code></a>.<br>
+    Light in browsers where the theme settings can't be detected.
     `
   } else {
     table.theme.innerText = `Theme is forced to ${theme}.`
-    table.browserSupport.innerText = 'All browsers (including Internet Explorer)'
   }
 }
 
