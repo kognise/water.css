@@ -20,7 +20,7 @@ const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
 const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
   /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: color => color.toRGBLegacy()
+  stringifier: (color) => color.toRGBLegacy()
 })
 
 const paths = {
@@ -53,73 +53,45 @@ const formatByteMessage = (source, data) => {
 }
 
 const style = () => {
-  const isLegacy = (path) => /legacy/.test(path)
-
-  const excludeModern = filter(file => isLegacy(file.path), { restore: true })
-  const excludeLegacy = filter(file => !isLegacy(file.path), { restore: true })
-
   // Don't inline minified versions, so builds can lazily import them at runtime
   const cssImportOptions = { filter: (path) => !/\.min/.test(path) }
+
+  const startDiff = () => bytediff.start()
+  const endDiff = (source) => bytediff.stop((data) => formatByteMessage(source, data))
 
   return (
     gulp
       .src(paths.styles.src)
-      // Add sourcemaps
       .pipe(sourcemaps.init())
-      // Resolve imports, calculated colors and inlined SVG files
       .pipe(postcss([postcssImport(cssImportOptions), postcssColorModFunction(), postcssInlineSvg()]))
 
-      // * Process legacy builds *
-      .pipe(excludeModern)
-      // Inline variable values so CSS works in legacy browsers
-      .pipe(postcss([postcssCssVariables()]))
-      // Calculate size before autoprefixing
-      .pipe(bytediff.start())
-      // autoprefix
-      .pipe(postcss([autoprefixer({
-        env: 'legacy'
-      })]))
-      // Write the amount gained by autoprefixing
-      .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
-      .pipe(excludeModern.restore)
+      .pipe(startDiff())
+      .pipe(postcss([postcssCssVariables({ preserve: true })]))
+      .pipe(endDiff('css variables'))
 
-      // * Process modern builds *
-      .pipe(excludeLegacy)
-      // Calculate size before autoprefixing
-      .pipe(bytediff.start())
-      // autoprefix modern builds
-      .pipe(postcss([autoprefixer({
-        env: 'modern'
-      })]))
-      // Write the amount gained by autoprefixing
-      .pipe(bytediff.stop(data => formatByteMessage('autoprefixer', data)))
-      .pipe(excludeLegacy.restore)
+      .pipe(startDiff())
+      .pipe(postcss([autoprefixer({ env: 'legacy' })]))
+      .pipe(endDiff('autoprefixer'))
 
-      // Write the sourcemaps after making pre-minified changes
       .pipe(sourcemaps.write('.'))
-      // Flatten output so files end up in dist/*, not dist/builds/*
-      .pipe(flatten())
-      // Write pre-minified styles
+      .pipe(flatten()) // Put files in dist/*, not dist/builds/*
       .pipe(gulp.dest(paths.styles.dest))
-      // Remove sourcemaps from the pipeline, only keep css
-      .pipe(filter('**/*.css'))
-      // Calculate size before minifying
-      .pipe(bytediff.start())
-      // Minify using cssnano, use extra-low precision while minifying inline SVGs
+
+      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
+
+      // <minifying>
+      .pipe(startDiff())
       .pipe(postcss([cssnano({ preset: ['default', { svgo: { floatPrecision: 0 } }] })]))
-      // Write the amount saved by minifying
-      .pipe(bytediff.stop(data => formatByteMessage('cssnano', data)))
-      // Rename the files have the .min suffix
+      .pipe(endDiff('minification'))
       .pipe(rename({ suffix: '.min' }))
-      // Write the sourcemaps after making all changes
+      // </minifying>
+
       .pipe(sourcemaps.write('.'))
-      // Write the minified files
       .pipe(gulp.dest(paths.styles.dest))
-      // Output files to docs directory so documentation site can use them
       .pipe(gulp.dest(paths.docs.dest + '/water.css'))
-      // Final size report including gzipped sizes
+
+      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
       .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
-      // Stream any changes to browserSync
       .pipe(browserSync.stream())
   )
 }

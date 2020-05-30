@@ -10,7 +10,6 @@
       content="A drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
     />
 
-    <!-- Icons generated with https://realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
     <link rel="icon" id="icon-16" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
     <link rel="icon" id="icon-32" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
@@ -24,17 +23,13 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
-    <link rel="preload" as="style" href="./water.css/dark-legacy.standalone.min.css" />
-    <link
-      rel="preload"
-      as="style"
-      media="(prefers-color-scheme: dark)"
-      href="./water.css/dark-legacy.standalone.min.css"
-    />
-    <link rel="stylesheet" id="js-startup-stylesheet" href="./water.css/dark-legacy.min.css" />
+    <link rel="preload" as="style" href="./water.css/dark.min.css" />
+    <link rel="preload" as="style" href="./water.css/light.min.css" />
+    <link rel="stylesheet" id="js-startup-stylesheet" href="./water.css/water.min.css" />
 
     <!-- Dynamic version of water.css, overwrites startup styles. JavaScript sets & updates href -->
     <link rel="stylesheet" id="js-stylesheet" />
+
     <!-- Custom styles for the documentation / version picker -->
     <link rel="stylesheet" href="style.css" />
 
@@ -48,7 +43,7 @@
     />
     <meta
       property="og:image"
-      content="https://raw.githubusercontent.com/kognise/water.css/29afc6c80a1a38123e47c8a50779faae97cc2a8b/assets/logo.png"
+      content="https://raw.githubusercontent.com/kognise/water.css/master/logo.png"
     />
     <meta property="og:image:width" content="1154" />
     <meta property="og:image:height" content="444" />
@@ -60,6 +55,11 @@
         "alternateName": "Water.css",
         "url": "https://watercss.kognise.dev/"
       }
+    </script>
+
+    <script>
+      // eslint-disable-next-line no-useless-escape
+      window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
     </script>
 
     <!-- Use bright favicons when the browser is in dark mode. -->
@@ -75,7 +75,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116663597-6"></script>
     <script>
       window.dataLayer = window.dataLayer || []
-      const gtag = (...args) => window.dataLayer.push(args)
+      // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+      const gtag = function () {
+        window.dataLayer.push(arguments)
+      }
       gtag('js', new Date())
       gtag('config', 'UA-116663597-6')
     </script>
@@ -87,22 +90,25 @@
     <p>
       Water.css is a drop-in collection of CSS styles to make simple websites like this just a
       little bit nicer.
-      <br />
+    </p>
+    <p>
       Now you can write your simple static site with nice semantic html, and Water.css will manage
       the styling for you.
     </p>
+
     <div class="row">
       <div>
         <a href="#installation"><b>Get it already!</b></a>
         <br />
         <a href="https://github.com/kognise/water.css"><b>GitHub</b></a>
       </div>
+
       <a
         href="https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css"
         target="_blank"
       >
         <img
-          id="js-producthunt"
+          id="product-hunt"
           src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily"
           alt="Water.css - Make your tiny website just a little nicer | Product Hunt Embed"
           style="width: 250px; height: 54px;"
@@ -113,7 +119,58 @@
     </div>
 
     <h2>Installation</h2>
-    <include src="./versionpicker.html"></include>
+    <div id="installation">
+      <header class="row">
+        <h3 id="link-snippet-headline">
+          Paste this into the <code>&lt;head&gt;</code> of your HTML:
+        </h3>
+        <button type="button" id="copy-button">
+          <span id="copy-button-feedback" class="emoji"></span>
+          Copy to clipboard
+        </button>
+      </header>
+
+      <div id="link-snippet-container">
+        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/water.css"></code></pre>
+        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.css"></code></pre>
+        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/light.css"></code></pre>
+      </div>
+
+      <h3>Options</h3>
+      <form id="theme-form">
+        <input type="radio" value="auto" checked name="theme" id="theme-auto" />
+        <label for="theme-auto">Automatic <span class="emoji">🌙</span> / <span class="emoji">☀</span></label>
+
+        <input type="radio" value="dark" name="theme" id="theme-dark" />
+        <label for="theme-dark">Dark theme <span class="emoji">🌙</span></label>
+
+        <input type="radio" value="light" name="theme" id="theme-light" />
+        <label for="theme-light">Light theme <span class="emoji">☀</span></label>
+      </form>
+
+      <table id="version-info">
+        <caption>
+          <h3>Version info</h3>
+        </caption>
+
+        <tbody>
+          <tr>
+            <th scope="row">File</th>
+            <td id="table-file-name"></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Size (min + gzip)</th>
+            <td id="table-file-size"></td>
+          </tr>
+
+          <tr>
+            <th scope="row">Theme</th>
+            <td id="table-theme"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <h2 id="goals">Goals</h2>
     <ul>
@@ -272,12 +329,6 @@
       <a href="#">Back to top <span class="emoji">⬆</span></a>
     </footer>
 
-    <script
-      src="https://unpkg.com/clipboard-polyfill@2.8.0/build/clipboard-polyfill.promise.js"
-      defer
-    ></script>
-    <script src="https://unpkg.com/@ungap/url-search-params@0.1.2/min.js" defer></script>
-    <script src="https://unpkg.com/vue@2.6.10/dist/vue.min.js" defer></script>
     <script src="script.js" defer></script>
   </body>
 </html>
