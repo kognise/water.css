@@ -6,9 +6,10 @@
   "scripts": {
     "build": "gulp build",
     "dev": "gulp watch",
-    "lint:js": "eslint **/*.js **/*.html gulpfile.js --fix",
-    "lint:css": "stylelint src/**/*.css docs/style.css --fix",
-    "lint": "yarn lint:js && yarn lint:css"
+    "lint:js": "eslint **/*.js **/*.html gulpfile.js",
+    "lint:css": "stylelint src/**/*.css docs/style.css",
+    "lint": "yarn lint:js --fix && yarn lint:css --fix",
+    "lint:nofix": "yarn lint:js && yarn lint:css"
   },
   "repository": {
     "type": "git",
