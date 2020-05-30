@@ -70,7 +70,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116663597-6"></script>
     <script>
       window.dataLayer = window.dataLayer || []
-      const gtag = (...args) => window.dataLayer.push(args)
+      // eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+      const gtag = function () {
+        window.dataLayer.push(arguments)
+      }
       gtag('js', new Date())
       gtag('config', 'UA-116663597-6')
     </script>
@@ -118,9 +121,9 @@
           Copy to clipboard
         </button>
       </header>
-    
+
       <pre><code id="link-snippet">Oh noes, the JavaScript hasn't loaded!</code></pre>
-    
+
       <h3>Options</h3>
       <form id="theme-form">
         <input type="radio" value="auto" checked name="theme" id="theme-auto" />

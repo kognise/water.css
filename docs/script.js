@@ -1,3 +1,5 @@
+'use strict'
+
 const cdnBase = 'https://cdn.jsdelivr.net/npm/water.css@2/dist/'
 const localBase = './water.css/'
 
@@ -25,7 +27,8 @@ const updateProductHunt = (theme) => {
 }
 
 const updateTheme = () => {
-  const theme = themeForm.theme.value
+  const theme = themeForm.querySelector('input[name="theme"]:checked').value
+
   const fileName = `${theme === 'auto' ? 'water' : theme}.min.css`
   const cdnUrl = `${cdnBase}${fileName}`
   const localUrl = `${localBase}${fileName}`
@@ -40,7 +43,7 @@ const updateTheme = () => {
     table.theme.innerHTML = 'Defaults to dark, but respects user-defined theme settings. Detected via <code>prefers-color-scheme</code>'
     table.browserSupport.innerHTML = `
       All current browsers
-      (<a href="https://caniuse.com/#feat=css-variables" target="_blank">support for CSS Custom Properties</a>)
+      (<a href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">support for CSS Custom Properties</a>)
     `
   } else {
     table.theme.innerText = `Theme is forced to ${theme}`
@@ -49,14 +52,14 @@ const updateTheme = () => {
   }
 }
 
-themeForm.addEventListener('input', updateTheme)
+themeForm.addEventListener('change', updateTheme)
 
 const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
 updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
-prefersColorScheme.addEventListener('change', () => {
+prefersColorScheme.addListener(() => {
   if (themeForm.theme.value !== 'auto') return
   updateProductHunt(prefersColorScheme.matches ? 'light' : 'dark')
 })
 
 updateTheme()
-startupStylesheet.remove()
+startupStylesheet.parentElement.removeChild(startupStylesheet)
