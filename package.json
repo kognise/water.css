@@ -65,7 +65,7 @@
     "stylelint-config-standard": "^20.0.0"
   },
   "browserslist":  [
-      "defaults AND not android 4.4.3"
+      "defaults"
   ],
   "files": [
     "dist/*.css",
