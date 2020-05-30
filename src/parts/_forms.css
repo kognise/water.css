@@ -62,6 +62,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   resize: vertical;
+  min-height: 140px;
 }
 
 select {
