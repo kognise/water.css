@@ -1089,11 +1089,6 @@
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.3.tgz#9c088679876f374eb5983f150d4787aa6fb32d7e"
   integrity sha512-FvUupuM3rlRsRtCN+fDudtmytGO6iHJuuRKS1Ss0pG5z8oX0diNEw94UEL7hgDbpN94rgaK5R7sWm6RrSkZuAQ==
 
-"@ungap/url-search-params@^0.1.2":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@ungap/url-search-params/-/url-search-params-0.1.4.tgz#727e9b4c811beaa6be6d7e4cc0516663c884cfd0"
-  integrity sha512-RLwrxCTDNiNev9hpr9rDq8NyeQ8Nn0X1we4Wu7Tlf368I8r+7hBj3uObhifhuLk74egaYaSX5nUsBlWz6kjj+A==
-
 abab@^2.0.0:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.3.tgz#623e2075e02eb2d3f2475e49f99c91846467907a"
@@ -2016,11 +2011,6 @@ cli-width@^2.0.0:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/cli-width/-/cli-width-2.2.1.tgz#b0433d0b4e9c847ef18868a4ef16fd5fc8271c48"
   integrity sha512-GRMWDxpOB6Dgk2E5Uo+3eEBvtOOlimMmpbFiKuLFnQzYDavtLFY3K5ona41jgN/WdRZtG7utuVSVTL4HbZHGkw==
-
-clipboard-polyfill@^2.8.1:
-  version "2.8.6"
-  resolved "https://registry.yarnpkg.com/clipboard-polyfill/-/clipboard-polyfill-2.8.6.tgz#19d27283f11f2933bb18737263b98b8c95b5a0f7"
-  integrity sha512-kz/1ov+PXsBpGnW9XJH3dLWdYj12FpXqO89Dngm/GRPoI36E/tnYs6N0YPTEhxM9WHAlFiN5eoyIVuv5nzKXvg==
 
 cliui@^3.2.0:
   version "3.2.0"
@@ -3408,11 +3398,6 @@ fastq@^1.6.0:
   integrity sha512-SMIZoZdLh/fgofivvIkmknUXyPnvxRE3DhtZ5Me3Mrsk5gyPL42F0xr51TdRXskBxHfMp+07bcYzfsYEsSQA9Q==
   dependencies:
     reusify "^1.0.4"
-
-favicon-mode-switcher@^1.0.4:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/favicon-mode-switcher/-/favicon-mode-switcher-1.1.0.tgz#b06ec7526f25fdf0b744b456f16b4c9315b42fed"
-  integrity sha512-SL+F07TzXtJJ+/HDniyTmRyovkSfOCCQ5w4BJhkKOj4G8jVITrMPtjhzjjBZt4oiOZlIoUOJblooN3zBiw1v9w==
 
 fclone@^1.0.11:
   version "1.0.11"
@@ -8912,11 +8897,6 @@ vinyl@^2.0.0:
     cloneable-readable "^1.0.0"
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
-
-vue@^2.6.10:
-  version "2.6.11"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.11.tgz#76594d877d4b12234406e84e35275c6d514125c5"
-  integrity sha512-VfPwgcGABbGAue9+sfrD4PuwFar7gPb1yl1UK1MwXoQPAw0BKSqWfoYCT/ThFrdEVWoI51dBuyCoiNU9bZDZxQ==
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"

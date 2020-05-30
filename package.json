@@ -31,11 +31,9 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@changesets/cli": "^2.7.2",
-    "@ungap/url-search-params": "^0.1.2",
     "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.3",
     "chalk": "^2.4.2",
-    "clipboard-polyfill": "^2.8.1",
     "cssnano": "^4.1.10",
     "eslint": "^7.1.0",
     "eslint-config-standard": "^14.1.1",
@@ -46,7 +44,6 @@
     "eslint-plugin-prefer-arrow": "^1.2.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "favicon-mode-switcher": "^1.0.4",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-bytediff": "^1.0.0",
@@ -66,8 +63,7 @@
     "postcss-inline-svg": "^4.1.0",
     "posthtml-include": "^1.2.0",
     "stylelint": "^13.5.0",
-    "stylelint-config-standard": "^20.0.0",
-    "vue": "^2.6.10"
+    "stylelint-config-standard": "^20.0.0"
   },
   "browserslist": {
     "legacy": [
