@@ -52,9 +52,6 @@ const formatByteMessage = (source, data) => {
 }
 
 const style = () => {
-  // Don't inline minified versions, so builds can lazily import them at runtime
-  const cssImportOptions = { filter: (path) => !/\.min/.test(path) }
-
   const startDiff = () => bytediff.start()
   const endDiff = (source) => bytediff.stop((data) => formatByteMessage(source, data))
 
@@ -62,7 +59,7 @@ const style = () => {
     gulp
       .src(paths.styles.src)
       .pipe(sourcemaps.init())
-      .pipe(postcss([postcssImport(cssImportOptions), postcssColorModFunction(), postcssInlineSvg()]))
+      .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       .pipe(startDiff())
       .pipe(postcss([postcssCssVariables({ preserve: true })]))
