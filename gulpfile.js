@@ -66,7 +66,7 @@ const style = () => {
       .pipe(endDiff('css variables'))
 
       .pipe(startDiff())
-      .pipe(postcss([autoprefixer({ env: 'legacy' })]))
+      .pipe(postcss([autoprefixer()]))
       .pipe(endDiff('autoprefixer'))
 
       .pipe(sourcemaps.write('.'))
