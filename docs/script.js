@@ -41,7 +41,7 @@ const updateTheme = () => {
 
   if (theme === 'auto') {
     table.theme.innerHTML = `
-    Defaults to dark, but respects user-defined theme settings.<br>
+    Defaults to light, but respects user-defined theme settings.<br>
     (detected via <a style="--links: var(--code)" href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme" target="_blank" rel="noopener"><code>prefers-color-scheme</code></a>)
     `
     table.browserSupport.innerHTML = `
