@@ -3,9 +3,9 @@
 const localBase = './water.css/'
 
 const fileSizes = {
-  dark: 2.3,
-  light: 2.29,
-  auto: 2.96
+  dark: 2.46,
+  light: 2.43,
+  auto: 3.13
 }
 
 const themeForm = document.getElementById('theme-form')
