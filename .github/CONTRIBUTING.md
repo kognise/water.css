@@ -4,57 +4,116 @@ Water.css becomes better for everyone when people like you help make it better!
 
 Have any questions or concerns? Did I forget an element or selector? Does something look ugly? Feel free to submit an issue or pull request.
 
-Before contributing, please read the [code of conduct](CODE_OF_CONDUCT.md). Also you agree that your contributions will be licensed under its [MIT License](../LICENSE.md).
+Before contributing, please read the [code of conduct](CODE_OF_CONDUCT.md). Also, you agree that your contributions will be licensed under this project's [MIT License](../LICENSE.md).
 
-## How to get started
+## Overview
 
-1. Get a copy of repository. It is recommended to fork it first and clone to your machine using `git`.
-2. Make sure that you have [yarn](https://yarnpkg.com) and install dependencies listed in `package.json` using it.
+Please take a moment to read through the following guidelines:
+
+- [Get started](#get-started)
+- [Find issues to work on](#find-issues-to-work-on)
+- [Add or change styles](#add-or-change-styles)
+- [Create your pull request](#create-your-pull-request)
+- [Project structure](#project-structure)
+
+<br>
+
+> **TL;DR**:
+> 1. `yarn install` – install dependencies
+> 2. `yarn dev` – start the dev server, make your changes
+> 3. `yarn validate` – make sure your changes pass all tests
+> 4. `yarn changeset` – describe your changes for the changelog
+
+<br>
+
+## Get started
+
+1. Get a copy of the repository. It is recommended to fork it first and clone to your machine using `git`.
+
+2. Make sure that you have [yarn](https://yarnpkg.com), then install dependencies by running:
+
     ```
-    yarn
+    yarn install
     ```
-3. Then you can run development server with live reloading out of the box and play around with the framework.
+
+3. Start the development server with live reload:
+
     ```
     yarn dev
     ```
 
-So you can access the `index.html` in browser by visiting [localhost:3000](http://localhost:3000/)
+4. Now you can visit [localhost:3000](http://localhost:3000) and start playing around with the framework – when you make changes to Water.css, the site will reload automatically so you can see what changed.
 
-*Note.* A script that builds distribution ready files is also available but it is not the part of development workflow, it is designed to be triggered automatically while publishing a new version of a package. The script itself could be run manually:
+*Note:* A script that builds distribution ready files is also available but it is not the part of development workflow. It is designed to be triggered automatically while publishing a new version of Water.css, but if you want to inspect the minified assets meant for production, you can run it manually: `yarn build`
 
-```
-yarn build
-```
 
-## How to find issues to work on
+## Find issues to work on
 
-If you are new to contributing open-source software, you can starty by picking any relevant issue that is tagged with `good first issue` [there](
+If you are new to contributing open-source software, you can starty by picking any relevant issue that is [tagged with **`good first issue`**](
 https://github.com/kognise/water.css/contribute).
 
-Also everyone is welcome to contribute on issues tagged with `help wanted`, you can find it filtered [here](https://github.com/kognise/water.css/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
+Also, everyone is welcome to contribute on issues [tagged with **`help wanted`**, you can find it filtered here](https://github.com/kognise/water.css/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22).
 
+## Add or change styles
 
-## How to make a pull request
+There are a few rules for working in the Water.css source code:
 
-It is a few general rules of thumb about making pull requests:
+1. The styles must not use any classes or IDs. Water.css is made entirely of basic style rules that only target HTML elements.
+
+2. Don't specify colors directly in the source files (`src/parts/*`). Only use named variables there, which are declared in `src/variables-*.css`.
+
+  ❌ Bad:
+  ```css
+  color: #fff;
+  ```
+
+  ✔ Good:
+  ```css
+  color: var(--text-bright);
+  ```
+
+3. Reuse existing colors where possible. Before introducing a new color to our palette, check if one of the existing colors fits your needs.
+
+4. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes.
+
+## Create your pull request
+
+Once you're happy with your changes, you need to **commit** them, create a **changelog** and **submit a pull request**.
+
+A few general rules of thumb about what makes a good pull request:
 
 - Make sure that your pull request covers a small and well defined scope
 - Make small commits with clear and explainful messages
-- You need to provide a clear description about your contribution on GitHub
+- Provide a clear description about your contribution on GitHub
 
-Before making a pull request, make sure you lint your code and generate a changelog.
+When you commit code, Water.css will run some checks to make sure that your changes have no errors and match the project's coding style – a process called **Linting**. It will also verify that all **colors are accessible**, which means they need to have enough contrast to be easily readable.
 
-**Linting**
+If the code you introduced has errors or some of the colors aren't accessible, you'll see an error and the commit will abort.
+You can check whether your changes pass all tests before committing them by running:
 
-If you aren't familiar, a linter is a program that automatically checks your code for formatting issues and potential bugs. Our linters are configured to automatically fix what they can so you can typically run one command and be done with it:
+```
+yarn validate
+```
+
+If there are errors, you can try to fix them automatically by running:
 
 ```
 yarn lint
 ```
 
-**Changelogs**
+<details>
+  <summary>ℹ A note about puppeteer and WSL</summary>
+  <br>
+  <blockquote>
+    The accessibility checks use puppeteer, a tool that uses Chrome to render websites "headlessly", without a visible interface. In some environments like the <a href="https://aka.ms/wsl">Windows Subsystem for Linux</a>, you'll need to manually configure and run an X-Server in order for puppeteer to work.
+  </blockquote>
+</details>
 
-We use software called Changesets to keep track of what changes have been made between versions. Make sure to create a changelog before creating your pull request!
+<br>
+
+Now that your changes are commited, you'll need to **generate a changelog**:
+
+We use a tool called [Changesets](https://github.com/atlassian/changesets) to keep track of what changes have been made between versions. Make sure to create a changelog before creating your pull request!
 
 Just run this command for each change you made, and then answer a few questions:
 
@@ -62,9 +121,9 @@ Just run this command for each change you made, and then answer a few questions:
 yarn changeset
 ```
 
-If you're not sure what kind of change you're making, pick patch.
+If you're not sure what kind of change you're making, pick "patch".
 
-## Directory structure
+## Project structure
 
 ```
 .
@@ -77,16 +136,16 @@ If you're not sure what kind of change you're making, pick patch.
     └── parts
 ```
 
-`dist` directory is ignored by git and it contains built assets for distribution
+- **`dist`** is ignored by git – it contains built assets for distribution
 
-`docs` directory contains the documentation and demo page
+- **`docs`** contains the documentation and demo page
 
-`docs/icons` directory contains water.css favicons used in the documentation
+- **`docs/icons`** contains water.css favicons used in the documentation
 
-`src` directory contains all the source stylesheets groupped into folders and variables
+- **`src`** contains all the source stylesheets grouped into folders and variables
 
-`src/assets` directory contains images used for UI elements styling
+- **`src/assets`** contains images/icons used for UI element styling
 
-`src/builds` directory contains base style files prepared for different kind of builds (i.e. light and dark themes, supporting legacy browsers, etc)
+- **`src/builds`** contains entry files for the different versions water.css comes in: auto, dark and light
 
-`src/parts` directory contains the whole source organized in separate files by its kind like forms, links, typography
+- **`src/parts`** contains the water.css source code organized in separate files by its kind, like "forms" or "typography"
