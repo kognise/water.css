@@ -58,10 +58,17 @@ textarea {
 }
 
 textarea {
+  display: block;
   margin-right: 0;
-  width: 100%;
   box-sizing: border-box;
   resize: vertical;
+}
+
+textarea:not([cols]) {
+  width: 100%;
+}
+
+textarea:not([rows]) {
   min-height: 140px;
 }
 
