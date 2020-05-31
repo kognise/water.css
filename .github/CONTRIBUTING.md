@@ -58,7 +58,9 @@ Also, everyone is welcome to contribute on issues [tagged with **`help wanted`**
 
 There are a few rules for working in the Water.css source code:
 
-1. Don't specify colors directly in the source files (`src/parts/*`). Only use named variables there, which are declared in `src/variables-*.css`.
+1. The styles must not use any classes or IDs. Water.css is made entirely of basic style rules that only target HTML elements.
+
+2. Don't specify colors directly in the source files (`src/parts/*`). Only use named variables there, which are declared in `src/variables-*.css`.
 
   ❌ Bad:
   ```css
@@ -70,9 +72,9 @@ There are a few rules for working in the Water.css source code:
   color: var(--text-bright);
   ```
 
-2. Reuse existing colors where possible. Before introducing a new color to our palette, check if one of the existing colors fits your needs.
+3. Reuse existing colors where possible. Before introducing a new color to our palette, check if one of the existing colors fits your needs.
 
-3. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes.
+4. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes.
 
 ## Make your pull request
 
