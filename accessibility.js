@@ -18,34 +18,42 @@ const check = async (browser, theme) => {
     page
   })
 
+  await page.close()
+  return results
+}
+
+const log = (results, theme) => {
   if (results.issues.length === 0) {
-    await page.close()
-    console.log(chalk`{green No issues found!}`)
-    return false
+    console.log(chalk`{blue ${theme} –} {green.bold No issues found!}`)
+    return
   }
 
+  console.log()
+  console.log(chalk`{blue ${theme} –} {red.bold Errors found:}`)
   for (const issue of results.issues) {
     console.log()
-    console.log(chalk`{red Error:} ${issue.message}`)
     console.log(chalk`{gray -> ${issue.code}}`)
     console.log(chalk`{gray -> ${issue.selector}}`)
     console.log(chalk`{gray -> ${issue.context}}`)
   }
-
-  await page.close()
-  return true
+  console.log()
 }
 
 const go = async () => {
   try {
     const browser = await puppeteer.launch()
 
-    const lightResult = await check(browser, 'light')
+    const [lightResults, darkResults] = await Promise.all([check(browser, 'light'), check(browser, 'dark')])
+
     console.log()
-    const darkResult = await check(browser, 'dark')
+    log(lightResults, '☀ Light Theme')
+    log(darkResults, '🌙 Dark Theme')
+    console.log()
 
     await browser.close()
-    if (lightResult || darkResult) process.exit(1)
+
+    const errorsFound = lightResults.issues.length || darkResults.issues.length
+    if (errorsFound) process.exit(1)
   } catch (error) {
     console.log()
     console.log(chalk`{red An unexpected error occured!} ${error.message}`)
