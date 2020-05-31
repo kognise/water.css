@@ -74,8 +74,28 @@ Simply remove the `.min` from the file name.
 
 ## Theming
 
-Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do!
-You can find a full list of the variables used at [**src/variables-\*.css**](https://github.com/kognise/water.css/tree/master/src/variables-dark.css).
+Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do! Here's a list list of all the variables you can change to your liking:
+
+- `--background-body`
+- `--background`
+- `--background-alt`
+- `--selection`
+- `--text-main`
+- `--text-bright`
+- `--text-muted`
+- `--links`
+- `--focus`
+- `--border`
+- `--code`
+- `--animation-duration`
+- `--button-hover`
+- `--scrollbar-thumb`
+- `--scrollbar-thumb-hover`
+- `--form-placeholder`
+- `--form-text`
+- `--variable`
+- `--highlight`
+- `--select-arrow`
 
 ### Runtime theming
 
@@ -138,5 +158,5 @@ $ yarn dev
 
 **Alternatively, just click this button to develop in Repl.it, a supercool in-browser IDE!** [![Run on Repl.it](https://repl.it/badge/github/kognise/water.css)](https://repl.it/github/kognise/water.css)
 
-Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!  
+Before submitting your first pull request, make sure to check out our [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md)!
 Thanks for taking the time to contribute :)

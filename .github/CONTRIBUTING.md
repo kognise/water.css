@@ -74,7 +74,7 @@ There are a few rules for working in the Water.css source code:
 
 3. Reuse existing colors where possible. Before introducing a new color to our palette, check if one of the existing colors fits your needs.
 
-4. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes.
+4. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes. Also, add the new variable to the list of variables available for theming in the [README](../README.md#theming).
 
 ## Create your pull request
 
