@@ -74,8 +74,28 @@ Simply remove the `.min` from the file name.
 
 ## Theming
 
-Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do!
-You can find a full list of the variables used at [**src/variables-\*.css**](https://github.com/kognise/water.css/tree/master/src/variables-dark.css).
+Do you want to make some adjustments or build your own theme completely different from the official dark or light themes? Since Water.css is built with CSS variables this is super easy to do! Here's a list list of all the variables you can change to your liking:
+
+- `--background-body`
+- `--background`
+- `--background-alt`
+- `--selection`
+- `--text-main`
+- `--text-bright`
+- `--text-muted`
+- `--links`
+- `--focus`
+- `--border`
+- `--code`
+- `--animation-duration`
+- `--button-hover`
+- `--scrollbar-thumb`
+- `--scrollbar-thumb-hover`
+- `--form-placeholder`
+- `--form-text`
+- `--variable`
+- `--highlight`
+- `--select-arrow`
 
 ### Runtime theming
 
