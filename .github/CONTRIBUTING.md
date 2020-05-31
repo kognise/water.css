@@ -76,7 +76,7 @@ There are a few rules for working in the Water.css source code:
 
 4. If you introduce a new variable, make sure to declare it both in `variables-dark.css` and `variables-light.css` so it's available in both themes.
 
-## Make your pull request
+## Create your pull request
 
 Once you're happy with your changes, you need to **commit** them, create a **changelog** and **submit a pull request**.
 
