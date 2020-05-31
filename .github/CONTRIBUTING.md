@@ -86,7 +86,7 @@ A few general rules of thumb about what makes a good pull request:
 - Make small commits with clear and explainful messages
 - Provide a clear description about your contribution on GitHub
 
-When you commit code, Water.css will run some checks to make sure that your changes have no errors and match the project's coding style – a process called **Linting**. It will also verify that all **colors are accessible**, which means they need to have enough contrast to be easily readable.
+When you commit code, Water.css will run some checks to make sure that your changes have no errors and match the project's coding style – a process called [**Linting**](https://www.freecodecamp.org/news/what-is-linting-and-how-can-it-save-you-time). It will also verify that all **colors are accessible**, which means they need to have enough contrast to be easily readable.
 
 If the code you introduced has errors or some of the colors aren't accessible, you'll see an error and the commit will abort.
 You can check whether your changes pass all tests before committing them by running:
