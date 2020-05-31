@@ -66,7 +66,7 @@ const style = () => {
       .pipe(endDiff('css variables'))
 
       .pipe(startDiff())
-      .pipe(postcss([autoprefixer({ env: 'legacy' })]))
+      .pipe(postcss([autoprefixer()]))
       .pipe(endDiff('autoprefixer'))
 
       .pipe(sourcemaps.write('.'))
@@ -118,7 +118,7 @@ const docs = () => {
       // * Process CSS *
       .pipe(cssOnly)
       .pipe(sourcemaps.init())
-      .pipe(postcss([cssnano()]))
+      .pipe(postcss([autoprefixer(), cssnano()]))
       .pipe(sourcemaps.write('.'))
       .pipe(cssOnly.restore)
 

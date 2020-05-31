@@ -64,11 +64,9 @@
     "stylelint": "^13.5.0",
     "stylelint-config-standard": "^20.0.0"
   },
-  "browserslist": {
-    "legacy": [
-      "defaults AND not android 4.4.3"
-    ]
-  },
+  "browserslist":  [
+      "defaults"
+  ],
   "files": [
     "dist/*.css",
     "LICENSE.md"
