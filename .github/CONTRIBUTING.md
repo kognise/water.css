@@ -18,7 +18,7 @@ Please take a moment to read through the following guidelines:
 
 <br>
 
-> **TL;DR**:
+> **Quickstart**:
 > 1. `yarn install` – install dependencies
 > 2. `yarn dev` – start the dev server, make your changes
 > 3. `yarn validate` – make sure your changes pass all tests
@@ -28,9 +28,9 @@ Please take a moment to read through the following guidelines:
 
 ## Get started
 
-1. Get a copy of the repository. It is recommended to fork it first and clone to your machine using `git`.
+1. Get a copy of the repository. It is recommended to [fork](https://github.com/kognise/water.css/fork) it first and clone to your machine using `git`.
 
-2. Make sure that you have [yarn](https://yarnpkg.com), then install dependencies by running:
+2. Make sure that you have [yarn installed](https://classic.yarnpkg.com/en/docs/install/), then install dependencies by running:
 
     ```
     yarn install
@@ -87,6 +87,8 @@ A few general rules of thumb about what makes a good pull request:
 - Make small commits with clear and explainful messages
 - Provide a clear description about your contribution on GitHub
 
+### Commit
+
 When you commit code, Water.css will run some checks to make sure that your changes have no errors and match the project's coding style – a process called [**Linting**](https://www.freecodecamp.org/news/what-is-linting-and-how-can-it-save-you-time). It will also verify that all **colors are accessible**, which means they need to have enough contrast to be easily readable.
 
 If the code you introduced has errors or some of the colors aren't accessible, you'll see an error and the commit will abort.
@@ -112,6 +114,8 @@ yarn lint
 
 <br>
 
+### Changelog
+
 Now that your changes are commited, you'll need to **generate a changelog**:
 
 We use a tool called [Changesets](https://github.com/atlassian/changesets) to keep track of what changes have been made between versions. Make sure to create a changelog before creating your pull request!
@@ -123,6 +127,16 @@ yarn changeset
 ```
 
 If you're not sure what kind of change you're making, pick "patch".
+
+### Submit a Pull Request
+
+Once your changes have been committed and you've created a changelog, you'll want to [submit a pull request](https://github.com/kognise/water.css/compare).
+
+Be sure to provide a clear description of what your pull request includes. If your pull request will close an existing issue, make sure to write `Closes #[id]` in the pull request description, where `[id]` is replaced by the issue your pull request will close.
+
+After submitting a pull request, it will need to be reviewed by a maintainer of the project before being merged. You may be asked to make some changes to your pull request.
+
+After your change has been reviewed and merge, you can celebrate as the newest contributor to the Water.css project! 🎉
 
 ## Project structure
 
