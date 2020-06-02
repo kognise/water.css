@@ -136,7 +136,7 @@ Be sure to provide a clear description of what your pull request includes. If yo
 
 After submitting a pull request, it will need to be reviewed by a maintainer of the project before being merged. You may be asked to make some changes to your pull request.
 
-After your change has been reviewed and merge, you can celebrate as the newest contributor to the Water.css project! 🎉
+After your change has been reviewed and merged, you can celebrate as the newest contributor to the Water.css project! 🎉
 
 ## Project structure
 
