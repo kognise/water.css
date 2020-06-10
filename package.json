@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp build",
     "dev": "gulp watch",
-    "lint:js": "eslint **/*.js **/*.html gulpfile.js",
+    "lint:js": "eslint bookmarklet/original.js docs/script.js docs/index.html gulpfile.js",
     "lint:css": "stylelint src/**/*.css docs/style.css",
     "lint": "yarn lint:js --fix && yarn lint:css --fix",
     "accessibility": "yarn build && node accessibility.js",
