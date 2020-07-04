@@ -61,6 +61,7 @@ tbody tr:nth-child(even) {
 
 ::selection {
   background-color: var(--selection);
+  color: var(--text-bright);
 }
 
 details {
