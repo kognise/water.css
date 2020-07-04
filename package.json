@@ -1,6 +1,6 @@
 {
   "name": "water.css",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "A drop-in collection of CSS styles to make simple websites just a little nicer",
   "main": "index.js",
   "scripts": {
@@ -67,8 +67,8 @@
     "stylelint": "^13.5.0",
     "stylelint-config-standard": "^20.0.0"
   },
-  "browserslist":  [
-      "defaults"
+  "browserslist": [
+    "defaults"
   ],
   "files": [
     "dist/*.css",
