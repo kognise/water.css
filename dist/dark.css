@@ -155,6 +155,8 @@ blockquote cite {
 
 address {
   font-style: normal;
+  padding-left: 15px;
+  padding-bottom: 10px;
 }
 
 a[href^='mailto']::before {
