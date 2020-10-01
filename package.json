@@ -71,7 +71,7 @@
     "defaults"
   ],
   "files": [
-    "dist/*.css",
+    "out/*.css",
     "LICENSE.md"
   ]
 }

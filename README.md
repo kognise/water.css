@@ -41,15 +41,15 @@ Just stick this in your `<head>`:
 
 ### 🌙/☀ Automatic Theme:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/water.min.css">`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">`
 
 ### 🌙 Dark Theme:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/dark.min.css">`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">`
 
 ### ☀ Light Theme:
 
-`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/dist/light.min.css">`
+`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css">`
 
 <br>
 
@@ -108,7 +108,7 @@ Because of this, you can simply add your own stylesheet to the page and set your
 This short example will use Water.css, but color all links red:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/water.css@2/dist/water.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/water.css@2/out/water.min.css" />
 <style>
   :root {
     --links: red;
@@ -140,7 +140,7 @@ If you are targeting browsers without support for CSS Custom Properties such as 
 - Run `yarn` to install dependencies
 - Make the theming changes you want in `src/variables-*.css`
 - Run `yarn build` to compile the CSS files
-- Use the compiled files in the `dist/` directory on your site
+- Use the compiled files in the `out/` directory on your site
 
 You also might want to check out the [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md) as it contains further information about the build setup.
 

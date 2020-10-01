@@ -23,8 +23,8 @@ const postcssColorModFunction = require('postcss-color-mod-function').bind(null,
 })
 
 const paths = {
-  docs: { src: 'docs/**', dest: 'dist/docs' },
-  styles: { src: 'src/builds/*.css', dest: 'dist', watch: 'src/**/*.css' }
+  docs: { src: 'docs/**', dest: 'out/docs' },
+  styles: { src: 'src/builds/*.css', dest: 'out', watch: 'src/**/*.css' }
 }
 
 // https://stackoverflow.com/a/20732091
@@ -70,7 +70,7 @@ const style = () => {
       .pipe(endDiff('autoprefixer'))
 
       .pipe(sourcemaps.write('.'))
-      .pipe(flatten()) // Put files in dist/*, not dist/builds/*
+      .pipe(flatten()) // Put files in out/*, not out/builds/*
       .pipe(gulp.dest(paths.styles.dest))
 
       .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
@@ -132,7 +132,7 @@ const browserReload = (done) => {
 }
 
 const startDevServer = () => {
-  browserSync.init({ server: { baseDir: './dist/docs' } })
+  browserSync.init({ server: { baseDir: './out/docs' } })
 
   gulp.watch(paths.styles.watch, gulp.series(style, browserReload))
   gulp.watch(paths.docs.src, gulp.series(docs, browserReload))

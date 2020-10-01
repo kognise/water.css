@@ -10,7 +10,7 @@ const check = async (browser, theme) => {
     { name: 'prefers-color-scheme', value: theme }
   ])
 
-  const results = await pa11y('./dist/docs/index.html', {
+  const results = await pa11y('./out/docs/index.html', {
     ignore: [
       'WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2' // Ignore "this form does not contain a submit button"
     ],

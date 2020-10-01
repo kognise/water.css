@@ -1,5 +1,3 @@
-dist/docs
-
 # Logs
 logs
 *.log
@@ -89,4 +87,4 @@ typings/
 .idea/
 
 # Output of yarn build
-dist/
+out/

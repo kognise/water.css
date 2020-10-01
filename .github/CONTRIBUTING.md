@@ -142,6 +142,7 @@ After your change has been reviewed and merged, you can celebrate as the newest 
 
 ```
 .
+├── out
 ├── dist
 └── docs
     └── icons
@@ -151,7 +152,9 @@ After your change has been reviewed and merged, you can celebrate as the newest 
     └── parts
 ```
 
-- **`dist`** is ignored by git – it contains built assets for distribution
+- **`out`** is ignored by git – it contains built assets for distribution
+
+- **`dist`** contains old assets, for backwards compatibility - ignore this
 
 - **`docs`** contains the documentation and demo page
 
