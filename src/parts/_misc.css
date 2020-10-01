@@ -1,4 +1,5 @@
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
 }
@@ -12,12 +13,19 @@ table {
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
+  table-layout: fixed;
+}
+
+table caption {
+  text-align: left;
 }
 
 td,
 th {
   padding: 6px;
   text-align: left;
+  vertical-align: top;
+  word-wrap: break-word;
 }
 
 thead {
@@ -53,6 +61,7 @@ tbody tr:nth-child(even) {
 
 ::selection {
   background-color: var(--selection);
+  color: var(--text-bright);
 }
 
 details {
@@ -83,6 +92,13 @@ summary {
   background-color: var(--background);
   padding: 10px;
   margin: -10px -10px 0;
+  cursor: pointer;
+  outline: none;
+}
+
+summary:hover,
+summary:focus {
+  text-decoration: underline;
 }
 
 details > :not(summary) {
@@ -94,8 +110,11 @@ summary::-webkit-details-marker {
 }
 
 footer {
-  border-top: 1px solid var(--background);
+  border-top: 1px solid var(--border);
   padding-top: 10px;
-  font-size: 0.8em;
   color: var(--text-muted);
+}
+
+body > footer {
+  margin-top: 40px;
 }

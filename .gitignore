@@ -87,4 +87,5 @@ typings/
 .idea/
 
 # Output of yarn build
+out/
 dist/
