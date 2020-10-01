@@ -19,7 +19,8 @@ const linkSnippets = [].slice.call(document.querySelectorAll('#link-snippet-cont
 const table = {
   fileName: document.getElementById('table-file-name'),
   fileSize: document.getElementById('table-file-size'),
-  theme: document.getElementById('table-theme')
+  theme: document.getElementById('table-theme'),
+  npm: document.getElementById('table-npm')
 }
 
 const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
@@ -54,6 +55,14 @@ const updateTheme = () => {
     updateProductHunt(theme)
     table.theme.innerText = `Theme is forced to ${theme}.`
   }
+
+  table.npm.innerHTML = `
+  Install with <code>npm i water.css</code> or <code>yarn add water.css</code>
+  <br><br>
+  JS: <code>import 'water.css/out/${fileName}'</code>
+  <br>
+  CSS: <code>@import './node_modules/water.css/out/${fileName}'</code>
+  `
 }
 
 themeForm.addEventListener('change', updateTheme)
