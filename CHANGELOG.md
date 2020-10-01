@@ -1,32 +1,27 @@
-# water.css
+# Water.css
 
 ## 2.0.0
 ### Major Changes
 
 - Published to npm
+  
+  If you're using an old version of Water.css, you **must** see the README or you won't get new changes 
 
-  **TODO:** How does this impact jsdelivr?
 - Added sourcemaps, autoprefixing, and minification
+  - Cleaned up the structure of sourcemap files
+  - Compatible with all major browsers including IE
 
-  **TODO:** this could use more description?
-  - Strucutre of sourcemap files
-  - Description of browser compatibility (?)
 - Added support for `prefers-color-scheme` to automatically set light and dark theme
-  
-  **TODO:** Describe this more
-  - What are the breaking changes?
-    - What is the new default theme color?
-    - How does this affect them?
-  - Why did we make this change?
-    - Browser support means this makes sense now?
-  - How should consumers update their code?
-    - Should they be using `water.css`, `light.css`, or `dark.css`?
-  ```
-- Changes to supported browsers
-  
-  **TODO:** Have we lost any browser support? Especially surrounding CSS variables
+  - The default theme color is light mode
+  - Internet Explorer does not support this so the automatic version will always show up as light mode in IE
+  - If you want to force a color scheme, use `light.css`, or `dark.css`
+
+
+- Added CSS variables to allow for changing theme colors at runtime instead of build time
+
+  IE does not support this either, but nothing should break because we provide fixed fallback colors. It is possible to compile your own theme if you must have custom colors in IE.
+
 - Added [Code of Conduct](.github/CODE_OF_CONDUCT.md) and [Contribution Guide](.github/CONTRIBUTING.md)
-- Added css variables to allow for changing theme colors at runtime instead of build time
 - Restructured `.scss` file locations and variable names
 - Added `height: auto` to `img` elements to keep aspect ratio
 
