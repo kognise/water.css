@@ -32,7 +32,7 @@ Water.css is a CSS framework that doesn't require any classes. You just include 
 
 You might want to use Water.css if you're making a simple static page or demo website that you don't want to spend time styling.
 
-You probably don't want to use it for a production app or something that is more than a simple document. Rule of thumb: if your site has a navbar, don't use Water.css. It's just not meant for that kind of content.
+You probably don't want to use it for a production app or something that is more than a simple document. Rule of thumb: if your site has a navbar then don't use Water.css. It's just not meant for that kind of content.
 
 ## How?
 
