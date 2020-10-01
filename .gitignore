@@ -88,3 +88,4 @@ typings/
 
 # Output of yarn build
 out/
+dist/
