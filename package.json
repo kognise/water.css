@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/kognise/water.css.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "css",
     "css-framework",
