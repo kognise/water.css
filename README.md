@@ -56,6 +56,30 @@ Just stick this in your `<head>`:
 
 A **preview** of the different themes is available [on the **demo page**](https://watercss.kognise.dev/#installation)! ⚡
 
+#### Installing from NPM
+
+Alternatively, to install Water.css through a package manager, you can run:
+
+```
+# Using npm
+npm install water.css
+
+# Using yarn
+yarn add water.css
+```
+
+<details>
+  <summary><strong>In JavaScript (where CSS imports are supported)</strong></summary>
+
+  <pre><code>import 'water.css/out/water.css'</code></pre>
+</details>
+
+<details>
+  <summary><strong>In CSS or similar</strong></summary>
+
+  <pre><code>@import './node_modules/water.css/out/water.css';</code></pre>
+</details>
+
 #### How the "Automatic Theme" works
 
 The main `water.css` file automatically switches between light and dark mode depending on the system preferences of a user's device. This detection is made possible through a CSS media query called [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). In browsers where the preference can't be detected, `water.css` will stick to the light theme.
