@@ -22,6 +22,7 @@
 - Tiny size
 - Beautiful
 - No classes
+- Encourage accessible code
 
 ## Why?
 
