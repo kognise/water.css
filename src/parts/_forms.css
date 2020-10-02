@@ -29,6 +29,12 @@ select {
   outline: none;
 }
 
+input[type='color'] {
+  min-height: 2rem;
+  padding: 8px;
+  cursor: pointer;
+}
+
 input[type='checkbox'],
 input[type='radio'] {
   height: 1em;
