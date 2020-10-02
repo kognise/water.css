@@ -10,6 +10,7 @@ h4,
 h5,
 h6 {
   margin-bottom: 12px;
+  margin-top: 24px;
 }
 
 h1,
@@ -35,16 +36,17 @@ th {
 }
 
 q::before {
-   content: none;
+  content: none;
 }
 
 q::after {
-   content: none;
+  content: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   border-left: 4px solid var(--focus);
-  margin: 1.5em 0em;
+  margin: 1.5em 0;
   padding: 0.5em 1em;
   font-style: italic;
 }
@@ -77,6 +79,6 @@ a[href^='sms\:']::before {
 mark {
   background-color: var(--highlight);
   border-radius: 2px;
-  padding: 0px 2px 0px 2px;
-  color: #000000;
+  padding: 0 2px 0 2px;
+  color: #000;
 }

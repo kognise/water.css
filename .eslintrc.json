@@ -1,0 +1,37 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "html",
+    "markdown",
+    "prefer-arrow"
+  ],
+  "overrides": [
+    {
+      "files": [ "**/*.md" ],
+      "processor": "markdown/markdown"
+    }
+  ],
+  "rules": {
+    "prefer-arrow/prefer-arrow-functions": [
+      "error",
+      {
+        "disallowPrototype": true,
+        "singleReturnOnly": false,
+        "classPropertiesAllowed": false
+      }
+    ],
+    "func-style": ["error", "expression"],
+    "arrow-parens": ["error", "always"]
+  }
+}
