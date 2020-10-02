@@ -30,8 +30,8 @@ select {
 }
 
 input[type='color'] {
-    min-height: 2rem;
-    padding: 8px;
+  min-height: 2rem;
+  padding: 8px;
 }
 
 input[type='checkbox'],
