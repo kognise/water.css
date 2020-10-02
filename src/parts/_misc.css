@@ -109,6 +109,35 @@ summary::-webkit-details-marker {
   color: var(--text-main);
 }
 
+dialog {
+  background-color: var(--background-alt);
+  color: var(--text-main);
+
+  border: none;
+  border-radius: 6px;
+  border-color: var(--border);
+
+  box-shadow: 0 10px 30px color-mod(var(--border) alpha(0.1)), 0 1px 8px color-mod(var(--border) alpha(0.2));
+
+  padding: 10px 30px;
+}
+
+dialog > header {
+  background-color: var(--background);
+
+  border-radius: 6px 6px 0 0;
+
+  margin: -10px -30px 10px;
+  padding: 10px;
+
+  text-align: center;
+}
+
+dialog::backdrop {
+  background: color-mod(var(--background-body) alpha(0.15));
+  backdrop-filter: blur(4px);
+}
+
 footer {
   border-top: 1px solid var(--border);
   padding-top: 10px;

@@ -77,3 +77,11 @@ copyButton.addEventListener('click', () => {
     .catch(() => { copyButtonFeedback.textContent = '❌' })
     .then(() => setTimeout(() => { copyButtonFeedback.textContent = '' }, 1000))
 })
+
+document.getElementById('dialog-trigger').addEventListener('click', function (event) {
+  document.getElementById('dialog-result').innerText = '';
+  document.getElementById('dialog').showModal();
+});
+document.getElementById('dialog').addEventListener('close', function (event) {
+  document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`;
+});
