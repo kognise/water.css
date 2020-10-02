@@ -37,8 +37,19 @@ input[type='color'] {
 
 input[type='checkbox'],
 input[type='radio'] {
-  height: 1em;
-  width: 1em;
+  transform: scale(1.4);
+}
+
+input[type='submit']:active,
+input[type='button']:active,
+input[type='range']:active,
+button:active {
+  transform: translateY(2px);
+}
+
+input[type='checkbox']:active,
+input[type='radio']:active {
+  transform: translateY(2px) scale(1.4);
 }
 
 input[type='radio'] {
@@ -46,7 +57,7 @@ input[type='radio'] {
 }
 
 input {
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 label {
@@ -112,15 +123,6 @@ select:focus,
 button:focus,
 textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
-}
-
-input[type='checkbox']:active,
-input[type='radio']:active,
-input[type='submit']:active,
-input[type='button']:active,
-input[type='range']:active,
-button:active {
-  transform: translateY(2px);
 }
 
 input:disabled,
