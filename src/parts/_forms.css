@@ -31,11 +31,6 @@ select {
   outline: none;
 }
 
-input[type='color'] {
-  min-height: 2rem;
-  padding: 8px;
-}
-
 input,
 select,
 button,
