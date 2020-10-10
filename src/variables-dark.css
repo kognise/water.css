@@ -1,6 +1,7 @@
 :root {
   --background-body: #202b38;
   --background: #161f27;
+  --background-btn: #0c151c;
   --background-alt: #1a242f;
   --selection: #1c76c5;
   --text-main: #dbdbdb;
@@ -11,7 +12,7 @@
   --border: #526980;
   --code: #ffbe85;
   --animation-duration: 0.1s;
-  --button-hover: #324759;
+  --button-hover: #2f5372;
   --scrollbar-thumb: var(--button-hover);
   --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(+8%));
   --form-placeholder: #a9a9a9;
