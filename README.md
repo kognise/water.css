@@ -97,6 +97,16 @@ Do you want to make some adjustments or build your own theme completely differen
 - `--highlight`
 - `--select-arrow`
 
+### Browser support
+
+Water.css styles some elements which are not supported by a few browsers. They are mentioned below:
+
+| HTML element  | Browsers which don't support them |
+|---|---|
+| `details`  | IE  |
+| `dialog`  |  IE, Firefox, Safari, Opera (Mini), KaiOS Browser |
+
+
 ### Runtime theming
 
 > ⚠ If you use a version with support for legacy browsers like Internet Explorer, skip to [Compiling your own theme](#compiling-your-own-theme)!
