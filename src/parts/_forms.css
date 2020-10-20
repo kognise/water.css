@@ -29,6 +29,14 @@ select {
   outline: none;
 }
 
+button,
+input[type='submit'],
+input[type='button'] {
+  background-color: var(--background-btn);
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
 input[type='color'] {
   min-height: 2rem;
   padding: 8px;
@@ -94,17 +102,12 @@ select[multiple] {
   overflow-y: auto;
 }
 
-button,
-input[type='submit'],
-input[type='button'] {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
 button:hover,
 input[type='submit']:hover,
 input[type='button']:hover {
   background: var(--button-hover);
+
+  /* transform: scale(1.03); */
 }
 
 input:focus,
