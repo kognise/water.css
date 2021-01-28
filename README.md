@@ -144,9 +144,40 @@ If you are targeting browsers without support for CSS Custom Properties such as 
 
 You also might want to check out the [Contributing Guide](https://github.com/kognise/water.css/tree/master/.github/CONTRIBUTING.md) as it contains further information about the build setup.
 
+## `<dialog>` tag compatibility in the browsers
+
+### Suported versions browsers
+
+- **Edge:** suported in the versions 79-85 and 86;
+- **Chrome:** suported in the versions 37-85, 86 and 87-89;
+- **Opera:** suported in the versions 24-70 and 71;
+- **Android Browser:** suported in the version 81;
+- **Opera Mobile:** suported in the version 59;
+ - **Chrome for Android:** suported in the version 85;
+ -**UC Browser for Android:** suported in the version 12.12;
+ - **Sansung Internet:** suported in the version  4-11.2 and 12.0;
+ - **QQ Browser:** suported in the version 10.4;
+ - **Baidu Browser:** suported in the version 10.4;
+
+
+### Not suported
+- **IE:** not suported in the versions 6-10 and 11;
+- **Edge:** not suported in the versions 12-18;
+- **Firefox:** not suported in the versions 2-52, 53-79, 80, 81 and 82-83;
+- **Chrome:** not suported in the versions 4-31 and 32-36;
+- **Safari:** not suported in the versions 3.1-13.1, 14 and TP (Technology Preview);
+- **Opera:** not suported in the versions 10-18 and 19-23;
+- **iOS Safari:** not suported in the versions 3.2-13.7 and 14;
+- **Opera Mini:** all versions;
+- **Android Browser:** not suported in the versions 2.1-4.4.4;
+- **Opera Mobile:** not suported in the version 12-12.1;
+- **Firefox for Android:** not suported in the version 79;
+- **KaiOS Browser:** not suported in the version 2.5;
+
 ## Contributing
 
 Water.css becomes better for everyone when people like you help make it better!
 
 Check out our [Contributing Guide](.github/CONTRIBUTING.md) to learn how to get started.  
 And thanks for taking the time to contribute! :)
+
