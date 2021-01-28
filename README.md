@@ -22,6 +22,7 @@
 - Tiny size
 - Beautiful
 - No classes
+- Encourage accessible code
 
 ## Why?
 
@@ -54,6 +55,30 @@ Just stick this in your `<head>`:
 <br>
 
 A **preview** of the different themes is available [on the **demo page**](https://watercss.kognise.dev/#installation)! ⚡
+
+#### Installing from NPM
+
+Alternatively, to install Water.css through a package manager, you can run:
+
+```
+# Using npm
+npm install water.css
+
+# Using yarn
+yarn add water.css
+```
+
+<details>
+  <summary><strong>In JavaScript (where CSS imports are supported)</strong></summary>
+
+  <pre><code>import 'water.css/out/water.css'</code></pre>
+</details>
+
+<details>
+  <summary><strong>In CSS or similar</strong></summary>
+
+  <pre><code>@import './node_modules/water.css/out/water.css';</code></pre>
+</details>
 
 #### How the "Automatic Theme" works
 
