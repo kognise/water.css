@@ -82,3 +82,8 @@ mark {
   padding: 0 2px 0 2px;
   color: #000;
 }
+
+a > code,
+a > strong {
+  color: inherit;
+}
