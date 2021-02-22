@@ -38,10 +38,6 @@
     color: #000;
   }
 
-  summary::-webkit-details-marker {
-    color: #000;
-  }
-
   tbody tr:nth-child(even) {
     background-color: #f2f2f2;
   }
