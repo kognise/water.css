@@ -113,7 +113,7 @@ details > :not(summary) {
   margin-top: 0;
 }
 
-summary::-webkit-details-marker {
+summary::marker {
   color: var(--text-main);
 }
 
