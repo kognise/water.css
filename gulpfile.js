@@ -58,7 +58,6 @@ const style = () => {
   return (
     gulp
       .src(paths.styles.src)
-      .pipe(sourcemaps.init())
       .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
 
       .pipe(startDiff())
@@ -69,11 +68,8 @@ const style = () => {
       .pipe(postcss([autoprefixer()]))
       .pipe(endDiff('autoprefixer'))
 
-      .pipe(sourcemaps.write('.'))
       .pipe(flatten()) // Put files in out/*, not out/builds/*
       .pipe(gulp.dest(paths.styles.dest))
-
-      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
 
       // <minifying>
       .pipe(startDiff())
@@ -82,11 +78,9 @@ const style = () => {
       .pipe(rename({ suffix: '.min' }))
       // </minifying>
 
-      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest(paths.styles.dest))
       .pipe(gulp.dest(paths.docs.dest + '/water.css'))
 
-      .pipe(filter('**/*.css')) // Remove sourcemaps from the pipeline
       .pipe(sizereport({ gzip: true, total: false, title: 'SIZE REPORT' }))
       .pipe(browserSync.stream())
   )
