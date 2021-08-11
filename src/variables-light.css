@@ -1,6 +1,6 @@
 :root {
   --background-body: #fff;
-  --background: #e2e2e2;
+  --background: #efefef;
   --background-alt: #f7f7f7;
   --selection: #9e9e9e;
   --text-main: #363636;
@@ -16,7 +16,7 @@
   --scrollbar-thumb: color-mod(var(--button-hover) lightness(+6%));
   --scrollbar-thumb-hover: var(--button-hover);
   --form-placeholder: #949494;
-  --form-text: rgb(29, 29, 29);
+  --form-text: #1d1d1d;
   --variable: #39a33c;
   --highlight: #ff0;
   --select-arrow: svg-load('./assets/select-arrow.svg', fill: #161f27);
