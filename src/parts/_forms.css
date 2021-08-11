@@ -1,6 +1,7 @@
 button,
 select,
 input[type='submit'],
+input[type='reset'],
 input[type='button'],
 input[type='checkbox'],
 input[type='range'],
@@ -8,9 +9,14 @@ input[type='radio'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input,
 select {
   display: block;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: initial;
 }
 
 input,
@@ -96,6 +102,7 @@ select[multiple] {
 
 button,
 input[type='submit'],
+input[type='reset'],
 input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
@@ -103,6 +110,7 @@ input[type='button'] {
 
 button:hover,
 input[type='submit']:hover,
+input[type='reset']:hover,
 input[type='button']:hover {
   background: var(--button-hover);
 }
@@ -117,6 +125,7 @@ textarea:focus {
 input[type='checkbox']:active,
 input[type='radio']:active,
 input[type='submit']:active,
+input[type='reset']:active,
 input[type='button']:active,
 input[type='range']:active,
 button:active {

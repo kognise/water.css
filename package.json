@@ -2,7 +2,7 @@
   "name": "water.css",
   "version": "2.0.0",
   "description": "A drop-in collection of CSS styles to make simple websites just a little nicer",
-  "main": "index.js",
+  "main": "out/water.css",
   "scripts": {
     "build": "gulp build",
     "dev": "gulp watch",
