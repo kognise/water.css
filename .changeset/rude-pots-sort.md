@@ -2,4 +2,4 @@
 "water.css": patch
 ---
 
-Added Contrast to the Buttons
+Update button colors for better contrast, especially in tables

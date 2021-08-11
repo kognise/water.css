@@ -1,7 +1,6 @@
 :root {
   --background-body: #fff;
   --background: #e2e2e2;
-  --background-btn: #d0cfcf;
   --background-alt: #f7f7f7;
   --selection: #9e9e9e;
   --text-main: #363636;
@@ -12,9 +11,10 @@
   --border: #dbdbdb;
   --code: #000;
   --animation-duration: 0.1s;
-  --button-hover: rgb(170, 170, 170);
-  --scrollbar-thumb: color-mod(var(--button-hover) lightness(-3%));
-  --scrollbar-thumb-hover: color-mod(var(--button-hover) lightness(-10%));
+  --button-base: #d0cfcf;
+  --button-hover: #9b9b9b;
+  --scrollbar-thumb: color-mod(var(--button-hover) lightness(+6%));
+  --scrollbar-thumb-hover: var(--button-hover);
   --form-placeholder: #949494;
   --form-text: rgb(29, 29, 29);
   --variable: #39a33c;
