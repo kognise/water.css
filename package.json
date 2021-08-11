@@ -1,6 +1,6 @@
 {
   "name": "water.css",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "A drop-in collection of CSS styles to make simple websites just a little nicer",
   "main": "out/water.css",
   "scripts": {
