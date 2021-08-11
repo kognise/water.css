@@ -35,6 +35,22 @@ select {
   outline: none;
 }
 
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-color: var(--button-base);
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background: var(--button-hover);
+}
+
 input[type='color'] {
   min-height: 2rem;
   padding: 8px;
@@ -98,21 +114,6 @@ select[multiple] {
   padding-right: 10px;
   background-image: none;
   overflow-y: auto;
-}
-
-button,
-input[type='submit'],
-input[type='reset'],
-input[type='button'] {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-button:hover,
-input[type='submit']:hover,
-input[type='reset']:hover,
-input[type='button']:hover {
-  background: var(--button-hover);
 }
 
 input:focus,
