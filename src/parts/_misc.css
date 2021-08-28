@@ -150,8 +150,6 @@ body > footer {
 }
 
 progress {
-  -moz-appearance: none;
-  -webkit-appearance: none;
   appearance: none;
   height: 8px;
   position: relative;
@@ -208,7 +206,7 @@ progress:not([value])::before {
       rgba(0, 0, 0, 0.4) 66%,
       transparent 66%
     );
-  -webkit-animation: stripes 3s linear infinite;
+  animation: stripes 3s linear infinite;
   border-radius: 6px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
   background-color: var(--border);
@@ -224,7 +222,7 @@ progress:not([value])::-webkit-progress-bar {
       rgba(0, 0, 0, 0.4) 66%,
       transparent 66%
     );
-  -webkit-animation: stripes 3s linear infinite;
+  animation: stripes 3s linear infinite;
   border-radius: 6px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
   background-color: var(--border);
@@ -240,23 +238,13 @@ progress:not([value])::-moz-progress-bar {
       rgba(0, 0, 0, 0.4) 66%,
       transparent 66%
     );
-  -moz-animation: stripes 3s linear infinite;
+  animation: stripes 3s linear infinite;
   border-radius: 6px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
   background-color: var(--border);
 }
 
 /* Animations */
-@-webkit-keyframes stripes {
-  from { background-position: 0 0; }
-  to { background-position: 100px 0; }
-}
-
-@-moz-keyframes stripes {
-  from { background-position: 0 0; }
-  to { background-position: 100px 0; }
-}
-
 @keyframes stripes {
   from { background-position: 0 0; }
   to { background-position: 100px 0; }
