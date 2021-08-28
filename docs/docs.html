@@ -1,0 +1,237 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="sheets.css">
+    <title>Water.css Docs</title>
+</head>
+<body>
+    <h1>Documentation</h1>
+    <p>Get started with Water.css, a collection of CSS styles to make simple websites.</p>
+    <h3>Quick Start</h3>
+    <p>Copy paste the <code style="color:red;">link</code> into your <code style="color:red;">head</code> before all other stylesheets</p>
+    <pre>
+        <code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> </code>
+    </pre>
+    <h3>Example</h3>
+    <pre>
+        <code>&lt;head><br>&emsp; &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"><br>&lt;/head></code>
+    </pre>
+    <h3>Components</h3>
+    <p>A few HTML elements for reference</p>
+    <ul>
+        <li><code><a href="#one">&lt;h1></code>to <code>&lt;h6></code> elements</a></li>
+        <li><code><a href="#two">&lt;blockquote></code> element</a></li>
+        <li><code><a href="#three">&lt;table></code> element</a></li>
+        <li><code><a href="#four">&lt;form></code> element</a></li>
+        <li><code><a href="#five">&lt;abbr></code> element</a></li>
+        <li><code><a href="#six">&lt;article></code> element</a></li>
+    </ul>
+    <section id="one">
+        <h4>HTML <code style="color:red;">&lt;h1> to &lt;h6></code> Tag</h4>
+        <pre>
+            <code>&lt;h1>Heading 1&lt;h1> <button onclick="myFunction('headings')">Copy</button>
+&lt;h1>Heading 1&lt;h1>
+&lt;h2>Heading 2&lt;h2>
+&lt;h3>Heading 3&lt;h3>
+&lt;h4>Heading 4&lt;h4>
+&lt;h5>Heading 5&lt;h5>
+&lt;h6>Heading 6&lt;h6></code>
+        </pre>
+        <h4 style="color: blue;">Output</h4>
+        <div id="headings">
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+        </div>
+    </section>
+    <br>
+    <section id="two">
+        <h4>HTML <code style="color:red;">&lt;blockquote></code> Tag</h4>
+        <p>The <code>&lt;blockquote> </code> tag specifies a section that is quoted from another source.</p>
+        <pre>
+            <code>&lt;blockquote cite="https://watercss.kognise.dev/"> <button onclick="myFunction('block')">Copy</button>
+    Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit
+    nicer.
+&lt;/blockquote></code>
+        </pre>
+        <h4 style="color: blue;">Output</h4>
+        <div id="block">
+        <blockquote cite="https://watercss.kognise.dev/">
+            Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit nicer.
+        </blockquote>
+        </div>
+    </section>
+    <br>
+    <section id="three">
+    <h4>HTML <code style="color:red;">&lt;table></code> Tag</h4>
+    <pre>
+        <code>&lt;table> <button onclick="myFunction('tab')">Copy</button>
+    &lt;tr>
+        &lt;th>Company&lt;/th>
+        &lt;th>Contact&lt;/th>
+        &lt;th>Country&lt;/th>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Alfreds Futterkiste&lt;/td>
+        &lt;td>Maria Anders&lt;/td>
+        &lt;td>Germany&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Centro comercial Moctezuma&lt;/td>
+        &lt;td>Francisco Chang&lt;/td>
+        &lt;td>Mexico&lt;/td>
+    &lt;/tr>
+    &lt;tr>
+        &lt;td>Ernst Handel&lt;/td>
+        &lt;td>Roland Mendel&lt;/td>
+        &lt;td>Austria&lt;/td>
+    &lt;/tr>
+&lt;/table></code>
+    </pre>
+    <h4 style="color: blue;">Output</h4>
+    <div id="tab">
+    <table>
+        <tr>
+          <th>Company</th>
+          <th>Contact</th>
+          <th>Country</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+        </tr>
+        <tr>
+          <td>Centro comercial Moctezuma</td>
+          <td>Francisco Chang</td>
+          <td>Mexico</td>
+        </tr>
+        <tr>
+          <td>Ernst Handel</td>
+          <td>Roland Mendel</td>
+          <td>Austria</td>
+        </tr>
+    </table>
+    </div>
+</section>
+    <br>
+    <section id="four">
+    <h4>HTML<code style="color:red;">&lt;form></code> elements</h4>
+    <pre>
+        <code>&lt;label for="email">Email&lt;/label> <button onclick="myFunction('formm')">Copy</button>
+    &lt;input type="email" name="email" id="email" placeholder="john.doe@gmail.com"/>
+    &lt;label for="id">User id (read only)&lt;/label>
+    &lt;input readonly name="id" id="id" value="04D6H89Z"/>
+    &lt;label for="disabled">Random disabled input&lt;/label>
+    &lt;input disabled name="disabled" id="disabled" placeholder="Because why not?"/>
+    &lt;label for="about">About me&lt;/label>
+    &lt;textarea name="about" id="about" placeholder="I am a textarea...">&lt;/textarea>
+    &lt;label>Choose a Doe:&lt;/label>
+    &lt;div>
+        &lt;input type="radio" id="john" name="drone" value="john" checked/>
+        &lt;label for="john">John Doe&lt;/label>
+    &lt;/div>
+    &lt;div>
+        &lt;input type="radio" id="jane" name="drone" value="jane" checked />
+        &lt;label for="jane">Jane Doe&lt;/label>
+    &lt;/div>
+    &lt;div>
+        &lt;input type="radio" id="johnny" name="drone" value="johnny" checked />
+        &lt;label for="johnny">Johnny Doe&lt;/label>
+    &lt;/div>
+    &lt;br>
+    &lt;input type="checkbox" name="remember" id="remember" checked/>
+    &lt;label for="remember">Remember me</label>
+    &lt;input type="submit" value="Submit" />
+    &lt;input type="reset" value="Reset" />
+&lt;/form></code>
+    </pre>
+    <h4 style="color: blue;">Output</h4>
+    <div id="formm">
+    <form>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" />
+
+      <label for="id">User id (read only)</label>
+      <input readonly name="id" id="id" value="04D6H89Z" />
+
+      <label for="disabled">Random disabled input</label>
+      <input disabled name="disabled" id="disabled" placeholder="Because why not?" />
+
+      <label for="about">About me</label>
+      <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
+
+      <label>Choose a Doe:</label>
+      <div>
+        <input type="radio" id="john" name="drone" value="john" checked />
+        <label for="john">John Doe</label>
+      </div>
+      <div>
+        <input type="radio" id="jane" name="drone" value="jane" checked />
+        <label for="jane">Jane Doe</label>
+      </div>
+      <div>
+        <input type="radio" id="johnny" name="drone" value="johnny" checked />
+        <label for="johnny">Johnny Doe</label>
+      </div>
+      
+      <br>
+
+      <input type="checkbox" name="remember" id="remember" checked />
+      <label for="remember">Remember me</label>
+
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </form>
+    </div>
+</section>
+    <br>
+    <section id="five">
+    <h4>HTML <code style="color:red;">&lt;abbr></code> Tag</h4>
+    <p>The <code>&lt;abbr></code> tag defines an abbreviation or an acronym.</p>
+    <pre>
+        <code>&lt;p>&lt;abbr title="Cascading Style Sheets">CSS&lt;/abbr> is used for styling webpages&lt;/p><button onclick="myFunction('abbrv')">Copy</button></code>
+    </pre>
+    <h4 style="color: blue;">Output</h4>
+    <div id="abbrv">
+        <p>
+            <abbr title="Cascading Style Sheets">CSS</abbr> is used for styling webpages
+        </p>
+    </div>
+    <p>A similar output can be got by using the<code style="color:red;">&lt;acronym></code> Tag</p>
+</section>
+    <br>
+    <section id="six">
+    <h4>HTML <code style="color:red;">&lt;article></code> Tag</h4>
+    <pre>
+        <code>&lt;article> <button onclick="myFunction('art')">Copy</button>
+    &lt;h2>Microsoft&lt;/h2>
+    &lt;p>Microsoft India Development Center is one of Microsoft’s largest R&D centers outside
+    the Redmond headquarters. Set up in Hyderabad in 1998, we represent Microsoft’s strategy of 
+    globally shared development to build products and services.&lt;p>
+&lt;/article>
+        </code>
+    </pre>
+    <h4 style="color: blue;">Output</h4>
+    <div  id="art">
+    <article>
+        <h2>Microsoft</h2>
+        <p>
+            Microsoft India Development Center is one of Microsoft’s largest R&D centers outside the Redmond headquarters. 
+        <p>
+    </article>
+    </div>
+</section>
+<footer>
+
+</footer>
+
+<script src="scr.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+code{
+    position: relative;
+}
+button{
+    position: absolute;
+    top: 7px;
+    right: 0;
+    padding: 5px;
+}
