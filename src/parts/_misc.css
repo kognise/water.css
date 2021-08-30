@@ -249,3 +249,49 @@ progress:not([value])::-moz-progress-bar {
   from { background-position: 0 0; }
   to { background-position: 100px 0; }
 }
+
+/* Meter */
+meter {
+  width: 100%;
+  border-radius: 6px;
+  height: 8px;
+  background: var(--border);
+}
+
+meter::-webkit-meter-bar {
+  border-radius: 6px;
+  background: var(--border);
+  height: 8px;
+  border: none;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: var(--meter-optimum);
+  border-radius: 6px;
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: var(--meter-sub-optimum);
+  border-radius: 6px;
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: var(--meter-sub-sub-optimum);
+  border-radius: 6px;
+}
+
+meter::-moz-meter-bar {
+  border-radius: 6px;
+}
+
+meter:-moz-meter-optimum::-moz-meter-bar {
+  background: var(--meter-optimum);
+}
+
+meter:-moz-meter-sub-optimum::-moz-meter-bar {
+  background: var(--meter-sub-optimum);
+}
+
+meter:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+  background: var(--meter-sub-sub-optimum);
+}
