@@ -20,7 +20,7 @@
   --variable: #39a33c;
   --highlight: #ff0;
   --select-arrow: svg-load('./assets/select-arrow.svg', fill: #161f27);
-  --meter-optimum:#39a33c;
+  --meter-optimum: #39a33c;
   --meter-sub-optimum: #e9d563;
   --meter-sub-sub-optimum: #f25757;
 }
