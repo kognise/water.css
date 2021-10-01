@@ -51,6 +51,10 @@ q {
   font-style: italic;
 }
 
+q {
+  line-height: 2.2em;
+}
+
 blockquote > footer {
   font-style: normal;
   border: 0;
