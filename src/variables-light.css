@@ -1,9 +1,9 @@
 :root {
   --background-body: #fff;
-  --background: #efefef;
+  --background: #eee;
   --background-alt: #f7f7f7;
-  --selection: #9e9e9e;
-  --text-main: #363636;
+  --selection: #eee;
+  --text-main: #222;
   --text-bright: #000;
   --text-muted: #70777f;
   --links: #0076d1;
