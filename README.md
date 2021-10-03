@@ -22,7 +22,7 @@
 - Tiny size
 - Beautiful
 - No classes
-- Encourage accessible code
+- Encourage semantic code
 
 ## Why?
 
