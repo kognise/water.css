@@ -8,6 +8,14 @@ time {
   font-size: 1em;
 }
 
+pre,
+code,
+samp,
+kbd,
+var {
+  font-family: ui-monospace, 'SFMono-Regular', 'SF Mono', 'Menlo', 'Consolas', 'Liberation Mono', monospace;
+}
+
 pre > code {
   padding: 10px;
   display: block;
@@ -17,7 +25,6 @@ pre > code {
 var {
   color: var(--variable);
   font-style: normal;
-  font-family: monospace;
 }
 
 kbd {
