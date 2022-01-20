@@ -1,6 +1,7 @@
 button,
 select,
 input[type='submit'],
+input[type='reset'],
 input[type='button'],
 input[type='checkbox'],
 input[type='range'],
@@ -8,9 +9,14 @@ input[type='radio'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input,
 select {
   display: block;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  display: initial;
 }
 
 input,
@@ -27,6 +33,22 @@ select {
   border: none;
   border-radius: 6px;
   outline: none;
+}
+
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  background-color: var(--button-base);
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background: var(--button-hover);
 }
 
 input[type='color'] {
@@ -94,19 +116,6 @@ select[multiple] {
   overflow-y: auto;
 }
 
-button,
-input[type='submit'],
-input[type='button'] {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
-button:hover,
-input[type='submit']:hover,
-input[type='button']:hover {
-  background: var(--button-hover);
-}
-
 input:focus,
 select:focus,
 button:focus,
@@ -117,6 +126,7 @@ textarea:focus {
 input[type='checkbox']:active,
 input[type='radio']:active,
 input[type='submit']:active,
+input[type='reset']:active,
 input[type='button']:active,
 input[type='range']:active,
 button:active {

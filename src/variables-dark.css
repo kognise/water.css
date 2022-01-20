@@ -11,9 +11,10 @@
   --border: #526980;
   --code: #ffbe85;
   --animation-duration: 0.1s;
-  --button-hover: #324759;
+  --button-base: #0c151c;
+  --button-hover: #040a0f;
   --scrollbar-thumb: var(--button-hover);
-  --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(+8%));
+  --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));
   --form-placeholder: #a9a9a9;
   --form-text: #fff;
   --variable: #d941e2;
