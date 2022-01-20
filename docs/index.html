@@ -211,19 +211,31 @@
       <label for="about">About me</label>
       <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
 
-      <label>Choose a Doe:</label>
-      <div>
-        <input type="radio" id="john" name="drone" value="john" checked />
-        <label for="john">John Doe</label>
-      </div>
-      <div>
-        <input type="radio" id="jane" name="drone" value="jane" checked />
-        <label for="jane">Jane Doe</label>
-      </div>
-      <div>
-        <input type="radio" id="johnny" name="drone" value="johnny" checked />
-        <label for="johnny">Johnny Doe</label>
-      </div>
+      <label for="rating">Rate this site</label>
+      <input name="rating" id="rating" type="range" min="1" max="10"></input>
+
+      <label for="flavor">Choose a flavor</label>
+      <select name="flavor" id="flavor">
+        <option>Chocolate</option>
+        <option>Strawberry</option>
+        <option>Vanilla</option>
+      </select>
+
+      <fieldset>
+        <legend>Choose a Doe</legend>
+        <div>
+          <input type="radio" id="john" name="drone" value="john" checked />
+          <label for="john">John Doe</label>
+        </div>
+        <div>
+          <input type="radio" id="jane" name="drone" value="jane" />
+          <label for="jane">Jane Doe</label>
+        </div>
+        <div>
+          <input type="radio" id="johnny" name="drone" value="johnny" />
+          <label for="johnny">Johnny Doe</label>
+        </div>
+      </fieldset>
 
       <br />
 
