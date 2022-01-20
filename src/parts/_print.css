@@ -34,7 +34,8 @@
     color: #000;
   }
 
-  summary::marker {
+  summary::marker,
+  summary::-webkit-details-marker /* isn't autoprefixed, kept for backwards compatibility */ {
     color: #000;
   }
 
