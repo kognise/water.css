@@ -8,6 +8,13 @@ time {
   font-size: 1em;
 }
 
+code,
+samp,
+pre,
+var {
+  font-family: ui-monospace, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
 pre > code {
   padding: 10px;
   display: block;
@@ -17,7 +24,6 @@ pre > code {
 var {
   color: var(--variable);
   font-style: normal;
-  font-family: monospace;
 }
 
 kbd {
