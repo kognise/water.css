@@ -118,7 +118,8 @@ details > :not(summary) {
   margin-top: 0;
 }
 
-summary::-webkit-details-marker {
+summary::marker,
+summary::-webkit-details-marker /* isn't autoprefixed, kept for backwards compatibility */ {
   color: var(--text-main);
 }
 
