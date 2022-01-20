@@ -17,10 +17,6 @@ const sizereport = require('gulp-sizereport')
 const postcssCssVariables = require('postcss-css-variables')
 const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
-const postcssColorModFunction = require('postcss-color-mod-function').bind(null, {
-  /* Use `.toRGBLegacy()` as other methods can result in lots of decimals */
-  stringifier: (color) => color.toRGBLegacy()
-})
 
 const paths = {
   docs: { src: 'docs/**', dest: 'out/docs' },
@@ -58,7 +54,7 @@ const style = () => {
   return (
     gulp
       .src(paths.styles.src)
-      .pipe(postcss([postcssImport(), postcssColorModFunction(), postcssInlineSvg()]))
+      .pipe(postcss([postcssImport(), postcssInlineSvg()]))
 
       .pipe(startDiff())
       .pipe(postcss([postcssCssVariables({ preserve: true })]))

@@ -14,7 +14,7 @@
   --button-base: #0c151c;
   --button-hover: #040a0f;
   --scrollbar-thumb: var(--button-hover);
-  --scrollbar-thumb-hover: color-mod(var(--scrollbar-thumb) lightness(-30%));
+  --scrollbar-thumb-hover: #3b4d5c;
   --form-placeholder: #a9a9a9;
   --form-text: #fff;
   --variable: #d941e2;

@@ -48,6 +48,10 @@ tbody tr:nth-child(even) button:hover {
   background-color: var(--background-body);
 }
 
+html {
+  scrollbar-color: var(--scrollbar-thumb-pressed) var(--background);
+}
+
 ::-webkit-scrollbar {
   height: 16px;
   width: 16px;
@@ -60,7 +64,7 @@ tbody tr:nth-child(even) button:hover {
 ::-webkit-scrollbar-thumb {
   background: var(--scrollbar-thumb);
   background-clip: content-box;
-  border: 4px solid transparent;
+  border: 4px solid var(--background);
   border-radius: 8px;
 }
 
