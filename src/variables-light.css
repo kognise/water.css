@@ -13,7 +13,7 @@
   --animation-duration: 0.1s;
   --button-base: #d0cfcf;
   --button-hover: #9b9b9b;
-  --scrollbar-thumb: color-mod(var(--button-hover) lightness(+6%));
+  --scrollbar-thumb: #aaa;
   --scrollbar-thumb-hover: var(--button-hover);
   --form-placeholder: #949494;
   --form-text: #1d1d1d;
