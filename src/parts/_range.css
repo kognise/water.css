@@ -22,7 +22,7 @@ input[type='range']::-webkit-slider-thumb {
   width: 20px;
   border-radius: 50%;
   background: var(--border);
-  -webkit-appearance: none;
+  appearance: none;
   margin-top: -7px;
 }
 
