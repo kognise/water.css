@@ -8,9 +8,10 @@ time {
   font-size: 1em;
 }
 
+pre,
 code,
 samp,
-pre,
+kbd,
 var {
   font-family: ui-monospace, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }

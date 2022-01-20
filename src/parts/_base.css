@@ -1,8 +1,3 @@
-html {
-  scrollbar-color: var(--scrollbar-thumb) var(--background-body);
-  scrollbar-width: thin;
-}
-
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   line-height: 1.4;
