@@ -35,16 +35,7 @@ th {
   font-weight: 600;
 }
 
-q::before {
-  content: none;
-}
-
-q::after {
-  content: none;
-}
-
-blockquote,
-q {
+blockquote {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0;
   padding: 0.5em 1em;
