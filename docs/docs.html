@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Element Docs | Water.css</title>
+    <link rel="canonical" href="https://watercss.kognise.dev/docs.html" />
+    <meta
+      name="description"
+      content="Get started with Water.css, a drop-in collection of classless CSS styles."
+    />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png" />
+    <link rel="icon" id="icon-16" type="image/png" sizes="16x16" href="./icons/favicon-16x16.png" />
+    <link rel="icon" id="icon-32" type="image/png" sizes="32x32" href="./icons/favicon-32x32.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./icons/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" id="icon-ico" href="./icons/favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="Water.css" />
+    <meta name="application-name" content="Water.css" />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="msapplication-config" content="./icons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
+    <link rel="stylesheet" id="js-startup-stylesheet" href="./water.css/water.min.css" />
+
+    <!-- Dynamic version of water.css, overwrites startup styles. JavaScript sets & updates href -->
+    <link rel="stylesheet" id="js-stylesheet" />
+
+    <!-- Custom styles for the documentation / version picker -->
+    <link rel="stylesheet" href="style.css" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://watercss.kognise.dev/docs.html" />
+    <meta property="og:title" content="Element Docs" />
+    <meta property="og:site_name" content="Water.css" />
+    <meta
+      property="og:description"
+      content="Get started with Water.css, a drop-in collection of classless CSS styles."
+    />
+    <meta
+      property="og:image"
+      content="https://raw.githubusercontent.com/kognise/water.css/master/assets/logo.png"
+    />
+    <meta property="og:image:width" content="1154" />
+    <meta property="og:image:height" content="444" />
+
+    <script>
+      // eslint-disable-next-line no-useless-escape
+      window.navigator.clipboard || document.write('<script src="https://unpkg.com/clipboard-polyfill@2.8.6/dist/clipboard-polyfill.promise.js"><\/script>')
+    </script>
+
+    <!-- Use bright favicons when the browser is in dark mode. -->
+    <script type="module">
+      import faviconSwitcher from 'https://unpkg.com/favicon-mode-switcher@1.0.4/dist/index.min.mjs'
+      faviconSwitcher([
+        { element: '#icon-ico', href: { dark: './icons/light-favicon.ico' } },
+        { element: '#icon-16', href: { dark: './icons/light-favicon-16x16.png' } },
+        { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
+      ])
+    </script>
+  </head>
+
+  <body>
+    <form id="theme-form" class="top-theme-form">
+      <input type="radio" value="auto" checked name="theme" id="theme-auto" />
+      <label for="theme-auto">Automatic 🌙 / ☀</label>
+
+      <input type="radio" value="dark" name="theme" id="theme-dark" />
+      <label for="theme-dark">Dark theme 🌙</label>
+
+      <input type="radio" value="light" name="theme" id="theme-light" />
+      <label for="theme-light">Light theme ☀</label>
+    </form>
+    
+    <header>
+      <h1>Element Docs</h1>
+      <p>
+        Get started with Water.css, a drop-in collection of classless CSS styles.
+      </p>
+      
+      <h2>Table of contents</h2>
+      <ul id="toc"></ul>
+    </header>
+
+    <main id="demos"></main>
+
+    <footer>
+      <a href="#">Back to top ⬆</a>
+    </footer>
+
+    <dialog id="dialog">
+      <header>This is a sample dialog</header>
+      <form method="dialog">
+        <p>What is your favorite pet animal?</p>
+        <menu>
+          <button value="feline">Cats</button>
+          <button value="canine">Dogs</button>
+          <button value="other">Others</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="scripts/docs.js"></script>
+    <script src="scripts/themer.js" defer></script>
+  </body>
+</html>

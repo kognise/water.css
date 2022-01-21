@@ -1,7 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
-
 #product-hunt {
   margin-top: 1rem;
 }
@@ -62,4 +58,15 @@ body > footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+/* Hmmm yes great class name */
+.top-theme-form {
+  padding: 10px 0;
+  top: 0;
+  width: 100%;
+  position: sticky;
+  margin-top: -20px;
+  z-index: 999;
+  background: var(--background-body);
 }
