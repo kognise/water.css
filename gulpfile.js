@@ -19,7 +19,7 @@ const postcssImport = require('postcss-import')
 const postcssInlineSvg = require('postcss-inline-svg')
 
 const paths = {
-  docs: { src: 'docs/**', dest: 'out/docs' },
+  docs: { src: 'docs/**/*', dest: 'out/docs' },
   styles: { src: 'src/builds/*.css', dest: 'out', watch: 'src/**/*.css' }
 }
 
@@ -89,8 +89,8 @@ const docs = () => {
 
   return (
     gulp
-      // Exclude all HTML files but index.html
-      .src(paths.docs.src, { ignore: '**/!(index).html' })
+      // Exclude all HTML files except for those ending with .html
+      .src(paths.docs.src, { ignore: '**/!(*).html' })
 
       // * Process HTML *
       .pipe(htmlOnly)

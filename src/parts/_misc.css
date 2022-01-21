@@ -114,7 +114,7 @@ summary:focus {
   text-decoration: underline;
 }
 
-details > :not(summary) {
+details > :not(summary):first-child {
   margin-top: 0;
 }
 
@@ -151,6 +151,11 @@ footer {
   color: var(--text-muted);
 }
 
-body > footer {
+body > footer:last-of-type {
   margin-top: 40px;
+}
+
+body > header:first-of-type {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
 }

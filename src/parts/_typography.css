@@ -78,3 +78,17 @@ a > code,
 a > strong {
   color: inherit;
 }
+
+dt {
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+dd {
+  margin: 5px 0;
+  margin-left: 40px;
+}
+
+dd + dt {
+  margin-top: 10px;
+}
