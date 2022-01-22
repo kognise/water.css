@@ -17,7 +17,8 @@ const linkSnippets = [...document.querySelectorAll('#link-snippet-container > pr
 const table = {
   fileName: document.getElementById('table-file-name'),
   fileSize: document.getElementById('table-file-size'),
-  theme: document.getElementById('table-theme')
+  theme: document.getElementById('table-theme'),
+  npm: document.getElementById('table-npm')
 }
 
 const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
@@ -55,6 +56,15 @@ const updateTheme = () => {
       updateProductHunt(theme)
       table.theme.innerText = `Theme is forced to ${theme}.`
     }
+
+    table.npm.innerHTML = `
+    Install with <code>npm i water.css</code> or <code>yarn add water.css</code>.
+    <br><br>
+    In JavaScript, where CSS imports are supported:<br>
+    <code>import 'water.css/out/${fileName}'</code>
+    <br><br>
+    Usage from CSS depends on your bundler and dependency management setup, but in some cases may be as simple as a <code>@import</code>.
+    `
   }
 }
 

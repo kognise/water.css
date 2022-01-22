@@ -16,12 +16,13 @@
 
 ## Goals
 
-- Responsive
-- Themeable
-- Good browser support (works on my old kindle's browser :P)
-- Tiny size
-- Beautiful
-- No classes
+- It's responsive
+- It's easy to theme
+- It has great browser support
+- It has a tiny size
+- It doesn't require **any** classes
+- It looks beautiful
+- It encourages semantic code
 
 ## Why?
 
@@ -54,6 +55,25 @@ Just stick this in your `<head>`:
 <br>
 
 A **preview** of the different themes is available [on the **demo page**](https://watercss.kognise.dev/#installation)! ⚡
+
+#### Installing from NPM
+
+Alternatively, to install Water.css through a package manager, you can run:
+
+```sh
+# Using NPM
+npm install water.css
+# Using Yarn
+yarn add water.css
+```
+
+In JavaScript, where CSS imports are supported:
+
+```js
+import 'water.css/out/water.css'
+```
+
+Usage from CSS depends on your bundler and dependency management setup, but in some cases may be as simple as a `@import`.
 
 #### How the "Automatic Theme" works
 
