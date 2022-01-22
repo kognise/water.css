@@ -1,3 +1,13 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 body {
   font-family:
     system-ui,
@@ -31,5 +41,6 @@ textarea {
     border-color var(--animation-duration) linear,
     color var(--animation-duration) linear,
     box-shadow var(--animation-duration) linear,
-    transform var(--animation-duration) ease;
+    transform var(--animation-duration) ease-in-out,
+    opacity var(--animation-duration) linear;
 }

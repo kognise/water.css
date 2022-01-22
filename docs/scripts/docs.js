@@ -327,18 +327,12 @@ for (const category of categories) {
     const pre = document.createElement('pre')
     const code = document.createElement('code')
     code.innerText = snippet.code.trim()
-    code.style.position = 'relative'
+    pre.style.position = 'relative'
+    pre.appendChild(code)
 
     const button = document.createElement('button')
     button.innerText = 'Copy'
-    Object.assign(button.style, {
-      position: 'absolute',
-      top: '0',
-      right: '0',
-      margin: '6px',
-      padding: '8px'
-    })
-
+    button.className = 'snippet-copy'
     let timeout = null
     button.addEventListener('click', () => {
       navigator.clipboard.writeText(snippet.code.trim())
@@ -347,9 +341,7 @@ for (const category of categories) {
       timeout = setTimeout(() => { button.innerText = 'Copy' }, 1000)
     })
 
-    code.appendChild(button)
-
-    pre.appendChild(code)
+    pre.appendChild(button)
     demosContainer.appendChild(pre)
 
     const details = document.createElement('details')
