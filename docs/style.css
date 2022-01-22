@@ -23,8 +23,10 @@
 #link-snippet-container {
   overflow: hidden;
   display: grid;
-  display: -ms-grid;
+  /* stylelint-disable */
+  -ms-display: grid;
   -ms-grid-columns: 1fr;
+  /* stylelint-enable */
 }
 
 #link-snippet-container > pre {

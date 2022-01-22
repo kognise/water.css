@@ -1,5 +1,18 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'avenir next',
+    avenir,
+    'segoe ui',
+    'helvetica neue',
+    helvetica,
+    Ubuntu,
+    roboto,
+    noto,
+    arial,
+    sans-serif;
   line-height: 1.4;
   max-width: 800px;
   margin: 20px auto;

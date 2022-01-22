@@ -1,22 +1,25 @@
-const gulp = require('gulp')
-const postcss = require('gulp-postcss')
-const autoprefixer = require('autoprefixer')
-const cssnano = require('cssnano')
-const sourcemaps = require('gulp-sourcemaps')
-const bytediff = require('gulp-bytediff')
-const browserSync = require('browser-sync').create()
-const chalk = require('chalk')
-const rename = require('gulp-rename')
-const filter = require('gulp-filter')
-const flatten = require('gulp-flatten')
-const babel = require('gulp-babel')
-const terser = require('gulp-terser')
-const posthtml = require('gulp-posthtml')
-const htmlnano = require('htmlnano')
-const sizereport = require('gulp-sizereport')
-const postcssCssVariables = require('postcss-css-variables')
-const postcssImport = require('postcss-import')
-const postcssInlineSvg = require('postcss-inline-svg')
+import gulp from 'gulp'
+import postcss from 'gulp-postcss'
+import autoprefixer from 'autoprefixer'
+import cssnano from 'cssnano'
+import sourcemaps from 'gulp-sourcemaps'
+import bytediff from 'gulp-bytediff'
+import chalk from 'chalk'
+import rename from 'gulp-rename'
+import filter from 'gulp-filter'
+import flatten from 'gulp-flatten'
+import babel from 'gulp-babel'
+import terser from 'gulp-terser'
+import posthtml from 'gulp-posthtml'
+import htmlnano from 'htmlnano'
+import sizereport from 'gulp-sizereport'
+import postcssCssVariables from 'postcss-css-variables'
+import postcssImport from 'postcss-import'
+import postcssInlineSvg from 'postcss-inline-svg'
+import _browserSync from 'browser-sync'
+import chalkTemplate from 'chalk-template'
+
+const browserSync = _browserSync.create()
 
 const paths = {
   docs: { src: 'docs/**/*', dest: 'out/docs' },
@@ -41,10 +44,10 @@ const formatByteMessage = (source, data) => {
     if (data.endSize > data.startSize) prettyEndSize = chalk.yellow(prettyEndSize)
     if (data.endSize < data.startSize) prettyEndSize = chalk.green(prettyEndSize)
 
-    message = chalk`${change} ${prettySavings} (${prettyStartSize} -> {bold ${prettyEndSize}})`
-  } else message = chalk`kept original filesize. ({bold ${prettyStartSize}})`
+    message = chalkTemplate`${change} ${prettySavings} (${prettyStartSize} -> {bold ${prettyEndSize}})`
+  } else message = chalkTemplate`kept original filesize. ({bold ${prettyStartSize}})`
 
-  return chalk`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
+  return chalkTemplate`{cyan ${source.padStart(12, ' ')}}: {bold ${data.fileName}} ${message}`
 }
 
 const style = () => {
@@ -128,8 +131,5 @@ const startDevServer = () => {
   gulp.watch(paths.docs.src, gulp.series(docs, browserReload))
 }
 
-const build = gulp.parallel(style, docs)
-const watch = gulp.series(build, startDevServer)
-
-module.exports.build = build
-module.exports.watch = watch
+export const build = gulp.parallel(style, docs)
+export const watch = gulp.series(build, startDevServer)

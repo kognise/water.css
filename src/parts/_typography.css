@@ -70,7 +70,7 @@ a[href^='sms\:']::before {
 mark {
   background-color: var(--highlight);
   border-radius: 2px;
-  padding: 0 2px 0 2px;
+  padding: 0 2px;
   color: #000;
 }
 

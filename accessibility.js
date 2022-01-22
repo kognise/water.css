@@ -1,9 +1,9 @@
-const pa11y = require('pa11y')
-const chalk = require('chalk')
-const puppeteer = require('puppeteer')
+import pa11y from 'pa11y'
+import chalkTemplate from 'chalk-template'
+import puppeteer from 'puppeteer'
 
 const check = async (browser, theme) => {
-  console.log(chalk`{bold Checking {blue ${theme}} theme...}`)
+  console.log(chalkTemplate`{bold Checking {blue ${theme}} theme...}`)
 
   const page = await browser.newPage()
   page.emulateMediaFeatures([
@@ -20,16 +20,16 @@ const check = async (browser, theme) => {
 
   if (results.issues.length === 0) {
     await page.close()
-    console.log(chalk`{green No issues found!}`)
+    console.log(chalkTemplate`{green No issues found!}`)
     return false
   }
 
   for (const issue of results.issues) {
     console.log()
-    console.log(chalk`{red Error:} ${issue.message}`)
-    console.log(chalk`{gray -> ${issue.code}}`)
-    console.log(chalk`{gray -> ${issue.selector}}`)
-    console.log(chalk`{gray -> ${issue.context}}`)
+    console.log(chalkTemplate`{red Error:} ${issue.message}`)
+    console.log(chalkTemplate`{gray -> ${issue.code}}`)
+    console.log(chalkTemplate`{gray -> ${issue.selector}}`)
+    console.log(chalkTemplate`{gray -> ${issue.context}}`)
   }
 
   await page.close()
@@ -48,7 +48,7 @@ const go = async () => {
     if (lightResult || darkResult) process.exit(1)
   } catch (error) {
     console.log()
-    console.log(chalk`{red An unexpected error occured!} ${error.message}`)
+    console.log(chalkTemplate`{red An unexpected error occured!} ${error.message}`)
   }
 }
 
