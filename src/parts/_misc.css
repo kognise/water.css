@@ -49,7 +49,7 @@ tbody tr:nth-child(even) button:hover {
 }
 
 html {
-  scrollbar-color: var(--scrollbar-thumb-pressed) var(--background);
+  scrollbar-color: var(--scrollbar-thumb-hover) var(--background);
 }
 
 ::-webkit-scrollbar {
