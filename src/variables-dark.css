@@ -3,6 +3,7 @@
   --background: #161f27;
   --background-alt: #1a242f;
   --selection: #1c76c5;
+  --selection-foreground: var(--text-bright);
   --text-main: #dbdbdb;
   --text-bright: #fff;
   --text-muted: #a9b1ba;

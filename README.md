@@ -100,6 +100,7 @@ Do you want to make some adjustments or build your own theme completely differen
 - `--background`
 - `--background-alt`
 - `--selection`
+- `--selection-foreground`
 - `--text-main`
 - `--text-bright`
 - `--text-muted`
