@@ -122,13 +122,13 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
 }
 
-input[type='checkbox']:active,
-input[type='radio']:active,
-input[type='submit']:active,
-input[type='reset']:active,
-input[type='button']:active,
-input[type='range']:active,
-button:active {
+input[type='checkbox']:active:enabled,
+input[type='radio']:active:enabled,
+input[type='submit']:active:enabled,
+input[type='reset']:active:enabled,
+input[type='button']:active:enabled,
+input[type='range']:active:enabled,
+button:active:enabled {
   transform: translateY(2px);
 }
 
