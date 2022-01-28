@@ -44,10 +44,10 @@ input[type='button'] {
   padding-left: 30px;
 }
 
-button:hover,
-input[type='submit']:hover,
-input[type='reset']:hover,
-input[type='button']:hover {
+button:hover:enabled,
+input[type='submit']:hover:enabled,
+input[type='reset']:hover:enabled,
+input[type='button']:hover:enabled {
   background: var(--button-hover);
 }
 
