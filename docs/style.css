@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 #product-hunt {
@@ -62,4 +63,28 @@ body > footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+.nav-bar {
+  overflow: hidden;
+  z-index: 5;
+  background-color: black;
+  box-sizing: border-box;
+  box-shadow: 0 4px 8px 0 grey;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.nav-bar a {
+  float: left;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  font-size: 17px;
+}
+
+.nav-bar a:hover {
+  color: darkslateblue;
 }
