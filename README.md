@@ -6,6 +6,7 @@
 </p>
 
 <br>
+<a href="readme/ru"><img src="assets/rus.png" align="right" height="25" width="30" title="Russian"></a>
 
 <h1 align="center">Water.css</h1>
 <p align="center">🌊 A drop-in collection of CSS styles to make simple websites just a little nicer</p>
