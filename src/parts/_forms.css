@@ -110,7 +110,8 @@ select::-ms-expand {
   display: none;
 }
 
-select[multiple] {
+select[multiple],
+select[size] {
   padding-right: 10px;
   background-image: none;
   overflow-y: auto;
