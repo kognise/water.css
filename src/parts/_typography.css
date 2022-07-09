@@ -1,4 +1,4 @@
-h1 {
+h1{
   font-size: 2.2em;
   margin-top: 0;
 }
@@ -8,7 +8,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6{
   margin-bottom: 12px;
   margin-top: 24px;
 }
@@ -19,7 +19,7 @@ h3,
 h4,
 h5,
 h6,
-strong {
+strong{
   color: var(--text-bright);
 }
 
@@ -31,52 +31,52 @@ h5,
 h6,
 b,
 strong,
-th {
+th{
   font-weight: 600;
 }
 
-q::before {
+q::before{
   content: none;
 }
 
-q::after {
+q::after{
   content: none;
 }
 
 blockquote,
-q {
+q{
   border-left: 4px solid var(--focus);
   margin: 1.5em 0;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
-blockquote > footer {
+blockquote > footer{
   font-style: normal;
   border: 0;
 }
 
-blockquote cite {
+blockquote cite{
   font-style: normal;
 }
 
-address {
+address{
   font-style: normal;
 }
 
-a[href^='mailto\:']::before {
+a[href^='mailto\:']::before{
   content: '📧 ';
 }
 
-a[href^='tel\:']::before {
+a[href^='tel\:']::before{
   content: '📞 ';
 }
 
-a[href^='sms\:']::before {
+a[href^='sms\:']::before{
   content: '💬 ';
 }
 
-mark {
+mark{
   background-color: var(--highlight);
   border-radius: 2px;
   padding: 0 2px 0 2px;
@@ -84,6 +84,6 @@ mark {
 }
 
 a > code,
-a > strong {
+a > strong{
   color: inherit;
 }

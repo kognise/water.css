@@ -1,78 +1,78 @@
 img,
-video {
+video{
   max-width: 100%;
   height: auto;
 }
 
-hr {
+hr{
   border: none;
   border-top: 1px solid var(--border);
 }
 
-table {
+table{
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
   table-layout: fixed;
 }
 
-table caption {
+table caption{
   text-align: left;
 }
 
 td,
-th {
+th{
   padding: 6px;
   text-align: left;
   vertical-align: top;
   word-wrap: break-word;
 }
 
-thead {
+thead{
   border-bottom: 1px solid var(--border);
 }
 
-tfoot {
+tfoot{
   border-top: 1px solid var(--border);
 }
 
-tbody tr:nth-child(even) {
+tbody tr:nth-child(even){
   background-color: var(--background);
 }
 
-tbody tr:nth-child(even) button {
+tbody tr:nth-child(even) button{
   background-color: var(--background-alt);
 }
 
-tbody tr:nth-child(even) button:hover {
+tbody tr:nth-child(even) button:hover{
   background-color: var(--background-body);
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
   height: 10px;
   width: 10px;
 }
 
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
   background: var(--background);
   border-radius: 6px;
 }
 
-::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb{
   background: var(--scrollbar-thumb);
   border-radius: 6px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover{
   background: var(--scrollbar-thumb-hover);
 }
 
-::selection {
+::selection{
   background-color: var(--selection);
   color: var(--text-bright);
 }
 
-details {
+details{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -83,19 +83,19 @@ details {
   overflow: hidden;
 }
 
-details[open] {
+details[open]{
   padding: 10px;
 }
 
-details > :last-child {
+details > :last-child{
   margin-bottom: 0;
 }
 
-details[open] summary {
+details[open] summary{
   margin-bottom: 10px;
 }
 
-summary {
+summary{
   display: list-item;
   background-color: var(--background);
   padding: 10px;
@@ -105,19 +105,19 @@ summary {
 }
 
 summary:hover,
-summary:focus {
+summary:focus{
   text-decoration: underline;
 }
 
-details > :not(summary) {
+details > :not(summary){
   margin-top: 0;
 }
 
-summary::-webkit-details-marker {
+summary::-webkit-details-marker{
   color: var(--text-main);
 }
 
-dialog {
+dialog{
   background-color: var(--background-alt);
   color: var(--text-main);
   border: none;
@@ -126,7 +126,7 @@ dialog {
   padding: 10px 30px;
 }
 
-dialog > header:first-child {
+dialog > header:first-child{
   background-color: var(--background);
   border-radius: 6px 6px 0 0;
   margin: -10px -30px 10px;
@@ -134,17 +134,17 @@ dialog > header:first-child {
   text-align: center;
 }
 
-dialog::backdrop {
+dialog::backdrop{
   background: #0000009c;
   backdrop-filter: blur(4px);
 }
 
-footer {
+footer{
   border-top: 1px solid var(--border);
   padding-top: 10px;
   color: var(--text-muted);
 }
 
-body > footer {
+body > footer{
   margin-top: 40px;
 }
