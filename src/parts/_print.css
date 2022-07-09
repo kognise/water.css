@@ -1,4 +1,4 @@
-@media print {
+@media print{
   body,
   pre,
   code,
@@ -6,13 +6,13 @@
   details,
   button,
   input,
-  textarea {
+  textarea{
     background-color: #fff;
   }
 
   button,
   input,
-  textarea {
+  textarea{
     border: 1px solid #000;
   }
 
@@ -30,23 +30,23 @@
   textarea,
   footer,
   summary,
-  strong {
+  strong{
     color: #000;
   }
 
-  summary::marker {
+  summary::marker{
     color: #000;
   }
 
-  summary::-webkit-details-marker {
+  summary::-webkit-details-marker{
     color: #000;
   }
 
-  tbody tr:nth-child(even) {
+  tbody tr:nth-child(even){
     background-color: #f2f2f2;
   }
 
-  a {
+  a{
     color: #00f;
     text-decoration: underline;
   }

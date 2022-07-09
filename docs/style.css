@@ -67,4 +67,9 @@ body > footer{
 /* stylelint-disable-next-line rule-empty-line-before */
 label{
   margin-bottom: 6px;
-} 
+}
+/* stylelint-disable-next-line rule-empty-line-before */
+#reset{
+  text-align: center;
+  padding: 10px 35px;
+}
