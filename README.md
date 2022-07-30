@@ -88,6 +88,7 @@ Do you want to make some adjustments or build your own theme completely differen
 - `--border`
 - `--code`
 - `--animation-duration`
+- `--button-base`
 - `--button-hover`
 - `--scrollbar-thumb`
 - `--scrollbar-thumb-hover`
