@@ -1,6 +1,7 @@
 html {
   scrollbar-color: var(--scrollbar-thumb) var(--background-body);
   scrollbar-width: thin;
+  text-size-adjust: none;
 }
 
 body {
