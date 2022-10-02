@@ -24,6 +24,11 @@ html {
   transform: scale(1.3);
 }
 
+
+.addressed{
+    display: flex;
+}  
+  
 #link-snippet-container {
   overflow: hidden;
   display: grid;
