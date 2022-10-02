@@ -71,6 +71,14 @@
         { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
       ])
     </script>
+    
+     <div class="link_add">
+      <div id="link-snippet-container">
+        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"></code></pre>
+        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"></code></pre>
+        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"></code></pre>
+      </div>
+    </div>
   </head>
 
   <body>
@@ -110,21 +118,6 @@
 
     <h2>Installation</h2>
     <div id="installation">
-      <header class="row">
-        <h3 id="link-snippet-headline">
-          Paste this into the <code>&lt;head&gt;</code> of your HTML:
-        </h3>
-        <button type="button" id="copy-button">
-          <span id="copy-button-feedback"></span>
-          Copy to clipboard
-        </button>
-      </header>
-
-      <div id="link-snippet-container">
-        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"></code></pre>
-        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"></code></pre>
-        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"></code></pre>
-      </div>
 
       <h3>Options</h3>
       <form id="theme-form">
@@ -339,13 +332,6 @@
       <li>Ordered list item 3</li>
     </ol>
 
-    <p>Addresses are also styled to be <strong>awesome</strong>!</p>
-    <address>
-      <a href="mailto:john.doe@example.com">john.doe@example.com</a><br />
-      <a href="tel:778-330-2389">778-330-2389</a><br />
-      <a href="sms:666-666-6666">666-666-6666</a><br />
-    </address>
-
     <br />
 
     <h1>Heading 1</h1>
@@ -354,7 +340,13 @@
     <h4>Heading 4</h4>
     <h5>Heading 5</h5>
     <h6>Heading 6</h6>
-
+    <br>
+  <h2><strong>Contact Us</strong>!</h2>
+    <address class="addressed">
+      <a href="mailto:john.doe@example.com">john.doe@example.com</a><br />
+      <a href="tel:778-330-2389" style="padding: 0px 83px 0px 98px;">778-330-2389</a><br />
+      <a href="sms:666-666-6666">666-666-6666</a><br />
+    </address>
     <footer>
       <a href="#">Back to top ⬆</a>
     </footer>
