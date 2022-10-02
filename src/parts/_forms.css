@@ -82,13 +82,12 @@ input[type='range'],
 select,
 button,
 textarea {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 textarea {
   display: block;
   margin-right: 0;
-  box-sizing: border-box;
   resize: vertical;
 }
 

@@ -23,8 +23,6 @@
     <meta name="theme-color" content="#ffffff" />
 
     <!-- Startup styles of water.css, so styles don't have to wait until JS is loaded -->
-    <link rel="preload" as="style" href="./water.css/dark.min.css" />
-    <link rel="preload" as="style" href="./water.css/light.min.css" />
     <link rel="stylesheet" id="js-startup-stylesheet" href="./water.css/water.min.css" />
 
     <!-- Dynamic version of water.css, overwrites startup styles. JavaScript sets & updates href -->
@@ -37,6 +35,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://watercss.kognise.dev/" />
     <meta property="og:title" content="Water.css" />
+    <meta property="og:site_name" content="Water.css" />
     <meta
       property="og:description"
       content="A drop-in collection of CSS styles to make simple websites like this just a little bit nicer."
@@ -74,41 +73,49 @@
   </head>
 
   <body>
-    <h1>Water.css</h1>
+    <header>
+      <div class="row">
+        <h1>Water.css</h1>
 
-    <p>
-      Water.css is a drop-in collection of CSS styles to make simple websites like this just a
-      little bit nicer.
-    </p>
-    <p>
-      Now you can write your simple static site with nice semantic html, and Water.css will manage
-      the styling for you.
-    </p>
-
-    <div class="row">
-      <div>
-        <a href="#installation"><b>Get it already!</b></a>
-        <br />
-        <a href="https://github.com/kognise/water.css"><b>GitHub</b></a>
-      </div>
-
-      <a
-        href="https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
+        <a
+          href="https://www.producthunt.com/posts/water-css?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-water-css"
+          target="_blank"
           id="product-hunt"
-          src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily"
-          alt="Water.css - Make your tiny website just a little nicer | Product Hunt Embed"
-          style="width: 250px; height: 54px;"
-          width="250px"
-          height="54px"
-        />
-      </a>
-    </div>
+          rel="noopener"
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=150490&theme=dark&period=daily"
+            alt="Water.css - Make your tiny website just a little nicer | Product Hunt Embed"
+            style="width: 250px; height: 54px;"
+            width="250px"
+            height="54px"
+          />
+        </a>
+      </div>
+      
+      <p>
+        Water.css is a drop-in collection of CSS styles to make simple websites like this just a little bit nicer.
+      </p>
+      <p>
+        Now you can write your simple static site with nice semantic html, and Water.css will manage the styling for you.
+      </p>
+      <ul>
+        <li>It's responsive</li>
+        <li>It's easy to theme</li>
+        <li>It has great browser support</li>
+        <li>It has a tiny size</li>
+        <li>It doesn't require <strong>any</strong> classes</li>
+        <li>It looks beautiful</li>
+        <li>It encourages semantic code</li>
+      </ul>
+      <p>
+        <b>Go to <a href="/docs.html" target="_blank">element documentation</a></b> or check out the
+        <a href="https://github.com/kognise/water.css" target="_blank" rel="nooopener noreferrer">GitHub</a>.
+      </p>
+    </header>
 
     <h2>Installation</h2>
+    
     <div id="installation">
       <header class="row">
         <h3 id="link-snippet-headline">
@@ -121,9 +128,9 @@
       </header>
 
       <div id="link-snippet-container">
-        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"></code></pre>
-        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css"></code></pre>
-        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css"></code></pre>
+        <pre id="link-snippet-auto"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css"></code></pre>
+        <pre hidden id="link-snippet-dark"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css"></code></pre>
+        <pre hidden id="link-snippet-light"><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css"></code></pre>
       </div>
 
       <h3>Options</h3>
@@ -158,28 +165,23 @@
             <th scope="row">Theme</th>
             <td id="table-theme"></td>
           </tr>
+
+          <tr>
+            <th scope="row">NPM instructions</th>
+            <td id="table-npm"></td>
+          </tr>
         </tbody>
       </table>
     </div>
 
-    <h2 id="goals">Goals</h2>
-    <ul>
-      <li>Responsive</li>
-      <li>Good code quality</li>
-      <li>Good browser support</li>
-      <li>Small size (&lt; 2kb)</li>
-      <li>Beautiful</li>
-      <li>No classes</li>
-    </ul>
-
     <h2 id="responsive">Is it responsive?</h2>
     <p>
-      <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's easily mobile
-      responsive. Just add the famous
-      <a href="https://www.w3schools.com/css/css_rwd_viewport.asp">responsive viewport tag</a> and
+      <strong>Heck yeah!</strong> It doesn't include any fancy styles so it's mobile
+      responsive by default. Just add the famous
+      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_basics">responsive viewport tag</a> and
       you'll be good to go!
     </p>
-    <p>In fact, try resizing this page. Everything flows super nicely as you'll see.</p>
+    <p>In fact, try resizing this page. Everything will flow super nicely.</p>
 
     <h2 id="bookmarklet">Bookmarklet</h2>
     <p>
@@ -189,175 +191,12 @@
       The Waterize bookmarklet can be used to make ugly websites more readable by replacing the styles with Water.css. Just drag this link to your bookmarks bar:
     </p>
     <strong>
-      <a href="javascript:(function()%7B%2F%2F%20Water.css%20Bookmarklet%0A%2F%2F%20---------------------%0A%0Aconst%20%24%24%20%3D%20(selector)%20%3D%3E%20document.querySelectorAll(selector)%0Aconst%20createElement%20%3D%20(tagName%2C%20properties)%20%3D%3E%20Object.assign(document.createElement(tagName)%2C%20properties)%0A%0A%2F%2F%20Remove%20all%20CSS%20stylesheets%2C%20external%20and%20internal%0A%24%24('link%5Brel%3D%22stylesheet%22%5D%2Cstyle').forEach((el)%20%3D%3E%20el.remove())%0A%0A%2F%2F%20Remove%20all%20inline%20styles%0A%24%24('*').forEach((el)%20%3D%3E%20(el.style%20%3D%20''))%0A%0Aconst%20linkElm%20%3D%20createElement('link'%2C%20%7B%0A%20%20rel%3A%20'stylesheet'%2C%0A%20%20href%3A%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.css'%0A%7D)%0A%0A%2F%2F%20Add%20water.css%20and%20responsive%20viewport%20(if%20necessary)%0Adocument.head.append(%0A%20%20linkElm%2C%0A%20%20!%24%24('meta%5Bname%3D%22viewport%22%5D').length%20%26%26%20createElement('meta'%2C%20%7B%0A%20%20%20%20name%3A%20'viewport'%2C%0A%20%20%20%20content%3A%20'width%3Ddevice-width%2Cinitial-scale%3D1.0'%0A%20%20%7D)%0A)%0A%0A%2F%2F%20Theme%20switching%20icons%0Aconst%20moonSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-moon%22%3E%3Cpath%20d%3D%22M21%2012.79A9%209%200%201%201%2011.21%203%207%207%200%200%200%2021%2012.79z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'%0Aconst%20sunSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-sun%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2212%22%20y1%3D%221%22%20x2%3D%2212%22%20y2%3D%223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2212%22%20y1%3D%2221%22%20x2%3D%2212%22%20y2%3D%2223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%224.22%22%20x2%3D%225.64%22%20y2%3D%225.64%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%2218.36%22%20x2%3D%2219.78%22%20y2%3D%2219.78%22%3E%3C%2Fline%3E%3Cline%20x1%3D%221%22%20y1%3D%2212%22%20x2%3D%223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2221%22%20y1%3D%2212%22%20x2%3D%2223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%2219.78%22%20x2%3D%225.64%22%20y2%3D%2218.36%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%225.64%22%20x2%3D%2219.78%22%20y2%3D%224.22%22%3E%3C%2Fline%3E%3C%2Fsvg%3E'%0A%0A%2F%2F%20Theme%20toggling%20logic%0Aconst%20toggleBtn%20%3D%20createElement('button'%2C%20%7B%0A%20%20innerHTML%3A%20sunSVG%2C%0A%20%20ariaLabel%3A%20'Switch%20theme'%2C%0A%20%20style%3A%20%60%0A%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20top%3A%2050px%3B%0A%20%20%20%20right%3A%2050px%3B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20line-height%3A%201%3B%0A%20%20%60%0A%7D)%0A%0Alet%20theme%20%3D%20'light'%0Aconst%20toggleTheme%20%3D%20()%20%3D%3E%20%7B%0A%20%20if%20(theme%20%3D%3D%3D%20'light')%20%7B%0A%20%20%20%20theme%20%3D%20'dark'%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20moonSVG%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Fdark.css'%0A%20%20%7D%20else%20%7B%0A%20%20%20%20theme%20%3D%20'light'%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.css'%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20sunSVG%0A%20%20%7D%0A%7D%0A%0AtoggleBtn.addEventListener('click'%2C%20toggleTheme)%0Adocument.body.append(toggleBtn)%7D)()%3B">
+      <a href="javascript:(function()%7B%2F%2F%20Water.css%20Bookmarklet%0A%2F%2F%20---------------------%0A%0Aconst%20%24%24%20%3D%20(selector)%20%3D%3E%20document.querySelectorAll(selector)%0Aconst%20createElement%20%3D%20(tagName%2C%20properties)%20%3D%3E%20Object.assign(document.createElement(tagName)%2C%20properties)%0A%0A%2F%2F%20Remove%20all%20CSS%20stylesheets%2C%20external%20and%20internal%0A%24%24('link%5Brel%3D%22stylesheet%22%5D%2Cstyle').forEach((el)%20%3D%3E%20el.remove())%0A%0A%2F%2F%20Remove%20all%20inline%20styles%0A%24%24('*').forEach((el)%20%3D%3E%20(el.style%20%3D%20''))%0A%0Aconst%20linkElm%20%3D%20createElement('link'%2C%20%7B%0A%20%20rel%3A%20'stylesheet'%2C%0A%20%20href%3A%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.min.css'%0A%7D)%0A%0A%2F%2F%20Add%20water.css%20and%20responsive%20viewport%20(if%20necessary)%0Adocument.head.append(%0A%20%20linkElm%2C%0A%20%20!%24%24('meta%5Bname%3D%22viewport%22%5D').length%20%26%26%20createElement('meta'%2C%20%7B%0A%20%20%20%20name%3A%20'viewport'%2C%0A%20%20%20%20content%3A%20'width%3Ddevice-width%2Cinitial-scale%3D1.0'%0A%20%20%7D)%0A)%0A%0A%2F%2F%20Theme%20switching%20icons%0Aconst%20moonSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-moon%22%3E%3Cpath%20d%3D%22M21%2012.79A9%209%200%201%201%2011.21%203%207%207%200%200%200%2021%2012.79z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E'%0Aconst%20sunSVG%20%3D%20'%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22feather%20feather-sun%22%3E%3Ccircle%20cx%3D%2212%22%20cy%3D%2212%22%20r%3D%225%22%3E%3C%2Fcircle%3E%3Cline%20x1%3D%2212%22%20y1%3D%221%22%20x2%3D%2212%22%20y2%3D%223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2212%22%20y1%3D%2221%22%20x2%3D%2212%22%20y2%3D%2223%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%224.22%22%20x2%3D%225.64%22%20y2%3D%225.64%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%2218.36%22%20x2%3D%2219.78%22%20y2%3D%2219.78%22%3E%3C%2Fline%3E%3Cline%20x1%3D%221%22%20y1%3D%2212%22%20x2%3D%223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2221%22%20y1%3D%2212%22%20x2%3D%2223%22%20y2%3D%2212%22%3E%3C%2Fline%3E%3Cline%20x1%3D%224.22%22%20y1%3D%2219.78%22%20x2%3D%225.64%22%20y2%3D%2218.36%22%3E%3C%2Fline%3E%3Cline%20x1%3D%2218.36%22%20y1%3D%225.64%22%20x2%3D%2219.78%22%20y2%3D%224.22%22%3E%3C%2Fline%3E%3C%2Fsvg%3E'%0A%0A%2F%2F%20Theme%20toggling%20logic%0Aconst%20toggleBtn%20%3D%20createElement('button'%2C%20%7B%0A%20%20innerHTML%3A%20sunSVG%2C%0A%20%20ariaLabel%3A%20'Switch%20theme'%2C%0A%20%20style%3A%20%60%0A%20%20%20%20position%3A%20fixed%3B%0A%20%20%20%20top%3A%2050px%3B%0A%20%20%20%20right%3A%2050px%3B%0A%20%20%20%20margin%3A%200%3B%0A%20%20%20%20padding%3A%2010px%3B%0A%20%20%20%20line-height%3A%201%3B%0A%20%20%60%0A%7D)%0A%0Alet%20theme%20%3D%20'light'%0Aconst%20updateTheme%20%3D%20()%20%3D%3E%20%7B%0A%20%20if%20(theme%20%3D%3D%3D%20'dark')%20%7B%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20moonSVG%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Fdark.min.css'%0A%20%20%7D%20else%20%7B%0A%20%20%20%20toggleBtn.innerHTML%20%3D%20sunSVG%0A%20%20%20%20linkElm.href%20%3D%20'https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2Fwater.css%402%2Fout%2Flight.min.css'%0A%20%20%7D%0A%7D%0A%0AtoggleBtn.addEventListener('click'%2C%20()%20%3D%3E%20%7B%0A%20%20theme%20%3D%20theme%20%3D%3D%3D%20'dark'%20%3F%20'light'%20%3A%20'dark'%0A%20%20localStorage.setItem('water.css-theme'%2C%20theme)%0A%20%20updateTheme()%0A%7D)%0Adocument.body.append(toggleBtn)%0A%0Aconst%20saved%20%3D%20localStorage.getItem('water.css-theme')%0Aif%20(saved)%20%7B%0A%20%20theme%20%3D%20saved%0A%20%20updateTheme()%0A%7D%20else%20if%20(window.matchMedia('(prefers-color-scheme%3A%20dark)').matches)%20%7B%0A%20%20theme%20%3D%20'dark'%0A%20%20updateTheme()%0A%7D%20else%20if%20(window.matchMedia('(prefers-color-scheme%3A%20light)').matches)%20%7B%0A%20%20theme%20%3D%20'light'%0A%20%20updateTheme()%0A%7D%7D)()%3B">
         Waterize
       </a>
     </strong>
 
-    <h2 id="demo">Element demos</h2>
-    <p>This is supposed to be a demo page so we need more elements!</p>
-
-    <h3 id="form-elements">Form elements</h3>
-    <form>
-      <label for="email">Email</label>
-      <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" />
-
-      <label for="id">User id (read only)</label>
-      <input readonly name="id" id="id" value="04D6H89Z" />
-
-      <label for="disabled">Random disabled input</label>
-      <input disabled name="disabled" id="disabled" placeholder="Because why not?" />
-
-      <label for="about">About me</label>
-      <textarea name="about" id="about" placeholder="I am a textarea..."></textarea>
-
-      <label>Choose a Doe:</label>
-      <div>
-        <input type="radio" id="john" name="drone" value="john" checked />
-        <label for="john">John Doe</label>
-      </div>
-      <div>
-        <input type="radio" id="jane" name="drone" value="jane" checked />
-        <label for="jane">Jane Doe</label>
-      </div>
-      <div>
-        <input type="radio" id="johnny" name="drone" value="johnny" checked />
-        <label for="johnny">Johnny Doe</label>
-      </div>
-
-      <br />
-
-      <input type="checkbox" name="remember" id="remember" checked />
-      <label for="remember">Remember me</label>
-
-      <input type="submit" value="Submit" />
-      <input type="reset" value="Reset" />
-    </form>
-
-    <h3 id="code">Code</h3>
-    <p>
-      Below is some code, you can copy it with <kbd>Ctrl-C</kbd>. Did you know,
-      <code>alert(1)</code> can show an alert in JavaScript!
-    </p>
-    <pre><code>// This logs a message to the console and check out the scrollbar.<br>console.log('Hello, world!')</code></pre>
-
-    <h3 id="other">Other</h3>
-    <p>Here's a horizontal rule and image because I don't know where else to put them.</p>
-    <img src="https://placekitten.com/408/287" alt="Example kitten" />
-    <hr />
-
-    <p>And here's a nicely marked up table!</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Quantity</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Godzilla</td>
-          <td>2</td>
-          <td>$299.99</td>
-        </tr>
-        <tr>
-          <td>Mozilla</td>
-          <td>10</td>
-          <td>$100,000.00</td>
-        </tr>
-        <tr>
-          <td>Quesadilla</td>
-          <td>1</td>
-          <td>$2.22</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <details>
-      <summary>Some summary/details can't hurt!</summary>
-      <p>Lorem ipsum dolor sit blah blah.</p>
-    </details>
-
-    <p>The dialog (form, and menu) tag</p>
-
-    <div>
-      <button type="button" id="dialog-trigger">
-        Show me the dialog!
-      </button>
-      <span id="dialog-result"></span>
-    </div>
-
-    <dialog id="dialog">
-      <header>This is a sample dialog</header>
-      <form method="dialog">
-        <p>What is your favorite pet animal?</p>
-        <menu>
-          <button value="feline">Cats</button>
-          <button value="canine">Dogs</button>
-          <button value="other">Others</button>
-        </menu>
-      </form>
-    </dialog>
-
-    <h3 id="typography">Typography</h3>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque dictum hendrerit velit, quis
-      ullamcorper sem congue ac. Quisque id magna rhoncus, sodales massa vel, vestibulum elit. Duis
-      ornare accumsan egestas. Proin maximus lacus interdum leo molestie convallis. Orci varius
-      natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut iaculis risus eu
-      felis feugiat, eu mollis neque elementum. Donec interdum, nisl id dignissim iaculis, felis dui
-      aliquet dui, non fermentum velit lectus ac quam. Class aptent taciti sociosqu ad litora
-      torquent per conubia nostra, per inceptos himenaeos.
-      <strong>This is strong,</strong> this is normal, <b>this is just bold,</b>
-      <em>and this is emphasized!</em> And heck, <a href="/">here</a>'s a link.
-    </p>
-
-    <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
-      "The HTML blockquote Element (or HTML Block Quotation Element) indicates that the enclosed
-      text is an extended quotation. Usually, this is rendered visually by indentation (see
-      <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote#Usage_notes"
-        >Notes</a
-      >
-      for how to change it). A URL for the source of the quotation may be given using the
-      <code>cite</code> attribute, while a text representation of the source can be given using the
-      <code>&lt;cite&gt;</code> cite element."
-
-      <footer>
-        <cite>MDN, "The Block Quotation element"</cite>
-      </footer>
-    </blockquote>
-
-    <ul>
-      <li>Unordered list item 1</li>
-      <li>Unordered list item 2</li>
-      <li>Unordered list item 3</li>
-    </ul>
-    <ol>
-      <li>Ordered list item 1</li>
-      <li>Ordered list item 2</li>
-      <li>Ordered list item 3</li>
-    </ol>
-
-    <p>Addresses are also styled to be <strong>awesome</strong>!</p>
-    <address>
-      <a href="mailto:john.doe@example.com">john.doe@example.com</a><br />
-      <a href="tel:778-330-2389">778-330-2389</a><br />
-      <a href="sms:666-666-6666">666-666-6666</a><br />
-    </address>
-
-    <br />
-
-    <h1>Heading 1</h1>
-    <h2>Heading 2</h2>
-    <h3>Heading 3</h3>
-    <h4>Heading 4</h4>
-    <h5>Heading 5</h5>
-    <h6>Heading 6</h6>
-
-    <footer>
-      <a href="#">Back to top ⬆</a>
-    </footer>
-    <script src="script.js" defer></script>
+    <script src="scripts/themer.js" defer></script>
+    <script src="scripts/index.js" defer></script>
   </body>
 </html>

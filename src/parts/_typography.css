@@ -35,16 +35,7 @@ th {
   font-weight: 600;
 }
 
-q::before {
-  content: none;
-}
-
-q::after {
-  content: none;
-}
-
-blockquote,
-q {
+blockquote {
   border-left: 4px solid var(--focus);
   margin: 1.5em 0;
   padding: 0.5em 1em;
@@ -79,11 +70,25 @@ a[href^='sms\:']::before {
 mark {
   background-color: var(--highlight);
   border-radius: 2px;
-  padding: 0 2px 0 2px;
+  padding: 0 2px;
   color: #000;
 }
 
 a > code,
 a > strong {
   color: inherit;
+}
+
+dt {
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+dd {
+  margin: 5px 0;
+  margin-left: 40px;
+}
+
+dd + dt {
+  margin-top: 10px;
 }

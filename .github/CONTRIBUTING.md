@@ -130,9 +130,11 @@ If you're not sure what kind of change you're making, pick "patch".
 
 ### Submit a Pull Request
 
-Once your changes have been committed and you've created a changelog, you'll want to [submit a pull request](https://github.com/kognise/water.css/compare).
+Once your changes have been committed and you've created a changelog, you'll want to [submit a pull request](https://github.com/kognise/water.css/compare/development..development).
 
 Be sure to provide a clear description of what your pull request includes. If your pull request will close an existing issue, make sure to write `Closes #[id]` in the pull request description, where `[id]` is replaced by the issue your pull request will close.
+
+Make sure that you create your pull request with the base set to the `development` branch. This is where all the changes for the next update go.
 
 After submitting a pull request, it will need to be reviewed by a maintainer of the project before being merged. You may be asked to make some changes to your pull request.
 
@@ -167,3 +169,10 @@ After your change has been reviewed and merged, you can celebrate as the newest 
 - **`src/builds`** contains entry files for the different versions water.css comes in: auto, dark and light
 
 - **`src/parts`** contains the water.css source code organized in separate files by its kind, like "forms" or "typography"
+
+
+### Branches
+
+The `master` branch contains the code that is currently published, for example on NPM.
+
+In contrast, the `development` branch contains all the changes that will come in the next official release. When updating Water.css, software called Changesets will automatically figure out what version increase has to be made.

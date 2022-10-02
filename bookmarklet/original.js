@@ -12,7 +12,7 @@ $$('*').forEach((el) => (el.style = ''))
 
 const linkElm = createElement('link', {
   rel: 'stylesheet',
-  href: 'https://cdn.jsdelivr.net/npm/water.css@2/out/light.css'
+  href: 'https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css'
 })
 
 // Add water.css and responsive viewport (if necessary)
@@ -43,17 +43,31 @@ const toggleBtn = createElement('button', {
 })
 
 let theme = 'light'
-const toggleTheme = () => {
-  if (theme === 'light') {
-    theme = 'dark'
+const updateTheme = () => {
+  if (theme === 'dark') {
     toggleBtn.innerHTML = moonSVG
-    linkElm.href = 'https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css'
+    linkElm.href = 'https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css'
   } else {
-    theme = 'light'
-    linkElm.href = 'https://cdn.jsdelivr.net/npm/water.css@2/out/light.css'
     toggleBtn.innerHTML = sunSVG
+    linkElm.href = 'https://cdn.jsdelivr.net/npm/water.css@2/out/light.min.css'
   }
 }
 
-toggleBtn.addEventListener('click', toggleTheme)
+toggleBtn.addEventListener('click', () => {
+  theme = theme === 'dark' ? 'light' : 'dark'
+  localStorage.setItem('water.css-theme', theme)
+  updateTheme()
+})
 document.body.append(toggleBtn)
+
+const saved = localStorage.getItem('water.css-theme')
+if (saved) {
+  theme = saved
+  updateTheme()
+} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+  theme = 'dark'
+  updateTheme()
+} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+  theme = 'light'
+  updateTheme()
+}
