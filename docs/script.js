@@ -22,7 +22,7 @@ const table = {
   theme: document.getElementById('table-theme')
 }
 
-const prefersColorScheme = window.matchMedia('(prefers-color-scheme: light)')
+const prefersColorScheme = window.matchMedia('(prefers-color-scheme: dark)')
 
 const updateProductHunt = (theme) => {
   theme = theme || (prefersColorScheme.matches ? 'light' : 'dark')
