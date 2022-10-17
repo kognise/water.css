@@ -63,3 +63,11 @@ body > footer {
   align-items: center;
   justify-content: space-between;
 }
+input[type=radio]{
+    outline: 2px solid blue
+}
+input[type=radio]{
+  outline: 6px solid blue;
+  outline-style:auto;
+  border-radius: 3px;
+    }
