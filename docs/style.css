@@ -16,6 +16,14 @@ html {
   margin-right: 2px;
   overflow: visible;
 }
+#push:hover{
+  animation: pulse 0.3s linear 1;
+}
+@keyframes push{
+  80%  {transform: scale(0.8);
+    
+  }
+}
 
 #copy-button-feedback {
   position: absolute;
