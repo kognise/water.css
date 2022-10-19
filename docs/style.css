@@ -6,6 +6,26 @@ html {
   margin-top: 1rem;
 }
 
+.navbar {
+  background-color: aqua;
+  column-width: auto;
+}
+
+.navbar-heading {
+  color: black;
+  font-size: larger;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: end;
+  gap: 30px;
+}
+
+li {
+  list-style: none;
+}
+
 #link-snippet-headline {
   margin: 1rem 2.5rem 1rem 0;
 }

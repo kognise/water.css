@@ -56,6 +56,7 @@
         "url": "https://watercss.kognise.dev/"
       }
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 
     <script>
       // eslint-disable-next-line no-useless-escape
@@ -74,6 +75,16 @@
   </head>
 
   <body>
+    <nav class="navbar">
+        <div class="navbar-header">
+          <a class="navbar-heading" href="#">Water.css</Water></a>
+        </div>
+        <ul class="nav-list">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">Form</a></li>
+        </ul>
+    </nav>
+
     <h1>Water.css</h1>
 
     <p>
@@ -198,7 +209,7 @@
     <p>This is supposed to be a demo page so we need more elements!</p>
 
     <h3 id="form-elements">Form elements</h3>
-    <form>
+    <form id="form">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" />
 
