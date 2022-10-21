@@ -57,6 +57,13 @@ body > footer {
   text-align: right;
 }
 
+.btn {
+  border-radius: 30%;
+  padding: 10px 10px 10px 10px;
+  color: #005aa0;
+  font-size: 10px;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
