@@ -123,6 +123,11 @@ textarea:focus {
   box-shadow: 0 0 0 2px var(--focus);
 }
 
+input[type='radio']:focus {
+  filter: drop-shadow(2px 2px 2px var(--focus)) drop-shadow(-2px -2px 2px var(--focus)) drop-shadow(-2px 2px 2px var(--focus)) drop-shadow(2px -2px 2px var(--focus));
+  clip-path: circle(0.6rem at 50% 50%);
+}
+
 input[type='checkbox']:active,
 input[type='radio']:active,
 input[type='submit']:active,
