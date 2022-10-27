@@ -1,30 +1,30 @@
 span[type="chip"] {
-    color: var(--text-bright);
-    border: 1px;
-    border-style: solid;
-    -moz-border-radius: 30px;
-    border-radius: 30px;
-    padding: 7px;
-    display: inline-block;
-    margin:1px;
+  color: var(--text-bright);
+  border: 1px;
+  border-style: solid;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
+  padding: 7px;
+  display: inline-block;
+  margin: 1px;
 }
 
 span[for="filled"] {
-    border-color: var(--border);
-    background-color: var(--border);
+  border-color: var(--border);
+  background-color: var(--border);
 }
 
 span[id="disabled"] {
-    cursor: not-allowed;
-    opacity: 0.5;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 span[id="clickable"] {
-    cursor: pointer;
-    text-decoration: none;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 span[id="clickable"]:hover {
-    opacity: 0.80;
-    text-decoration: none;
+  opacity: 0.8;
+  text-decoration: none;
 }
