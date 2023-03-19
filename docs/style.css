@@ -10,6 +10,18 @@ html {
   margin: 1rem 2.5rem 1rem 0;
 }
 
+#h1-water-css {
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  margin-bottom: 50px;
+  padding: 20px ;
+  width: max-content;
+}
+
+
 /* Make the feedback Emoji appear next to the button */
 #copy-button {
   position: relative;
@@ -62,4 +74,13 @@ body > footer {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+}
+
+#back-to-top {
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow:  20px 20px 60px #bebebe,
+               -20px -20px 60px #ffffff;
+  margin: 30px 0;
+  padding: 20px;
 }
