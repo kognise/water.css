@@ -86,3 +86,13 @@ document.getElementById('dialog-trigger').addEventListener('click', () => {
 document.getElementById('dialog').addEventListener('close', (event) => {
   document.getElementById('dialog-result').innerText = `Your answer: ${event.target.returnValue}`
 })
+
+// hide content-list on small screen size
+const screenSize = window.innerWidth
+const contentContainer = document.querySelector('.content-container')
+
+if (screenSize < 1200) {
+  contentContainer.style.display = 'none'
+} else {
+  contentContainer.style.display = 'block'
+}

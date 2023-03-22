@@ -63,3 +63,24 @@ body > footer {
   align-items: center;
   justify-content: space-between;
 }
+
+.content-container {
+  position: fixed;
+}
+
+.content-list {
+  position: absolute;
+  top: -131px;
+  left: -194px;
+}
+
+.content-list li,
+.content-list a {
+  list-style: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content-list li:hover {
+  color: black;
+}
