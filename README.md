@@ -96,6 +96,9 @@ Do you want to make some adjustments or build your own theme completely differen
 - `--variable`
 - `--highlight`
 - `--select-arrow`
+- `--links-hover`
+
+Can we also add links-hover to the list of variables?
 
 ### Runtime theming
 
