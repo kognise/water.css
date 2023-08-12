@@ -1,0 +1,26 @@
+/* Button Styles */
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--button-base);
+  color: var(--text-main);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  margin-right: 6px;
+  margin-bottom: 6px;
+  outline: none;
+}
+
+/* Button Hover Styles */
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover {
+  background: var(--button-hover);
+}

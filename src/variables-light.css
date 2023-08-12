@@ -20,4 +20,6 @@
   --variable: #39a33c;
   --highlight: #ff0;
   --select-arrow: svg-load('./assets/select-arrow.svg', fill: #161f27);
+  --button-base: #d0cfcf;
+  --button-hover: #9b9b9b;
 }
