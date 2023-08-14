@@ -57,6 +57,15 @@ body > footer {
   text-align: right;
 }
 
+.link-button a {
+  text-decoration: none;
+  color: var(--text-bright);
+}
+
+.link-button a:hover {
+  text-decoration: none;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
