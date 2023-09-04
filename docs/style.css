@@ -63,3 +63,17 @@ body > footer {
   align-items: center;
   justify-content: space-between;
 }
+
+.header-button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+  padding: 10px;
+  background-color: var(--button-base);
+  color: var(--text-bright);
+  border-radius: 10%;
+}
+
+.header-button:hover {
+  background-color: var(--button-hover);
+}
