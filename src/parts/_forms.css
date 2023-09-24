@@ -90,6 +90,7 @@ textarea {
   margin-right: 0;
   box-sizing: border-box;
   resize: vertical;
+  overflow-y: hidden;
 }
 
 textarea:not([cols]) {
