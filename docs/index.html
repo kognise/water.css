@@ -71,9 +71,22 @@
         { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
       ])
     </script>
+                      <script>
+                        function myFunction() {
+                           var element = document.body;
+                           element.classList.toggle("dark-mode");
+                        }
+                        </script>
   </head>
 
   <body>
+    <ul>
+      <li><a href="#home">Water CSS</a></li>
+      <li style="float:right"><label class="switch">
+                    <input type="checkbox" onclick="myFunction()"checked>
+                    <span class="slider round"></span>
+                  </label></a></li>
+    </ul>
     <h1>Water.css</h1>
 
     <p>
