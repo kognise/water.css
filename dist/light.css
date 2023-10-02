@@ -1,3 +1,4 @@
+/* Reset default character set and define global styles */
 @charset "UTF-8";
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -10,66 +11,49 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Apply transitions to interactive elements */
 button, input, textarea {
   transition: background-color 0.1s linear, border-color 0.1s linear, color 0.1s linear, box-shadow 0.1s linear, transform 0.1s ease;
 }
 
+/* Heading styles */
 h1 {
   font-size: 2.2em;
   margin-top: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* Heading and strong text styles */
+h1, h2, h3, h4, h5, h6, strong {
+  color: #000000;
+  font-weight: 600;
   margin-bottom: 12px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong {
-  color: #000000;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-b,
-strong,
-th {
-  font-weight: 600;
-}
-
+/* Blockquote styles */
 blockquote {
   border-left: 4px solid #0096bfab;
-  margin: 1.5em 0em;
+  margin: 1.5em 0;
   padding: 0.5em 1em;
   font-style: italic;
 }
 
+/* Blockquote footer styles */
 blockquote > footer {
   margin-top: 10px;
   font-style: normal;
 }
 
+/* Blockquote cite styles */
 blockquote cite {
   font-style: normal;
 }
 
+/* Address styles */
 address {
   font-style: normal;
 }
 
+/* Links styles with icons */
 a[href^='mailto']::before {
   content: '📧 ';
 }
@@ -82,19 +66,13 @@ a[href^='sms']::before {
   content: '💬 ';
 }
 
-button,
-input[type='submit'],
-input[type='button'],
-input[type='checkbox'] {
+/* Apply cursor pointer to interactive elements */
+button, input[type='submit'], input[type='button'], input[type='checkbox'] {
   cursor: pointer;
 }
 
-input:not([type='checkbox']):not([type='radio']),
-select {
-  display: block;
-}
-
-input, select, button, textarea {
+/* Form elements styles */
+input:not([type='checkbox']):not([type='radio']), select, button, textarea {
   color: #000000;
   background-color: #efefef;
   font-family: inherit;
@@ -105,13 +83,10 @@ input, select, button, textarea {
   border: none;
   border-radius: 6px;
   outline: none;
-}
-
-input:not([type='checkbox']):not([type='radio']),
-select, button, textarea {
   -webkit-appearance: none;
 }
 
+/* Textarea styles */
 textarea {
   margin-right: 0;
   width: 100%;
@@ -119,65 +94,50 @@ textarea {
   resize: vertical;
 }
 
+/* Button padding styles */
 button, input[type='submit'], input[type='button'] {
   padding-right: 30px;
   padding-left: 30px;
 }
 
-button:hover,
-input[type='submit']:hover,
-input[type='button']:hover {
+/* Hover styles for interactive elements */
+button:hover, input[type='submit']:hover, input[type='button']:hover {
   background: #dddddd;
 }
 
-input:focus,
-select:focus,
-button:focus,
-textarea:focus {
+/* Focus styles for interactive elements */
+input:focus, select:focus, button:focus, textarea:focus {
   box-shadow: 0 0 0 2px #0096bfab;
 }
 
-input[type='checkbox']:active,
-input[type='radio']:active,
-input[type='submit']:active,
-input[type='button']:active,
-button:active {
+/* Active styles for interactive elements */
+input[type='checkbox']:active, input[type='radio']:active, input[type='submit']:active, input[type='button']:active, button:active {
   transform: translateY(2px);
 }
 
-input:disabled,
-select:disabled,
-button:disabled,
-textarea:disabled {
+/* Disabled styles for interactive elements */
+input:disabled, select:disabled, button:disabled, textarea:disabled {
   cursor: not-allowed;
   opacity: .5;
 }
 
-::-webkit-input-placeholder {
+/* Placeholder text color */
+::-webkit-input-placeholder, :-ms-input-placeholder, ::-ms-input-placeholder, ::placeholder {
   color: #949494;
 }
 
-:-ms-input-placeholder {
-  color: #949494;
-}
-
-::-ms-input-placeholder {
-  color: #949494;
-}
-
-::placeholder {
-  color: #949494;
-}
-
+/* Links styles */
 a {
   text-decoration: none;
   color: #0076d1;
 }
 
+/* Hover styles for links */
 a:hover {
   text-decoration: underline;
 }
 
+/* Code and keyboard styles */
 code, kbd {
   background: #efefef;
   color: #000000;
@@ -185,57 +145,66 @@ code, kbd {
   border-radius: 6px;
 }
 
+/* Code block styles */
 pre > code {
   padding: 10px;
   display: block;
   overflow-x: auto;
 }
 
+/* Responsive image styles */
 img {
   max-width: 100%;
 }
 
+/* Horizontal rule styles */
 hr {
   border: none;
   border-top: 1px solid #dbdbdb;
 }
 
+/* Table styles */
 table {
   border-collapse: collapse;
   margin-bottom: 10px;
   width: 100%;
 }
 
+/* Table cell styles */
 td, th {
   padding: 6px;
   text-align: left;
 }
 
+/* Table header styles */
 th {
   border-bottom: 1px solid #dbdbdb;
 }
 
+/* Alternating row background color */
 tbody tr:nth-child(even) {
   background-color: #efefef;
 }
 
+/* Scrollbar styles */
 ::-webkit-scrollbar {
   height: 10px;
   width: 10px;
 }
 
+/* Scrollbar track styles */
 ::-webkit-scrollbar-track {
   background: #efefef;
   border-radius: 6px;
 }
 
+/* Scrollbar thumb styles */
 ::-webkit-scrollbar-thumb {
   background: #d5d5d5;
   border-radius: 6px;
 }
 
+/* Hover styles for scrollbar thumb */
 ::-webkit-scrollbar-thumb:hover {
   background: #c4c4c4;
 }
-
-/*# sourceMappingURL=light.css.map */
