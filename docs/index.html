@@ -71,9 +71,22 @@
         { element: '#icon-32', href: { dark: './icons/light-favicon-32x32.png' } }
       ])
     </script>
+                      <script>
+                        function myFunction() {
+                           var element = document.body;
+                           element.classList.toggle("dark-mode");
+                        }
+                        </script>
   </head>
 
   <body>
+    <ul>
+      <li><a href="#home">Water CSS</a></li>
+      <li style="float:right"><label class="switch">
+                    <input type="checkbox" onclick="myFunction()"checked>
+                    <span class="slider round"></span>
+                  </label></a></li>
+    </ul>
     <h1>Water.css</h1>
 
     <p>
@@ -163,14 +176,14 @@
     </div>
 
     <h2 id="goals">Goals</h2>
-    <ul>
+    <ul1>
       <li>Responsive</li>
       <li>Good code quality</li>
       <li>Good browser support</li>
       <li>Small size (&lt; 2kb)</li>
       <li>Beautiful</li>
       <li>No classes</li>
-    </ul>
+    </ul1>
 
     <h2 id="responsive">Is it responsive?</h2>
     <p>
@@ -328,11 +341,11 @@
       </footer>
     </blockquote>
 
-    <ul>
+    <ul1>
       <li>Unordered list item 1</li>
       <li>Unordered list item 2</li>
       <li>Unordered list item 3</li>
-    </ul>
+    </ul1>
     <ol>
       <li>Ordered list item 1</li>
       <li>Ordered list item 2</li>
